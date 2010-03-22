@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65CA2AB31135F4710015FFF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA2AB21135F4710015FFF6 /* CoreGraphics.framework */; };
+		65CA2AB41135F4710015FFF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		65CA2AB61135F4710015FFF6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA2AB51135F4710015FFF6 /* UIKit.framework */; };
+		65CA2ADD1135F7170015FFF6 /* DCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CA2ADC1135F7170015FFF6 /* DCCommon.h */; };
+		65CA2AF91135FFA00015FFF6 /* DCCommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA2AF81135FFA00015FFF6 /* DCCommonTests.m */; };
+		65CA2C0911360AD30015FFF6 /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA2A741135F3D60015FFF6 /* GHUnitIPhoneTestMain.m */; };
+		65CA2C0A11360AD50015FFF6 /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA2A761135F3D60015FFF6 /* libGHUnitIPhone3_0.a */; };
+		65CA2CD911362A040015FFF6 /* PlaceHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CA2CD711362A040015FFF6 /* PlaceHolder.h */; };
+		65CA2CDA11362A040015FFF6 /* PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA2CD811362A040015FFF6 /* PlaceHolder.m */; };
+		AA747D9F0F9514B9006C5449 /* dUsefulStuff_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		65CA2A6A1135F3D60015FFF6 /* GHAsyncTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHAsyncTestCase.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHAsyncTestCase.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A6B1135F3D60015FFF6 /* GHTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTest.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHTest.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A6C1135F3D60015FFF6 /* GHTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestCase.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHTestCase.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A6D1135F3D60015FFF6 /* GHTestGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestGroup.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHTestGroup.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A6E1135F3D60015FFF6 /* GHTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTesting.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHTesting.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A6F1135F3D60015FFF6 /* GHTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestMacros.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHTestMacros.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A701135F3D60015FFF6 /* GHTestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestRunner.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHTestRunner.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A711135F3D60015FFF6 /* GHTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestSuite.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHTestSuite.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A721135F3D60015FFF6 /* GHUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHUnit.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHUnit.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A731135F3D60015FFF6 /* GHUnitIPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHUnitIPhoneAppDelegate.h; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHUnitIPhoneAppDelegate.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A741135F3D60015FFF6 /* GHUnitIPhoneTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIPhoneTestMain.m; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHUnitIPhoneTestMain.m"; sourceTree = SOURCE_ROOT; };
+		65CA2A751135F3D60015FFF6 /* GHUNSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GHUNSObject+Swizzle.h"; path = "../../tools/libGHUnitIPhone3_0-0.4.18/GHUNSObject+Swizzle.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A761135F3D60015FFF6 /* libGHUnitIPhone3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGHUnitIPhone3_0.a; path = "../../tools/libGHUnitIPhone3_0-0.4.18/libGHUnitIPhone3_0.a"; sourceTree = SOURCE_ROOT; };
+		65CA2A771135F3D60015FFF6 /* NSException+GHTestFailureExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSException+GHTestFailureExceptions.h"; path = "../../tools/libGHUnitIPhone3_0-0.4.18/NSException+GHTestFailureExceptions.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A781135F3D60015FFF6 /* NSValue+GHValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSValue+GHValueFormatter.h"; path = "../../tools/libGHUnitIPhone3_0-0.4.18/NSValue+GHValueFormatter.h"; sourceTree = SOURCE_ROOT; };
+		65CA2A8E1135F40C0015FFF6 /* dUsefulStuff unit tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dUsefulStuff unit tests-Info.plist"; sourceTree = "<group>"; };
+		65CA2AB21135F4710015FFF6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		65CA2AB51135F4710015FFF6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		65CA2ADC1135F7170015FFF6 /* DCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCommon.h; sourceTree = "<group>"; };
+		65CA2AF81135FFA00015FFF6 /* DCCommonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCommonTests.m; sourceTree = "<group>"; };
+		65CA2CD711362A040015FFF6 /* PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceHolder.h; sourceTree = "<group>"; };
+		65CA2CD811362A040015FFF6 /* PlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceHolder.m; sourceTree = "<group>"; };
+		65EDA8D81157945000510429 /* lib_dUsefulStuff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = lib_dUsefulStuff.a; path = "build/Debug-iphonesimulator/lib_dUsefulStuff.a"; sourceTree = "<group>"; };
+		65EDA8D91157945000510429 /* dUsefulStuff unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "dUsefulStuff unit tests.app"; path = "build/Debug-iphoneos/dUsefulStuff unit tests.app"; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dUsefulStuff_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65CA2A8A1135F40C0015FFF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65CA2AB31135F4710015FFF6 /* CoreGraphics.framework in Frameworks */,
+				65CA2AB41135F4710015FFF6 /* Foundation.framework in Frameworks */,
+				65CA2AB61135F4710015FFF6 /* UIKit.framework in Frameworks */,
+				65CA2C0A11360AD50015FFF6 /* libGHUnitIPhone3_0.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65EDA8D81157945000510429 /* lib_dUsefulStuff.a */,
+				65EDA8D91157945000510429 /* dUsefulStuff unit tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* dUsefulStuff */ = {
+			isa = PBXGroup;
+			children = (
+				65CA2AF11135FEBF0015FFF6 /* tests */,
+				08FB77AEFE84172EC02AAC07 /* code */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				65CA2A8E1135F40C0015FFF6 /* dUsefulStuff unit tests-Info.plist */,
+			);
+			name = dUsefulStuff;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65CA2AB21135F4710015FFF6 /* CoreGraphics.framework */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				65CA2A431135F2590015FFF6 /* GHUnit */,
+				65CA2AB51135F4710015FFF6 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* code */ = {
+			isa = PBXGroup;
+			children = (
+				65CA2ADC1135F7170015FFF6 /* DCCommon.h */,
+				65CA2CD711362A040015FFF6 /* PlaceHolder.h */,
+				65CA2CD811362A040015FFF6 /* PlaceHolder.m */,
+			);
+			lineEnding = 0;
+			name = code;
+			path = src/code;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		65CA2A431135F2590015FFF6 /* GHUnit */ = {
+			isa = PBXGroup;
+			children = (
+				65CA2A6A1135F3D60015FFF6 /* GHAsyncTestCase.h */,
+				65CA2A6B1135F3D60015FFF6 /* GHTest.h */,
+				65CA2A6C1135F3D60015FFF6 /* GHTestCase.h */,
+				65CA2A6D1135F3D60015FFF6 /* GHTestGroup.h */,
+				65CA2A6E1135F3D60015FFF6 /* GHTesting.h */,
+				65CA2A6F1135F3D60015FFF6 /* GHTestMacros.h */,
+				65CA2A701135F3D60015FFF6 /* GHTestRunner.h */,
+				65CA2A711135F3D60015FFF6 /* GHTestSuite.h */,
+				65CA2A721135F3D60015FFF6 /* GHUnit.h */,
+				65CA2A731135F3D60015FFF6 /* GHUnitIPhoneAppDelegate.h */,
+				65CA2A741135F3D60015FFF6 /* GHUnitIPhoneTestMain.m */,
+				65CA2A751135F3D60015FFF6 /* GHUNSObject+Swizzle.h */,
+				65CA2A761135F3D60015FFF6 /* libGHUnitIPhone3_0.a */,
+				65CA2A771135F3D60015FFF6 /* NSException+GHTestFailureExceptions.h */,
+				65CA2A781135F3D60015FFF6 /* NSValue+GHValueFormatter.h */,
+			);
+			name = GHUnit;
+			sourceTree = "<group>";
+		};
+		65CA2AF11135FEBF0015FFF6 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				65CA2AF81135FFA00015FFF6 /* DCCommonTests.m */,
+			);
+			lineEnding = 0;
+			name = tests;
+			path = src/tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		65CA2C40113627230015FFF6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65CA2CD911362A040015FFF6 /* PlaceHolder.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* dUsefulStuff_Prefix.pch in Headers */,
+				65CA2ADD1135F7170015FFF6 /* DCCommon.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		65CA2A8B1135F40C0015FFF6 /* dUsefulStuff unit tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65CA2A911135F40D0015FFF6 /* Build configuration list for PBXNativeTarget "dUsefulStuff unit tests" */;
+			buildPhases = (
+				65CA2C40113627230015FFF6 /* Headers */,
+				65CA2A881135F40C0015FFF6 /* Resources */,
+				65CA2A891135F40C0015FFF6 /* Sources */,
+				65CA2A8A1135F40C0015FFF6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dUsefulStuff unit tests";
+			productName = "dUsefulStuff unit tests";
+			productReference = 65EDA8D91157945000510429 /* dUsefulStuff unit tests.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D2AAC07D0554694100DB518D /* dUsefulStuff */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "dUsefulStuff" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dUsefulStuff;
+			productName = dUsefulStuff;
+			productReference = 65EDA8D81157945000510429 /* lib_dUsefulStuff.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "dUsefulStuff" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* dUsefulStuff */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* dUsefulStuff */,
+				65CA2A8B1135F40C0015FFF6 /* dUsefulStuff unit tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65CA2A881135F40C0015FFF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65CA2A891135F40C0015FFF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65CA2AF91135FFA00015FFF6 /* DCCommonTests.m in Sources */,
+				65CA2C0911360AD30015FFF6 /* GHUnitIPhoneTestMain.m in Sources */,
+				65CA2CDA11362A040015FFF6 /* PlaceHolder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_TEMP_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = NO;
+				DEPLOYMENT_POSTPROCESSING = NO;
+				DSTROOT = "$(CONFIGURATION)";
+				EXECUTABLE_PREFIX = lib_;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
+				INSTALL_PATH = "/v$(CURRENT_PROJECT_VERSION)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../tools/libGHUnitIPhone3_0-0.4.18\"",
+				);
+				PRODUCT_NAME = dUsefulStuff;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;
+				SDKROOT = iphonesimulator3.1.3;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_TEMP_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				DSTROOT = "$(CONFIGURATION)";
+				EXECUTABLE_PREFIX = lib_;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
+				INSTALL_PATH = "/v$(CURRENT_PROJECT_VERSION)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../tools/libGHUnitIPhone3_0-0.4.18\"",
+				);
+				PRODUCT_NAME = dUsefulStuff;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;
+				SDKROOT = iphonesimulator3.1.3;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CURRENT_PROJECT_VERSION = 0.0.1;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = "$(CONFIGURATION)";
+				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/v$(CURRENT_PROJECT_VERSION)";
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				PUBLIC_HEADERS_FOLDER_PATH = "/v$(CURRENT_PROJECT_VERSION)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos3.1.3;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CURRENT_PROJECT_VERSION = 0.0.1;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = "$(CONFIGURATION)";
+				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/v$(CURRENT_PROJECT_VERSION)";
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				PUBLIC_HEADERS_FOLDER_PATH = "/v$(CURRENT_PROJECT_VERSION)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos3.1.3;
+			};
+			name = Release;
+		};
+		65CA2A8F1135F40D0015FFF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				EXECUTABLE_PREFIX = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "dUsefulStuff unit tests-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../tools/libGHUnitIPhone3_0-0.4.18\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "dUsefulStuff unit tests";
+				SDKROOT = iphoneos3.1.3;
+			};
+			name = Debug;
+		};
+		65CA2A901135F40D0015FFF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "dUsefulStuff unit tests-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../tools/libGHUnitIPhone3_0-0.4.18\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "dUsefulStuff unit tests";
+				SDKROOT = iphoneos3.1.3;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "dUsefulStuff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "dUsefulStuff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65CA2A911135F40D0015FFF6 /* Build configuration list for PBXNativeTarget "dUsefulStuff unit tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65CA2A8F1135F40D0015FFF6 /* Debug */,
+				65CA2A901135F40D0015FFF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
