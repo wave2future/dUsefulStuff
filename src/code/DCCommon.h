@@ -6,14 +6,14 @@
 
 // Notes:
 
-// 1. The do - while is so that macro defined variables
-// have their own scope. This stops definition errors when the macro is used several times in a row.
+// 1. The do - while is so that macro defined variables have their own scope. 
+// This stops definition errors when the macro is used several times in a row.
 
 #pragma mark Logging
 
 /**
  * DC_LOG is controlled by the DHC_DEBUG flag. If set, all DHC_LOG calls are converted into NSLog() calls.
- * If not set they are balnked out, producing no additional code. This makes life easy for developing because we
+ * If not set they are blanked out, producing no additional code. This makes life easy for developing because we
  * can be quite verbose without worrying about slowing the code down.
  */
 #ifdef DC_DEBUG
@@ -22,14 +22,16 @@
          __LINE__, \
          [NSString stringWithFormat:(s), ## __VA_ARGS__])
 #else
-// Effective remove the logging.
+// Effectively remove the logging.
 #define DC_LOG(s, ...)
 #endif
 
 #pragma mark Memory handling
 
 /**
- * Wraps up some boiler plate code to dealloc an instance of a variable.
+ * Wraps up some boiler plate code to dealloc an instance of a variable. This just does some house keeping
+ * Although if logging is on, it will attempt to print a representation of the value of the deallocd variable so
+ * that the developer can see when things are being freed.
  */
 #ifdef DC_LOG_DEALLOCS
 
@@ -84,27 +86,6 @@
 // Convert a NSString to a NSData.
 #define DC_STRING_TO_DATA(string) \
    [string dataUsingEncoding : NSUTF8StringEncoding]
-
-#pragma mark Working with NSDictionarys
-
-/**
- * When the dictionary is indexed using ints, returns the NSDictionary key as an int.
- */
-#define DC_NSDICTIONARY_KEY_TO_INT(dic, keyIndex) \
-   [(NSNumber *)[[dic allKeys] objectAtIndex:keyIndex] intValue]
-
-/**
- * When a dictionary is indexed using ints, returns the object for a specific key.
- */
-#define DC_NSDICTIONARY_OBJ_FOR_INT_KEY(dic, intKey) \
-   [dic objectForKey :[NSNumber numberWithInteger:intKey]]
-
-/**
- * When a dictionary is indexed using ints and has int values, returns the value for a key.
- */
-
-#define DC_NSDICTIONARY_INT_FOR_INT_KEY(dic, intKey) \
-   [(NSNumber *)DC_NSDICTIONARY_OBJ_FOR_INT_KEY(dic, intKey) intValue]
 
 #pragma mark Testing
 
