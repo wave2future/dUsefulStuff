@@ -12,6 +12,9 @@
 
 @interface NSDictionary (dUsefulStuff)
 
+/**
+ * Returns an object based on an int key.
+ */
 - (id) objectForIntKey:(int)aIntKey;
 
 @end

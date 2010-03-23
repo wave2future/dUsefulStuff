@@ -1,0 +1,10 @@
+rm -f $TEMP_DIR/loadDocSet.scpt
+
+# Build applescript.
+echo "tell application \"Xcode\"" >> $TEMP_DIR/loadDocSet.scpt
+echo "load documentation set with path \"$PWD/docs/au.com.dhc.dUsefulStuff.docset\"" >> $TEMP_DIR/loadDocSet.scpt
+echo "end tell" >> $TEMP_DIR/loadDocSet.scpt
+
+#  Run the load-docset applescript command.
+osascript $TEMP_DIR/loadDocSet.scpt
+

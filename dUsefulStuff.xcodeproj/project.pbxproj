@@ -6,6 +6,33 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		65EDA9FC1158758200510429 /* Generate API documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 65EDAA01115875A900510429 /* Build configuration list for PBXAggregateTarget "Generate API documentation" */;
+			buildPhases = (
+				65EDA9FB1158758200510429 /* ShellScript */,
+			);
+			dependencies = (
+				65EDAA001158758B00510429 /* PBXTargetDependency */,
+			);
+			name = "Generate API documentation";
+			productName = "Generate API documentation";
+		};
+		65EDAA2E115879CD00510429 /* Create distribution file */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 65EDAA33115879F100510429 /* Build configuration list for PBXAggregateTarget "Create distribution file" */;
+			buildPhases = (
+				65EDAA2D115879CD00510429 /* ShellScript */,
+			);
+			dependencies = (
+				65EDAA32115879D200510429 /* PBXTargetDependency */,
+			);
+			name = "Create distribution file";
+			productName = "Create distribution file";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		65CA2AB31135F4710015FFF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA2AB21135F4710015FFF6 /* CoreGraphics.framework */; };
 		65CA2AB41135F4710015FFF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
@@ -21,16 +48,43 @@
 		65EDA92811584B8D00510429 /* NSDictionary+dUsefulStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EDA92611584B8D00510429 /* NSDictionary+dUsefulStuffTests.m */; };
 		65EDA9D41158701C00510429 /* lib_dUsefulStuff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65EDA8D81157945000510429 /* lib_dUsefulStuff.a */; };
 		65EDA9DB115870F100510429 /* NSMutableDictionary+dUsefulStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EDA9DA115870F100510429 /* NSMutableDictionary+dUsefulStuffTests.m */; };
+		65EDAA6D115883B300510429 /* DCUIRating.h in Headers */ = {isa = PBXBuildFile; fileRef = 65EDAA6B115883B300510429 /* DCUIRating.h */; };
+		65EDAA6E115883B300510429 /* DCUIRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EDAA6C115883B300510429 /* DCUIRating.m */; };
+		65EDAE451158982A00510429 /* RatingTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EDAE431158982A00510429 /* RatingTestController.m */; };
+		65EDAEFD1158989E00510429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EDAEFC1158989E00510429 /* main.m */; };
+		65EDAF091158993D00510429 /* RatingTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65EDAF081158993D00510429 /* RatingTest.xib */; };
+		65EDAF1911589AB500510429 /* RatingTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EDAF1811589AB500510429 /* RatingTestAppDelegate.m */; };
 		AA747D9F0F9514B9006C5449 /* dUsefulStuff_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		65EDA92C11584BCE00510429 /* PBXContainerItemProxy */ = {
+		65500B0111589D1E00D58D4B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC07D0554694100DB518D /* dUsefulStuff */;
 			remoteInfo = dUsefulStuff;
+		};
+		65EDA92C11584BCE00510429 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = dUsefulStuff;
+		};
+		65EDA9FF1158758B00510429 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65CA2A8B1135F40C0015FFF6;
+			remoteInfo = "dUsefulStuff unit tests";
+		};
+		65EDAA31115879D200510429 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65EDA9FC1158758200510429;
+			remoteInfo = "Generate API documentation";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -63,6 +117,19 @@
 		65EDA9171158489300510429 /* NSMutableDictionary+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+dUsefulStuff.m"; sourceTree = "<group>"; };
 		65EDA92611584B8D00510429 /* NSDictionary+dUsefulStuffTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+dUsefulStuffTests.m"; sourceTree = "<group>"; };
 		65EDA9DA115870F100510429 /* NSMutableDictionary+dUsefulStuffTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+dUsefulStuffTests.m"; sourceTree = "<group>"; };
+		65EDAA12115876EC00510429 /* docset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = docset.plist; sourceTree = "<group>"; };
+		65EDAA13115876EC00510429 /* doxygen-appledoc.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "doxygen-appledoc.config"; sourceTree = "<group>"; };
+		65EDAA3B11587B5000510429 /* installDocSet */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = installDocSet; sourceTree = "<group>"; };
+		65EDAA6B115883B300510429 /* DCUIRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUIRating.h; sourceTree = "<group>"; };
+		65EDAA6C115883B300510429 /* DCUIRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUIRating.m; sourceTree = "<group>"; };
+		65EDAE3B115897B900510429 /* RatingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65EDAE3D115897B900510429 /* RatingTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RatingTest-Info.plist"; sourceTree = "<group>"; };
+		65EDAE421158982A00510429 /* RatingTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTestController.h; sourceTree = "<group>"; };
+		65EDAE431158982A00510429 /* RatingTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTestController.m; sourceTree = "<group>"; };
+		65EDAEFC1158989E00510429 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65EDAF081158993D00510429 /* RatingTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingTest.xib; sourceTree = "<group>"; };
+		65EDAF1711589AB500510429 /* RatingTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTestAppDelegate.h; sourceTree = "<group>"; };
+		65EDAF1811589AB500510429 /* RatingTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTestAppDelegate.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dUsefulStuff_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -77,6 +144,13 @@
 				65CA2AB61135F4710015FFF6 /* UIKit.framework in Frameworks */,
 				65CA2C0A11360AD50015FFF6 /* libGHUnitIPhone3_0.a in Frameworks */,
 				65EDA9D41158701C00510429 /* lib_dUsefulStuff.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65EDAE39115897B900510429 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +169,7 @@
 			children = (
 				65EDA8D81157945000510429 /* lib_dUsefulStuff.a */,
 				65EDA8D91157945000510429 /* dUsefulStuff unit tests.app */,
+				65EDAE3B115897B900510429 /* RatingTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				08FB77AEFE84172EC02AAC07 /* code */,
-				65CA2A8E1135F40C0015FFF6 /* dUsefulStuff unit tests-Info.plist */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -131,6 +205,8 @@
 				65EDA8F6115844CE00510429 /* NSDictionary+dUsefulStuff.m */,
 				65EDA9161158489300510429 /* NSMutableDictionary+dUsefulStuff.h */,
 				65EDA9171158489300510429 /* NSMutableDictionary+dUsefulStuff.m */,
+				65EDAA6B115883B300510429 /* DCUIRating.h */,
+				65EDAA6C115883B300510429 /* DCUIRating.m */,
 			);
 			lineEnding = 0;
 			name = code;
@@ -140,6 +216,9 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				65EDAA3B11587B5000510429 /* installDocSet */,
+				65EDAA12115876EC00510429 /* docset.plist */,
+				65EDAA13115876EC00510429 /* doxygen-appledoc.config */,
 				AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -170,6 +249,9 @@
 		65CA2AF11135FEBF0015FFF6 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				65EDAEFC1158989E00510429 /* main.m */,
+				65CA2A8E1135F40C0015FFF6 /* dUsefulStuff unit tests-Info.plist */,
+				65EDAE41115897DD00510429 /* Rating test */,
 				65CA2AF81135FFA00015FFF6 /* DCCommonTests.m */,
 				65EDA92611584B8D00510429 /* NSDictionary+dUsefulStuffTests.m */,
 				65EDA9DA115870F100510429 /* NSMutableDictionary+dUsefulStuffTests.m */,
@@ -177,6 +259,19 @@
 			lineEnding = 0;
 			name = tests;
 			path = src/tests;
+			sourceTree = "<group>";
+		};
+		65EDAE41115897DD00510429 /* Rating test */ = {
+			isa = PBXGroup;
+			children = (
+				65EDAE3D115897B900510429 /* RatingTest-Info.plist */,
+				65EDAE421158982A00510429 /* RatingTestController.h */,
+				65EDAE431158982A00510429 /* RatingTestController.m */,
+				65EDAF081158993D00510429 /* RatingTest.xib */,
+				65EDAF1711589AB500510429 /* RatingTestAppDelegate.h */,
+				65EDAF1811589AB500510429 /* RatingTestAppDelegate.m */,
+			);
+			name = "Rating test";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +292,7 @@
 				65CA2ADD1135F7170015FFF6 /* DCCommon.h in Headers */,
 				65EDA8F9115844CE00510429 /* NSDictionary+dUsefulStuff.h in Headers */,
 				65EDA91A1158489300510429 /* NSMutableDictionary+dUsefulStuff.h in Headers */,
+				65EDAA6D115883B300510429 /* DCUIRating.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +316,24 @@
 			name = "dUsefulStuff unit tests";
 			productName = "dUsefulStuff unit tests";
 			productReference = 65EDA8D91157945000510429 /* dUsefulStuff unit tests.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65EDAE3A115897B900510429 /* RatingTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65EDAE40115897BA00510429 /* Build configuration list for PBXNativeTarget "RatingTest" */;
+			buildPhases = (
+				65EDAE37115897B900510429 /* Resources */,
+				65EDAE38115897B900510429 /* Sources */,
+				65EDAE39115897B900510429 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65500B0211589D1E00D58D4B /* PBXTargetDependency */,
+			);
+			name = RatingTest;
+			productName = RatingTest;
+			productReference = 65EDAE3B115897B900510429 /* RatingTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D2AAC07D0554694100DB518D /* dUsefulStuff */ = {
@@ -257,6 +371,9 @@
 			targets = (
 				D2AAC07D0554694100DB518D /* dUsefulStuff */,
 				65CA2A8B1135F40C0015FFF6 /* dUsefulStuff unit tests */,
+				65EDA9FC1158758200510429 /* Generate API documentation */,
+				65EDAA2E115879CD00510429 /* Create distribution file */,
+				65EDAE3A115897B900510429 /* RatingTest */,
 			);
 		};
 /* End PBXProject section */
@@ -269,7 +386,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65EDAE37115897B900510429 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65EDAF091158993D00510429 /* RatingTest.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65EDA9FB1158758200510429 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\n# Run custom apple doc.\n/Users/$USER/projects/appledoc/build/Release/appledoc -p \"$PROJECT_NAME\" --input src/code --output \"$CONFIGURATION/v$CURRENT_PROJECT_VERSION/docs\" -t /Users/$USER/projects/appledoc/Templates -d /Users/$USER/tools/Doxygen.app/Contents/Resources/doxygen -c doxygen-appledoc.config --xhtml-bordered-issues --docset --docplist docset.plist\n\necho Fixing docset name ...\nrm -fr \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"/docs/au.com.dhc.dUsefulStuff.docset\nmv -vf \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"/docs/docset \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"/docs/au.com.dhc.dUsefulStuff.docset\n\n#echo Copying HTML documentation to dUsefulStuff-website ...\n#cp -vfR \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"/docs/cxhtml/ $PROJECT_DIR/../dUsefulStuff-website/api \n\necho Moving unused directories ...\nrm -fr $PROJECT_DIR/build/docs\nmv -vf \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"/docs/cxml $PROJECT_DIR/build/docs\n\nexit 0";
+		};
+		65EDAA2D115879CD00510429 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\necho Copying additional files ...\ncp -v installDocSet \"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"\n\necho Building dmg of project ...\n\nFILE_DIR=\"$PROJECT_DIR/$CONFIGURATION/v$CURRENT_PROJECT_VERSION\"\nFINAL_DMG=\"$PROJECT_DIR/$CONFIGURATION/$PROJECT-$CURRENT_PROJECT_VERSION.dmg\"\n\nhdiutil create \"$FINAL_DMG\" -ov -srcdir $FILE_DIR -volname \"$PROJECT_NAME v$CURRENT_PROJECT_VERSION\" -attach\n\necho done.";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		65CA2A891135F40C0015FFF6 /* Sources */ = {
@@ -283,22 +437,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65EDAE38115897B900510429 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65EDAE451158982A00510429 /* RatingTestController.m in Sources */,
+				65EDAEFD1158989E00510429 /* main.m in Sources */,
+				65EDAF1911589AB500510429 /* RatingTestAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC07B0554694100DB518D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				65EDA8FA115844CE00510429 /* NSDictionary+dUsefulStuff.m in Sources */,
 				65EDA91B1158489300510429 /* NSMutableDictionary+dUsefulStuff.m in Sources */,
+				65EDAA6E115883B300510429 /* DCUIRating.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		65500B0211589D1E00D58D4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* dUsefulStuff */;
+			targetProxy = 65500B0111589D1E00D58D4B /* PBXContainerItemProxy */;
+		};
 		65EDA92D11584BCE00510429 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D2AAC07D0554694100DB518D /* dUsefulStuff */;
 			targetProxy = 65EDA92C11584BCE00510429 /* PBXContainerItemProxy */;
+		};
+		65EDAA001158758B00510429 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65CA2A8B1135F40C0015FFF6 /* dUsefulStuff unit tests */;
+			targetProxy = 65EDA9FF1158758B00510429 /* PBXContainerItemProxy */;
+		};
+		65EDAA32115879D200510429 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65EDA9FC1158758200510429 /* Generate API documentation */;
+			targetProxy = 65EDAA31115879D200510429 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -460,6 +640,99 @@
 			};
 			name = Release;
 		};
+		65EDA9FD1158758200510429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Generate API documentation";
+			};
+			name = Debug;
+		};
+		65EDA9FE1158758200510429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Generate API documentation";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		65EDAA2F115879CE00510429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Create distribution file";
+			};
+			name = Debug;
+		};
+		65EDAA30115879CE00510429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Create distribution file";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		65EDAE3E115897BA00510429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_STYLE = Debug;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "src/tests/RatingTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = RatingTest;
+				SDKROOT = iphoneos3.1.3;
+			};
+			name = Debug;
+		};
+		65EDAE3F115897BA00510429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_STYLE = Release;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "src/tests/RatingTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = RatingTest;
+				SDKROOT = iphoneos3.1.3;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -486,6 +759,33 @@
 			buildConfigurations = (
 				65CA2A8F1135F40D0015FFF6 /* Debug */,
 				65CA2A901135F40D0015FFF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65EDAA01115875A900510429 /* Build configuration list for PBXAggregateTarget "Generate API documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65EDA9FD1158758200510429 /* Debug */,
+				65EDA9FE1158758200510429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65EDAA33115879F100510429 /* Build configuration list for PBXAggregateTarget "Create distribution file" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65EDAA2F115879CE00510429 /* Debug */,
+				65EDAA30115879CE00510429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65EDAE40115897BA00510429 /* Build configuration list for PBXNativeTarget "RatingTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65EDAE3E115897BA00510429 /* Debug */,
+				65EDAE3F115897BA00510429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
