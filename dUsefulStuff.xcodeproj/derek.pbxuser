@@ -507,6 +507,8 @@
 			65D9EBC11163727500F73897 /* PBXTextBookmark */ = 65D9EBC11163727500F73897 /* PBXTextBookmark */;
 			65D9EBC21163727500F73897 /* PBXTextBookmark */ = 65D9EBC21163727500F73897 /* PBXTextBookmark */;
 			65D9EBC31163727500F73897 /* PBXTextBookmark */ = 65D9EBC31163727500F73897 /* PBXTextBookmark */;
+			65D9EBC41163741C00F73897 /* PBXTextBookmark */ = 65D9EBC41163741C00F73897 /* PBXTextBookmark */;
+			65D9EBC51163741C00F73897 /* PBXTextBookmark */ = 65D9EBC51163741C00F73897 /* PBXTextBookmark */;
 			65EDA97011584EE400510429 = 65EDA97011584EE400510429 /* PBXTextBookmark */;
 			65EDA9E01158713A00510429 = 65EDA9E01158713A00510429 /* PBXTextBookmark */;
 			65EDA9E6115874E800510429 = 65EDA9E6115874E800510429 /* PBXTextBookmark */;
@@ -4088,8 +4090,8 @@
 	65D9EBAC116371DD00F73897 /* ReadMe.markdown */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {825, 500}}";
-			sepNavSelRange = "{164, 0}";
-			sepNavVisRange = "{0, 164}";
+			sepNavSelRange = "{291, 0}";
+			sepNavVisRange = "{0, 408}";
 		};
 	};
 	65D9EBBD1163726100F73897 /* PBXTextBookmark */ = {
@@ -4127,7 +4129,7 @@
 		fRef = 65D9EBAC116371DD00F73897 /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 1";
 		rLen = 0;
-		rLoc = 164;
+		rLoc = 408;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -4137,9 +4139,29 @@
 		fRef = 65D9EBAC116371DD00F73897 /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 3";
 		rLen = 0;
-		rLoc = 164;
+		rLoc = 408;
 		rType = 0;
 		vrLen = 164;
+		vrLoc = 0;
+	};
+	65D9EBC41163741C00F73897 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 65D9EBAC116371DD00F73897 /* ReadMe.markdown */;
+		name = "ReadMe.markdown: 9";
+		rLen = 0;
+		rLoc = 407;
+		rType = 0;
+		vrLen = 251;
+		vrLoc = 0;
+	};
+	65D9EBC51163741C00F73897 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 65D9EBAC116371DD00F73897 /* ReadMe.markdown */;
+		name = "ReadMe.markdown: 11";
+		rLen = 0;
+		rLoc = 291;
+		rType = 0;
+		vrLen = 408;
 		vrLoc = 0;
 	};
 	65EDA8DA1157945000510429 /* dUsefulStuff unit tests */ = {
