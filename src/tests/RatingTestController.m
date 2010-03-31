@@ -7,50 +7,49 @@
 //
 
 #import "RatingTestController.h"
+#import "DCCommon.h"
 
 
 @implementation RatingTestController
+@synthesize rating5;
+@synthesize rating5half;
+@synthesize rating10;
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-*/
+- (void) viewDidLoad {
+	DC_LOG(@"View did load");
+	[super viewDidLoad];
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+	NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"star" ofType:@"png"];
+	UIImage *myNoRatingImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
 
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
+	imagePath = [[NSBundle mainBundle] pathForResource:@"star-half-active" ofType:@"png"];
+	UIImage *myHalfRatingImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
+
+	imagePath = [[NSBundle mainBundle] pathForResource:@"star-active" ofType:@"png"];
+	UIImage *myRatingImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
+
+	[self.rating5 setupControlWithRatingImage:myRatingImage noRatingImage:myNoRatingImage halfRatingImage:nil padding:0 scaleType:DC_SCALE_0_TO_5];
+
+	[self.rating5half setupControlWithRatingImage:myRatingImage noRatingImage:myNoRatingImage halfRatingImage:myHalfRatingImage padding:0 scaleType:DC_SCALE_0_TO_5_WITH_HALVES];
+
+	[self.rating10 setupControlWithRatingImage:myRatingImage noRatingImage:myNoRatingImage halfRatingImage:myHalfRatingImage padding:0 scaleType:DC_SCALE_0_TO_10];
+
 }
 
-- (void)viewDidUnload {
+
+- (void) didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
+}
+
+- (void) viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
 
 
-- (void)dealloc {
-    [super dealloc];
+- (void) dealloc {
+	[super dealloc];
 }
 
 

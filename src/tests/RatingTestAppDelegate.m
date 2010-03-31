@@ -12,8 +12,10 @@
 @implementation RatingTestAppDelegate
 
 @synthesize window;
+@synthesize ratingController;
 
 - (void) applicationDidFinishLaunching:(UIApplication *)application {
+	[window addSubview:ratingController.view];
 	[window makeKeyAndVisible];
 	DC_LOG(@"Main window loaded");
 }
