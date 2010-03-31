@@ -292,24 +292,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>0867D691FE84028FC02AAC07</string>
-								<string>1C37FBAC04509CD000000102</string>
-								<string>65D9EB7D11636ED800F73897</string>
-								<string>65D9EB7E11636ED800F73897</string>
-								<string>65D9EB7F11636ED800F73897</string>
-								<string>65D9EBAD1163720200F73897</string>
-								<string>65D9EB9B1163705E00F73897</string>
-								<string>65D9EB8011636ED800F73897</string>
-								<string>65D9EB6C11636E0200F73897</string>
-								<string>65D9EB8111636ED800F73897</string>
+								<string>08FB77AEFE84172EC02AAC07</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>21</integer>
-									<integer>20</integer>
-									<integer>8</integer>
-									<integer>7</integer>
+									<integer>2</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -334,7 +325,7 @@
 							<real>307</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>479 344 1237 820 0 0 1920 1178 </string>
+						<string>602 159 1237 820 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -364,7 +355,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>65D9EBC51163741C00F73897</string>
+										<string>65D9EBD4116377BD00F73897</string>
 										<key>history</key>
 										<array>
 											<string>65EDA97011584EE400510429</string>
@@ -417,7 +408,6 @@
 											<string>65D9E9BD1162EFD000F73897</string>
 											<string>65D9EA251162FE8900F73897</string>
 											<string>65D9EA381163015F00F73897</string>
-											<string>65D9EA821163064A00F73897</string>
 											<string>65D9EA881163081700F73897</string>
 											<string>65D9EA9F11636D7900F73897</string>
 											<string>65D9EAA011636D7900F73897</string>
@@ -440,7 +430,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {886, 542}}</string>
 								<key>RubberWindowFrame</key>
-								<string>479 344 1237 820 0 0 1920 1178 </string>
+								<string>602 159 1237 820 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -460,7 +450,7 @@
 								<key>Frame</key>
 								<string>{{0, 547}, {886, 232}}</string>
 								<key>RubberWindowFrame</key>
-								<string>479 344 1237 820 0 0 1920 1178 </string>
+								<string>602 159 1237 820 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -607,7 +597,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>291730460.88868803</real>
+	<real>291731389.01997799</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -630,10 +620,11 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>65CA2A961135F42D0015FFF6</string>
+		<string>65D9EBD5116377BD00F73897</string>
 		<string>/Users/derek/projects/dUsefulStuff/dUsefulStuff.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>479 344 1237 820 0 0 1920 1178 </string>
+	<string>602 159 1237 820 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
