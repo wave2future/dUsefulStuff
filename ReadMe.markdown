@@ -6,18 +6,18 @@ This library is intended as a container of useful defines and classes which can 
 
 This header fine contains the following useful defines :
 
-< table >
-< tr >
-< th > Define</ th>
-< th > Description</ th>
-< / tr >
-< tr >
-< td > DC_LOG(template, ...) < / td >
-< td > Wraps NSLog and includes only the compiler flag DC_DEBUG is set.< / td >
-< / tr >
-< tr >
-< td > DC_DEALLOC(name) < / td >
-< td > Cleanly releases pointers and set 's then to point at nil. Also will log various info to
+<table>
+<tr>
+<th> Define</th>
+<th> Description</th>
+</tr>
+<tr>
+<td> DC_LOG(template, ...) </td>
+<td> Wraps NSLog and includes only the compiler flag DC_DEBUG is set.</td>
+</tr>
+<tr>
+<td> DC_DEALLOC(name) </td>
+<td> Cleanly releases pointers and set 's then to point at nil. Also will log various info to
 	NSLog if DC_LOG_DEALLOC is set as a compiler flag.</td>
 </tr>
 <tr>
@@ -44,10 +44,10 @@ This class can be used on iPhone displays to produce a star rating control simil
 
 It's core features include :
 
-*3 scales : 0 - 5, 0 - 5 with half values, and 0 - 10.
+* 3 scales : 0 - 5, 0 - 5 with half values, and 0 - 10.
 * Provided star images but can be configured with any images you like.
-*Resizes itself to match the width and height of the supplied images.
-*Can optionally add n pixels of padding between images.
+* Resizes itself to match the width and height of the supplied images.
+* Can optionally add n pixels of padding between images.
 
 ## NSDictionary + dUsefulStuff and NSMutableDictionary + dUsefulStuff
 
