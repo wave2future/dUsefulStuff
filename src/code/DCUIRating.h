@@ -49,9 +49,9 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  * It's job is to store in the control all the images and settings that the control needs to layout the rating display. It also calculates various values used internally during the controls operation by the user.
  * \param aRatingImage - the image that will be used to represent a selected rating. For example a filled in star.
  * \param aNoRatingImage the image that will be used to represent a rating not selected by the user. For example a star outline.
- * \param halfRatingImage the image used whenusing the 0 - 10 or 0 - 5 with halves scales. This image is used when a half rating is needed. For example a half filled in star. If using the DC_SCALE_0_TO_5 scale, this parameter can be nil as it is not used.
- * \param padding the number of pixels padding to apply between images. usually 0.
- * \param scaleType one of the above DCRATINGSCALE enum values above. Most of the time DC_SCALE_0_TO_5 would be used.
+ * \param aHalfRatingImage the image used whenusing the 0 - 10 or 0 - 5 with halves scales. This image is used when a half rating is needed. For example a half filled in star. If using the DC_SCALE_0_TO_5 scale, this parameter can be nil as it is not used.
+ * \param aPadding the number of pixels padding to apply between images. usually 0.
+ * \param aScaleType one of the above DCRATINGSCALE enum values above. Most of the time DC_SCALE_0_TO_5 would be used.
  */
 - (void) setupControlWithRatingImage:(UIImage *)aRatingImage noRatingImage:(UIImage *)aNoRatingImage
   halfRatingImage:(UIImage *)aHalfRatingImage padding:(int)aPadding scaleType:(DCRATINGSCALE)aScaleType;
