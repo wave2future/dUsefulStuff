@@ -10,6 +10,7 @@
 #import "OCMock.h"
 #import "DCUIRating.h"
 #import "DCCommon.h"
+#import <UIKit/UIKit.h>
 
 @interface DCUIRatingTests : GHTestCase
 {
