@@ -2,6 +2,21 @@
 
 This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications.
 
+# Installing
+
+This is if you want to just use the library.
+
+1. Download the latest dmg file. This contains compiled versions of the library for the devices (IiPhone and iPad) and simulator, in both debug and release versions.
+1. Create a group within Frameworks in your XCode project.
+1. Drag and drop one of the four libraries into the group:
+ /Releases/libdUsefulStuff-device.a 
+ /Releases/libdUsefulStuff-simulator.a 
+ /Debug/libdUsefulStuff-device.a 
+ /Debug/libdUsefulStuff-simulator.a 
+ Don't forget to link not copy this.
+1. Select all the .h header files and drag them into the group as well. 
+
+
 ## DCCommons.h
 
 This header fine contains the following useful defines :

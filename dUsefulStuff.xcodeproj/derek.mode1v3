@@ -260,8 +260,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -305,13 +303,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>35</integer>
-									<integer>33</integer>
-									<integer>24</integer>
+									<integer>19</integer>
+									<integer>15</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {331, 822}}</string>
+							<string>{{0, 0}, {331, 835}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -323,7 +321,7 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {348, 840}}</string>
+						<string>{{0, 0}, {348, 853}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>ErrorsColumn</string>
@@ -334,7 +332,7 @@
 							<real>266</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>75 220 982 881 0 0 1920 1178 </string>
+						<string>83 250 1253 894 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -345,12 +343,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>GHTestCase.h</string>
+								<string>ReadMe.markdown</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -358,11 +358,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>GHTestCase.h</string>
+										<string>ReadMe.markdown</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>65CA1C5211733F10000DC347</string>
+										<string>65CA1C6E1173491F000DC347</string>
 										<key>history</key>
 										<array>
 											<string>650357BF116AB49000202897</string>
@@ -385,8 +385,8 @@
 											<string>657D8F7D1170B6BE0044EF4F</string>
 											<string>657D8F891170BAAE0044EF4F</string>
 											<string>65CA1C031173324A000DC347</string>
+											<string>65CA1C6D1173491F000DC347</string>
 											<string>65CA1C3B117339FF000DC347</string>
-											<string>65CA1C3C117339FF000DC347</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -398,14 +398,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {629, 551}}</string>
+								<string>{{0, 0}, {900, 848}}</string>
 								<key>RubberWindowFrame</key>
-								<string>75 220 982 881 0 0 1920 1178 </string>
+								<string>83 250 1253 894 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>551pt</string>
+							<string>848pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -418,18 +418,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 556}, {629, 284}}</string>
+								<string>{{0, 853}, {900, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>75 220 982 881 0 0 1920 1178 </string>
+								<string>83 250 1253 894 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>284pt</string>
+							<string>0pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>629pt</string>
+					<string>900pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -567,7 +567,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>292765456.27258003</real>
+	<real>292768031.187491</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -588,7 +588,7 @@
 		<string>/Users/derek/projects/dUsefulStuff/dUsefulStuff.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>75 220 982 881 0 0 1920 1178 </string>
+	<string>83 250 1253 894 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
