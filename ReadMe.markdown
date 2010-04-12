@@ -1,6 +1,6 @@
 # dUsefulStuff static library v0.0.1
 
-This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications.
+This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications. It's built as a set of static libraries ready to go 
 
 # Installing
 
