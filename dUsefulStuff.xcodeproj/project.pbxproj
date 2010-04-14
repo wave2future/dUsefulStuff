@@ -61,10 +61,6 @@
 		654ED661116C5B96007AB3BA /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
 		654ED662116C5B96007AB3BA /* star-half-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65E116C5B89007AB3BA /* star-half-active.png */; };
 		654ED663116C5B96007AB3BA /* star.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65F116C5B89007AB3BA /* star.png */; };
-		6564F74C116F4E4200AF91EF /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564F747116F4E4200AF91EF /* GHUnitIPhoneTestMain.m */; };
-		6564F74D116F4E4200AF91EF /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564F749116F4E4200AF91EF /* libGHUnitIPhone3_0.a */; };
-		6564F74E116F4E4200AF91EF /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564F747116F4E4200AF91EF /* GHUnitIPhoneTestMain.m */; };
-		6564F74F116F4E4200AF91EF /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564F749116F4E4200AF91EF /* libGHUnitIPhone3_0.a */; };
 		6579F22F116E1B010065C30E /* libdUsefulStuff-device.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6579F220116E1AC00065C30E /* libdUsefulStuff-device.a */; };
 		65A0C67B116EF534003AC854 /* ReadMe.markdown in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65C116C5B89007AB3BA /* ReadMe.markdown */; };
 		65A0C67C116EF534003AC854 /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
@@ -83,6 +79,8 @@
 		65CA1C341173374C000DC347 /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA1C301173374C000DC347 /* libGHUnitIPhone3_0.a */; };
 		65CA1C351173374C000DC347 /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CA1C2E1173374C000DC347 /* GHUnitIPhoneTestMain.m */; };
 		65CA1C361173374C000DC347 /* libGHUnitIPhone3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA1C301173374C000DC347 /* libGHUnitIPhone3_0.a */; };
+		65D66C4F1175FC07001132D1 /* libOCMock-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D66C3A1175FC07001132D1 /* libOCMock-static.a */; };
+		65D66C501175FC07001132D1 /* libOCMock-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D66C3A1175FC07001132D1 /* libOCMock-static.a */; };
 		65F2165C116C67460086F808 /* blank_10_x_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 650357AA116A1BAA00202897 /* blank_10_x_10.png */; };
 		65F2165D116C674A0086F808 /* DCCommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357AC116A1BAA00202897 /* DCCommonTests.m */; };
 		65F2165E116C674B0086F808 /* DCUIRatingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357AD116A1BAA00202897 /* DCUIRatingTests.m */; };
@@ -187,21 +185,6 @@
 		654ED65D116C5B89007AB3BA /* star-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-active.png"; sourceTree = "<group>"; };
 		654ED65E116C5B89007AB3BA /* star-half-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-half-active.png"; sourceTree = "<group>"; };
 		654ED65F116C5B89007AB3BA /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		6564F73D116F4E4200AF91EF /* GHAsyncTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHAsyncTestCase.h; path = "../tools/GHUnit-static/GHAsyncTestCase.h"; sourceTree = SOURCE_ROOT; };
-		6564F73E116F4E4200AF91EF /* GHTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTest.h; path = "../tools/GHUnit-static/GHTest.h"; sourceTree = SOURCE_ROOT; };
-		6564F73F116F4E4200AF91EF /* GHTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestCase.h; path = "../tools/GHUnit-static/GHTestCase.h"; sourceTree = SOURCE_ROOT; };
-		6564F740116F4E4200AF91EF /* GHTestGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestGroup.h; path = "../tools/GHUnit-static/GHTestGroup.h"; sourceTree = SOURCE_ROOT; };
-		6564F741116F4E4200AF91EF /* GHTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTesting.h; path = "../tools/GHUnit-static/GHTesting.h"; sourceTree = SOURCE_ROOT; };
-		6564F742116F4E4200AF91EF /* GHTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestMacros.h; path = "../tools/GHUnit-static/GHTestMacros.h"; sourceTree = SOURCE_ROOT; };
-		6564F743116F4E4200AF91EF /* GHTestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestRunner.h; path = "../tools/GHUnit-static/GHTestRunner.h"; sourceTree = SOURCE_ROOT; };
-		6564F744116F4E4200AF91EF /* GHTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestSuite.h; path = "../tools/GHUnit-static/GHTestSuite.h"; sourceTree = SOURCE_ROOT; };
-		6564F745116F4E4200AF91EF /* GHUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHUnit.h; path = "../tools/GHUnit-static/GHUnit.h"; sourceTree = SOURCE_ROOT; };
-		6564F746116F4E4200AF91EF /* GHUnitIPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHUnitIPhoneAppDelegate.h; path = "../tools/GHUnit-static/GHUnitIPhoneAppDelegate.h"; sourceTree = SOURCE_ROOT; };
-		6564F747116F4E4200AF91EF /* GHUnitIPhoneTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIPhoneTestMain.m; path = "../tools/GHUnit-static/GHUnitIPhoneTestMain.m"; sourceTree = SOURCE_ROOT; };
-		6564F748116F4E4200AF91EF /* GHUNSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GHUNSObject+Swizzle.h"; path = "../tools/GHUnit-static/GHUNSObject+Swizzle.h"; sourceTree = SOURCE_ROOT; };
-		6564F749116F4E4200AF91EF /* libGHUnitIPhone3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGHUnitIPhone3_0.a; path = "../tools/GHUnit-static/libGHUnitIPhone3_0.a"; sourceTree = SOURCE_ROOT; };
-		6564F74A116F4E4200AF91EF /* NSException+GHTestFailureExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSException+GHTestFailureExceptions.h"; path = "../tools/GHUnit-static/NSException+GHTestFailureExceptions.h"; sourceTree = SOURCE_ROOT; };
-		6564F74B116F4E4200AF91EF /* NSValue+GHValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSValue+GHValueFormatter.h"; path = "../tools/GHUnit-static/NSValue+GHValueFormatter.h"; sourceTree = SOURCE_ROOT; };
 		6579F220116E1AC00065C30E /* libdUsefulStuff-device.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libdUsefulStuff-device.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6579F222116E1AC00065C30E /* dUsefulStuff device unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefulStuff device unit tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefulStuff simulator unit tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +205,27 @@
 		65CA1C301173374C000DC347 /* libGHUnitIPhone3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGHUnitIPhone3_0.a; path = "../tools/GHUnit-static/libGHUnitIPhone3_0.a"; sourceTree = SOURCE_ROOT; };
 		65CA1C311173374C000DC347 /* NSException+GHTestFailureExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSException+GHTestFailureExceptions.h"; path = "../tools/GHUnit-static/NSException+GHTestFailureExceptions.h"; sourceTree = SOURCE_ROOT; };
 		65CA1C321173374C000DC347 /* NSValue+GHValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSValue+GHValueFormatter.h"; path = "../tools/GHUnit-static/NSValue+GHValueFormatter.h"; sourceTree = SOURCE_ROOT; };
+		65D66C3A1175FC07001132D1 /* libOCMock-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libOCMock-static.a"; path = "../tools/OCMock-static/libOCMock-static.a"; sourceTree = SOURCE_ROOT; };
+		65D66C3B1175FC07001132D1 /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "../tools/OCMock-static/NSInvocation+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
+		65D66C3C1175FC07001132D1 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "../tools/OCMock-static/NSMethodSignature+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
+		65D66C3D1175FC07001132D1 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "../tools/OCMock-static/NSNotificationCenter+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
+		65D66C3E1175FC07001132D1 /* OCClassMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCClassMockObject.h; path = "../tools/OCMock-static/OCClassMockObject.h"; sourceTree = SOURCE_ROOT; };
+		65D66C3F1175FC07001132D1 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = "../tools/OCMock-static/OCMArg.h"; sourceTree = SOURCE_ROOT; };
+		65D66C401175FC07001132D1 /* OCMBoxedReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMBoxedReturnValueProvider.h; path = "../tools/OCMock-static/OCMBoxedReturnValueProvider.h"; sourceTree = SOURCE_ROOT; };
+		65D66C411175FC07001132D1 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = "../tools/OCMock-static/OCMConstraint.h"; sourceTree = SOURCE_ROOT; };
+		65D66C421175FC07001132D1 /* OCMExceptionReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMExceptionReturnValueProvider.h; path = "../tools/OCMock-static/OCMExceptionReturnValueProvider.h"; sourceTree = SOURCE_ROOT; };
+		65D66C431175FC07001132D1 /* OCMIndirectReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMIndirectReturnValueProvider.h; path = "../tools/OCMock-static/OCMIndirectReturnValueProvider.h"; sourceTree = SOURCE_ROOT; };
+		65D66C441175FC07001132D1 /* OCMNotificationPoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMNotificationPoster.h; path = "../tools/OCMock-static/OCMNotificationPoster.h"; sourceTree = SOURCE_ROOT; };
+		65D66C451175FC07001132D1 /* OCMObserverRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMObserverRecorder.h; path = "../tools/OCMock-static/OCMObserverRecorder.h"; sourceTree = SOURCE_ROOT; };
+		65D66C461175FC07001132D1 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = "../tools/OCMock-static/OCMock.h"; sourceTree = SOURCE_ROOT; };
+		65D66C471175FC07001132D1 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = "../tools/OCMock-static/OCMockObject.h"; sourceTree = SOURCE_ROOT; };
+		65D66C481175FC07001132D1 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = "../tools/OCMock-static/OCMockRecorder.h"; sourceTree = SOURCE_ROOT; };
+		65D66C491175FC07001132D1 /* OCMPassByRefSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMPassByRefSetter.h; path = "../tools/OCMock-static/OCMPassByRefSetter.h"; sourceTree = SOURCE_ROOT; };
+		65D66C4A1175FC07001132D1 /* OCMReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMReturnValueProvider.h; path = "../tools/OCMock-static/OCMReturnValueProvider.h"; sourceTree = SOURCE_ROOT; };
+		65D66C4B1175FC07001132D1 /* OCObserverMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCObserverMockObject.h; path = "../tools/OCMock-static/OCObserverMockObject.h"; sourceTree = SOURCE_ROOT; };
+		65D66C4C1175FC07001132D1 /* OCPartialMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCPartialMockObject.h; path = "../tools/OCMock-static/OCPartialMockObject.h"; sourceTree = SOURCE_ROOT; };
+		65D66C4D1175FC07001132D1 /* OCPartialMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCPartialMockRecorder.h; path = "../tools/OCMock-static/OCPartialMockRecorder.h"; sourceTree = SOURCE_ROOT; };
+		65D66C4E1175FC07001132D1 /* OCProtocolMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCProtocolMockObject.h; path = "../tools/OCMock-static/OCProtocolMockObject.h"; sourceTree = SOURCE_ROOT; };
 		AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dUsefulStuff_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -235,8 +239,8 @@
 				653AD415116E165B006E2268 /* Foundation.framework in Frameworks */,
 				65269779116EF91E003C63D3 /* CoreGraphics.framework in Frameworks */,
 				65269784116EF983003C63D3 /* UIKit.framework in Frameworks */,
-				6564F74F116F4E4200AF91EF /* libGHUnitIPhone3_0.a in Frameworks */,
 				65CA1C361173374C000DC347 /* libGHUnitIPhone3_0.a in Frameworks */,
+				65D66C501175FC07001132D1 /* libOCMock-static.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,8 +252,8 @@
 				6579F22F116E1B010065C30E /* libdUsefulStuff-device.a in Frameworks */,
 				652697A8116EF98C003C63D3 /* CoreGraphics.framework in Frameworks */,
 				652697E9116EF992003C63D3 /* UIKit.framework in Frameworks */,
-				6564F74D116F4E4200AF91EF /* libGHUnitIPhone3_0.a in Frameworks */,
 				65CA1C341173374C000DC347 /* libGHUnitIPhone3_0.a in Frameworks */,
+				65D66C4F1175FC07001132D1 /* libOCMock-static.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,21 +405,27 @@
 		65F21672116C67FB0086F808 /* OCMock */ = {
 			isa = PBXGroup;
 			children = (
-				6564F73D116F4E4200AF91EF /* GHAsyncTestCase.h */,
-				6564F73E116F4E4200AF91EF /* GHTest.h */,
-				6564F73F116F4E4200AF91EF /* GHTestCase.h */,
-				6564F740116F4E4200AF91EF /* GHTestGroup.h */,
-				6564F741116F4E4200AF91EF /* GHTesting.h */,
-				6564F742116F4E4200AF91EF /* GHTestMacros.h */,
-				6564F743116F4E4200AF91EF /* GHTestRunner.h */,
-				6564F744116F4E4200AF91EF /* GHTestSuite.h */,
-				6564F745116F4E4200AF91EF /* GHUnit.h */,
-				6564F746116F4E4200AF91EF /* GHUnitIPhoneAppDelegate.h */,
-				6564F747116F4E4200AF91EF /* GHUnitIPhoneTestMain.m */,
-				6564F748116F4E4200AF91EF /* GHUNSObject+Swizzle.h */,
-				6564F749116F4E4200AF91EF /* libGHUnitIPhone3_0.a */,
-				6564F74A116F4E4200AF91EF /* NSException+GHTestFailureExceptions.h */,
-				6564F74B116F4E4200AF91EF /* NSValue+GHValueFormatter.h */,
+				65D66C3A1175FC07001132D1 /* libOCMock-static.a */,
+				65D66C3B1175FC07001132D1 /* NSInvocation+OCMAdditions.h */,
+				65D66C3C1175FC07001132D1 /* NSMethodSignature+OCMAdditions.h */,
+				65D66C3D1175FC07001132D1 /* NSNotificationCenter+OCMAdditions.h */,
+				65D66C3E1175FC07001132D1 /* OCClassMockObject.h */,
+				65D66C3F1175FC07001132D1 /* OCMArg.h */,
+				65D66C401175FC07001132D1 /* OCMBoxedReturnValueProvider.h */,
+				65D66C411175FC07001132D1 /* OCMConstraint.h */,
+				65D66C421175FC07001132D1 /* OCMExceptionReturnValueProvider.h */,
+				65D66C431175FC07001132D1 /* OCMIndirectReturnValueProvider.h */,
+				65D66C441175FC07001132D1 /* OCMNotificationPoster.h */,
+				65D66C451175FC07001132D1 /* OCMObserverRecorder.h */,
+				65D66C461175FC07001132D1 /* OCMock.h */,
+				65D66C471175FC07001132D1 /* OCMockObject.h */,
+				65D66C481175FC07001132D1 /* OCMockRecorder.h */,
+				65D66C491175FC07001132D1 /* OCMPassByRefSetter.h */,
+				65D66C4A1175FC07001132D1 /* OCMReturnValueProvider.h */,
+				65D66C4B1175FC07001132D1 /* OCObserverMockObject.h */,
+				65D66C4C1175FC07001132D1 /* OCPartialMockObject.h */,
+				65D66C4D1175FC07001132D1 /* OCPartialMockRecorder.h */,
+				65D66C4E1175FC07001132D1 /* OCProtocolMockObject.h */,
 			);
 			name = OCMock;
 			sourceTree = "<group>";
@@ -603,7 +613,6 @@
 				653AD385116E153F006E2268 /* DCUIRatingTests.m in Sources */,
 				653AD386116E153F006E2268 /* NSDictionary+dUsefulStuffTests.m in Sources */,
 				653AD387116E153F006E2268 /* NSMutableDictionary+dUsefulStuffTests.m in Sources */,
-				6564F74E116F4E4200AF91EF /* GHUnitIPhoneTestMain.m in Sources */,
 				65CA1C351173374C000DC347 /* GHUnitIPhoneTestMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,7 +625,6 @@
 				65F2165E116C674B0086F808 /* DCUIRatingTests.m in Sources */,
 				65F21661116C67710086F808 /* NSDictionary+dUsefulStuffTests.m in Sources */,
 				65F21662116C67710086F808 /* NSMutableDictionary+dUsefulStuffTests.m in Sources */,
-				6564F74C116F4E4200AF91EF /* GHUnitIPhoneTestMain.m in Sources */,
 				65CA1C331173374C000DC347 /* GHUnitIPhoneTestMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,6 +720,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				PUBLIC_HEADERS_FOLDER_PATH = ./;
@@ -728,6 +737,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				PUBLIC_HEADERS_FOLDER_PATH = ./;
@@ -755,6 +765,7 @@
 					"\"$(SRCROOT)/../../tools/OCMock-static\"",
 					"\"$(SRCROOT)/../../tools/libGHUnitIPhone3_0-0.4.19\"",
 					"\"$(SRCROOT)/../tools/GHUnit-static\"",
+					"\"$(SRCROOT)/../tools/OCMock-static\"",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -784,6 +795,7 @@
 					"\"$(SRCROOT)/../../tools/OCMock-static\"",
 					"\"$(SRCROOT)/../../tools/libGHUnitIPhone3_0-0.4.19\"",
 					"\"$(SRCROOT)/../tools/GHUnit-static\"",
+					"\"$(SRCROOT)/../tools/OCMock-static\"",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -812,6 +824,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../tools/GHUnit-static\"",
+					"\"$(SRCROOT)/../tools/OCMock-static\"",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -838,6 +851,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../tools/GHUnit-static\"",
+					"\"$(SRCROOT)/../tools/OCMock-static\"",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefulStuff device unit tests";

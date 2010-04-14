@@ -1,6 +1,9 @@
 # dUsefulStuff static library v0.0.1
 
-This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications. It's built as a set of static libraries ready to go 
+This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications. It's built as a set of static libraries, ready to go. Of course you can also use the source code as well.
+
+The only difference between the Release and debug versions is that the Debug versions contain debug code wihich logs information out to the standard out via NSLog(). Generaly speaking you won't need this unless you want to see whats going on inside a particular class from the library.
+
 
 # Installing
 
