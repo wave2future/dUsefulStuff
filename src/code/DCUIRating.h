@@ -12,9 +12,14 @@
  * What type of scale the control uses.
  */
 enum DCScaleEnum {
-	DC_SCALE_0_TO_5,                     // 0, 1, 2, 3 ... 5
-	DC_SCALE_0_TO_5_WITH_HALVES,         // 0, 0.5, 1, 1.5, ... 5
-	DC_SCALE_0_TO_10                     // 0, 1, 2, 3, ... 10
+	DC_SCALE_0_TO_5,
+	// 0, 1, 2, 3 ... 5
+
+	DC_SCALE_0_TO_5_WITH_HALVES,
+	// 0, 0.5, 1, 1.5, ... 5
+
+	DC_SCALE_0_TO_10
+	// 0, 1, 2, 3, ... 10
 };
 typedef enum DCScaleEnum DCRATINGSCALE;
 
@@ -23,15 +28,24 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  * The user can select a rating value by either taping the control at the rating they want, or swiping their finger back and forwards to adjust the rating.
  *
  * There are two options for the value of the rating. Like iTunes the default is a value from 0 - 5. Each icon from left to right represents 1 rating value, so tapping the second icon from the right will choose a rating of 4 out of 5. However you can also select to using ratings from 0 to 10 or 0 - 5 with half values. This is represented by the control drawing half stars for either the odd numbers or half values.
+ *
+ * The developer can also choose to display a popup bubble above the rating controller. This bubble tracks the
+ * users touch and displays the value during the touch operation. It appears at the first touch and disappears when
+ * the touch leaves.
  */
 @interface DCUIRating : UIControl {
 	@private
+
+	// Public interface variables.
 	UIImage *offRatingImage;
 	UIImage *onRatingImage;
 	UIImage *halfRatingImage;
 	DCRATINGSCALE scaleType;
 	int padding;
 	double rating;
+	BOOL displayBubble;
+
+	// Internal use for display and layout.
 	BOOL controlIsSetup;
 	int offsetPixels;
 	int segmentSize;
@@ -45,16 +59,42 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 @property (nonatomic) double rating;
 
 /**
- * This method must be called before the first drawRect: call is made by the UI. Preferably call this in the viewDidLoad: as part of setting up the control.
- * It's job is to store in the control all the images and settings that the control needs to layout the rating display. It also calculates various values used internally during the controls operation by the user.
- * \param aRatingImage - the image that will be used to represent a selected rating. For example a filled in star.
- * \param aNoRatingImage the image that will be used to represent a rating not selected by the user. For example a star outline.
- * \param aHalfRatingImage the image used whenusing the 0 - 10 or 0 - 5 with halves scales. This image is used when a half rating is needed. For example a half filled in star. If using the DC_SCALE_0_TO_5 scale, this parameter can be nil as it is not used.
- * \param aPadding the number of pixels padding to apply between images. usually 0.
- * \param aScaleType one of the above DCRATINGSCALE enum values above. Most of the time DC_SCALE_0_TO_5 would be used.
+ * If set to true, then a popup bubble is displayed above the users touch pint showing he current value.
  */
-- (void) setupControlWithRatingImage:(UIImage *)aRatingImage noRatingImage:(UIImage *)aNoRatingImage
-  halfRatingImage:(UIImage *)aHalfRatingImage padding:(int)aPadding scaleType:(DCRATINGSCALE)aScaleType;
+@property (nonatomic) BOOL displayBubble;
+
+/**
+ * The image to use for when a rating is on.
+ */
+@property (nonatomic, retain) UIImage *onRatingImage;
+
+/**
+ * The image to use for when a rating is off.
+ */
+@property (nonatomic, retain) UIImage *offRatingImage;
+
+/**
+ * If the scale type is 0 - 10 or 0 - 5 with halves, then this image is used to display the half/odd values.
+ */
+@property (nonatomic, retain) UIImage *halfRatingImage;
+
+/**
+ * Sets the number of pixels added between the images. Can be used to space out the images across the control.
+ */
+@property (nonatomic) int padding;
+
+/**
+ * Defines the range of values that the control will produce. There are three options:
+ * \li DC_SCALE_0_TO_5 - produces 0, 1, 2, 3, 5
+ * \li DC_SCALE_0_TO_5_WITH_HALVES - produces 0, 0.5, 1, 1.5, ... 5
+ * \li DC_SCALE_0_TO_10 - produces 0, 1, 2, 3, ... 10
+ */
+@property (nonatomic) DCRATINGSCALE scaleType;
+
+/**
+ * Must be called after all properties have been set or the control will not function correctly.
+ */
+-(void) setupControl;
 
 
 @end

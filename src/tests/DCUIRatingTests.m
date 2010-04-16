@@ -31,7 +31,10 @@
 
 	// Test
 	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
-	[rating setupControlWithRatingImage:nil noRatingImage:mockNoRatingImage halfRatingImage:nil padding:2 scaleType:DC_SCALE_0_TO_5];
+	rating.offRatingImage = mockNoRatingImage;
+	rating.onRatingImage = mockNoRatingImage;
+	rating.padding = 2;
+	[rating setupControl];
 
 	// finish up
 	GHAssertEquals((double)rating.frame.size.width, 58.0, @"Incorrect width calculated");
@@ -63,7 +66,9 @@
 	// Test
 	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
 	CGRect rect = CGRectMake(0, 0, 100, 100);
-	[rating setupControlWithRatingImage:nil noRatingImage:mockNoRatingImage halfRatingImage:nil padding:0 scaleType:DC_SCALE_0_TO_5];
+	rating.offRatingImage = mockNoRatingImage;
+	rating.onRatingImage	= mockNoRatingImage;
+	[rating setupControl];
 	[rating drawRect:rect];
 
 	// finish up
@@ -86,7 +91,10 @@
 	// Test
 	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
 	CGRect rect = CGRectMake(0, 0, 100, 100);
-	[rating setupControlWithRatingImage:nil noRatingImage:mockNoRatingImage halfRatingImage:nil padding:2 scaleType:DC_SCALE_0_TO_5];
+	rating.offRatingImage = mockNoRatingImage;
+	rating.onRatingImage	= mockNoRatingImage;
+	rating.padding = 2;
+	[rating setupControl];
 	[rating drawRect:rect];
 
 	// finish up
@@ -110,7 +118,9 @@
 	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
 	rating.rating = 3;
 	CGRect rect = CGRectMake(0, 0, 100, 100);
-	[rating setupControlWithRatingImage:mockOnImage noRatingImage:mockOffImage halfRatingImage:nil padding:0 scaleType:DC_SCALE_0_TO_5];
+	rating.offRatingImage = mockOffImage;
+	rating.onRatingImage	= mockOnImage;
+	[rating setupControl];
 	[rating drawRect:rect];
 
 	// finish up
@@ -138,7 +148,11 @@
 	// Test
 	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
 	rating.rating = 2.5;
-	[rating setupControlWithRatingImage:mockOnImage noRatingImage:mockOffImage halfRatingImage:mockHalfImage padding:0 scaleType:DC_SCALE_0_TO_5_WITH_HALVES];
+	rating.offRatingImage = mockOffImage;
+	rating.onRatingImage	= mockOnImage;
+	rating.halfRatingImage = mockHalfImage;
+	rating.scaleType = DC_SCALE_0_TO_5_WITH_HALVES;
+	[rating setupControl];
 	CGRect rect = CGRectMake(0, 0, 100, 100);
 	[rating drawRect:rect];
 
@@ -191,7 +205,11 @@
 	[[[mockTouch expect] andReturnValue:DC_MOCK_VALUE(location)] locationInView:rating];
 
 	// Test
-	[rating setupControlWithRatingImage:nil noRatingImage:mockOffImage halfRatingImage:nil padding:0 scaleType:scale];
+	rating.offRatingImage = mockOffImage;
+	rating.onRatingImage	= mockOffImage;
+	rating.halfRatingImage = mockOffImage;
+	rating.scaleType = scale;
+	[rating setupControl];
 	[rating touchesEnded:touches withEvent:mockEvent];
 
 	[mockEvent verify];
