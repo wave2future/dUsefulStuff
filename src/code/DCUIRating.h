@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIControl.h>
+#import "BubbleView.h"
 
 /**
  * What type of scale the control uses.
@@ -40,16 +41,18 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 	UIImage *offRatingImage;
 	UIImage *onRatingImage;
 	UIImage *halfRatingImage;
+	UIImage *bubbleBackgroundImage;
 	DCRATINGSCALE scaleType;
-	int padding;
 	double rating;
-	BOOL displayBubble;
 
 	// Internal use for display and layout.
 	BOOL controlIsSetup;
 	int offsetPixels;
 	int segmentSize;
 	float fuzzFactor;
+	int lastTouchX;
+	int controlWidth;
+	BubbleView *bubbleView;
 
 }
 
@@ -59,9 +62,10 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 @property (nonatomic) double rating;
 
 /**
- * If set to true, then a popup bubble is displayed above the users touch pint showing he current value.
+ * The image to use as a background for the popup bubble showing the value during touch operations.
+ * The presence of this image will trigger the bubble's display.
  */
-@property (nonatomic) BOOL displayBubble;
+@property (nonatomic, retain) UIImage *bubbleBackgroundImage;
 
 /**
  * The image to use for when a rating is on.
@@ -77,11 +81,6 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  * If the scale type is 0 - 10 or 0 - 5 with halves, then this image is used to display the half/odd values.
  */
 @property (nonatomic, retain) UIImage *halfRatingImage;
-
-/**
- * Sets the number of pixels added between the images. Can be used to space out the images across the control.
- */
-@property (nonatomic) int padding;
 
 /**
  * Defines the range of values that the control will produce. There are three options:

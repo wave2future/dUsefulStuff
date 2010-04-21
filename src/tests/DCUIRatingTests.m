@@ -33,11 +33,10 @@
 	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
 	rating.offRatingImage = mockNoRatingImage;
 	rating.onRatingImage = mockNoRatingImage;
-	rating.padding = 2;
 	[rating setupControl];
 
 	// finish up
-	GHAssertEquals((double)rating.frame.size.width, 58.0, @"Incorrect width calculated");
+	GHAssertEquals((double)rating.frame.size.width, 50.0, @"Incorrect width calculated");
 	GHAssertEquals((double)rating.frame.size.height, 10.0, @"Incorrect height calculated");
 	[mockNoRatingImage verify];
 }
@@ -74,31 +73,6 @@
 	// finish up
 	[mockNoRatingImage verify];
 
-}
-
-- (void) testDrawRectWithPadding {
-
-	// Mocks
-	id mockNoRatingImage = [OCMockObject mockForClass:[UIImage class]];
-	CGSize size = CGSizeMake(10, 10);
-	[[[mockNoRatingImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(0, 0)];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(12, 0)];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(24, 0)];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(36, 0)];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(48, 0)];
-
-	// Test
-	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
-	CGRect rect = CGRectMake(0, 0, 100, 100);
-	rating.offRatingImage = mockNoRatingImage;
-	rating.onRatingImage	= mockNoRatingImage;
-	rating.padding = 2;
-	[rating setupControl];
-	[rating drawRect:rect];
-
-	// finish up
-	[mockNoRatingImage verify];
 }
 
 - (void) testDrawRectWithScale5AndRating3 {
@@ -217,6 +191,61 @@
 	[mockOffImage verify];
 	GHAssertEquals(rating.rating, result, @"Incorrect rating returned");
 
+}
+
+- (void) testDrawRectWithBubble {
+	
+	// Mocks
+	id mockOnImage = [OCMockObject mockForClass:[UIImage class]];
+	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
+	id mockHalfImage = [OCMockObject mockForClass:[UIImage class]];
+	
+	id mockBubble = [OCMockObject mockForClass:[UIImage class]];
+	
+	CGSize size = CGSizeMake(10, 10);
+	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockBubble stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+
+	//drawing events.
+	[[mockOnImage expect] drawAtPoint:CGPointMake(0, 0)];
+	[[mockOnImage expect] drawAtPoint:CGPointMake(10, 0)];
+	[[mockHalfImage expect] drawAtPoint:CGPointMake(20, 0)];
+	[[mockOffImage expect] drawAtPoint:CGPointMake(30, 0)];
+	[[mockOffImage expect] drawAtPoint:CGPointMake(40, 0)];
+
+	// Mocks - setup a mocked touch event.
+	id mockEvent = [OCMockObject mockForClass:[UIEvent class]];
+	NSMutableSet *touches = [NSMutableSet set];
+	id mockTouch = [OCMockObject mockForClass:[UITouch class]];
+	[touches addObject:mockTouch];
+
+	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
+
+	[[[mockEvent expect] andReturn:touches] touchesForView:rating];
+	CGPoint location = CGPointMake(25, 50);
+	[[[mockTouch expect] andReturnValue:DC_MOCK_VALUE(location)] locationInView:rating];
+	
+	// Setup control.
+	rating.offRatingImage = mockOffImage;
+	rating.onRatingImage	= mockOnImage;
+	rating.halfRatingImage = mockHalfImage;
+	rating.bubbleBackgroundImage = mockBubble;
+	rating.scaleType = DC_SCALE_0_TO_5_WITH_HALVES;
+	[rating setupControl];
+
+	//Events 
+	[rating touchesBegan:touches withEvent:mockEvent];
+	CGRect rect = CGRectMake(0, 0, 100, 100);
+	[rating drawRect:rect];
+	
+	// finish up
+	[mockOffImage verify];
+	[mockOnImage verify];
+	[mockHalfImage verify];
+	[mockBubble verify];
+	[mockEvent verify];
+	[mockTouch verify];
+	
 }
 
 

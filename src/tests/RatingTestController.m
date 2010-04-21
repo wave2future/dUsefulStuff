@@ -29,12 +29,29 @@
 	imagePath = [[NSBundle mainBundle] pathForResource:@"star-active" ofType:@"png"];
 	UIImage *myRatingImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
 
-	[self.rating5 setupControlWithRatingImage:myRatingImage noRatingImage:myNoRatingImage halfRatingImage:nil padding:0 scaleType:DC_SCALE_0_TO_5];
+	imagePath = [[NSBundle mainBundle] pathForResource:@"bubble" ofType:@"png"];
+	UIImage *myBubbleImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
 
-	[self.rating5half setupControlWithRatingImage:myRatingImage noRatingImage:myNoRatingImage halfRatingImage:myHalfRatingImage padding:0 scaleType:DC_SCALE_0_TO_5_WITH_HALVES];
+	self.rating5.onRatingImage = myRatingImage;
+	self.rating5.offRatingImage = myNoRatingImage;
+	self.rating5.bubbleBackgroundImage = myBubbleImage;
+	self.rating5.scaleType = DC_SCALE_0_TO_5;
+	[self.rating5 setupControl];
 
-	[self.rating10 setupControlWithRatingImage:myRatingImage noRatingImage:myNoRatingImage halfRatingImage:myHalfRatingImage padding:0 scaleType:DC_SCALE_0_TO_10];
+	self.rating5half.onRatingImage = myRatingImage;
+	self.rating5half.offRatingImage = myNoRatingImage;
+	self.rating5half.halfRatingImage = myHalfRatingImage;
+	self.rating5half.bubbleBackgroundImage = myBubbleImage;
+	self.rating5half.scaleType = DC_SCALE_0_TO_5_WITH_HALVES;
+	[self.rating5half setupControl];
 
+	self.rating10.onRatingImage = myRatingImage;
+	self.rating10.offRatingImage = myNoRatingImage;
+	self.rating10.halfRatingImage = myHalfRatingImage;
+	self.rating10.bubbleBackgroundImage = myBubbleImage;
+	self.rating10.scaleType = DC_SCALE_0_TO_10;
+	[self.rating10 setupControl];
+	
 }
 
 
