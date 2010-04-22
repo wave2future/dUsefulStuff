@@ -201,9 +201,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUIRatingPopupBubble.h; sourceTree = "<group>"; };
-		65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUIRatingPopupBubble.m; sourceTree = "<group>"; };
-		65001DB7117F2C8700C6ACA8 /* BubbleViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleViewTests.m; sourceTree = "<group>"; };
+		65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingPopupBubble.h; path = src/code/DCUIRatingPopupBubble.h; sourceTree = "<group>"; };
+		65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingPopupBubble.m; path = src/code/DCUIRatingPopupBubble.m; sourceTree = "<group>"; };
+		65001DB7117F2C8700C6ACA8 /* BubbleViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BubbleViewTests.m; path = src/tests/BubbleViewTests.m; sourceTree = "<group>"; };
 		6503579B116A1B8100202897 /* DCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCommon.h; path = src/code/DCCommon.h; sourceTree = "<group>"; };
 		6503579C116A1B8100202897 /* DCUIRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRating.h; path = src/code/DCUIRating.h; sourceTree = "<group>"; };
 		6503579D116A1B8100202897 /* DCUIRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRating.m; path = src/code/DCUIRating.m; sourceTree = "<group>"; };

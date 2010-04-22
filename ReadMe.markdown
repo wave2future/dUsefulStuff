@@ -61,6 +61,8 @@ This header fine contains the following useful defines :
 
 ## DCUIRating
 
+![Screen dump of rating controller](screendump1.png)
+
 This class can be used on iPhone displays to produce a star rating control similar to what you can see in Tunes. It produces a single horizontal bar of 5 images across the display. The user can tap or swipe across the bar to set the rating value they want.
 
 It's core features include :
@@ -69,7 +71,7 @@ It's core features include :
 * Provided star images but can be configured with any images you like.
 * Resizes itself to match the width and height of the supplied images.
 * Can popup a bubble above the users finger displaying the newly selected rating.
-* Bubble background, font and colour is all comnfigurable.
+* Bubble background, font and colour is all configurable.
 
 ### Using DCUIRating
 
