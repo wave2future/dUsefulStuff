@@ -61,7 +61,7 @@ This header fine contains the following useful defines :
 
 ## DCUIRating
 
-![Screen dump of rating controller](screendump1.png)
+![Screen dump of rating controller](blob/master/screendump1.png)
 
 This class can be used on iPhone displays to produce a star rating control similar to what you can see in Tunes. It produces a single horizontal bar of 5 images across the display. The user can tap or swipe across the bar to set the rating value they want.
 
