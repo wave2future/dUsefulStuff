@@ -75,27 +75,21 @@ It's core features include :
 
 1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view. Here's the header file:
 
-{% highlight objc linenos %}
-#import <UIKit/UIKit.h>
-#import "DCUIRating.h"
-
-
-@interface RatingTestController : UIViewController {
+	#import <UIKit/UIKit.h>
+	#import "DCUIRating.h"
 	
-	@private
-	DCUIRating * ratingControl;
-
-}
-
-@property (retain, nonatomic) IBOutlet DCUIRating * ratingControl;
-
-@end
-{% endhighlight %}
+	@interface RatingTestController : UIViewController {
+		
+		@private
+		DCUIRating * ratingControl;
+	
+	}
+	
+	@property (retain, nonatomic) IBOutlet DCUIRating * ratingControl;
+	
+	@end
 
 1. Then you will need to add the following code to your viewDidLoad: method:
-
-{% highlight objc linenos %}
-{% endhighlight %}
 
 
 
