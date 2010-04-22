@@ -35,10 +35,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		65001C98117C87F500C6ACA8 /* BubbleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* BubbleView.h */; };
-		65001C99117C87F500C6ACA8 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* BubbleView.m */; };
-		65001C9A117C87F500C6ACA8 /* BubbleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* BubbleView.h */; };
-		65001C9B117C87F500C6ACA8 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* BubbleView.m */; };
+		65001C98117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */; };
+		65001C99117C87F500C6ACA8 /* DCUIRatingPopupBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */; };
+		65001C9A117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */; };
+		65001C9B117C87F500C6ACA8 /* DCUIRatingPopupBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */; };
 		65001DF4117F32CA00C6ACA8 /* BubbleViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* BubbleViewTests.m */; };
 		65001E06117F335000C6ACA8 /* BubbleViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* BubbleViewTests.m */; };
 		650357A2116A1B8100202897 /* DCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579B116A1B8100202897 /* DCCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,6 +57,12 @@
 		652697E8116EF992003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
 		652697E9116EF992003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
 		65296A45116E066C002B1FB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		652E5C2A118079B700B98429 /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
+		652E5C2B118079B700B98429 /* star-half-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65E116C5B89007AB3BA /* star-half-active.png */; };
+		652E5C2C118079B700B98429 /* star.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65F116C5B89007AB3BA /* star.png */; };
+		652E5C2D118079C900B98429 /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
+		652E5C2E118079C900B98429 /* star-half-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65E116C5B89007AB3BA /* star-half-active.png */; };
+		652E5C2F118079C900B98429 /* star.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65F116C5B89007AB3BA /* star.png */; };
 		653AD383116E146E006E2268 /* blank_10_x_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 650357AA116A1BAA00202897 /* blank_10_x_10.png */; };
 		653AD384116E153F006E2268 /* DCCommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357AC116A1BAA00202897 /* DCCommonTests.m */; };
 		653AD385116E153F006E2268 /* DCUIRatingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357AD116A1BAA00202897 /* DCUIRatingTests.m */; };
@@ -64,9 +70,6 @@
 		653AD387116E153F006E2268 /* NSMutableDictionary+dUsefulStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357B1116A1BAA00202897 /* NSMutableDictionary+dUsefulStuffTests.m */; };
 		653AD415116E165B006E2268 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		654ED660116C5B96007AB3BA /* ReadMe.markdown in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65C116C5B89007AB3BA /* ReadMe.markdown */; };
-		654ED661116C5B96007AB3BA /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
-		654ED662116C5B96007AB3BA /* star-half-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65E116C5B89007AB3BA /* star-half-active.png */; };
-		654ED663116C5B96007AB3BA /* star.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65F116C5B89007AB3BA /* star.png */; };
 		656B790E1178ABC800F19C5D /* libdUsefulStuff-device.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6579F220116E1AC00065C30E /* libdUsefulStuff-device.a */; };
 		656B793511796FE000F19C5D /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
 		656B793611796FE000F19C5D /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
@@ -93,9 +96,6 @@
 		659D2D6E1178A81A0056AA74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269778116EF91E003C63D3 /* CoreGraphics.framework */; };
 		659D2D6F1178A81A0056AA74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
 		65A0C67B116EF534003AC854 /* ReadMe.markdown in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65C116C5B89007AB3BA /* ReadMe.markdown */; };
-		65A0C67C116EF534003AC854 /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
-		65A0C67D116EF534003AC854 /* star-half-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65E116C5B89007AB3BA /* star-half-active.png */; };
-		65A0C67E116EF534003AC854 /* star.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65F116C5B89007AB3BA /* star.png */; };
 		65A0C680116EF534003AC854 /* DCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579B116A1B8100202897 /* DCCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65A0C681116EF534003AC854 /* DCUIRating.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579C116A1B8100202897 /* DCUIRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65A0C682116EF534003AC854 /* NSDictionary+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579E116A1B8100202897 /* NSDictionary+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -178,10 +178,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				652E5C2A118079B700B98429 /* star-active.png in CopyFiles */,
+				652E5C2B118079B700B98429 /* star-half-active.png in CopyFiles */,
+				652E5C2C118079B700B98429 /* star.png in CopyFiles */,
 				654ED660116C5B96007AB3BA /* ReadMe.markdown in CopyFiles */,
-				654ED661116C5B96007AB3BA /* star-active.png in CopyFiles */,
-				654ED662116C5B96007AB3BA /* star-half-active.png in CopyFiles */,
-				654ED663116C5B96007AB3BA /* star.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,18 +191,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				652E5C2D118079C900B98429 /* star-active.png in CopyFiles */,
+				652E5C2E118079C900B98429 /* star-half-active.png in CopyFiles */,
+				652E5C2F118079C900B98429 /* star.png in CopyFiles */,
 				65A0C67B116EF534003AC854 /* ReadMe.markdown in CopyFiles */,
-				65A0C67C116EF534003AC854 /* star-active.png in CopyFiles */,
-				65A0C67D116EF534003AC854 /* star-half-active.png in CopyFiles */,
-				65A0C67E116EF534003AC854 /* star.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		65001C96117C87F500C6ACA8 /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
-		65001C97117C87F500C6ACA8 /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
+		65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUIRatingPopupBubble.h; sourceTree = "<group>"; };
+		65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUIRatingPopupBubble.m; sourceTree = "<group>"; };
 		65001DB7117F2C8700C6ACA8 /* BubbleViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleViewTests.m; sourceTree = "<group>"; };
 		6503579B116A1B8100202897 /* DCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCommon.h; path = src/code/DCCommon.h; sourceTree = "<group>"; };
 		6503579C116A1B8100202897 /* DCUIRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRating.h; path = src/code/DCUIRating.h; sourceTree = "<group>"; };
@@ -396,12 +396,12 @@
 				6503579B116A1B8100202897 /* DCCommon.h */,
 				6503579C116A1B8100202897 /* DCUIRating.h */,
 				6503579D116A1B8100202897 /* DCUIRating.m */,
+				65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */,
+				65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */,
 				6503579E116A1B8100202897 /* NSDictionary+dUsefulStuff.h */,
 				6503579F116A1B8100202897 /* NSDictionary+dUsefulStuff.m */,
 				650357A0116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.h */,
 				650357A1116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.m */,
-				65001C96117C87F500C6ACA8 /* BubbleView.h */,
-				65001C97117C87F500C6ACA8 /* BubbleView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -519,7 +519,7 @@
 				65A0C681116EF534003AC854 /* DCUIRating.h in Headers */,
 				65A0C682116EF534003AC854 /* NSDictionary+dUsefulStuff.h in Headers */,
 				65A0C683116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.h in Headers */,
-				65001C9A117C87F500C6ACA8 /* BubbleView.h in Headers */,
+				65001C9A117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +531,7 @@
 				650357A3116A1B8100202897 /* DCUIRating.h in Headers */,
 				650357A5116A1B8100202897 /* NSDictionary+dUsefulStuff.h in Headers */,
 				650357A7116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.h in Headers */,
-				65001C98117C87F500C6ACA8 /* BubbleView.h in Headers */,
+				65001C98117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,7 +800,7 @@
 				65A0C685116EF534003AC854 /* DCUIRating.m in Sources */,
 				65A0C686116EF534003AC854 /* NSDictionary+dUsefulStuff.m in Sources */,
 				65A0C687116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.m in Sources */,
-				65001C9B117C87F500C6ACA8 /* BubbleView.m in Sources */,
+				65001C9B117C87F500C6ACA8 /* DCUIRatingPopupBubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,7 +811,7 @@
 				650357A4116A1B8100202897 /* DCUIRating.m in Sources */,
 				650357A6116A1B8100202897 /* NSDictionary+dUsefulStuff.m in Sources */,
 				650357A8116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.m in Sources */,
-				65001C99117C87F500C6ACA8 /* BubbleView.m in Sources */,
+				65001C99117C87F500C6ACA8 /* DCUIRatingPopupBubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

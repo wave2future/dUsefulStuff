@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIControl.h>
-#import "BubbleView.h"
+#import "DCUIRatingPopupBubble.h"
 
 /**
  * What type of scale the control uses.
@@ -44,6 +44,10 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 	UIImage *bubbleBackgroundImage;
 	DCRATINGSCALE scaleType;
 	double rating;
+	UIFont *bubbleTextFont;
+	UIColor *bubbleTextColour;
+	int bubbleTextXOffset;
+	int bubbleTextYOffset;
 
 	// Internal use for display and layout.
 	BOOL controlIsSetup;
@@ -52,7 +56,7 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 	float fuzzFactor;
 	int lastTouchX;
 	int controlWidth;
-	BubbleView *bubbleView;
+	DCUIRatingPopupBubble *bubbleView;
 
 }
 
@@ -60,6 +64,11 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  * The current value of the control. This value depends on the current setting of the scaleType;
  */
 @property (nonatomic) double rating;
+
+/**
+ * The font to use on the popup bubble if it is being displayed.
+ */
+@property (nonatomic, retain) UIFont *bubbleTextFont;
 
 /**
  * The image to use as a background for the popup bubble showing the value during touch operations.
@@ -83,6 +92,22 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 @property (nonatomic, retain) UIImage *halfRatingImage;
 
 /**
+ * The colour of the font on the rating bubble. Will default to black if not set.
+ */
+@property (nonatomic, retain) UIColor *bubbleTextColour;
+
+/**
+ * The number of pixels to shift the rating bubble text by in the horizontal direction. Negative numbers shift to the left.
+ */
+@property (nonatomic) int bubbleTextXOffset;
+
+/**
+ * The number of pixels to shift the rating bubble text by in the vertical direction. Negative numbers shift upwards.
+ */
+@property (nonatomic) int bubbleTextYOffset;
+
+
+/**
  * Defines the range of values that the control will produce. There are three options:
  * \li DC_SCALE_0_TO_5 - produces 0, 1, 2, 3, 5
  * \li DC_SCALE_0_TO_5_WITH_HALVES - produces 0, 0.5, 1, 1.5, ... 5
@@ -93,7 +118,7 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 /**
  * Must be called after all properties have been set or the control will not function correctly.
  */
--(void) setupControl;
+- (void) setupControl;
 
 
 @end

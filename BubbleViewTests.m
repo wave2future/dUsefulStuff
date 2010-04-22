@@ -7,26 +7,31 @@
 //
 #import "GHUnit.h"
 #import "OCMock.h"
-#import "BubbleView.h"
+#import "DCUIRatingPopupBubble.h"
 #import "DCCommon.h"
 
-@interface BubbleViewTests : GHTestCase
+@interface DCUIRatingPopupBubbleTests : GHTestCase
 {
 }
 
 @end
 
-@implementation BubbleViewTests
+@implementation DCUIRatingPopupBubbleTests
 
 - (void) testInitWithBackgroundImage {
 	id mockBackground = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
 	[[[mockBackground stub] andReturnValue:DC_MOCK_VALUE(size)] size];
 
-	BubbleView *view = [[[BubbleView alloc] initWithImage:mockBackground] autorelease];
+	DCUIRatingPopupBubble *view = [[[DCUIRatingPopupBubble alloc] initWithImage:mockBackground
+	                                                                       font:nil
+	                                                                 textColour:nil
+	                                                                    xOffset:0
+	                                                                    yOffset:0
+	                                                           displayAsDecimal:NO] autorelease];
 
 	GHAssertEquals(view.frame.origin.x, (CGFloat)0.0, @"Incorrect position x");
-	GHAssertEquals(view.frame.origin.y, (CGFloat)-10.0, @"Incorrect position y");
+	GHAssertEquals(view.frame.origin.y, (CGFloat) - 10.0, @"Incorrect position y");
 	GHAssertEquals(view.frame.size.width, (CGFloat)10.0, @"Incorrect width");
 	GHAssertEquals(view.frame.size.height, (CGFloat)10.0, @"Incorrect height");
 	GHAssertEquals(view.userInteractionEnabled, NO, @"User interactive not set");
@@ -40,27 +45,37 @@
 	CGSize size = CGSizeMake(10, 10);
 	[[[mockBackground stub] andReturnValue:DC_MOCK_VALUE(size)] size];
 	[[mockBackground expect] drawInRect:CGRectMake(0, 0, 10, 10)];
-	
-	BubbleView *view = [[[BubbleView alloc] initWithImage:mockBackground] autorelease];
+
+	DCUIRatingPopupBubble *view = [[[DCUIRatingPopupBubble alloc] initWithImage:mockBackground
+	                                                                       font:nil
+	                                                                 textColour:nil
+	                                                                    xOffset:0
+	                                                                    yOffset:0
+	                                                           displayAsDecimal:NO] autorelease];
 	[view drawRect:CGRectMake(0, 0, 0, 0)];
 
-	//Nothing to assert.
-	
+	// Nothing to assert.
+
 }
 
 - (void) testMoveToX {
 	id mockBackground = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
 	[[[mockBackground stub] andReturnValue:DC_MOCK_VALUE(size)] size];
-	
-	BubbleView *view = [[[BubbleView alloc] initWithImage:mockBackground] autorelease];
+
+	DCUIRatingPopupBubble *view = [[[DCUIRatingPopupBubble alloc] initWithImage:mockBackground
+	                                                                       font:nil
+	                                                                 textColour:nil
+	                                                                    xOffset:0
+	                                                                    yOffset:0
+	                                                           displayAsDecimal:NO] autorelease];
 	[view moveToX:15];
-	
+
 	GHAssertEquals(view.frame.origin.x, (CGFloat)15.0, @"Incorrect position x");
-	GHAssertEquals(view.frame.origin.y, (CGFloat)-10.0, @"Incorrect position y");
+	GHAssertEquals(view.frame.origin.y, (CGFloat) - 10.0, @"Incorrect position y");
 	GHAssertEquals(view.frame.size.width, (CGFloat)10.0, @"Incorrect width");
 	GHAssertEquals(view.frame.size.height, (CGFloat)10.0, @"Incorrect height");
-	
+
 }
 
 @end

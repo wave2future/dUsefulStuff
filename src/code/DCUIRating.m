@@ -22,6 +22,11 @@
 @synthesize halfRatingImage;
 @synthesize scaleType;
 @synthesize bubbleBackgroundImage;
+@synthesize bubbleTextFont;
+@synthesize bubbleTextColour;
+@synthesize bubbleTextXOffset;
+@synthesize bubbleTextYOffset;
+
 
 - (void) setupControl {
 
@@ -60,7 +65,12 @@
 	// Create a subview for the popup bubble.
 	if (bubbleBackgroundImage != nil) {
 		DC_LOG(@"Adding bubble to control");
-		bubbleView = [[BubbleView alloc] initWithImage:self.bubbleBackgroundImage];
+		bubbleView = [[DCUIRatingPopupBubble alloc] initWithImage:self.bubbleBackgroundImage
+		                                                     font:bubbleTextFont
+		                                               textColour:bubbleTextColour
+		                                                  xOffset:bubbleTextXOffset
+		                                                  yOffset:bubbleTextYOffset
+		                                         displayAsDecimal:self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES];
 		[self addSubview:bubbleView];
 
 		// Don't clip.
@@ -150,7 +160,7 @@
 	lastTouchX = [aTouch locationInView:self].x;
 	lastTouchX = fmin(controlWidth, lastTouchX);
 	lastTouchX = fmax(0, lastTouchX);
-	
+
 	float newRating = floor((lastTouchX + fuzzFactor) / segmentSize);
 
 	// Adjust rating if allowing halves.
@@ -161,6 +171,7 @@
 	// If the value has changed, initiate a screen update.
 	if (self.rating != newRating) {
 		self.rating = newRating;
+		bubbleView.value = newRating;
 		[self setNeedsDisplay];
 	}
 

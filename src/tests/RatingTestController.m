@@ -43,6 +43,9 @@
 	self.rating5half.halfRatingImage = myHalfRatingImage;
 	self.rating5half.bubbleBackgroundImage = myBubbleImage;
 	self.rating5half.scaleType = DC_SCALE_0_TO_5_WITH_HALVES;
+	self.rating10.bubbleTextColour = [UIColor blueColor];
+	self.rating5half.bubbleTextXOffset = -2;
+	self.rating5half.bubbleTextYOffset = 3;
 	[self.rating5half setupControl];
 
 	self.rating10.onRatingImage = myRatingImage;
@@ -50,6 +53,10 @@
 	self.rating10.halfRatingImage = myHalfRatingImage;
 	self.rating10.bubbleBackgroundImage = myBubbleImage;
 	self.rating10.scaleType = DC_SCALE_0_TO_10;
+	self.rating10.bubbleTextColour = [UIColor redColor];
+	self.rating10.bubbleTextFont = [UIFont boldSystemFontOfSize:14.0];
+	self.rating10.bubbleTextXOffset = -2;
+	self.rating10.bubbleTextYOffset = 5;
 	[self.rating10 setupControl];
 	
 }
