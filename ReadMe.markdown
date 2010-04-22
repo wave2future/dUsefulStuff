@@ -89,8 +89,34 @@ It's core features include :
 		
 		@end
 
-1. Then you will need to add the following code to your viewDidLoad: method:
+1. Then you will need to add the following code to your **viewDidLoad:** method:
 
+		- (void) viewDidLoad {
+			[super viewDidLoad];
+			
+			// Load the images for the active and inactive rating symbols.
+			NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"star" ofType:@"png"];
+			UIImage *myNoRatingImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
+		
+			imagePath = [[NSBundle mainBundle] pathForResource:@"star-active" ofType:@"png"];
+			UIImage *myRatingImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
+		
+			// Now setup the rating control. First the properties.
+			self.ratingControl.onRatingImage = myRatingImage;
+			self.ratingControl.offRatingImage = myNoRatingImage;
+			self.ratingControl.bubbleBackgroundImage = myBubbleImage;
+			self.ratingControl.scaleType = DC_SCALE_0_TO_5;
+			
+			// Now tell the control it can setup.
+			[self.ratingControl setupControl];
+			
+		}
+
+1. The last thing to do is to add the the control to your xib file. Open Interface Builder and the view. 
+1. In the **Library** dialog, click on the **Classes** button to show all classes in the project.
+1. Scroll down until you find the DCUIRating classes, then drag it onto your view.
+1. Size and position the control. Note you won't see anything because Interface Builder does not see it as a control and therefore does not draw it. Also note that an instance of DCUIRating will resize itself to fit the height and 5 times the width of the inactive image you set in the controller code.
+1. Lastly, make sure that the control is connected to the controllers IBOutlet.
 
 
 ## NSDictionary + dUsefulStuff and NSMutableDictionary + dUsefulStuff
