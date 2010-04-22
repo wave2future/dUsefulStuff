@@ -1,4 +1,4 @@
-# dUsefulStuff static library v0.0.1
+# dUsefulStuff static library v0.0.3
 
 This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications. It's built as a set of static libraries, ready to go. Of course you can also use the source code as well.
 
@@ -18,7 +18,7 @@ This is if you want to just use the library.
     /Debug/libdUsefulStuff-device.a   
     /Debug/libdUsefulStuff-simulator.a   
  
-    Don't forget to link not copy this.
+    Don't forget to link, not copy this.
 1. Select all the .h header files and drag them into the group as well. 
 
 # The library
@@ -68,9 +68,38 @@ It's core features include :
 * 3 scales : 0 - 5, 0 - 5 with half values, and 0 - 10.
 * Provided star images but can be configured with any images you like.
 * Resizes itself to match the width and height of the supplied images.
-* Can optionally add n pixels of padding between images.
+* Can popup a bubble above the users finger displaying the newly selected rating.
+* Bubble background, font and colour is all comnfigurable.
+
+### Using DCUIRating
+
+1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view. Here's the header file:
+
+{% highlight objc linenos %}
+#import <UIKit/UIKit.h>
+#import "DCUIRating.h"
+
+
+@interface RatingTestController : UIViewController {
+	
+	@private
+	DCUIRating * ratingControl;
+
+}
+
+@property (retain, nonatomic) IBOutlet DCUIRating * ratingControl;
+
+@end
+{% endhighlight %}
+
+1. Then you will need to add the following code to your viewDidLoad: method:
+
+{% highlight objc linenos %}
+{% endhighlight %}
+
+
 
 ## NSDictionary + dUsefulStuff and NSMutableDictionary + dUsefulStuff
 
-These two are categories which allow you to store adn retrieve dictionary entries based on the integer primitive.This saves having to do constant boxing and unboxing of values when you want to index based on a number .
+These two are categories which allow you to store and retrieve dictionary entries based on the integer primitive.This saves having to do constant boxing and unboxing of values when you want to index based on a number .
 
