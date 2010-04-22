@@ -77,13 +77,13 @@ It's core features include :
 
    #import <UIKit/UIKit.h>
     #import "DCUIRating.h"
-	
-	@interface RatingTestController : UIViewController {
-		
-		@private
-		DCUIRating * ratingControl;
-	
-	}
+    
+    @interface RatingTestController : UIViewController {
+    		
+        @private
+        DCUIRating * ratingControl;
+    
+    }
 	
 	@property (retain, nonatomic) IBOutlet DCUIRating * ratingControl;
 	
