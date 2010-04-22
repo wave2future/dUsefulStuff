@@ -150,6 +150,7 @@
 			652E5D3E11808C2300B98429 /* PBXTextBookmark */ = 652E5D3E11808C2300B98429 /* PBXTextBookmark */;
 			652E5D3F11808C2300B98429 /* PBXTextBookmark */ = 652E5D3F11808C2300B98429 /* PBXTextBookmark */;
 			652E5D4011808C2300B98429 /* PBXTextBookmark */ = 652E5D4011808C2300B98429 /* PBXTextBookmark */;
+			652E5D4411808C6700B98429 /* PBXTextBookmark */ = 652E5D4411808C6700B98429 /* PBXTextBookmark */;
 			654ED747116C6202007AB3BA = 654ED747116C6202007AB3BA /* PlistBookmark */;
 			6564F6E6116F032100AF91EF = 6564F6E6116F032100AF91EF /* PlistBookmark */;
 			6564F6EA116F032100AF91EF = 6564F6EA116F032100AF91EF /* PBXTextBookmark */;
@@ -389,7 +390,7 @@
 		fRef = 654ED65C116C5B89007AB3BA /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 64";
 		rLen = 0;
-		rLoc = 2189;
+		rLoc = 2202;
 		rType = 0;
 		vrLen = 1653;
 		vrLoc = 1498;
@@ -399,7 +400,7 @@
 		fRef = 654ED65C116C5B89007AB3BA /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 64";
 		rLen = 0;
-		rLoc = 2189;
+		rLoc = 2202;
 		rType = 0;
 		vrLen = 1653;
 		vrLoc = 1498;
@@ -419,7 +420,7 @@
 		fRef = 654ED65C116C5B89007AB3BA /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 64";
 		rLen = 0;
-		rLoc = 2189;
+		rLoc = 2202;
 		rType = 0;
 		vrLen = 1649;
 		vrLoc = 1498;
@@ -429,9 +430,19 @@
 		fRef = 654ED65C116C5B89007AB3BA /* ReadMe.markdown */;
 		name = "ReadMe.markdown: 64";
 		rLen = 0;
-		rLoc = 2189;
+		rLoc = 2202;
 		rType = 0;
 		vrLen = 1742;
+		vrLoc = 1977;
+	};
+	652E5D4411808C6700B98429 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 654ED65C116C5B89007AB3BA /* ReadMe.markdown */;
+		name = "ReadMe.markdown: 64";
+		rLen = 0;
+		rLoc = 2175;
+		rType = 0;
+		vrLen = 1755;
 		vrLoc = 1977;
 	};
 	653AD37C116E13CF006E2268 /* Run unit tests (Simulator) */ = {
@@ -450,8 +461,8 @@
 	654ED65C116C5B89007AB3BA /* ReadMe.markdown */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {863, 1807}}";
-			sepNavSelRange = "{2189, 0}";
-			sepNavVisRange = "{1977, 1742}";
+			sepNavSelRange = "{2175, 0}";
+			sepNavVisRange = "{1977, 1755}";
 		};
 	};
 	654ED733116C613B007AB3BA /* Run unit tests (Device) */ = {
