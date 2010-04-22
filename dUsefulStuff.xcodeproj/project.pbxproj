@@ -228,7 +228,7 @@
 		65269783116EF983003C63D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		654ED65A116C5B89007AB3BA /* docset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = docset.plist; sourceTree = "<group>"; };
 		654ED65B116C5B89007AB3BA /* doxygen-appledoc.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "doxygen-appledoc.config"; sourceTree = "<group>"; };
-		654ED65C116C5B89007AB3BA /* ReadMe.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.markdown; sourceTree = "<group>"; };
+		654ED65C116C5B89007AB3BA /* ReadMe.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = ReadMe.markdown; sourceTree = "<group>"; };
 		654ED65D116C5B89007AB3BA /* star-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-active.png"; sourceTree = "<group>"; };
 		654ED65E116C5B89007AB3BA /* star-half-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-half-active.png"; sourceTree = "<group>"; };
 		654ED65F116C5B89007AB3BA /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };

@@ -75,15 +75,16 @@ It's core features include :
 
 1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view. Here's the header file:
 
-   #import <UIKit/UIKit.h>
-    #import "DCUIRating.h"
-    
-    @interface RatingTestController : UIViewController {
-    		
-        @private
-        DCUIRating * ratingControl;
-    
-    }
+	
+	#import <UIKit/UIKit.h>
+	#import "DCUIRating.h"
+	
+	@interface RatingTestController : UIViewController {
+	
+		@private
+		DCUIRating * ratingControl;
+	
+	}
 	
 	@property (retain, nonatomic) IBOutlet DCUIRating * ratingControl;
 	
