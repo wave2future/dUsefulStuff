@@ -73,7 +73,7 @@ It's core features include :
 
 ### Using DCUIRating
 
-1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view. Here's the header file:
+1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view. Here's the header file: so lets update
 
 	
 	#import <UIKit/UIKit.h>
