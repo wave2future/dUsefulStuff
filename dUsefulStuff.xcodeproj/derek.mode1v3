@@ -360,7 +360,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>652E5D4511808D5400B98429</string>
+										<string>652E5D4611808DAE00B98429</string>
 										<key>history</key>
 										<array>
 											<string>654ED747116C6202007AB3BA</string>
@@ -571,7 +571,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>293637460.59154201</real>
+	<real>293637550.98201603</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
