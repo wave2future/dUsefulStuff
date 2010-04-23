@@ -26,13 +26,13 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 
 /**
  * This control provides a rating display similar to that seen in iTunes for rating songs. It draws a set of 5 icons across the display which the user can use to select a rating from 0 to 5.
- * The user can select a rating value by either taping the control at the rating they want, or swiping their finger back and forwards to adjust the rating.
+ * The user can select a rating value by either taping the control at the rating they want, or swiping their finger back and forwards to adjust the rating. However they must start the swipe inside the control.
  *
- * There are two options for the value of the rating. Like iTunes the default is a value from 0 - 5. Each icon from left to right represents 1 rating value, so tapping the second icon from the right will choose a rating of 4 out of 5. However you can also select to using ratings from 0 to 10 or 0 - 5 with half values. This is represented by the control drawing half stars for either the odd numbers or half values.
+ * There are three options for the value of the rating. Like iTunes the default is a value from 0 - 5. Each icon from left to right represents 1 rating value, so tapping the second icon from the right will choose a rating of 4 out of 5. However you can also select to using ratings from 0 to 10 or 0 - 5 with half values. This is represented by the control drawing half stars for either the odd numbers or half values.
  *
  * The developer can also choose to display a popup bubble above the rating controller. This bubble tracks the
  * users touch and displays the value during the touch operation. It appears at the first touch and disappears when
- * the touch leaves.
+ * the touch leaves. This bubble can be configured with an image background (setting this causes the bubble to be displayed), font, text colour and text position.
  */
 @interface DCUIRating : UIControl {
 	@private
@@ -61,7 +61,7 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 }
 
 /**
- * The current value of the control. This value depends on the current setting of the scaleType;
+ * The current value of the control. This value depends on the current setting of the scaleType; Set this value to have the control light up the necessary rating images.
  */
 @property (nonatomic) double rating;
 
@@ -72,7 +72,7 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 
 /**
  * The image to use as a background for the popup bubble showing the value during touch operations.
- * The presence of this image will trigger the bubble's display.
+ * The presence of this image will trigger the bubble's display when the user's finger is on the display.
  */
 @property (nonatomic, retain) UIImage *bubbleBackgroundImage;
 
