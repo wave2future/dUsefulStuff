@@ -35,9 +35,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		65001C98117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */; };
+		65001C98117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65001C99117C87F500C6ACA8 /* DCUIRatingPopupBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */; };
-		65001C9A117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */; };
+		65001C9A117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65001C9B117C87F500C6ACA8 /* DCUIRatingPopupBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */; };
 		65001DF4117F32CA00C6ACA8 /* BubbleViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* BubbleViewTests.m */; };
 		65001E06117F335000C6ACA8 /* BubbleViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* BubbleViewTests.m */; };
