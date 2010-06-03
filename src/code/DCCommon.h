@@ -21,9 +21,13 @@
    NSLog(@"%@:(%d) %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], \
          __LINE__, \
          [NSString stringWithFormat:(s), ## __VA_ARGS__])
+#define DC_LOG_LAYOUT(obj) \
+	UIView *_dObj = (UIView *) obj; \
+	NSLog(@"Layout for \"" # obj "\" object: position= %i x %i, size= %i x %i", (int)_dObj.frame.origin.x, (int)_dObj.frame.origin.y, (int)_dObj.frame.size.width, (int)_dObj.frame.size.height);
 #else
 // Effectively remove the logging.
 #define DC_LOG(s, ...)
+#define DC_LOG_LAYOUT(obj)
 #endif
 
 #pragma mark Memory handling
