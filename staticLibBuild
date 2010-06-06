@@ -1,0 +1,68 @@
+PROJECT_NAME=dUsefulStuff
+PROJECT_DIR=/Users/derek/projects/dUsefulStuff
+CURRENT_PROJECT_VERSION=0.0.4
+BUILD_DIR=build
+
+DC_BUILD_TARGET="Build Library"
+RELEASE=Release
+DEBUG=Debug
+DEVICE=iphoneos
+SIMULATOR=iphonesimulator
+SIMULATOR_SDK=iphonesimulator3.2
+DEVICE_SDK=iphoneos3.2
+
+echo "Starting build run ..."
+TARGET_DIR=Releases/v$CURRENT_PROJECT_VERSION
+
+echo "Cleaning build and target directories ..."
+rm -fvr $TARGET_DIR
+rm -fvr $BUILD_DIR
+echo "Directories cleared."
+
+echo "Building simulator libraries ..."
+xcodebuild -target "$DC_BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration $DEBUG 
+xcodebuild -target "$DC_BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration $RELEASE
+
+echo "Building device libraries ..."
+xcodebuild -target "$DC_BUILD_TARGET" -sdk $DEVICE_SDK -configuration $DEBUG
+xcodebuild -target "$DC_BUILD_TARGET" -sdk $DEVICE_SDK -configuration $RELEASE 
+
+echo "Building appledoc documentation ..."
+APPLEDOC_DIR=$PROJECT_DIR/../External/appledoc
+
+$APPLEDOC_DIR/build/Release/appledoc -p "$PROJECT_NAME" --input src/code --output "$BUILD_DIR/appledoc" -t $APPLEDOC_DIR/Templates -d $PROJECT_DIR/../tools/Doxygen.app/Contents/Resources/doxygen -c doxygen-appledoc.config --xhtml-bordered-issues --docset --docplist docset.plist
+
+Echo "building image directories ..."
+
+mkdir -p $TARGET_DIR
+mkdir -p $TARGET_DIR/$RELEASE/$DEVICE
+mkdir -p $TARGET_DIR/$RELEASE/$SIMULATOR
+mkdir -p $TARGET_DIR/$DEBUG/$DEVICE
+mkdir -p $TARGET_DIR/$DEBUG/$SIMULATOR
+
+echo Assembling image files ...
+cp $BUILD_DIR/$RELEASE-$DEVICE/lib${PROJECT_NAME}.a $TARGET_DIR/$RELEASE/$DEVICE
+cp $BUILD_DIR/$RELEASE-$SIMULATOR/lib${PROJECT_NAME}.a $TARGET_DIR/$RELEASE/$SIMULATOR
+cp $BUILD_DIR/$DEBUG-$DEVICE/lib${PROJECT_NAME}.a $TARGET_DIR/$DEBUG/$DEVICE
+cp $BUILD_DIR/$DEBUG-$SIMULATOR/lib${PROJECT_NAME}.a $TARGET_DIR/$DEBUG/$SIMULATOR
+
+echo "Copying headers ..."
+#cp -R $BUILD_DIR/$RELEASE-$DEVICE/*.h/ $TARGET_DIR
+find $BUILD_DIR/$RELEASE-$DEVICE -name *.h -print -exec cp "{}" $TARGET_DIR \;
+
+echo "Copying docset ..."
+mv -vf "$BUILD_DIR"/appledoc/docset "$TARGET_DIR"/au.com.dhc.$PROJECT_NAME.docset
+cp installDocSet $TARGET_DIR
+
+echo "Copying markdown documentation from root of project ..."
+cp *.markdown $TARGET_DIR
+
+echo "Copying other files copied by build ..."
+find $BUILD_DIR/$RELEASE-$DEVICE -type f -not -name *.a -depth 1 -print -exec cp "{}" $TARGET_DIR \;
+
+echo Building dmg of project ...
+FINAL_DMG="Releases/$PROJECT_NAME-$CURRENT_PROJECT_VERSION.dmg"
+rm -f $FINAL_DMG
+hdiutil create "$FINAL_DMG" -ov -srcdir $TARGET_DIR -volname "$PROJECT_NAME v$CURRENT_PROJECT_VERSION" -attach
+
+exit 0
