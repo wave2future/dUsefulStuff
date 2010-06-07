@@ -9,17 +9,19 @@ The only difference between the Release and debug versions is that the Debug ver
 
 This is if you want to just use the library.
 
-1. Download the latest dmg file. This contains compiled versions of the library for the devices (IiPhone and iPad) and simulator, in both debug and release versions.
+1. Download the latest dmg file. This contains compiled versions of the library for the devices (iPhone and iPad) and simulator, in both debug and release versions. 
+1. Copy the library contents to a folder somewhere. For example, ~/projects/libs/dUsefulStuff
 1. Create a group within Frameworks in your XCode project.
 1. Drag and drop one of the four libraries into the group:
     
-	 /Releases/libdUsefulStuff-device.a   
-    /Releases/libdUsefulStuff-simulator.a   
-    /Debug/libdUsefulStuff-device.a   
-    /Debug/libdUsefulStuff-simulator.a   
+	 /Release/iphoneos/libdUsefulStuff.a   
+    /Release/iphonesimulator/libdUsefulStuff.a   
+    /Debug/iphoneos/libdUsefulStuff.a   
+    /Debug/iphonesimulator/libdUsefulStuff.a   
  
-    Don't forget to link, not copy this.
 1. Select all the .h header files and drag them into the group as well. 
+1. Add the following to the library search path build setting: '${SRCROOT}/../libs/dUsefulStuff/$CONFIGURATION/$PLATFORM_NAME' That will ensure that no matter what you are building, the correct library is used.
+1. Now add the libdUsefulStuff.a library to your targets. Don't worry about it being the wrong one, at link time, the correct oen will be selected. This is just so that the linker knows it needs the library.
 
 # The library
 
@@ -35,6 +37,10 @@ This header fine contains the following useful defines :
 <tr>
 <td> DC_LOG(template, ...) </td>
 <td> Wraps NSLog and includes only the compiler flag DC_DEBUG is set.</td>
+</tr>
+<tr>
+<td> DC_LOG_LAYOUT(UIView) </td>
+<td> Logs the position and size of the passed UIView instance.</td>
 </tr>
 <tr>
 <td> DC_DEALLOC(name) </td>
@@ -125,4 +131,6 @@ It's core features include :
 
 These two are categories which allow you to store and retrieve dictionary entries based on the integer primitive.This saves having to do constant boxing and unboxing of values when you want to index based on a number .
 
-## 
+## staticLibBuild
+
+This is a script for building static libraries. It produces the debug/release device/simulator combinations, docset and other files and wraps them all up in a versioned dmg file. In addition to the normal build settings it also requires an additional one called BUILD_TARGET which must contain the name of the build target which buils a single library. 
