@@ -1,9 +1,7 @@
-PROJECT_NAME=dUsefulStuff
-PROJECT_DIR=/Users/derek/projects/dUsefulStuff
-CURRENT_PROJECT_VERSION=0.0.4
-BUILD_DIR=build
+# setup defaults.
+# set -o errexit
+set -o nounset
 
-DC_BUILD_TARGET="Build Library"
 RELEASE=Release
 DEBUG=Debug
 DEVICE=iphoneos
@@ -20,12 +18,12 @@ rm -fvr $BUILD_DIR
 echo "Directories cleared."
 
 echo "Building simulator libraries ..."
-xcodebuild -target "$DC_BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration $DEBUG 
-xcodebuild -target "$DC_BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration $RELEASE
+xcodebuild -target "$BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration $DEBUG 
+xcodebuild -target "$BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration $RELEASE
 
 echo "Building device libraries ..."
-xcodebuild -target "$DC_BUILD_TARGET" -sdk $DEVICE_SDK -configuration $DEBUG
-xcodebuild -target "$DC_BUILD_TARGET" -sdk $DEVICE_SDK -configuration $RELEASE 
+xcodebuild -target "$BUILD_TARGET" -sdk $DEVICE_SDK -configuration $DEBUG
+xcodebuild -target "$BUILD_TARGET" -sdk $DEVICE_SDK -configuration $RELEASE 
 
 echo "Building appledoc documentation ..."
 APPLEDOC_DIR=$PROJECT_DIR/../External/appledoc

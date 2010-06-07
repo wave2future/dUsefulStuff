@@ -260,8 +260,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -306,9 +304,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>43</integer>
 									<integer>42</integer>
-									<integer>41</integer>
-									<integer>33</integer>
+									<integer>34</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -346,12 +344,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>star-active.png</string>
+								<string>staticLibBuild</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -359,11 +359,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>star-active.png</string>
+										<string>staticLibBuild</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>65FE653111BBDBCC00C14BA3</string>
+										<string>65FE654211BCD0C700C14BA3</string>
 										<key>history</key>
 										<array>
 											<string>65F21675116C68020086F808</string>
@@ -396,9 +396,10 @@
 											<string>65FE651911BBDB6500C14BA3</string>
 											<string>65FE651A11BBDB6500C14BA3</string>
 											<string>65FE651B11BBDB6500C14BA3</string>
-											<string>65FE651C11BBDB6500C14BA3</string>
 											<string>65FE651D11BBDB6500C14BA3</string>
-											<string>65D75BEA11BB4531003D938D</string>
+											<string>65FE653411BC895900C14BA3</string>
+											<string>65FE653511BC895900C14BA3</string>
+											<string>65FE653611BC895900C14BA3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -579,7 +580,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>297524172.20312297</real>
+	<real>297586887.33764303</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -596,10 +597,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>659935E51168C10B006DE3C9</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/derek/projects/dUsefulStuff/dUsefulStuff.xcodeproj</string>
+		<string>659935E51168C10B006DE3C9</string>
 	</array>
 	<key>WindowString</key>
 	<string>119 128 1277 1028 0 0 1920 1178 </string>
@@ -694,7 +695,7 @@
 			<key>WindowToolGUID</key>
 			<string>659935E51168C10B006DE3C9</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

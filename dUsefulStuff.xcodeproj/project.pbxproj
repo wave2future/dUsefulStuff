@@ -62,6 +62,7 @@
 		65FE651011BBD9E300C14BA3 /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
 		65FE651111BBD9E300C14BA3 /* star-half-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65E116C5B89007AB3BA /* star-half-active.png */; };
 		65FE651211BBD9E300C14BA3 /* star.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65F116C5B89007AB3BA /* star.png */; };
+		65FE653311BC893500C14BA3 /* staticLibBuild in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65FE653211BC892000C14BA3 /* staticLibBuild */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				65FE653311BC893500C14BA3 /* staticLibBuild in CopyFiles */,
 				65FE650F11BBD9E300C14BA3 /* bubble.png in CopyFiles */,
 				65FE651011BBD9E300C14BA3 /* star-active.png in CopyFiles */,
 				65FE651111BBD9E300C14BA3 /* star-half-active.png in CopyFiles */,
@@ -170,6 +172,7 @@
 		65D66C4C1175FC07001132D1 /* OCPartialMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCPartialMockObject.h; path = "../tools/OCMock-static/OCPartialMockObject.h"; sourceTree = SOURCE_ROOT; };
 		65D66C4D1175FC07001132D1 /* OCPartialMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCPartialMockRecorder.h; path = "../tools/OCMock-static/OCPartialMockRecorder.h"; sourceTree = SOURCE_ROOT; };
 		65D66C4E1175FC07001132D1 /* OCProtocolMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCProtocolMockObject.h; path = "../tools/OCMock-static/OCProtocolMockObject.h"; sourceTree = SOURCE_ROOT; };
+		65FE653211BC892000C14BA3 /* staticLibBuild */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = staticLibBuild; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dUsefulStuff_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -289,6 +292,7 @@
 		654ED656116C5B62007AB3BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				65FE653211BC892000C14BA3 /* staticLibBuild */,
 				656B793411796FE000F19C5D /* bubble.png */,
 				657D8F731170B4E60044EF4F /* installDocSet */,
 				654ED65A116C5B89007AB3BA /* docset.plist */,
@@ -496,7 +500,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n../scripts/buildLibs";
+			shellScript = "\n# export PROJECT_NAME=dUsefulStuff\n# export PROJECT_DIR=/Users/derek/projects/dUsefulStuff\n# export CURRENT_PROJECT_VERSION=0.0.4\n# export BUILD_DIR=build\nexport BUILD_TARGET=\"Build Library\"\n\n./staticLibBuild";
 		};
 /* End PBXShellScriptBuildPhase section */
 
