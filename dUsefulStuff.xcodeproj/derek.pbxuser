@@ -5,7 +5,7 @@
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 659D2BE6117747BA0056AA74 /* Application Test (Simulator) */;
 		activeSDKPreference = iphonesimulator3.2;
-		activeTarget = 65D75B8511B7D19E003D938D /* Build release libraries */;
+		activeTarget = 65D75B8511B7D19E003D938D /* Build release framework */;
 		addToTargets = (
 			653AD37C116E13CF006E2268 /* Run unit tests (Simulator) */,
 		);
@@ -193,6 +193,10 @@
 			65CD37B8122541790061EEBF /* PBXTextBookmark */ = 65CD37B8122541790061EEBF /* PBXTextBookmark */;
 			65CD37B9122541B20061EEBF /* PBXTextBookmark */ = 65CD37B9122541B20061EEBF /* PBXTextBookmark */;
 			65CD37BA122549A10061EEBF /* PBXTextBookmark */ = 65CD37BA122549A10061EEBF /* PBXTextBookmark */;
+			65CD37BD12254A5F0061EEBF /* PBXTextBookmark */ = 65CD37BD12254A5F0061EEBF /* PBXTextBookmark */;
+			65CD37C012254AAC0061EEBF /* PBXTextBookmark */ = 65CD37C012254AAC0061EEBF /* PBXTextBookmark */;
+			65CD37C112254AAF0061EEBF /* PBXTextBookmark */ = 65CD37C112254AAF0061EEBF /* PBXTextBookmark */;
+			65CD37C212254AAF0061EEBF /* PBXTextBookmark */ = 65CD37C212254AAF0061EEBF /* PBXTextBookmark */;
 			65D75BEB11BB4531003D938D = 65D75BEB11BB4531003D938D /* PBXTargetBookmark */;
 			65DFFAFC11B690DF00FAE1B0 = 65DFFAFC11B690DF00FAE1B0 /* PBXTextBookmark */;
 			65DFFAFD11B690DF00FAE1B0 = 65DFFAFD11B690DF00FAE1B0 /* PBXTextBookmark */;
@@ -574,7 +578,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "staticLibBuild: 38";
 		rLen = 0;
-		rLoc = 1276;
+		rLoc = 1306;
 		rType = 0;
 		vrLen = 1670;
 		vrLoc = 0;
@@ -834,7 +838,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "staticLibBuild: 146";
 		rLen = 0;
-		rLoc = 5477;
+		rLoc = 5507;
 		rType = 0;
 		vrLen = 3165;
 		vrLoc = 3520;
@@ -844,7 +848,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "staticLibBuild: 139";
 		rLen = 0;
-		rLoc = 5243;
+		rLoc = 5273;
 		rType = 0;
 		vrLen = 2991;
 		vrLoc = 3651;
@@ -854,7 +858,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "staticLibBuild: 144";
 		rLen = 0;
-		rLoc = 5383;
+		rLoc = 5413;
 		rType = 0;
 		vrLen = 2995;
 		vrLoc = 3651;
@@ -895,7 +899,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "staticLibBuild: 144";
 		rLen = 0;
-		rLoc = 5383;
+		rLoc = 5413;
 		rType = 0;
 		vrLen = 3126;
 		vrLoc = 3520;
@@ -905,7 +909,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "staticLibBuild: 149";
 		rLen = 0;
-		rLoc = 5610;
+		rLoc = 5640;
 		rType = 0;
 		vrLen = 3001;
 		vrLoc = 3651;
@@ -915,7 +919,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "staticLibBuild: 139";
 		rLen = 0;
-		rLoc = 5243;
+		rLoc = 5273;
 		rType = 0;
 		vrLen = 2997;
 		vrLoc = 3651;
@@ -935,7 +939,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "staticLibBuild: 138";
 		rLen = 0;
-		rLoc = 5241;
+		rLoc = 5271;
 		rType = 0;
 		vrLen = 3089;
 		vrLoc = 3520;
@@ -955,7 +959,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "staticLibBuild: 138";
 		rLen = 0;
-		rLoc = 5241;
+		rLoc = 5271;
 		rType = 0;
 		vrLen = 3089;
 		vrLoc = 3520;
@@ -969,7 +973,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 117";
 		rLen = 0;
-		rLoc = 4608;
+		rLoc = 4638;
 		rType = 0;
 		vrLen = 2989;
 		vrLoc = 2911;
@@ -979,7 +983,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 7";
 		rLen = 0;
-		rLoc = 128;
+		rLoc = 158;
 		rType = 0;
 		vrLen = 2297;
 		vrLoc = 0;
@@ -989,7 +993,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 7";
 		rLen = 0;
-		rLoc = 118;
+		rLoc = 120;
 		rType = 0;
 		vrLen = 2298;
 		vrLoc = 0;
@@ -999,7 +1003,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 7";
 		rLen = 0;
-		rLoc = 118;
+		rLoc = 120;
 		rType = 0;
 		vrLen = 2299;
 		vrLoc = 0;
@@ -1009,7 +1013,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 7";
 		rLen = 0;
-		rLoc = 118;
+		rLoc = 120;
 		rType = 0;
 		vrLen = 2300;
 		vrLoc = 0;
@@ -1019,7 +1023,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 7";
 		rLen = 0;
-		rLoc = 116;
+		rLoc = 118;
 		rType = 0;
 		vrLen = 2299;
 		vrLoc = 0;
@@ -1029,7 +1033,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 40";
 		rLen = 0;
-		rLoc = 1297;
+		rLoc = 1327;
 		rType = 0;
 		vrLen = 2299;
 		vrLoc = 0;
@@ -1039,7 +1043,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 7";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 192;
 		rType = 0;
 		vrLen = 2301;
 		vrLoc = 0;
@@ -1049,7 +1053,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 7";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 192;
 		rType = 0;
 		vrLen = 2296;
 		vrLoc = 0;
@@ -1059,7 +1063,7 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 7";
 		rLen = 0;
-		rLoc = 162;
+		rLoc = 192;
 		rType = 0;
 		vrLen = 2302;
 		vrLoc = 0;
@@ -1069,12 +1073,52 @@
 		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
 		name = "makeFramework: 40";
 		rLen = 0;
-		rLoc = 1300;
+		rLoc = 1330;
 		rType = 0;
 		vrLen = 2311;
 		vrLoc = 0;
 	};
-	65D75B8511B7D19E003D938D /* Build release libraries */ = {
+	65CD37BD12254A5F0061EEBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 6503579D116A1B8100202897 /* DCUIRating.m */;
+		name = "DCUIRating.m: 77";
+		rLen = 0;
+		rLoc = 2910;
+		rType = 0;
+		vrLen = 489;
+		vrLoc = 2674;
+	};
+	65CD37C012254AAC0061EEBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 6503579D116A1B8100202897 /* DCUIRating.m */;
+		name = "DCUIRating.m: 77";
+		rLen = 0;
+		rLoc = 2910;
+		rType = 0;
+		vrLen = 489;
+		vrLoc = 2674;
+	};
+	65CD37C112254AAF0061EEBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
+		name = "makeFramework: 25";
+		rLen = 0;
+		rLoc = 877;
+		rType = 0;
+		vrLen = 2311;
+		vrLoc = 0;
+	};
+	65CD37C212254AAF0061EEBF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 65FE653211BC892000C14BA3 /* makeFramework */;
+		name = "makeFramework: 7";
+		rLen = 0;
+		rLoc = 148;
+		rType = 0;
+		vrLen = 2341;
+		vrLoc = 0;
+	};
+	65D75B8511B7D19E003D938D /* Build release framework */ = {
 		activeExec = 0;
 	};
 	65D75BDE11BB4475003D938D /* BuildLibs */ = {
@@ -1184,8 +1228,8 @@
 	65FE653211BC892000C14BA3 /* makeFramework */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1055, 1963}}";
-			sepNavSelRange = "{1300, 0}";
-			sepNavVisRange = "{0, 2311}";
+			sepNavSelRange = "{148, 0}";
+			sepNavVisRange = "{0, 2341}";
 		};
 	};
 	65FE653411BC895900C14BA3 /* PBXBookmark */ = {

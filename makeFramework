@@ -4,7 +4,7 @@
 # set -o nounset
 
 # Check or help request.
-if [ $# -lt 2 ] || [ $1 == "-?" ] || [ $1 == "--help" ]; then
+if ( [ $# -lt 2 ] && [ -z "$PRODUCT_NAME" ] ) || [ $1 == "-?" ] || [ $1 == "--help" ]; then
 	echo ""
 	echo This script will build a static iphone libraries and documentation and place it all within a dmg archive file.
 	echo Syntax:

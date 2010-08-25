@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		65D75B8511B7D19E003D938D /* Build release libraries */ = {
+		65D75B8511B7D19E003D938D /* Build release framework */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 65D75B8811B7D1BC003D938D /* Build configuration list for PBXAggregateTarget "Build release libraries" */;
+			buildConfigurationList = 65D75B8811B7D1BC003D938D /* Build configuration list for PBXAggregateTarget "Build release framework" */;
 			buildPhases = (
 				65D75B8411B7D19E003D938D /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = "Build release libraries";
+			name = "Build release framework";
 			productName = "Build final artifacts";
 		};
 /* End PBXAggregateTarget section */
@@ -427,7 +427,7 @@
 				65A0C679116EF534003AC854 /* Build Library */,
 				653AD37C116E13CF006E2268 /* Run unit tests (Simulator) */,
 				659D2BE4117747BA0056AA74 /* Application Test (Simulator) */,
-				65D75B8511B7D19E003D938D /* Build release libraries */,
+				65D75B8511B7D19E003D938D /* Build release framework */,
 			);
 		};
 /* End PBXProject section */
@@ -468,7 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n# export PROJECT_NAME=dUsefulStuff\n# export PROJECT_DIR=/Users/derek/projects/dUsefulStuff\n# export CURRENT_PROJECT_VERSION=0.0.4\n# export BUILD_DIR=build\nexport BUILD_TARGET=\"Build Library\"\n\n./staticLibBuild";
+			shellScript = "\n# export PROJECT_NAME=dUsefulStuff\n# export PROJECT_DIR=/Users/derek/projects/dUsefulStuff\n# export CURRENT_PROJECT_VERSION=0.0.4\n# export BUILD_DIR=build\nexport BUILD_TARGET=\"Build Library\"\n\n./makeFramework";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -756,7 +756,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65D75B8811B7D1BC003D938D /* Build configuration list for PBXAggregateTarget "Build release libraries" */ = {
+		65D75B8811B7D1BC003D938D /* Build configuration list for PBXAggregateTarget "Build release framework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				65D75B8611B7D19E003D938D /* Debug */,
