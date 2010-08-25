@@ -3,20 +3,21 @@
 # Disallows unset variables.
 # set -o nounset
 
-# Check or help request.
-if ( [ $# -lt 2 ] && [ -z "$PRODUCT_NAME" ] ) || [ $1 == "-?" ] || [ $1 == "--help" ]; then
-	echo ""
-	echo This script will build a static iphone libraries and documentation and place it all within a dmg archive file.
-	echo Syntax:
-	echo ""
-	echo "   ./staticLibBuild [<PROJECT_NAME> <PRODUCT_NAME> [<CURRENT_PROJECT_VERSION>]]"
-	echo ""
-	echo "If running from within xcode then there is no need to supply any parameters."
-	echo "If running from the command line then the project and product name parameter needs to be supplied."
-	echo "If not supplied on the command line then the current project version will be set to 0.0.1"
-	exit 0
+# Check or help requests if not running within xcode.
+if [ -z "$PRODUCT_NAME" ]; then
+	if [[ $# -lt 2 || $1 == "-?" || $1 == "--help" ]]; then
+		echo ""
+		echo This script will build a static iphone libraries and documentation and place it all within a dmg archive file.
+		echo Syntax:
+		echo ""
+		echo "   ./staticLibBuild [<PROJECT_NAME> <PRODUCT_NAME> [<CURRENT_PROJECT_VERSION>]]"
+		echo ""
+		echo "If running from within xcode then there is no need to supply any parameters."
+		echo "If running from the command line then the project and product name parameter needs to be supplied."
+		echo "If not supplied on the command line then the current project version will be set to 0.0.1"
+		exit 0
+	fi
 fi
-
 
 # Validate required properties.
 
@@ -37,7 +38,7 @@ if [ -z "$PRODUCT_NAME" ]; then
 	fi
 	PRODUCT_NAME=$2
 fi
-if [ $# == 3 ] && [ -z "$CURRENT_PROJECT_VERSION" ]; then
+if [[ $# == 3 && -z "$CURRENT_PROJECT_VERSION" ]]; then
 	CURRENT_PROJECT_VERSION=$3
 fi
 
