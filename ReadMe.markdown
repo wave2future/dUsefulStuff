@@ -8,7 +8,8 @@ This library is intended as a container of useful defines and classes which can 
 1. Copy the library contents to a folder somewhere. For example, ~/projects/libs/dUsefulStuff
 1. Drag and drop the dUsefulStuff.framework folder to xcode.
 1. Add the header imports you need to your project. As this is a framework, you can now use the framework style syntax. For example
-   #import &lt;dUsefulStuff/DCUIRating.h&gt;
+
+		#import &lt;dUsefulStuff/DCUIRating.h&gt;
 
 # The library
 
