@@ -2,7 +2,7 @@
 
 This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications. It's built as a set of static libraries, ready to go. Of course you can also use the source code as well.
 
-The only difference between the Release and debug versions is that the Debug versions contain debug code wihich logs information out to the standard out via NSLog(). Generaly speaking you won't need this unless you want to see whats going on inside a particular class from the library.
+The only difference between the Release and debug versions is that the Debug versions contain debug code which logs information out to the standard out via NSLog(). Generally speaking you won't need this unless you want to see whats going on inside a particular class from the library.
 
 
 # Installing
@@ -21,7 +21,7 @@ This is if you want to just use the library.
  
 1. Select all the .h header files and drag them into the group as well. 
 1. Add the following to the library search path build setting: '${SRCROOT}/../libs/dUsefulStuff/$CONFIGURATION/$PLATFORM_NAME' That will ensure that no matter what you are building, the correct library is used.
-1. Now add the libdUsefulStuff.a library to your targets. Don't worry about it being the wrong one, at link time, the correct oen will be selected. This is just so that the linker knows it needs the library.
+1. Now add the libdUsefulStuff.a library to your targets. Don't worry about it being the wrong one, at link time, the correct one will be selected. This is just so that the linker knows it needs the library.
 
 # The library
 

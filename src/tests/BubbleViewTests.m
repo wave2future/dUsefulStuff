@@ -5,7 +5,7 @@
 //  Created by Derek Clarkson on 21/04/10.
 //  Copyright 2010 Derek Clarkson. All rights reserved.
 //
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h> 
 #import "OCMock.h"
 #import "DCUIRatingPopupBubble.h"
 #import "DCCommon.h"

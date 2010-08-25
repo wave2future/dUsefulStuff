@@ -6,7 +6,7 @@
 //  Copyright 2010 Derek Clarkson. All rights reserved.
 //
 
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h> 
 #import "OCMock.h"
 #import "DCUIRating.h"
 #import "DCCommon.h"

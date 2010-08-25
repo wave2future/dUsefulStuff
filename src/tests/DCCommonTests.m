@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GHUnit.h"
+#import <GHUnitIOS/GHUnitIOS.h> 
 #import "DCCommon.h"
 #import <UIKit/UIKit.h>
 

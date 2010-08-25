@@ -42,8 +42,6 @@
 		rating = [[UILabel alloc] init];
 		[self addSubview:rating];
 
-		// Now setup the label.
-		// First resize to fit the label font or assign
 		if (font != nil) {
 			rating.font = font;
 		}
