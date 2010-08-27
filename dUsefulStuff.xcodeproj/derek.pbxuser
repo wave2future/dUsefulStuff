@@ -314,8 +314,8 @@
 	6518349F1227EED400B4AE43 /* build.sh */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1055, 876}}";
-			sepNavSelRange = "{515, 0}";
-			sepNavVisRange = "{0, 959}";
+			sepNavSelRange = "{329, 0}";
+			sepNavVisRange = "{0, 960}";
 		};
 	};
 	651834AD1227F19D00B4AE43 /* createDocumentation.sh */ = {
@@ -335,7 +335,7 @@
 	651834BB1227F98200B4AE43 /* assembleFramework.sh */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1055, 876}}";
-			sepNavSelRange = "{538, 0}";
+			sepNavSelRange = "{530, 0}";
 			sepNavVisRange = "{0, 1600}";
 		};
 	};
@@ -400,8 +400,8 @@
 	654ED65C116C5B89007AB3BA /* ReadMe.markdown */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1055, 1768}}";
-			sepNavSelRange = "{2956, 0}";
-			sepNavVisRange = "{2169, 2775}";
+			sepNavSelRange = "{5197, 0}";
+			sepNavVisRange = "{2326, 2872}";
 		};
 	};
 	6564F71B116F0DEE00AF91EF /* PBXTextBookmark */ = {
@@ -663,7 +663,7 @@
 	};
 	65CD392E122551E90061EEBF /* DCDialogs.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1055, 878}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1055, 876}}";
 			sepNavSelRange = "{984, 0}";
 			sepNavVisRange = "{0, 984}";
 		};

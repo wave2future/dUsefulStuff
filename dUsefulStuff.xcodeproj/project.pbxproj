@@ -141,14 +141,14 @@
 		654ED65F116C5B89007AB3BA /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		656B793411796FE000F19C5D /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 		6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = /Users/derek/projects/tools/GHUnitIOS.framework; sourceTree = "<absolute>"; };
-		6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIOSTestMain.m; sourceTree = "<group>"; };
+		6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = src/tests/GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefulStuff simulator unit tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657D8F731170B4E60044EF4F /* installDocSet */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = installDocSet; sourceTree = "<group>"; };
 		659D2BE5117747BA0056AA74 /* dUsefullStuff App Test Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefullStuff App Test Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A0C68F116EF534003AC854 /* libdUsefulStuff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdUsefulStuff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CD37711225288D0061EEBF /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = framework.plist; sourceTree = "<group>"; };
-		65CD392E122551E90061EEBF /* DCDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDialogs.h; sourceTree = "<group>"; };
-		65CD392F122551E90061EEBF /* DCDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDialogs.m; sourceTree = "<group>"; };
+		65CD392E122551E90061EEBF /* DCDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDialogs.h; path = src/code/DCDialogs.h; sourceTree = "<group>"; };
+		65CD392F122551E90061EEBF /* DCDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDialogs.m; path = src/code/DCDialogs.m; sourceTree = "<group>"; };
 		65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buildStaticLibrary.sh; sourceTree = "<group>"; };
 		65CD39A4122689B10061EEBF /* common.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = common.sh; sourceTree = "<group>"; };
 		65D66C3A1175FC07001132D1 /* libOCMock-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libOCMock-static.a"; path = "../tools/OCMock-static/libOCMock-static.a"; sourceTree = SOURCE_ROOT; };
