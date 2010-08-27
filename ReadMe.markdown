@@ -123,6 +123,6 @@ These two are categories which allow you to store and retrieve dictionary entrie
 
 Class of static methods for displaying messages to the user.
 
-## installDocset
+## Scripts
 
-This script should install the documentation into your xcode's docset directories so it is accessable from help.
+In the **scripts** directory there are a number of scripts which can be used for building static libraries and documentation from the command line. To see how they can be used look at the **build.sh** file in the source root of this project. 
