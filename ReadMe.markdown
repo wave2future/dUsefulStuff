@@ -119,6 +119,10 @@ It's core features include :
 
 These two are categories which allow you to store and retrieve dictionary entries based on the integer primitive.This saves having to do constant boxing and unboxing of values when you want to index based on a number .
 
+## DCAlerts
+
+Class of static methods for displaying messages to the user.
+
 ## installDocset
 
 This script should install the documentation into your xcode's docset directories so it is accessable from help.

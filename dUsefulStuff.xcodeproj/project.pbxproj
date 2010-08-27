@@ -58,6 +58,10 @@
 		65A0C689116EF534003AC854 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		65A0C6AB116EF691003AC854 /* libdUsefulStuff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A0C68F116EF534003AC854 /* libdUsefulStuff.a */; };
 		65CD37721225288D0061EEBF /* framework.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CD37711225288D0061EEBF /* framework.plist */; };
+		65CD3930122551E90061EEBF /* DCDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CD392E122551E90061EEBF /* DCDialogs.h */; };
+		65CD3931122551E90061EEBF /* DCDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD392F122551E90061EEBF /* DCDialogs.m */; };
+		65CD3932122552060061EEBF /* DCDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD392F122551E90061EEBF /* DCDialogs.m */; };
+		65CD3933122552060061EEBF /* DCDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD392F122551E90061EEBF /* DCDialogs.m */; };
 		65D66C501175FC07001132D1 /* libOCMock-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D66C3A1175FC07001132D1 /* libOCMock-static.a */; };
 		65FE650F11BBD9E300C14BA3 /* bubble.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
 		65FE651011BBD9E300C14BA3 /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
@@ -122,6 +126,11 @@
 		650357B5116A1BAA00202897 /* RatingTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingTestAppDelegate.m; path = src/tests/RatingTestAppDelegate.m; sourceTree = "<group>"; };
 		650357B6116A1BAA00202897 /* RatingTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatingTestController.h; path = src/tests/RatingTestController.h; sourceTree = "<group>"; };
 		650357B7116A1BAA00202897 /* RatingTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingTestController.m; path = src/tests/RatingTestController.m; sourceTree = "<group>"; };
+		6518349F1227EED400B4AE43 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		651834AD1227F19D00B4AE43 /* createDocumentation.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createDocumentation.sh; sourceTree = "<group>"; };
+		651834AE1227F3A300B4AE43 /* clean.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = clean.sh; sourceTree = "<group>"; };
+		651834BB1227F98200B4AE43 /* assembleFramework.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = assembleFramework.sh; sourceTree = "<group>"; };
+		651834BC1227F9AC00B4AE43 /* createDmg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createDmg.sh; sourceTree = "<group>"; };
 		65269778116EF91E003C63D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		65269783116EF983003C63D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		654ED65A116C5B89007AB3BA /* docset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = docset.plist; sourceTree = "<group>"; };
@@ -138,6 +147,10 @@
 		659D2BE5117747BA0056AA74 /* dUsefullStuff App Test Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefullStuff App Test Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A0C68F116EF534003AC854 /* libdUsefulStuff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdUsefulStuff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CD37711225288D0061EEBF /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = framework.plist; sourceTree = "<group>"; };
+		65CD392E122551E90061EEBF /* DCDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDialogs.h; sourceTree = "<group>"; };
+		65CD392F122551E90061EEBF /* DCDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDialogs.m; sourceTree = "<group>"; };
+		65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buildStaticLibrary.sh; sourceTree = "<group>"; };
+		65CD39A4122689B10061EEBF /* common.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = common.sh; sourceTree = "<group>"; };
 		65D66C3A1175FC07001132D1 /* libOCMock-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libOCMock-static.a"; path = "../tools/OCMock-static/libOCMock-static.a"; sourceTree = SOURCE_ROOT; };
 		65D66C3B1175FC07001132D1 /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "../tools/OCMock-static/NSInvocation+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
 		65D66C3C1175FC07001132D1 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "../tools/OCMock-static/NSMethodSignature+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
@@ -159,7 +172,6 @@
 		65D66C4C1175FC07001132D1 /* OCPartialMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCPartialMockObject.h; path = "../tools/OCMock-static/OCPartialMockObject.h"; sourceTree = SOURCE_ROOT; };
 		65D66C4D1175FC07001132D1 /* OCPartialMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCPartialMockRecorder.h; path = "../tools/OCMock-static/OCPartialMockRecorder.h"; sourceTree = SOURCE_ROOT; };
 		65D66C4E1175FC07001132D1 /* OCProtocolMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCProtocolMockObject.h; path = "../tools/OCMock-static/OCProtocolMockObject.h"; sourceTree = SOURCE_ROOT; };
-		65FE653211BC892000C14BA3 /* makeFramework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = makeFramework; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dUsefulStuff_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -215,6 +227,8 @@
 		0867D691FE84028FC02AAC07 /* dUsefulStuff */ = {
 			isa = PBXGroup;
 			children = (
+				6518349F1227EED400B4AE43 /* build.sh */,
+				65CD39A01226872A0061EEBF /* scripts */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
@@ -249,6 +263,8 @@
 				6503579F116A1B8100202897 /* NSDictionary+dUsefulStuff.m */,
 				650357A0116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.h */,
 				650357A1116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.m */,
+				65CD392E122551E90061EEBF /* DCDialogs.h */,
+				65CD392F122551E90061EEBF /* DCDialogs.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -280,7 +296,6 @@
 		654ED656116C5B62007AB3BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				65FE653211BC892000C14BA3 /* makeFramework */,
 				656B793411796FE000F19C5D /* bubble.png */,
 				657D8F731170B4E60044EF4F /* installDocSet */,
 				654ED65A116C5B89007AB3BA /* docset.plist */,
@@ -292,6 +307,19 @@
 				65CD37711225288D0061EEBF /* framework.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		65CD39A01226872A0061EEBF /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */,
+				65CD39A4122689B10061EEBF /* common.sh */,
+				651834AD1227F19D00B4AE43 /* createDocumentation.sh */,
+				651834AE1227F3A300B4AE43 /* clean.sh */,
+				651834BB1227F98200B4AE43 /* assembleFramework.sh */,
+				651834BC1227F9AC00B4AE43 /* createDmg.sh */,
+			);
+			path = scripts;
 			sourceTree = "<group>";
 		};
 		65F21665116C677F0086F808 /* Rating tests */ = {
@@ -348,6 +376,7 @@
 				65A0C682116EF534003AC854 /* NSDictionary+dUsefulStuff.h in Headers */,
 				65A0C683116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.h in Headers */,
 				65001C9A117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */,
+				65CD3930122551E90061EEBF /* DCDialogs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +497,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n# export PROJECT_NAME=dUsefulStuff\n# export PROJECT_DIR=/Users/derek/projects/dUsefulStuff\n# export CURRENT_PROJECT_VERSION=0.0.4\n# export BUILD_DIR=build\nexport BUILD_TARGET=\"Build Library\"\n\n./makeFramework";
+			shellScript = ./build.sh;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -483,6 +512,7 @@
 				653AD387116E153F006E2268 /* NSMutableDictionary+dUsefulStuffTests.m in Sources */,
 				65001DF4117F32CA00C6ACA8 /* BubbleViewTests.m in Sources */,
 				6576D211121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m in Sources */,
+				65CD3932122552060061EEBF /* DCDialogs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +523,7 @@
 				659D2BEF117748010056AA74 /* RatingTestAppDelegate.m in Sources */,
 				659D2BF0117748030056AA74 /* RatingTestController.m in Sources */,
 				659D2BF1117748040056AA74 /* main.m in Sources */,
+				65CD3933122552060061EEBF /* DCDialogs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +535,7 @@
 				65A0C686116EF534003AC854 /* NSDictionary+dUsefulStuff.m in Sources */,
 				65A0C687116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.m in Sources */,
 				65001C9B117C87F500C6ACA8 /* DCUIRatingPopupBubble.m in Sources */,
+				65CD3931122551E90061EEBF /* DCDialogs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +714,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_STYLE = Debug;
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
 				SDKROOT = iphonesimulator3.2;
 			};
@@ -691,6 +724,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_STYLE = Release;
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
 				SDKROOT = iphonesimulator3.2;
 			};
@@ -699,6 +733,7 @@
 		65D75B8611B7D19E003D938D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_STYLE = Debug;
 				COPY_PHASE_STRIP = NO;
 				DC_BUILD_TARGET = "Build Library";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -709,6 +744,7 @@
 		65D75B8711B7D19E003D938D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_STYLE = Release;
 				COPY_PHASE_STRIP = YES;
 				DC_BUILD_TARGET = "Build Library";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
