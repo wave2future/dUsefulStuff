@@ -36,12 +36,17 @@ assertSet SIMULATOR_VALID_ARCHS
 echo "Starting build ..."
 
 echo "Building simulator library ..."
+
+# Turn off error trapping because xcodebuild is throwing errors it should not.
+set +o errexit
 # xcodebuild -target "$BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration Debug VALID_ARCHS="$SIMULATOR_VALID_ARCHS" ARCHS="$SIMULATOR_ARCHS"
 xcodebuild -target "$BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration Release VALID_ARCHS="$SIMULATOR_VALID_ARCHS" ARCHS="$SIMULATOR_ARCHS"
 
 echo "Building device library ..."
 # xcodebuild -target "$BUILD_TARGET" -sdk $DEVICE_SDK -configuration Debug VALID_ARCHS="$DEVICE_VALID_ARCHS" ARCHS="$DEVICE_ARCHS"
 xcodebuild -target "$BUILD_TARGET" -sdk $DEVICE_SDK -configuration Release VALID_ARCHS="$DEVICE_VALID_ARCHS" ARCHS="$DEVICE_ARCHS"
+
+set -o errexit
 
 echo "Combining libraries..."
 mkdir "$BUILD_DIR/lib"
