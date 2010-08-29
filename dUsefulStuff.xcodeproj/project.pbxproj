@@ -57,6 +57,9 @@
 		65A0C687116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357A1116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.m */; };
 		65A0C689116EF534003AC854 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		65A0C6AB116EF691003AC854 /* libdUsefulStuff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A0C68F116EF534003AC854 /* libdUsefulStuff.a */; };
+		65AEB2CA122A9A3300E2C83E /* docset.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65A116C5B89007AB3BA /* docset.plist */; };
+		65AEB2CB122A9A3900E2C83E /* framework.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65CD37711225288D0061EEBF /* framework.plist */; };
+		65AEB2CC122A9A4400E2C83E /* doxygen-appledoc.config in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65B116C5B89007AB3BA /* doxygen-appledoc.config */; };
 		65CD37721225288D0061EEBF /* framework.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CD37711225288D0061EEBF /* framework.plist */; };
 		65CD3930122551E90061EEBF /* DCDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CD392E122551E90061EEBF /* DCDialogs.h */; };
 		65CD3931122551E90061EEBF /* DCDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD392F122551E90061EEBF /* DCDialogs.m */; };
@@ -93,7 +96,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				65AEB2CB122A9A3900E2C83E /* framework.plist in CopyFiles */,
+				65AEB2CC122A9A4400E2C83E /* doxygen-appledoc.config in CopyFiles */,
 				65FE650F11BBD9E300C14BA3 /* bubble.png in CopyFiles */,
+				65AEB2CA122A9A3300E2C83E /* docset.plist in CopyFiles */,
 				65FE651011BBD9E300C14BA3 /* star-active.png in CopyFiles */,
 				65FE651111BBD9E300C14BA3 /* star-half-active.png in CopyFiles */,
 				65FE651211BBD9E300C14BA3 /* star.png in CopyFiles */,
@@ -227,6 +233,7 @@
 		0867D691FE84028FC02AAC07 /* dUsefulStuff */ = {
 			isa = PBXGroup;
 			children = (
+				654ED65C116C5B89007AB3BA /* ReadMe.markdown */,
 				6518349F1227EED400B4AE43 /* build.sh */,
 				65CD39A01226872A0061EEBF /* scripts */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
@@ -300,7 +307,6 @@
 				657D8F731170B4E60044EF4F /* installDocSet */,
 				654ED65A116C5B89007AB3BA /* docset.plist */,
 				654ED65B116C5B89007AB3BA /* doxygen-appledoc.config */,
-				654ED65C116C5B89007AB3BA /* ReadMe.markdown */,
 				654ED65D116C5B89007AB3BA /* star-active.png */,
 				654ED65E116C5B89007AB3BA /* star-half-active.png */,
 				654ED65F116C5B89007AB3BA /* star.png */,

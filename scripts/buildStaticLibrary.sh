@@ -6,8 +6,8 @@
 # Created by Derek Clarkson on 26/08/10.
 # Copyright 2010 Derek Clarkson. All rights reserved.
 
-# setup defaults.
-# set -o errexit
+# Exit if an error occurs.
+set -o errexit
 # Disallows unset variables.
 set -o nounset
 

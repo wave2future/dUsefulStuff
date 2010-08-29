@@ -57,7 +57,7 @@ This header fine contains the following useful defines :
 
 ![Screen dump of rating controller](http://drekka.github.com/images/screendump1.png)
 
-This class can be used on iPhone displays to produce a star rating control similar to what you can see in Tunes. It produces a single horizontal bar of 5 images across the display. The user can tap or swipe across the bar to set the rating value they want.
+This class can be used on iPhone displays to produce a star rating control similar to what you can see in Tunes. It produces a single horizontal bar of 5 images across the display. The user can tap or swipe across the bar to set the rating value they want. In addition, it can also display a popup like bubble showing the current value of the control when the users finger is touching it. This is useful for instant feed back because he users finger often obscures the control and therefore the current value.
 
 It's core features include :
 
@@ -125,4 +125,82 @@ Class of static methods for displaying messages to the user.
 
 ## Scripts
 
-In the **scripts** directory there are a number of scripts which can be used for building static libraries and documentation from the command line. To see how they can be used look at the **build.sh** file in the source root of this project. 
+In the **scripts** directory there are a number of scripts which can be used for building static libraries and documentation from the command line. To see an example how they can be used look at the **build.sh** file in the source root of this project. Each script is a distinct part or phase of a build process. Here users of Ant or Maven will be familiar with what I am talking about. These scripts are designed to be used either from a command line or from within xcode. Hence they make use of the standard xcode properties.
+
+Here is an example of using them (actually it's a copy of the build.sh script :-):
+
+		#!/bin/sh
+		
+		# build.sh
+		# dUsefulStuff
+		#
+		# Created by Derek Clarkson on 27/08/10.
+		# Copyright 2010 Derek Clarkson. All rights reserved.
+		
+		# Exit if an error occurs.
+		set -o errexit
+		# Disallows unset variables.
+		set -o nounset
+		
+		# Set build related values.
+		PRODUCT_NAME=dUsefulStuff
+		PROJECT_NAME=$PRODUCT_NAME
+		CURRENT_PROJECT_VERSION=0.0.4
+		SRC=src/code
+		
+		BUILD_TARGET="Build Library"
+		
+		# SDKs.
+		SIMULATOR_SDK=iphonesimulator3.2
+		SIMULATOR_ARCHS=i386
+		SIMULATOR_VALID_ARCHS=i386
+		DEVICE_SDK=iphoneos3.2
+		DEVICE_ARCHS="armv6 armv7"
+		DEVICE_VALID_ARCHS="armv6 armv7"
+		
+		# Set used directories. Notice some allow for setting from xcode.
+		SCRIPTS_DIR=./scripts
+		TOOLS_DIR=../tools
+		EXTERNAL_DIR=../External
+		PROJECT_DIR=${PROJECT_DIR=.}
+		BUILD_DIR=${BUILD_DIR=build}
+		ARTIFACT_DIR=Releases/v$CURRENT_PROJECT_VERSION
+		
+		DMG_FILE=Releases/$PRODUCT_NAME-$CURRENT_PROJECT_VERSION.dmg
+		
+		# Export so the scripts can see the setting.
+		export SCRIPTS_DIR TOOLS_DIR EXTERNAL_DIR SIMULATOR_SDK SIMULATOR_ARCHS SIMULATOR_VALID_ARCHS DEVICE_SDK DEVICE_ARCHS DEVICE_VALID_ARCHS PROJECT_NAME PRODUCT_NAME BUILD_DIR PROJECT_DIR CURRENT_PROJECT_VERSION BUILD_TARGET ARTIFACT_DIR DMG_FILE SRC
+		
+		# Call the scripts.
+		$SCRIPTS_DIR/clean.sh
+		$SCRIPTS_DIR/buildStaticLibrary.sh
+		$SCRIPTS_DIR/createDocumentation.sh
+		$SCRIPTS_DIR/assembleFramework.sh
+		$SCRIPTS_DIR/createDmg.sh
+
+### buildStaticLibrary.sh
+
+This is the main script for building. It will compile both a simulator and device version of the code in your project and then combine them into a single library. 
+
+### common.sh
+
+A script which is included by other scripts to provide some commonly used functions.
+
+### createDocumentation.sh
+
+This script will create and install api documentation using he doxygen and appledoc tools. If either of these two tools are not found then documentation is not created and wil be skipped. Setting this up is quite complicated because it also depends on a **docset.plist** file and a **doxygen-appledoc.config** file. Both of these are supplied in the dmg.
+
+### clean.sh
+
+This is the equivalent of the ant and maven clean tasks. It deletes the projects build directory and the target artifacts and directories. 
+
+### assembleFramework.sh
+
+This script takes in the compiled static library and creates a framework. This also includes the header files and the **framework.plist** file. This framework is assembled in the artifact directory.
+
+### createDmg.sh
+
+This takes in all the files it finds into the artifact directory and builds a dmg file suitable for uploaded to distribution sites. Also included are any markdown documentation files (such as this one) that are in the project.
+
+
+ 
