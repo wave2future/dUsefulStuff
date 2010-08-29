@@ -34,6 +34,11 @@ mkdir -p $FRAMEWORK_DIR/Versions/$CURRENT_PROJECT_VERSION
 mkdir -p $FRAMEWORK_DIR/Versions/$CURRENT_PROJECT_VERSION/Resources
 mkdir -p $FRAMEWORK_DIR/Versions/$CURRENT_PROJECT_VERSION/Headers
 
+# Copying files
+echo "Copying files into place ..."
+find $BUILD_DIR/Release-iphoneos -name "*.h" -exec cp -v "{}" $FRAMEWORK_DIR/Versions/$CURRENT_PROJECT_VERSION/Headers \;
+cp -v "$BUILD_DIR/lib/$PROJECT_NAME" $FRAMEWORK_DIR/Versions/$CURRENT_PROJECT_VERSION
+
 echo "Creating framework symlinks..."  
 ln -s $CURRENT_PROJECT_VERSION $FRAMEWORK_DIR/Versions/Current
 ln -s Versions/Current/Headers $FRAMEWORK_DIR/Headers
@@ -44,9 +49,6 @@ if [ ! -f framework.plist ]; then
 	echo "Error: framework.plist not found."
 	exit 1
 fi
-
-echo "Copying headers ..."
-find $BUILD_DIR/Release-iphoneos -name "*.h" -exec cp -v "{}" $FRAMEWORK_DIR/Headers \;
 
 echo "Creating plist for framework ..."
 sed -e 's/${PROJECT_NAME}/'"${PROJECT_NAME}"'/' -e 's/${CURRENT_PROJECT_VERSION}/'"${CURRENT_PROJECT_VERSION}"'/' framework.plist > "$FRAMEWORK_DIR/Resources/Info.plist"  
