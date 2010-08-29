@@ -45,6 +45,11 @@ $SCRIPTS_DIR/clean.sh
 $SCRIPTS_DIR/buildStaticLibrary.sh
 $SCRIPTS_DIR/createDocumentation.sh
 $SCRIPTS_DIR/assembleFramework.sh
+
+# Extra step here to copy the scripts into a directory of the dmg file.
+mkdir $ARTIFACT_DIR/scripts
+find "scripts" -type f -name "*.sh" -depth 1 -exec cp -v "{}" "$ARTIFACT_DIR/scripts" \;
+
 $SCRIPTS_DIR/createDmg.sh
 
 
