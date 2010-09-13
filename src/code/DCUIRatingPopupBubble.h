@@ -18,8 +18,8 @@
 	float value;
 	UIImage *background;
 	UILabel *rating;
-	int width;
-	int height;
+	float width;
+	float height;
 	NSNumberFormatter * decimalFormatter;
 }
 
@@ -43,7 +43,8 @@
 
 /**
  * Called DCUIRating control to move this control to it's new horizontal position.
+ * \param aTouch the touch event that triggered the move.
  */
-- (void) moveToX:(int)x;
+- (void) alignWithTough:(UITouch *) aTouch;
 
 @end

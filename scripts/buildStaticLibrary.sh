@@ -32,21 +32,62 @@ assertSet SIMULATOR_SDK
 assertSet SIMULATOR_ARCHS
 assertSet SIMULATOR_VALID_ARCHS
 
+# Moves the  <user>.pbxuser file out of the way so that command line compiles 
+# will work without error. Otherwise it's presence triggers an exception.
+archivePbxuser() {
+	echo "Moving pbxuser file out of the way...."
+	mv $PROJECT_NAME.xcodeproj/$USER.pbxuser $PROJECT_NAME.xcodeproj/$USER.pbxuser.old
+}
+
+# Restores the <user>.pbxuser file so that xcode can continue working.
+restorePbxuser() {
+	echo "Restoring pbxuser file...."
+	mv $PROJECT_NAME.xcodeproj/$USER.pbxuser.old $PROJECT_NAME.xcodeproj/$USER.pbxuser
+}
+
+# Encapslates the compilation of the project against a specific set of architectures.
+compile() {
+
+	echo "Starting compilation ..."
+
+	archivePbxuser
+
+	# Reset error trapping.
+	set +o errexit
+
+	echo "Building $COMPILE_ARCHS library ..."
+	xcodebuild -target "$BUILD_TARGET" -sdk $COMPILE_SDK -configuration $BUILD_CONFIGURATION VALID_ARCHS="$COMPILE_VALID_ARCHS" ARCHS="$COMPILE_ARCHS"
+	BUILD_RC=$?
+	
+	# if it failed then restore user settings and exit.
+	if [ $BUILD_RC != 0 ]; then
+		echo "Executing build failure sequence ..."
+		restorePbxuser
+		echo "Exiting as build threw an error."
+		exit $BUILD_RC
+	fi
+	
+	echo "Compiled."
+	
+	restorePbxuser
+	
+	# Restore error trapping.
+	set -o errexit
+}
+
+
 # Start of run.
 echo "Starting build ..."
 
-echo "Building simulator library ..."
+COMPILE_SDK=$SIMULATOR_SDK
+COMPILE_VALID_ARCHS=$SIMULATOR_VALID_ARCHS
+COMPILE_ARCHS=$SIMULATOR_ARCHS
+compile
 
-# Turn off error trapping because xcodebuild is throwing errors it should not.
-set +o errexit
-# xcodebuild -target "$BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration Debug VALID_ARCHS="$SIMULATOR_VALID_ARCHS" ARCHS="$SIMULATOR_ARCHS"
-xcodebuild -target "$BUILD_TARGET" -sdk $SIMULATOR_SDK -configuration Release VALID_ARCHS="$SIMULATOR_VALID_ARCHS" ARCHS="$SIMULATOR_ARCHS"
-
-echo "Building device library ..."
-# xcodebuild -target "$BUILD_TARGET" -sdk $DEVICE_SDK -configuration Debug VALID_ARCHS="$DEVICE_VALID_ARCHS" ARCHS="$DEVICE_ARCHS"
-xcodebuild -target "$BUILD_TARGET" -sdk $DEVICE_SDK -configuration Release VALID_ARCHS="$DEVICE_VALID_ARCHS" ARCHS="$DEVICE_ARCHS"
-
-set -o errexit
+COMPILE_SDK=$DEVICE_SDK
+COMPILE_VALID_ARCHS=$DEVICE_VALID_ARCHS
+COMPILE_ARCHS=$DEVICE_ARCHS
+compile
 
 echo "Combining libraries..."
 mkdir "$BUILD_DIR/lib"

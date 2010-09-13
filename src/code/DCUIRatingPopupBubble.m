@@ -30,10 +30,14 @@
 - (DCUIRatingPopupBubble *) initWithImage:(UIImage *)backgroundImage font:(UIFont *)font textColour:(UIColor *)textColour xOffset:(int)xOffset yOffset:(int)yOffset displayAsDecimal:(BOOL)displayAsDecimal {
 	self = [super initWithFrame:CGRectMake(0, -backgroundImage.size.height, backgroundImage.size.width, backgroundImage.size.height)];
 	if (self) {
+
 		DC_LOG(@"Creating bubble");
-		width = backgroundImage.size.width;
-		height = backgroundImage.size.height;
+
 		background = [backgroundImage retain];
+		width = background.size.width;
+		height = background.size.height;
+		DC_LOG(@"Bubble size %f x %f", width, height);
+
 		self.userInteractionEnabled = NO;
 		self.backgroundColor = [UIColor clearColor];
 		self.hidden = YES;
@@ -70,12 +74,18 @@
 - (void) drawRect:(CGRect)rect {
 	DC_LOG(@"Drawing bubble");
 	[background drawInRect:CGRectMake(0, 0, width, height)];
-
 }
 
-- (void) moveToX:(int)x {
-	DC_LOG(@"Moving bubble to %i", x);
-	self.frame = CGRectMake(x, -height, width, height);
+- (void) alignWithTough:(UITouch *)aTouch {
+
+	// Stop the bubble moving to far to the left or right.
+	float lastTouchX = fmin(aTouch.view.frame.origin.x + aTouch.view.frame.size.width, [aTouch locationInView:aTouch.window].x);
+	lastTouchX = fmax(aTouch.view.frame.origin.x, lastTouchX);
+
+	// Position the bubble.
+	self.frame = CGRectMake(lastTouchX, aTouch.view.frame.origin.y - aTouch.view.frame.size.height, width, height);
+
+	[self setNeedsDisplay];
 }
 
 

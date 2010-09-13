@@ -1,4 +1,4 @@
-# dUsefulStuff static library v0.0.4
+# dUsefulStuff static library v0.0.5
 
 This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications. It's built as a set of static libraries, ready to go. Of course you can also use the source code as well.
 
@@ -119,9 +119,9 @@ It's core features include :
 
 These two are categories which allow you to store and retrieve dictionary entries based on the integer primitive.This saves having to do constant boxing and unboxing of values when you want to index based on a number .
 
-## DCAlerts
+## DCDialogs
 
-Class of static methods for displaying messages to the user.
+Class of static methods for displaying messages to the user. Just takes some pain out of rewriting code.
 
 ## Scripts
 

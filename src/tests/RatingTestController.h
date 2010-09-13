@@ -23,4 +23,7 @@
 @property (retain, nonatomic) IBOutlet DCUIRating * rating5half;
 @property (retain, nonatomic) IBOutlet DCUIRating * rating10;
 
+-(IBAction) alertButtonClicked: (id) button;
+-(IBAction) alert2ButtonClicked: (id) button;
+
 @end

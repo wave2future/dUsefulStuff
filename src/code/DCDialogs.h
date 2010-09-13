@@ -17,17 +17,15 @@
 }
 
 /**
- * Displays a standard error notification on top of the specified component. The dialog will have a single "ok" button.
- * \param view The view to use as the parent object for the dialog.
- * \param message the error text to display.
+ * Displays a standard error notification. The dialog will have a single "ok" button.
+ * \param msg the error text to display.
  */
-+ (void) displayErrorOnView:(UIView *)view message:(NSString *)msg;
++ (void) displayMessage:(NSString *)msg;
 
 /**
- * Displays a standard error notification on top of the specified component. The dialog will have a single "ok" button.
- * \param view The view to use as the parent object for the dialog.
- * \param message the error text to display.
+ * Displays a standard error notification. The dialog will have a single "ok" button.
+ * \param msg the error text to display.
  * \param title The title of the dialog.
  */
-+ (void) displayErrorOnView:(UIView *)view message:(NSString *)msg title:(NSString *)title;
++ (void) displayMessage:(NSString *)msg title:(NSString *)title;
 @end

@@ -47,7 +47,7 @@
 	self.autoresizingMask = UIViewAutoresizingNone;
 
 	// Setup common values.
-	offsetPixels = offRatingImage.size.width;
+	offsetPixels = (int)offRatingImage.size.width;
 
 	// Work out the size of each segement in the display.
 	segmentSize = scaleType == DC_SCALE_0_TO_5 ? offsetPixels : offsetPixels / 2;
@@ -59,26 +59,22 @@
 	// Adjust the size of the control to fit the new size.
 	controlWidth = self.offRatingImage.size.width * 5;
 	CGRect newSize = CGRectMake(self.frame.origin.x, self.frame.origin.y, controlWidth, self.offRatingImage.size.height);
-	DC_LOG(@"Updating component size from %fx%f to %fx%f", self.frame.size.width, self.frame.size.height, newSize.size.width, newSize.size.height);
+	DC_LOG(@"Updating component size from %f x %f to %f x %f", self.frame.size.width, self.frame.size.height, newSize.size.width, newSize.size.height);
 	self.frame = newSize;
 
 	// Create a subview for the popup bubble.
 	if (bubbleBackgroundImage != nil) {
 		DC_LOG(@"Adding bubble to control");
+		DC_LOG(@"bubbleBackgroundImage.size.width : %f", self.bubbleBackgroundImage.size.width);
+		DC_LOG(@"bubbleBackgroundImage.size.height: %f", self.bubbleBackgroundImage.size.height);
 		bubbleView = [[DCUIRatingPopupBubble alloc] initWithImage:self.bubbleBackgroundImage
 		                                                     font:bubbleTextFont
 		                                               textColour:bubbleTextColour
 		                                                  xOffset:bubbleTextXOffset
 		                                                  yOffset:bubbleTextYOffset
 		                                         displayAsDecimal:self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES];
-		[self addSubview:bubbleView];
 
-		// Don't clip.
-		self.clipsToBounds = NO;
-
-		// Bring ourselves to the front of the window. This is only important when we
-		// have a bubble so that the bubble appears on top of everything else.
-		[self.superview bringSubviewToFront:self];
+		// Dont add the bubble to the window as the window may not be set yet.
 	}
 
 	controlIsSetup = YES;
@@ -88,15 +84,23 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { // From UIResponder
 	DC_LOG(@"Starting touch event");
+	UITouch *aTouch = [[event touchesForView:self] anyObject];
+	[self calculateRatingWithTouch:aTouch];
+
+	// If there is a bubble we need to add it to the parent window if it is not already a subview of it.
+	if (bubbleView.window == nil) {
+		[self.window addSubview:bubbleView];
+	}
 	bubbleView.hidden = NO;
-	[self calculateRatingWithTouch:[[event touchesForView:self] anyObject]];
+
+	[bubbleView alignWithTough:aTouch];
+	[super touchesBegan:touches withEvent:event];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {     // From UIResponder
 	DC_LOG(@"Ending touch event");
 	[self calculateRatingWithTouch:[[event touchesForView:self] anyObject]];
 	bubbleView.hidden = YES;
-	[self setNeedsDisplay];
 	[super touchesEnded:touches withEvent:event];
 }
 
@@ -104,17 +108,15 @@
 	DC_LOG(@"Touch moved event");
 	UITouch *aTouch = [[event touchesForView:self] anyObject];
 	if (lastTouchX != [aTouch locationInView:self].x) {
-		[self setNeedsDisplay];
+		[self calculateRatingWithTouch:aTouch];
+		[bubbleView alignWithTough:aTouch];
 	}
-	[self calculateRatingWithTouch:aTouch];
-	[super touchesMoved:touches withEvent:event];
 }
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event { // From UIResponder
 	DC_LOG(@"Touch cancelled event");
 	[self calculateRatingWithTouch:[[event touchesForView:self] anyObject]];
 	bubbleView.hidden = YES;
-	[self setNeedsDisplay];
 	[super touchesCancelled:touches withEvent:event];
 }
 
@@ -149,24 +151,28 @@
 		offset += offsetPixels;
 	}
 
-	// Adjust the bubble's frame to move it.
-	[bubbleView moveToX:lastTouchX];
-
 }
 
 - (void) calculateRatingWithTouch:(UITouch *)aTouch {
+
+	DC_LOG(@"Touch in window : %f x %f", [aTouch locationInView:aTouch.window].x, [aTouch locationInView:aTouch.window].y);
+	DC_LOG(@"Touch in control: %f x %f", [aTouch locationInView:self].x, [aTouch locationInView:self].y);
+	DC_LOG_LAYOUT(aTouch.view);
 
 	// Store the current touch X and handle when it's out of the controls range.
 	lastTouchX = [aTouch locationInView:self].x;
 	lastTouchX = fmin(controlWidth, lastTouchX);
 	lastTouchX = fmax(0, lastTouchX);
 
+	// Add the fuzz factor. This creates the area around each star's center where
+	// the users touch will still select it. Dividing by the segment size gives the
+	// new rating.
 	float newRating = floor((lastTouchX + fuzzFactor) / segmentSize);
 
 	// Adjust rating if allowing halves.
 	newRating = self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES ? newRating / 2 : newRating;
 
-	DC_LOG(@"Touch x: %f, offsetSize: %i, fuzzFactor: %f, rating: %f", lastTouchX, offsetPixels, fuzzFactor, newRating);
+	DC_LOG(@"Touch x: %i, offsetSize: %i, fuzzFactor: %f, rating: %f", lastTouchX, offsetPixels, fuzzFactor, newRating);
 
 	// If the value has changed, initiate a screen update.
 	if (self.rating != newRating) {

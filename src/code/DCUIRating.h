@@ -60,6 +60,8 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 
 }
 
+/** \name Properties */
+
 /**
  * The current value of the control. This value depends on the current setting of the scaleType; Set this value to have the control light up the necessary rating images.
  */
@@ -114,6 +116,8 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  * \li DC_SCALE_0_TO_10 - produces 0, 1, 2, 3, ... 10
  */
 @property (nonatomic) DCRATINGSCALE scaleType;
+
+/** \name Setting up */
 
 /**
  * Must be called after all properties have been set or the control will not function correctly.

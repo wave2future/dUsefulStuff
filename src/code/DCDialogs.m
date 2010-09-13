@@ -12,11 +12,11 @@
 
 @implementation DCDialogs
 
-+ (void) displayErrorOnView:(UIView * )view message:(NSString *)msg {
-	[DCDialogs displayErrorOnView:view message:msg title:@"Oops!"];
++ (void) displayMessage:(NSString *)msg {
+	[DCDialogs displayMessage:msg title:@"Oops!"];
 }
 
-+ (void) displayErrorOnView:(UIView * )view message:(NSString *)msg title:(NSString *)title {
++ (void) displayMessage:(NSString *)msg title:(NSString *)title {
 
 	NSLog(@"Displaying error %@", msg);
 

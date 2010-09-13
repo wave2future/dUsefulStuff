@@ -8,7 +8,7 @@
 
 #import "RatingTestController.h"
 #import "DCCommon.h"
-
+#import "DCDialogs.h"
 
 @implementation RatingTestController
 @synthesize rating5;
@@ -58,7 +58,15 @@
 	self.rating10.bubbleTextXOffset = -2;
 	self.rating10.bubbleTextYOffset = 5;
 	[self.rating10 setupControl];
-	
+
+}
+
+- (IBAction) alertButtonClicked:(id)button; {
+	[DCDialogs displayMessage:@"Hello this is an alert"];
+}
+
+- (IBAction) alert2ButtonClicked:(id)button; {
+	[DCDialogs displayMessage:@"Hello this is an alert" title:@"With a title"];
 }
 
 
