@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIControl.h>
-#import "DCUIRatingPopupBubble.h"
+#import "DCUIBubble.h"
 
 /**
  * What type of scale the control uses.
@@ -41,43 +41,34 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 	UIImage *offRatingImage;
 	UIImage *onRatingImage;
 	UIImage *halfRatingImage;
-	UIImage *bubbleBackgroundImage;
 	DCRATINGSCALE scaleType;
-	double rating;
-	UIFont *bubbleTextFont;
-	UIColor *bubbleTextColour;
-	int bubbleTextXOffset;
-	int bubbleTextYOffset;
+	float rating;
+	DCUIBubble *bubble;
+	NSNumberFormatter *decimalFormatter;
 
 	// Internal use for display and layout.
-	BOOL controlIsSetup;
 	int offsetPixels;
 	int segmentSize;
 	float fuzzFactor;
 	int lastTouchX;
-	int controlWidth;
-	DCUIRatingPopupBubble *bubbleView;
-
 }
 
 /** \name Properties */
 
 /**
+ * Defines the range of values that the control will produce. There are three options:
+ * \li DC_SCALE_0_TO_5 - produces 0, 1, 2, 3, 5
+ * \li DC_SCALE_0_TO_5_WITH_HALVES - produces 0, 0.5, 1, 1.5, ... 5
+ * \li DC_SCALE_0_TO_10 - produces 0, 1, 2, 3, ... 10
+ */
+@property (nonatomic) DCRATINGSCALE scaleType;
+
+/**
  * The current value of the control. This value depends on the current setting of the scaleType; Set this value to have the control light up the necessary rating images.
  */
-@property (nonatomic) double rating;
+@property (nonatomic) float rating;
 
-/**
- * The font to use on the popup bubble if it is being displayed.
- */
-@property (nonatomic, retain) UIFont *bubbleTextFont;
-
-/**
- * The image to use as a background for the popup bubble showing the value during touch operations.
- * The presence of this image will trigger the bubble's display when the user's finger is on the display.
- */
-@property (nonatomic, retain) UIImage *bubbleBackgroundImage;
-
+/** \name Icons */
 /**
  * The image to use for when a rating is on.
  */
@@ -93,36 +84,6 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  */
 @property (nonatomic, retain) UIImage *halfRatingImage;
 
-/**
- * The colour of the font on the rating bubble. Will default to black if not set.
- */
-@property (nonatomic, retain) UIColor *bubbleTextColour;
-
-/**
- * The number of pixels to shift the rating bubble text by in the horizontal direction. Negative numbers shift to the left.
- */
-@property (nonatomic) int bubbleTextXOffset;
-
-/**
- * The number of pixels to shift the rating bubble text by in the vertical direction. Negative numbers shift upwards.
- */
-@property (nonatomic) int bubbleTextYOffset;
-
-
-/**
- * Defines the range of values that the control will produce. There are three options:
- * \li DC_SCALE_0_TO_5 - produces 0, 1, 2, 3, 5
- * \li DC_SCALE_0_TO_5_WITH_HALVES - produces 0, 0.5, 1, 1.5, ... 5
- * \li DC_SCALE_0_TO_10 - produces 0, 1, 2, 3, ... 10
- */
-@property (nonatomic) DCRATINGSCALE scaleType;
-
-/** \name Setting up */
-
-/**
- * Must be called after all properties have been set or the control will not function correctly.
- */
-- (void) setupControl;
-
+@property (nonatomic,retain) DCUIBubble * bubble;
 
 @end

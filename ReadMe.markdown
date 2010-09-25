@@ -1,6 +1,13 @@
 # dUsefulStuff static library v0.0.5
 
 This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications. It's built as a set of static libraries, ready to go. Of course you can also use the source code as well.
+# Changes
+
+* Fixed a bug where the bubble on a DCUIRating was being drawn behind other controls.
+* Refactored the bubble out to a standalone class that can be used with any UIView based class. 
+* Renamed to DCUIBubble.
+* Refactored DCUIRating to take an instance of DCUIBubble rather that act as a facade. This has simplified DCUIRating.
+* Added DCCoreData to provide sme commonly used Core Data code.
 
 # Installing
 

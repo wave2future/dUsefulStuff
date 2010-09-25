@@ -12,6 +12,10 @@
 
 @interface DCUIRating ()
 - (void) calculateRatingWithTouch:(UITouch *)aTouch;
+- (void) popBubbleAtTouch:(UITouch *)atTouch;
+- (void) hideBubble;
+- (void) updateBubble;
+- (void) setupControl;
 @end
 
 @implementation DCUIRating
@@ -21,64 +25,48 @@
 @synthesize onRatingImage;
 @synthesize halfRatingImage;
 @synthesize scaleType;
-@synthesize bubbleBackgroundImage;
-@synthesize bubbleTextFont;
-@synthesize bubbleTextColour;
-@synthesize bubbleTextXOffset;
-@synthesize bubbleTextYOffset;
-
+@synthesize bubble;
 
 - (void) setupControl {
 
-	// Validate that all required properties are setup.
-	if (self.offRatingImage == nil || self.onRatingImage == nil) {
-		@throw [NSException exceptionWithName : @"InvalidSetupException" reason : @"Rating images have not been set. Both the off and on images must be present." userInfo : nil];
-	}
-
-	if (self.scaleType != DC_SCALE_0_TO_5 && self.halfRatingImage == nil) {
-		@throw [NSException exceptionWithName : @"InvalidSetupException" reason : @"Scale type requires a half rating image to be set." userInfo : nil];
-	}
-
-	DC_LOG(@"offRatingImage.size.width : %f", self.offRatingImage.size.width);
-	DC_LOG(@"offRatingImage.size.height: %f", self.offRatingImage.size.height);
-	DC_LOG(@"ScaleType                 : %i", self.scaleType);
-
+	DC_LOG(@"Doing final setup of control.");
+	
 	// Make sure the control cannot be auto sized.
 	self.autoresizingMask = UIViewAutoresizingNone;
 
 	// Setup common values.
 	offsetPixels = (int)offRatingImage.size.width;
-
+	DC_LOG(@"Offset pixels: %i", offsetPixels);
+	
 	// Work out the size of each segement in the display.
 	segmentSize = scaleType == DC_SCALE_0_TO_5 ? offsetPixels : offsetPixels / 2;
+	DC_LOG(@"Segment size: %i", segmentSize);
 
-	// Calculate a fuzz factor to require less precision.
+	// Calculate a fuzz factor around the users touch position.
 	float fuzz = self.offRatingImage.size.width * 0.7;
 	fuzzFactor = self.scaleType == DC_SCALE_0_TO_5 ? fuzz : fuzz / 2;
+	DC_LOG(@"Fuzz factor: %f", fuzzFactor);
 
 	// Adjust the size of the control to fit the new size.
-	controlWidth = self.offRatingImage.size.width * 5;
-	CGRect newSize = CGRectMake(self.frame.origin.x, self.frame.origin.y, controlWidth, self.offRatingImage.size.height);
+	CGRect newSize = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.offRatingImage.size.width * 5, self.offRatingImage.size.height);
 	DC_LOG(@"Updating component size from %f x %f to %f x %f", self.frame.size.width, self.frame.size.height, newSize.size.width, newSize.size.height);
 	self.frame = newSize;
 
-	// Create a subview for the popup bubble.
-	if (bubbleBackgroundImage != nil) {
-		DC_LOG(@"Adding bubble to control");
-		DC_LOG(@"bubbleBackgroundImage.size.width : %f", self.bubbleBackgroundImage.size.width);
-		DC_LOG(@"bubbleBackgroundImage.size.height: %f", self.bubbleBackgroundImage.size.height);
-		bubbleView = [[DCUIRatingPopupBubble alloc] initWithImage:self.bubbleBackgroundImage
-		                                                     font:bubbleTextFont
-		                                               textColour:bubbleTextColour
-		                                                  xOffset:bubbleTextXOffset
-		                                                  yOffset:bubbleTextYOffset
-		                                         displayAsDecimal:self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES];
-
-		// Dont add the bubble to the window as the window may not be set yet.
+	// If there is a bubble we need to add it to the parent window if it is not already a subview of it.
+	if (bubble != nil) {
+		DC_LOG(@"Adding the bubble to the parent window");
+		[self.window addSubview:self.bubble];
 	}
 
-	controlIsSetup = YES;
+}
 
+- (void) popBubbleAtTouch:(UITouch *)atTouch {
+	[self.bubble alignWithTough:atTouch];
+	self.bubble.hidden = NO;
+}
+
+- (void) hideBubble {
+	self.bubble.hidden = YES;
 }
 
 
@@ -86,21 +74,14 @@
 	DC_LOG(@"Starting touch event");
 	UITouch *aTouch = [[event touchesForView:self] anyObject];
 	[self calculateRatingWithTouch:aTouch];
-
-	// If there is a bubble we need to add it to the parent window if it is not already a subview of it.
-	if (bubbleView.window == nil) {
-		[self.window addSubview:bubbleView];
-	}
-	bubbleView.hidden = NO;
-
-	[bubbleView alignWithTough:aTouch];
+	[self popBubbleAtTouch:aTouch];
 	[super touchesBegan:touches withEvent:event];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {     // From UIResponder
 	DC_LOG(@"Ending touch event");
 	[self calculateRatingWithTouch:[[event touchesForView:self] anyObject]];
-	bubbleView.hidden = YES;
+	[self hideBubble];
 	[super touchesEnded:touches withEvent:event];
 }
 
@@ -109,21 +90,22 @@
 	UITouch *aTouch = [[event touchesForView:self] anyObject];
 	if (lastTouchX != [aTouch locationInView:self].x) {
 		[self calculateRatingWithTouch:aTouch];
-		[bubbleView alignWithTough:aTouch];
+		[self popBubbleAtTouch:aTouch];
 	}
 }
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event { // From UIResponder
 	DC_LOG(@"Touch cancelled event");
 	[self calculateRatingWithTouch:[[event touchesForView:self] anyObject]];
-	bubbleView.hidden = YES;
+	[self hideBubble];
 	[super touchesCancelled:touches withEvent:event];
 }
 
 - (void) drawRect:(CGRect)rect {                                        // From UIView
 
-	if (!controlIsSetup) {
-		@throw [NSException exceptionWithName : @"NotSetupException" reason : @"The setUpControl: method must be called before drawing first occurs" userInfo : nil];
+	// First check for the control had all setup precalculations done.
+	if (fuzzFactor == 0) {
+		[self setupControl];
 	}
 
 	// Adjust display rating so it's within the 0-5 range.
@@ -155,13 +137,14 @@
 
 - (void) calculateRatingWithTouch:(UITouch *)aTouch {
 
+	DC_LOG_LAYOUT(aTouch.window);
 	DC_LOG(@"Touch in window : %f x %f", [aTouch locationInView:aTouch.window].x, [aTouch locationInView:aTouch.window].y);
-	DC_LOG(@"Touch in control: %f x %f", [aTouch locationInView:self].x, [aTouch locationInView:self].y);
 	DC_LOG_LAYOUT(aTouch.view);
+	DC_LOG(@"Touch in control: %f x %f", [aTouch locationInView:self].x, [aTouch locationInView:self].y);
 
 	// Store the current touch X and handle when it's out of the controls range.
-	lastTouchX = [aTouch locationInView:self].x;
-	lastTouchX = fmin(controlWidth, lastTouchX);
+	lastTouchX = (int)[aTouch locationInView:self].x;
+	lastTouchX = fmin(self.frame.size.width, lastTouchX);
 	lastTouchX = fmax(0, lastTouchX);
 
 	// Add the fuzz factor. This creates the area around each star's center where
@@ -173,21 +156,41 @@
 	newRating = self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES ? newRating / 2 : newRating;
 
 	DC_LOG(@"Touch x: %i, offsetSize: %i, fuzzFactor: %f, rating: %f", lastTouchX, offsetPixels, fuzzFactor, newRating);
-
-	// If the value has changed, initiate a screen update.
 	if (self.rating != newRating) {
 		self.rating = newRating;
-		bubbleView.value = newRating;
+		[self updateBubble];
 		[self setNeedsDisplay];
 	}
 
 }
 
+- (void) updateBubble {
+	if (self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES) {
+		
+		//If we are displaying a decimal and there is no formatter yet then create one.
+		if (decimalFormatter == nil) {
+			DC_LOG(@"Creating formatter");
+			decimalFormatter = [[NSNumberFormatter alloc] init];
+			[decimalFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+			[decimalFormatter setMinimumFractionDigits:1];
+			[decimalFormatter setMaximumFractionDigits:1];
+		}
+
+		[self.bubble setValue:[decimalFormatter stringFromNumber:[NSNumber numberWithFloat:self.rating]]];
+
+	} else {
+		[self.bubble setValue:[NSString stringWithFormat:@"%i", (int)self.rating]];
+	}
+
+}
+
+
 - (void) dealloc {
 	self.offRatingImage = nil;
 	self.onRatingImage = nil;
 	self.halfRatingImage = nil;
-	DC_DEALLOC(bubbleView);
+	DC_DEALLOC(bubble);
+	DC_DEALLOC(decimalFormatter);
 	[super dealloc];
 }
 

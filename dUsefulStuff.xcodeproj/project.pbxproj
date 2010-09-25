@@ -21,9 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		65001C9A117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65001C9B117C87F500C6ACA8 /* DCUIRatingPopupBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */; };
-		65001DF4117F32CA00C6ACA8 /* DCUIRatingPopupBubbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* DCUIRatingPopupBubbleTests.m */; };
+		65001C9A117C87F500C6ACA8 /* DCUIBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIBubble.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65001C9B117C87F500C6ACA8 /* DCUIBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIBubble.m */; };
+		65001DF4117F32CA00C6ACA8 /* DCUIBubbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */; };
 		65269779116EF91E003C63D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269778116EF91E003C63D3 /* CoreGraphics.framework */; };
 		65269784116EF983003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
 		652697A7116EF98B003C63D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269778116EF91E003C63D3 /* CoreGraphics.framework */; };
@@ -42,6 +42,9 @@
 		656B793511796FE000F19C5D /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
 		6576D1C4121C0CAF00CBE1B0 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */; };
 		6576D211121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */; };
+		65896F1F1244F9210089E207 /* UIColor+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */; };
+		65896F201244F9210089E207 /* UIColor+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */; };
+		65896F461244FC320089E207 /* UIColor+dUsefulStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */; };
 		659D2BEE117748000056AA74 /* RatingTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650357B3116A1BAA00202897 /* RatingTest.xib */; };
 		659D2BEF117748010056AA74 /* RatingTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357B5116A1BAA00202897 /* RatingTestAppDelegate.m */; };
 		659D2BF0117748030056AA74 /* RatingTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357B7116A1BAA00202897 /* RatingTestController.m */; };
@@ -65,6 +68,8 @@
 		65AEB2CA122A9A3300E2C83E /* docset.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65A116C5B89007AB3BA /* docset.plist */; };
 		65AEB2CB122A9A3900E2C83E /* framework.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65CD37711225288D0061EEBF /* framework.plist */; };
 		65AEB2CC122A9A4400E2C83E /* doxygen-appledoc.config in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65B116C5B89007AB3BA /* doxygen-appledoc.config */; };
+		65B182F1124DD7CC00A789C0 /* UIView+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */; };
+		65B182F2124DD7CC00A789C0 /* UIView+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */; };
 		65CD37721225288D0061EEBF /* framework.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CD37711225288D0061EEBF /* framework.plist */; };
 		65CD3930122551E90061EEBF /* DCDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CD392E122551E90061EEBF /* DCDialogs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65CD3931122551E90061EEBF /* DCDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD392F122551E90061EEBF /* DCDialogs.m */; };
@@ -112,9 +117,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingPopupBubble.h; path = src/code/DCUIRatingPopupBubble.h; sourceTree = "<group>"; };
-		65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingPopupBubble.m; path = src/code/DCUIRatingPopupBubble.m; sourceTree = "<group>"; };
-		65001DB7117F2C8700C6ACA8 /* DCUIRatingPopupBubbleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingPopupBubbleTests.m; path = src/tests/DCUIRatingPopupBubbleTests.m; sourceTree = "<group>"; };
+		65001C96117C87F500C6ACA8 /* DCUIBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIBubble.h; path = src/code/DCUIBubble.h; sourceTree = "<group>"; };
+		65001C97117C87F500C6ACA8 /* DCUIBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIBubble.m; path = src/code/DCUIBubble.m; sourceTree = "<group>"; };
+		65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIBubbleTests.m; path = src/tests/DCUIBubbleTests.m; sourceTree = "<group>"; };
 		6503579B116A1B8100202897 /* DCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCommon.h; path = src/code/DCCommon.h; sourceTree = "<group>"; };
 		6503579C116A1B8100202897 /* DCUIRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRating.h; path = src/code/DCUIRating.h; sourceTree = "<group>"; };
 		6503579D116A1B8100202897 /* DCUIRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRating.m; path = src/code/DCUIRating.m; sourceTree = "<group>"; };
@@ -156,8 +161,13 @@
 		6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = src/tests/GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefulStuff simulator unit tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657D8F731170B4E60044EF4F /* installDocSet */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = installDocSet; sourceTree = "<group>"; };
+		65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+dUsefulStuff.h"; sourceTree = "<group>"; };
+		65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+dUsefulStuff.m"; sourceTree = "<group>"; };
+		65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+dUsefulStuffTests.m"; sourceTree = "<group>"; };
 		659D2BE5117747BA0056AA74 /* dUsefullStuff App Test Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefullStuff App Test Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A0C68F116EF534003AC854 /* libdUsefulStuff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdUsefulStuff.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+dUsefulStuff.h"; sourceTree = "<group>"; };
+		65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+dUsefulStuff.m"; sourceTree = "<group>"; };
 		65CD37711225288D0061EEBF /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = framework.plist; sourceTree = "<group>"; };
 		65CD392E122551E90061EEBF /* DCDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDialogs.h; path = src/code/DCDialogs.h; sourceTree = "<group>"; };
 		65CD392F122551E90061EEBF /* DCDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDialogs.m; path = src/code/DCDialogs.m; sourceTree = "<group>"; };
@@ -278,12 +288,16 @@
 				65CD392F122551E90061EEBF /* DCDialogs.m */,
 				6503579C116A1B8100202897 /* DCUIRating.h */,
 				6503579D116A1B8100202897 /* DCUIRating.m */,
-				65001C96117C87F500C6ACA8 /* DCUIRatingPopupBubble.h */,
-				65001C97117C87F500C6ACA8 /* DCUIRatingPopupBubble.m */,
+				65001C96117C87F500C6ACA8 /* DCUIBubble.h */,
+				65001C97117C87F500C6ACA8 /* DCUIBubble.m */,
 				6503579E116A1B8100202897 /* NSDictionary+dUsefulStuff.h */,
 				6503579F116A1B8100202897 /* NSDictionary+dUsefulStuff.m */,
 				650357A0116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.h */,
 				650357A1116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.m */,
+				65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */,
+				65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */,
+				65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */,
+				65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -301,13 +315,14 @@
 			children = (
 				650357AA116A1BAA00202897 /* blank_10_x_10.png */,
 				650357AC116A1BAA00202897 /* DCCommonTests.m */,
-				65001DB7117F2C8700C6ACA8 /* DCUIRatingPopupBubbleTests.m */,
+				65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */,
 				650357AD116A1BAA00202897 /* DCUIRatingTests.m */,
 				650357AE116A1BAA00202897 /* dUsefulStuff unit tests-Info.plist */,
 				6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */,
 				650357B0116A1BAA00202897 /* NSDictionary+dUsefulStuffTests.m */,
 				650357B1116A1BAA00202897 /* NSMutableDictionary+dUsefulStuffTests.m */,
 				65F21665116C677F0086F808 /* Rating tests */,
+				65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -393,9 +408,11 @@
 				65A0C681116EF534003AC854 /* DCUIRating.h in Headers */,
 				65A0C682116EF534003AC854 /* NSDictionary+dUsefulStuff.h in Headers */,
 				65A0C683116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.h in Headers */,
-				65001C9A117C87F500C6ACA8 /* DCUIRatingPopupBubble.h in Headers */,
+				65001C9A117C87F500C6ACA8 /* DCUIBubble.h in Headers */,
 				65CD3930122551E90061EEBF /* DCDialogs.h in Headers */,
 				65568E991233B7C400BC02C3 /* DCCoreData.h in Headers */,
+				65896F1F1244F9210089E207 /* UIColor+dUsefulStuff.h in Headers */,
+				65B182F1124DD7CC00A789C0 /* UIView+dUsefulStuff.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,8 +546,9 @@
 				653AD385116E153F006E2268 /* DCUIRatingTests.m in Sources */,
 				653AD386116E153F006E2268 /* NSDictionary+dUsefulStuffTests.m in Sources */,
 				653AD387116E153F006E2268 /* NSMutableDictionary+dUsefulStuffTests.m in Sources */,
-				65001DF4117F32CA00C6ACA8 /* DCUIRatingPopupBubbleTests.m in Sources */,
+				65001DF4117F32CA00C6ACA8 /* DCUIBubbleTests.m in Sources */,
 				6576D211121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m in Sources */,
+				65896F461244FC320089E207 /* UIColor+dUsefulStuffTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,9 +569,11 @@
 				65A0C685116EF534003AC854 /* DCUIRating.m in Sources */,
 				65A0C686116EF534003AC854 /* NSDictionary+dUsefulStuff.m in Sources */,
 				65A0C687116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.m in Sources */,
-				65001C9B117C87F500C6ACA8 /* DCUIRatingPopupBubble.m in Sources */,
+				65001C9B117C87F500C6ACA8 /* DCUIBubble.m in Sources */,
 				65CD3931122551E90061EEBF /* DCDialogs.m in Sources */,
 				65568E9A1233B7C400BC02C3 /* DCCoreData.m in Sources */,
+				65896F201244F9210089E207 /* UIColor+dUsefulStuff.m in Sources */,
+				65B182F2124DD7CC00A789C0 /* UIView+dUsefulStuff.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +714,7 @@
 					"-framework",
 					UIKit,
 					"-ObjC",
+					"-all_load",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefullStuff App Test Simulator";
@@ -720,6 +741,7 @@
 					"-framework",
 					UIKit,
 					"-ObjC",
+					"-all_load",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefullStuff App Test Simulator";

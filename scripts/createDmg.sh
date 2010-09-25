@@ -20,6 +20,7 @@ fi
 
 assertSet DMG_FILE
 assertSet BUILD_DIR
+assertSet BUILD_CONFIGURATION
 
 echo "Copying docset ..."
 mv -vf "$BUILD_DIR/appledoc/docset" "$ARTIFACT_DIR/au.com.dhc.$PROJECT_NAME.docset"
@@ -29,7 +30,7 @@ echo "Copying markdown documentation from root of project ..."
 cp -v *.markdown "$ARTIFACT_DIR"
 
 echo "Copying other files copied by build ..."
-find "$BUILD_DIR/Release-iphoneos" -type f -not -name "*.a" -depth 1 -exec cp -v "{}" "$ARTIFACT_DIR" \;
+find "$BUILD_DIR/$BUILD_CONFIGURATION-iphoneos" -type f -not -name "*.a" -depth 1 -exec cp -v "{}" "$ARTIFACT_DIR" \;
 
 echo Building dmg of project ...
 hdiutil create "$DMG_FILE" -ov -srcdir "$ARTIFACT_DIR" -volname "$PRODUCT_NAME v$CURRENT_PROJECT_VERSION" -attach

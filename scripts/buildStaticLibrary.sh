@@ -31,6 +31,7 @@ assertSet DEVICE_VALID_ARCHS
 assertSet SIMULATOR_SDK
 assertSet SIMULATOR_ARCHS
 assertSet SIMULATOR_VALID_ARCHS
+assertSet BUILD_CONFIGURATION
 
 # Moves the  <user>.pbxuser file out of the way so that command line compiles 
 # will work without error. Otherwise it's presence triggers an exception.
@@ -91,7 +92,7 @@ compile
 
 echo "Combining libraries..."
 mkdir "$BUILD_DIR/lib"
-lipo -create "${PROJECT_DIR}/build/Release-iphoneos/lib${PROJECT_NAME}.a" "${PROJECT_DIR}/build/Release-iphonesimulator/lib${PROJECT_NAME}.a" -o "$BUILD_DIR/lib/$PROJECT_NAME"
+lipo -create "${PROJECT_DIR}/build/$BUILD_CONFIGURATION-iphoneos/lib${PROJECT_NAME}.a" "${PROJECT_DIR}/build/$BUILD_CONFIGURATION-iphonesimulator/lib${PROJECT_NAME}.a" -o "$BUILD_DIR/lib/$PROJECT_NAME"
 
 echo "Static library created at $BUILD_DIR/lib/$PROJECT_NAME"
 

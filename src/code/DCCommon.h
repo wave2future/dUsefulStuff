@@ -17,17 +17,26 @@
  * can be quite verbose without worrying about slowing the code down.
  */
 #ifdef DC_DEBUG
+
 #define DC_LOG(s, ...) \
    NSLog(@"%@:(%d) %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], \
          __LINE__, \
          [NSString stringWithFormat:(s), ## __VA_ARGS__])
+
 #define DC_LOG_LAYOUT(obj) \
-	UIView *_dObj = (UIView *) obj; \
-	NSLog(@"Layout for \"" # obj "\" object: position= %i x %i, size= %i x %i", (int)_dObj.frame.origin.x, (int)_dObj.frame.origin.y, (int)_dObj.frame.size.width, (int)_dObj.frame.size.height);
+	do { \
+		UIView *_dObj = (UIView *) obj; \
+		NSLog(@"%@:(%d) Layout for \"" # obj "\" position= %i x %i, size= %i x %i", \
+			[[NSString stringWithUTF8String:__FILE__] lastPathComponent], \
+			__LINE__, \
+			(int)_dObj.frame.origin.x, (int)_dObj.frame.origin.y, (int)_dObj.frame.size.width, (int)_dObj.frame.size.height); \
+	} while (FALSE);
 #else
+
 // Effectively remove the logging.
 #define DC_LOG(s, ...)
 #define DC_LOG_LAYOUT(obj)
+
 #endif
 
 #pragma mark Memory handling
@@ -60,15 +69,20 @@
 		} \
 	} while (FALSE); \
    if (vName != nil) { \
+		if ([vName retainCount] == 0) { \
+			DC_LOG(@"ERROR !!!!! " # vName " retain count == 0") \
+		} \
 		[vName release]; \
 		vName = nil; \
 	}
 #else
+
 #define DC_DEALLOC(vName) \
    if (vName != nil) { \
 		[vName release]; \
 		vName = nil; \
 	}
+
 #endif /* ifdef DC_LOG_DEALLOCS */
 
 #pragma mark String handling

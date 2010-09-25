@@ -22,6 +22,7 @@ fi
 assertSet ARTIFACT_DIR
 assertSet PROJECT_NAME
 assertSet CURRENT_PROJECT_VERSION
+assertSet BUILD_CONFIGURATION
 
 echo "Creating artifact directory ..."
 mkdir -p $ARTIFACT_DIR
@@ -36,7 +37,7 @@ mkdir -p $FRAMEWORK_DIR/Versions/$CURRENT_PROJECT_VERSION/Headers
 
 # Copying files
 echo "Copying files into place ..."
-find $BUILD_DIR/Release-iphoneos -name "*.h" -exec cp -v "{}" $FRAMEWORK_DIR/Versions/$CURRENT_PROJECT_VERSION/Headers \;
+find $BUILD_DIR/$BUILD_CONFIGURATION-iphoneos -name "*.h" -exec cp -v "{}" $FRAMEWORK_DIR/Versions/$CURRENT_PROJECT_VERSION/Headers \;
 cp -v "$BUILD_DIR/lib/$PROJECT_NAME" $FRAMEWORK_DIR/Versions/$CURRENT_PROJECT_VERSION
 
 echo "Creating framework symlinks..."  
