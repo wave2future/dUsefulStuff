@@ -20,16 +20,19 @@
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
 }
 
+/** \name Properties */
 /**
  * Gives access to the managed object context.
  */
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
+/** \name Constructors */
 /**
- * Constructor which accepts the name of the sqlite database that will be used.
+ * Constructor which accepts the name of the sqlite database that will be used. This assembles all the interal objects in order to work with that database.
  */
 - (id) initWithDBName:(NSString *)aName;
 
+/** \name Finalisation */
 /**
  * Call this from your application delegate to ensure correct shutdown. This ensures that any changes left in the managed object context are saved to the database.
  */

@@ -25,7 +25,7 @@
 	int textOffsetYPixels;
 }
 
-/** \name Displayed value */
+/** \name Properties */
 
 /**
  * The colour to paint the value with.
@@ -54,8 +54,6 @@
  */
 @property (nonatomic, retain) NSNumberFormatter *decimalFormatter;
 
-/** \name Background */
-
 /**
  * If an image is not supplied, this is the colour to paint the background with.
  */
@@ -65,14 +63,6 @@
  * If any image is not supplied this is the colour of the border for the background.
  */
 @property (nonatomic, retain) UIColor *borderColor;
-
-/** \name Events */
-
-/**
- * Called DCUIRating control to move this control to it's new horizontal position.
- * \param aTouch the touch event that triggered the move.
- */
-- (void) alignWithTough:(UITouch *)aTouch;
 
 /** \name Constructors */
 /**
@@ -85,6 +75,14 @@
  * Creates a bubble which uses an image as a background. This image can contain transparent areas. backgroundColor and borderColor values are ignored if this constructor is used.
  */
 - (id) initWithBackgroundImage:(UIImage *)image;
+
+/** \name Events */
+
+/**
+ * Called DCUIRating control to move this control to it's new horizontal position.
+ * \param aTouch the touch event that triggered the move.
+ */
+- (void) alignWithTough:(UITouch *)aTouch;
 
 /** \name Setting the value */
 

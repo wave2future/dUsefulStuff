@@ -16,6 +16,7 @@
 
 }
 
+/** \name Alerts */
 /**
  * Displays a standard error notification. The dialog will have a single "ok" button.
  * \param msg the error text to display.
