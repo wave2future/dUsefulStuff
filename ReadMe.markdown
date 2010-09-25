@@ -6,8 +6,9 @@ This library is intended as a container of useful defines and classes which can 
 * Fixed a bug where the bubble on a DCUIRating was being drawn behind other controls.
 * Refactored the bubble out to a standalone class that can be used with any UIView based class. 
 * Renamed to DCUIBubble.
+* Added the ability to a DCUIBubble to be able to draw a rounded rectangle as a background.
 * Refactored DCUIRating to take an instance of DCUIBubble rather that act as a facade. This has simplified DCUIRating.
-* Added DCCoreData to provide sme commonly used Core Data code.
+* Added DCCoreData to provide some commonly used Core Data code.
 
 # Installing
 
@@ -64,7 +65,7 @@ This header fine contains the following useful defines :
 
 ![Screen dump of rating controller](http://drekka.github.com/images/screendump1.png)
 
-This class can be used on iPhone displays to produce a star rating control similar to what you can see in Tunes. It produces a single horizontal bar of 5 images across the display. The user can tap or swipe across the bar to set the rating value they want. In addition, it can also display a popup like bubble showing the current value of the control when the users finger is touching it. This is useful for instant feed back because he users finger often obscures the control and therefore the current value.
+This class can be used on iPhone displays to produce a star rating control similar to what you can see in Tunes. It produces a single horizontal bar of 5 images across the display. The user can tap or swipe across the bar to set the rating value they want. In addition, you can create and add a DCUIBubble to it which will display the current value of the rating whenever the users finger is on the display. This is useful for instant feed back because he users finger often obscures the control and therefore the current value.
 
 It's core features include :
 
@@ -72,7 +73,6 @@ It's core features include :
 * Provided star images but can be configured with any images you like.
 * Resizes itself to match the width and height of the supplied images.
 * Can popup a bubble above the users finger displaying the newly selected rating.
-* Bubble background, font and colour is all configurable.
 
 ### Using DCUIRating
 
@@ -99,20 +99,32 @@ It's core features include :
 			
 			// Load the images for the active and inactive rating symbols.
 			NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"star" ofType:@"png"];
-			UIImage *myNoRatingImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
+			UIImage *myNoRatingImage = [[UIImage alloc] initWithContentsOfFile:imagePath];
 		
 			imagePath = [[NSBundle mainBundle] pathForResource:@"star-active" ofType:@"png"];
-			UIImage *myRatingImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
+			UIImage *myRatingImage = [[UIImage alloc] initWithContentsOfFile:imagePath];
 		
-			// Now setup the rating control. First the properties.
+			// Now setup the rating control.
 			self.ratingControl.onRatingImage = myRatingImage;
 			self.ratingControl.offRatingImage = myNoRatingImage;
-			self.ratingControl.bubbleBackgroundImage = myBubbleImage;
 			self.ratingControl.scaleType = DC_SCALE_0_TO_5;
+
+			[myRatingImage release];
+			[myNoRatingImage release];
 			
-			// Now tell the control it can setup.
-			[self.ratingControl setupControl];
+			//Now add a bubble.
+			imagePath = [[NSBundle mainBundle] pathForResource:@"bubble" ofType:@"png"];
+			UIImage *myBubbleImage = [[UIImage alloc] initWithContentsOfFile:imagePath];
+
+			DCUIBubble * bubble = [[DCUIBubble alloc] initWithBackgroundImage:myBubbleImage];
+			bubble.textOffsetXPixels = -2;
+			bubble.textOffsetYPixels = -9;
+			bubble.fontColor = [UIColor redColor];
 			
+			self.ratingControl.bubble = bubble;
+
+			[bubble release];
+			[myBubbleImage release];
 		}
 
 1. The last thing to do is to add the the control to your xib file. Open Interface Builder and the view. 
@@ -121,10 +133,56 @@ It's core features include :
 1. Size and position the control. Note you won't see anything because Interface Builder does not see it as a control and therefore does not draw it. Also note that an instance of DCUIRating will resize itself to fit the height and 5 times the width of the inactive image you set in the controller code.
 1. Lastly, make sure that the control is connected to the controllers IBOutlet.
 
+## DCUIBubble
 
-## NSDictionary + dUsefulStuff and NSMutableDictionary + dUsefulStuff
+This class can be used to display values from another control. generally speakng it's designed to be a popup bubble which appears when the user presses their finger against a control. Here's a example of how your control can display a DCUIBubble
+
+		- (void) popBubbleAtTouch:(UITouch *)atTouch {
+			[self.bubble alignWithTough:atTouch];
+			self.bubble.hidden = NO;
+		}
+		
+		- (void) hideBubble {
+			self.bubble.hidden = YES;
+		}
+				
+		- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event { // From UIResponder
+			UITouch *aTouch = [[event touchesForView:self] anyObject];
+			[self popBubbleAtTouch:aTouch];
+			[super touchesBegan:touches withEvent:event];
+		}
+		
+		- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {     // From UIResponder
+			[self hideBubble];
+			[super touchesEnded:touches withEvent:event];
+		}
+		
+		- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {     // From UIResponder
+			UITouch *aTouch = [[event touchesForView:self] anyObject];
+			[self popBubbleAtTouch:aTouch];
+			}
+		}
+		
+		- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event { // From UIResponder
+			[self hideBubble];
+			[super touchesCancelled:touches withEvent:event];
+		}
+ 
+Setting the bubbles value is simple. here's an example which sets it to an integer value:
+
+		[self.bubble setValue:[NSString stringWithFormat:@"%i", 5];
+
+## NSDictionary+dUsefulStuff and NSMutableDictionary+dUsefulStuff
 
 These two are categories which allow you to store and retrieve dictionary entries based on the integer primitive.This saves having to do constant boxing and unboxing of values when you want to index based on a number .
+
+## UIColor+dUsefulStuff
+
+This category adds a colour comparison function which can be used to test UIColor instances for equality.
+
+## UIView+dUsefulStuff
+
+This category adds a method for drawing rounded rectangles on the view.
 
 ## DCDialogs
 
