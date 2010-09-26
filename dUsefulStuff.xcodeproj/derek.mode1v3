@@ -295,13 +295,14 @@
 								<string>0867D691FE84028FC02AAC07</string>
 								<string>08FB77AEFE84172EC02AAC07</string>
 								<string>650357A9116A1B8600202897</string>
+								<string>65F21665116C677F0086F808</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
-									<integer>4</integer>
+									<integer>39</integer>
+									<integer>22</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -359,7 +360,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>650FC178124F67DF00876A6C</string>
+										<string>650FC19A124F6B5600876A6C</string>
 										<key>history</key>
 										<array>
 											<string>6564F750116F4E8B00AF91EF</string>
@@ -422,7 +423,7 @@
 											<string>650FC14D124F642F00876A6C</string>
 											<string>650FC173124F678F00876A6C</string>
 											<string>650FC176124F67DF00876A6C</string>
-											<string>650FC177124F67DF00876A6C</string>
+											<string>650FC179124F68F300876A6C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -480,9 +481,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>650FC151124F642F00876A6C</string>
+				<string>650FC195124F6A9E00876A6C</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>650FC152124F642F00876A6C</string>
+				<string>650FC196124F6A9E00876A6C</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -603,7 +604,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>307193823.45416898</real>
+	<real>307194710.57011199</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -620,11 +621,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>650FC160124F65E600876A6C</string>
-		<string>650FC155124F642F00876A6C</string>
 		<string>659935E51168C10B006DE3C9</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/derek/projects/dUsefulStuff/dUsefulStuff.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -705,7 +702,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>659935E51168C10B006DE3C9</string>
-				<string>650FC13F124F641200876A6C</string>
+				<string>650FC197124F6A9E00876A6C</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
