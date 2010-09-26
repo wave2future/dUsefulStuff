@@ -27,17 +27,30 @@
 @synthesize scaleType;
 @synthesize bubble;
 
+-(id) initWithCoder:(NSCoder *)aDecoder {
+	self = [super initWithCoder:aDecoder];
+	if (self) {
+		self.hidden = YES;
+	}
+	return self;
+}
+
+- (id) initWithFrame:(CGRect)frame {
+	self = [super initWithFrame:frame];
+	if (self) {
+		self.hidden = YES;
+	}
+	return self;
+}
+
 - (void) setupControl {
 
-	DC_LOG(@"Doing final setup of control.");
-	
-	// Make sure the control cannot be auto sized.
-	self.autoresizingMask = UIViewAutoresizingNone;
+	DC_LOG(@"Doing final setup of control %@", self);
 
 	// Setup common values.
 	offsetPixels = (int)offRatingImage.size.width;
 	DC_LOG(@"Offset pixels: %i", offsetPixels);
-	
+
 	// Work out the size of each segement in the display.
 	segmentSize = scaleType == DC_SCALE_0_TO_5 ? offsetPixels : offsetPixels / 2;
 	DC_LOG(@"Segment size: %i", segmentSize);
@@ -51,6 +64,9 @@
 	CGRect newSize = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.offRatingImage.size.width * 5, self.offRatingImage.size.height);
 	DC_LOG(@"Updating component size from %f x %f to %f x %f", self.frame.size.width, self.frame.size.height, newSize.size.width, newSize.size.height);
 	self.frame = newSize;
+
+	self.hidden = NO;
+	[self setNeedsDisplay];
 
 }
 
@@ -97,34 +113,37 @@
 
 - (void) drawRect:(CGRect)rect {                                        // From UIView
 
-	// First check for the control had all setup precalculations done.
+	DC_LOG(@"Drawing rating control: %@", self);
+
+	// First check for the control had all setup precalculations done. If not, then queue
+	// a setup call and exit.
 	if (fuzzFactor == 0) {
-		[self setupControl];
+		[self performSelector:@selector(setupControl)withObject:self afterDelay:0];
+		return;
 	}
 
 	// Adjust display rating so it's within the 0-5 range.
-	float scaledRating = self.scaleType == DC_SCALE_0_TO_10 ? self.rating / 2.0 : self.rating;
+	int lastActiveImageIndex = self.scaleType == DC_SCALE_0_TO_10 ? self.rating / 2.0 : self.rating;
+	DC_LOG(@"Last active image index %i", lastActiveImageIndex);
 
-	int offset = 0;
+	UIImage *image;
 	for (int i = 0; i < 5; i++) {
-		if (i < scaledRating) {
+		if (i < lastActiveImageIndex) {
 			// Use half ratings if 0-5 with halves or 0-10 and the next whole image index is grater than the rating.
-			if (self.scaleType != DC_SCALE_0_TO_5 && i + 1 > scaledRating) {
-				DC_LOG(@"Drawing half rating at %i", offset);
-				[self.halfRatingImage drawAtPoint:CGPointMake(offset, 0)];
+			if (self.scaleType != DC_SCALE_0_TO_5 && i + 1 > lastActiveImageIndex) {
+				DC_LOG(@"Drawing half rating at %i", i * offsetPixels);
+				image = self.halfRatingImage;
 			} else {
-				DC_LOG(@"Drawing full rating at %i", offset);
-				[self.onRatingImage drawAtPoint:CGPointMake(offset, 0)];
+				DC_LOG(@"Drawing full rating at %i", i * offsetPixels);
+				image = self.onRatingImage;
 			}
-
 		} else {
 			// Images for the off part of the rating.
-			DC_LOG(@"Drawing inactive rating at %i", offset);
-			[self.offRatingImage drawAtPoint:CGPointMake(offset, 0)];
+			DC_LOG(@"Drawing inactive rating at %i", i * offsetPixels);
+			image = self.offRatingImage;
 		}
+		[image drawAtPoint:CGPointMake(i * offsetPixels, 0)];
 
-		// Advance the offset to the next position depending on the size of the images.
-		offset += offsetPixels;
 	}
 
 }
@@ -160,8 +179,8 @@
 
 - (void) updateBubble {
 	if (self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES) {
-		
-		//If we are displaying a decimal and there is no formatter yet then create one.
+
+		// If we are displaying a decimal and there is no formatter yet then create one.
 		if (decimalFormatter == nil) {
 			DC_LOG(@"Creating formatter");
 			decimalFormatter = [[NSNumberFormatter alloc] init];
