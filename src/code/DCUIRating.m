@@ -52,12 +52,6 @@
 	DC_LOG(@"Updating component size from %f x %f to %f x %f", self.frame.size.width, self.frame.size.height, newSize.size.width, newSize.size.height);
 	self.frame = newSize;
 
-	// If there is a bubble we need to add it to the parent window if it is not already a subview of it.
-	if (bubble != nil) {
-		DC_LOG(@"Adding the bubble to the parent window");
-		[self.window addSubview:self.bubble];
-	}
-
 }
 
 - (void) popBubbleAtTouch:(UITouch *)atTouch {

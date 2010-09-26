@@ -91,6 +91,7 @@
  */
 - (void) commonInit {
 
+	DC_LOG(@"Executing common initialisation");
 	self.userInteractionEnabled = NO;
 	self.backgroundColor = [UIColor clearColor];
 	self.hidden = YES;
@@ -103,6 +104,7 @@
 
 	// Add the label as a subview of this control.
 	[self addSubview:valueLabel];
+ 
 }
 
 /**
@@ -132,6 +134,13 @@
 }
 
 - (void) alignWithTough:(UITouch *)aTouch {
+
+	//If the bubble is not in the view hirachy then add it to the current window.
+	//This effectively adds to to the top of the z-order.
+	if (self.window == nil) {
+		DC_LOG(@"Adding bubble to window");
+		[[[UIApplication sharedApplication] keyWindow] addSubview:self];
+	}
 
 	// Tell the controls superview to calculate it's origin in main window.
 	CGPoint controlOriginInWindow = [aTouch.view.superview convertPoint:aTouch.view.frame.origin toView:nil];
