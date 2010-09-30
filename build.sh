@@ -14,7 +14,7 @@ set -o nounset
 # Set build related values.
 PRODUCT_NAME=dUsefulStuff
 PROJECT_NAME=$PRODUCT_NAME
-CURRENT_PROJECT_VERSION=0.0.5
+CURRENT_PROJECT_VERSION=0.0.6
 SRC=src/code
 
 BUILD_TARGET="Build Library"
