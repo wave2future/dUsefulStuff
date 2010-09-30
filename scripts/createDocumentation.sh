@@ -24,6 +24,7 @@ assertSet PROJECT_NAME
 assertSet BUILD_DIR
 assertSet SRC
 
+DOCSETUTIL_PATH=${DOCSETUTIL_PATH=/Developer/usr/bin/docsetutil}
 APPLEDOC_DIR=${APPLEDOC_DIR=$EXTERNAL_DIR/appledoc}
 APPLEDOC=${APPLEDOC=$APPLEDOC_DIR/build/Release/appledoc}
 DOXYGEN=${DOXYGEN=$TOOLS_DIR/Doxygen.app/Contents/Resources/doxygen}
@@ -47,6 +48,6 @@ fi
 
 echo "Building appledoc documentation ..."
 
-$APPLEDOC -p "$PROJECT_NAME" --input $SRC --output "$BUILD_DIR/appledoc" -t "$APPLEDOC_DIR/Templates" -d $DOXYGEN -c doxygen-appledoc.config --xhtml-bordered-issues --docset --docplist docset.plist
+$APPLEDOC -p "$PROJECT_NAME" --input $SRC --output "$BUILD_DIR/appledoc" -t "$APPLEDOC_DIR/Templates" -d $DOXYGEN -c doxygen-appledoc.config --xhtml-bordered-issues --docutil $DOCSETUTIL_PATH --docset --docplist docset.plist
 
 
