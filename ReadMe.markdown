@@ -1,14 +1,6 @@
-# dUsefulStuff static library v0.0.5
+# dUsefulStuff static library
 
 This library is intended as a container of useful defines and classes which can make life easier when developing iPhone applications. It's built as a set of static libraries, ready to go. Of course you can also use the source code as well.
-# Changes
-
-* Fixed a bug where the bubble on a DCUIRating was being drawn behind other controls.
-* Refactored the bubble out to a standalone class that can be used with any UIView based class. 
-* Renamed to DCUIBubble.
-* Added the ability to a DCUIBubble to be able to draw a rounded rectangle as a background.
-* Refactored DCUIRating to take an instance of DCUIBubble rather that act as a facade. This has simplified DCUIRating.
-* Added DCCoreData to provide some commonly used Core Data code.
 
 # Installing
 
@@ -192,7 +184,7 @@ Class of static methods for displaying messages to the user. Just takes some pai
 
 In the **scripts** directory there are a number of scripts which can be used for building static libraries and documentation from the command line. To see an example how they can be used look at the **build.sh** file in the source root of this project. Each script is a distinct part or phase of a build process. Here users of Ant or Maven will be familiar with what I am talking about. These scripts are designed to be used either from a command line or from within xcode. Hence they make use of the standard xcode properties.
 
-Here is an example of using them (actually it's a copy of the build.sh script :-):
+Here is an example of using them (actually it's a copy of the build.sh script from this project :-). Check that ile for the latest version and settings.
 
 		#!/bin/sh
 		

@@ -71,6 +71,10 @@
 		65CD37721225288D0061EEBF /* framework.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CD37711225288D0061EEBF /* framework.plist */; };
 		65CD3930122551E90061EEBF /* DCDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CD392E122551E90061EEBF /* DCDialogs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65CD3931122551E90061EEBF /* DCDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD392F122551E90061EEBF /* DCDialogs.m */; };
+		65D11B85125856C9001FED62 /* DCUIRatingScaleStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D11B84125856C9001FED62 /* DCUIRatingScaleStrategy.h */; };
+		65D11B8812585AC0001FED62 /* DCUIRatingScale5Strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */; };
+		65D11B8912585AC0001FED62 /* DCUIRatingScale5Strategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8712585AC0001FED62 /* DCUIRatingScale5Strategy.m */; };
+		65D11B8C12586419001FED62 /* DCUIRatingScale5StrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8B12586419001FED62 /* DCUIRatingScale5StrategyTests.m */; };
 		65D66C501175FC07001132D1 /* libOCMock-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D66C3A1175FC07001132D1 /* libOCMock-static.a */; };
 		65FE650F11BBD9E300C14BA3 /* bubble.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
 		65FE651011BBD9E300C14BA3 /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
@@ -153,6 +157,7 @@
 		65568E981233B7C400BC02C3 /* DCCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCCoreData.m; path = src/code/DCCoreData.m; sourceTree = "<group>"; };
 		65568ECC1233B95900BC02C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		656B793411796FE000F19C5D /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
+		656E3EEC1257752A00CAFAD9 /* ChangeLog.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; name = ChangeLog.markdown; path = dUsefulStuff.xcodeproj/ChangeLog.markdown; sourceTree = "<group>"; };
 		6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = /Users/derek/projects/tools/GHUnitIOS.framework; sourceTree = "<absolute>"; };
 		6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = src/tests/GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefulStuff simulator unit tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +165,7 @@
 		65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+dUsefulStuff.h"; path = "src/code/UIColor+dUsefulStuff.h"; sourceTree = "<group>"; };
 		65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuff.m"; path = "src/code/UIColor+dUsefulStuff.m"; sourceTree = "<group>"; };
 		65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuffTests.m"; path = "src/tests/UIColor+dUsefulStuffTests.m"; sourceTree = "<group>"; };
-		659D2BE5117747BA0056AA74 /* dUsefullStuff App Test Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefullStuff App Test Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		659D2BE5117747BA0056AA74 /* dUsefullStuff Test Program.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefullStuff Test Program.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A0C68F116EF534003AC854 /* libdUsefulStuff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdUsefulStuff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+dUsefulStuff.h"; path = "src/code/UIView+dUsefulStuff.h"; sourceTree = "<group>"; };
 		65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+dUsefulStuff.m"; path = "src/code/UIView+dUsefulStuff.m"; sourceTree = "<group>"; };
@@ -169,6 +174,10 @@
 		65CD392F122551E90061EEBF /* DCDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDialogs.m; path = src/code/DCDialogs.m; sourceTree = "<group>"; };
 		65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buildStaticLibrary.sh; sourceTree = "<group>"; };
 		65CD39A4122689B10061EEBF /* common.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = common.sh; sourceTree = "<group>"; };
+		65D11B84125856C9001FED62 /* DCUIRatingScaleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingScaleStrategy.h; path = src/code/DCUIRatingScaleStrategy.h; sourceTree = "<group>"; };
+		65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingScale5Strategy.h; path = src/code/DCUIRatingScale5Strategy.h; sourceTree = "<group>"; };
+		65D11B8712585AC0001FED62 /* DCUIRatingScale5Strategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale5Strategy.m; path = src/code/DCUIRatingScale5Strategy.m; sourceTree = "<group>"; };
+		65D11B8B12586419001FED62 /* DCUIRatingScale5StrategyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale5StrategyTests.m; path = src/tests/DCUIRatingScale5StrategyTests.m; sourceTree = "<group>"; };
 		65D66C3A1175FC07001132D1 /* libOCMock-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libOCMock-static.a"; path = "../tools/OCMock-static/libOCMock-static.a"; sourceTree = SOURCE_ROOT; };
 		65D66C3B1175FC07001132D1 /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "../tools/OCMock-static/NSInvocation+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
 		65D66C3C1175FC07001132D1 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "../tools/OCMock-static/NSMethodSignature+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
@@ -240,7 +249,7 @@
 			children = (
 				6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */,
 				65A0C68F116EF534003AC854 /* libdUsefulStuff.a */,
-				659D2BE5117747BA0056AA74 /* dUsefullStuff App Test Simulator.app */,
+				659D2BE5117747BA0056AA74 /* dUsefullStuff Test Program.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +257,7 @@
 		0867D691FE84028FC02AAC07 /* dUsefulStuff */ = {
 			isa = PBXGroup;
 			children = (
+				656E3EEC1257752A00CAFAD9 /* ChangeLog.markdown */,
 				654ED65C116C5B89007AB3BA /* ReadMe.markdown */,
 				6518349F1227EED400B4AE43 /* build.sh */,
 				65CD39A01226872A0061EEBF /* scripts */,
@@ -277,6 +287,9 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */,
+				65D11B8712585AC0001FED62 /* DCUIRatingScale5Strategy.m */,
+				65D11B84125856C9001FED62 /* DCUIRatingScaleStrategy.h */,
 				6503579B116A1B8100202897 /* DCCommon.h */,
 				65568E971233B7C400BC02C3 /* DCCoreData.h */,
 				65568E981233B7C400BC02C3 /* DCCoreData.m */,
@@ -310,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				650357AA116A1BAA00202897 /* blank_10_x_10.png */,
+				65D11B8B12586419001FED62 /* DCUIRatingScale5StrategyTests.m */,
 				650357AC116A1BAA00202897 /* DCCommonTests.m */,
 				65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */,
 				650357AD116A1BAA00202897 /* DCUIRatingTests.m */,
@@ -409,15 +423,17 @@
 				65568E991233B7C400BC02C3 /* DCCoreData.h in Headers */,
 				65896F1F1244F9210089E207 /* UIColor+dUsefulStuff.h in Headers */,
 				65B182F1124DD7CC00A789C0 /* UIView+dUsefulStuff.h in Headers */,
+				65D11B85125856C9001FED62 /* DCUIRatingScaleStrategy.h in Headers */,
+				65D11B8812585AC0001FED62 /* DCUIRatingScale5Strategy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		653AD37C116E13CF006E2268 /* Run unit tests (Simulator) */ = {
+		653AD37C116E13CF006E2268 /* Run unit tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 653AD382116E13CF006E2268 /* Build configuration list for PBXNativeTarget "Run unit tests (Simulator)" */;
+			buildConfigurationList = 653AD382116E13CF006E2268 /* Build configuration list for PBXNativeTarget "Run unit tests" */;
 			buildPhases = (
 				653AD379116E13CF006E2268 /* Resources */,
 				653AD37A116E13CF006E2268 /* Sources */,
@@ -428,14 +444,14 @@
 			dependencies = (
 				65A0C695116EF5C2003AC854 /* PBXTargetDependency */,
 			);
-			name = "Run unit tests (Simulator)";
+			name = "Run unit tests";
 			productName = "Run unit tests (Simulator)";
 			productReference = 6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */;
 			productType = "com.apple.product-type.application";
 		};
-		659D2BE4117747BA0056AA74 /* Application Test (Simulator) */ = {
+		659D2BE4117747BA0056AA74 /* Application Test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 659D2BEA117747BA0056AA74 /* Build configuration list for PBXNativeTarget "Application Test (Simulator)" */;
+			buildConfigurationList = 659D2BEA117747BA0056AA74 /* Build configuration list for PBXNativeTarget "Application Test" */;
 			buildPhases = (
 				659D2BE1117747BA0056AA74 /* Resources */,
 				659D2BE2117747BA0056AA74 /* Sources */,
@@ -446,9 +462,9 @@
 			dependencies = (
 				659D2BEC117747C30056AA74 /* PBXTargetDependency */,
 			);
-			name = "Application Test (Simulator)";
+			name = "Application Test";
 			productName = "Application Test";
-			productReference = 659D2BE5117747BA0056AA74 /* dUsefullStuff App Test Simulator.app */;
+			productReference = 659D2BE5117747BA0056AA74 /* dUsefullStuff Test Program.app */;
 			productType = "com.apple.product-type.application";
 		};
 		65A0C679116EF534003AC854 /* Build Library */ = {
@@ -490,8 +506,8 @@
 			projectRoot = "";
 			targets = (
 				65A0C679116EF534003AC854 /* Build Library */,
-				653AD37C116E13CF006E2268 /* Run unit tests (Simulator) */,
-				659D2BE4117747BA0056AA74 /* Application Test (Simulator) */,
+				653AD37C116E13CF006E2268 /* Run unit tests */,
+				659D2BE4117747BA0056AA74 /* Application Test */,
 				65D75B8511B7D19E003D938D /* Build release framework */,
 			);
 		};
@@ -549,6 +565,7 @@
 				65001DF4117F32CA00C6ACA8 /* DCUIBubbleTests.m in Sources */,
 				6576D211121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m in Sources */,
 				65896F461244FC320089E207 /* UIColor+dUsefulStuffTests.m in Sources */,
+				65D11B8C12586419001FED62 /* DCUIRatingScale5StrategyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +591,7 @@
 				65568E9A1233B7C400BC02C3 /* DCCoreData.m in Sources */,
 				65896F201244F9210089E207 /* UIColor+dUsefulStuff.m in Sources */,
 				65B182F2124DD7CC00A789C0 /* UIView+dUsefulStuff.m in Sources */,
+				65D11B8912585AC0001FED62 /* DCUIRatingScale5Strategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +616,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Debug;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				CURRENT_PROJECT_VERSION = 0.0.6;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -617,6 +637,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Release;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				CURRENT_PROJECT_VERSION = 0.0.6;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -699,7 +721,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Debug;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -717,7 +739,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "dUsefullStuff App Test Simulator";
+				PRODUCT_NAME = "dUsefullStuff Test Program";
 				SDKROOT = iphonesimulator3.2;
 			};
 			name = Debug;
@@ -727,7 +749,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Release;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -744,7 +766,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "dUsefullStuff App Test Simulator";
+				PRODUCT_NAME = "dUsefullStuff Test Program";
 				SDKROOT = iphonesimulator3.2;
 				ZERO_LINK = NO;
 			};
@@ -805,7 +827,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		653AD382116E13CF006E2268 /* Build configuration list for PBXNativeTarget "Run unit tests (Simulator)" */ = {
+		653AD382116E13CF006E2268 /* Build configuration list for PBXNativeTarget "Run unit tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				653AD380116E13CF006E2268 /* Debug */,
@@ -814,7 +836,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		659D2BEA117747BA0056AA74 /* Build configuration list for PBXNativeTarget "Application Test (Simulator)" */ = {
+		659D2BEA117747BA0056AA74 /* Build configuration list for PBXNativeTarget "Application Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				659D2BE8117747BA0056AA74 /* Debug */,

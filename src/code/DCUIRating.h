@@ -8,6 +8,7 @@
 
 #import <UIKit/UIControl.h>
 #import "DCUIBubble.h"
+#import "DCUIRatingScaleStrategy.h"
 
 /**
  * What type of scale the control uses.
@@ -42,15 +43,12 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 	UIImage *onRatingImage;
 	UIImage *halfRatingImage;
 	DCRATINGSCALE scaleType;
-	float rating;
 	DCUIBubble *bubble;
-	NSNumberFormatter *decimalFormatter;
 
 	// Internal use for display and layout.
-	int offsetPixels;
-	int segmentSize;
-	float fuzzFactor;
 	int lastTouchX;
+	float initialRating;
+	NSObject<DCUIRatingScaleStrategy> * scaleStrategy;
 }
 
 /** \name Properties */

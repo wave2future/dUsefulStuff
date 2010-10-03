@@ -16,94 +16,87 @@
 {
 }
 - (void) runRatingSetValueTestForScale:(DCRATINGSCALE)scale x:(int)x result:(float)result;
-
+-(void) runDrawRectTestWithScale:(DCRATINGSCALE) scale rating:(float) rating imageTypes:(int[5]) imageTypes;
 @end
 
 
 
 @implementation DCUIRatingTests
 
-- (void) testDrawRect {
-
-	// Mocks
-	id mockNoRatingImage = [OCMockObject mockForClass:[UIImage class]];
-	CGSize size = CGSizeMake(10, 10);
-	[[[mockNoRatingImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(0, 0)];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(10, 0)];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(20, 0)];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(30, 0)];
-	[[mockNoRatingImage expect] drawAtPoint:CGPointMake(40, 0)];
-
-	// Test
-	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
-	CGRect rect = CGRectMake(0, 0, 100, 100);
-	rating.offRatingImage = mockNoRatingImage;
-	rating.onRatingImage    = mockNoRatingImage;
-	[rating drawRect:rect];
-
-	// finish up
-	[mockNoRatingImage verify];
-
+- (void) testDrawRectWithScale5AndRating0 {
+	int expectedImages[5] = {-1,-1,-1,-1,-1};
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5 rating:0 imageTypes:expectedImages];
 }
 
 - (void) testDrawRectWithScale5AndRating3 {
+	int expectedImages[5] = {1,1,1,-1,-1};
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5 rating:3 imageTypes:expectedImages];
+}
 
-	// Mocks
-	id mockOnImage = [OCMockObject mockForClass:[UIImage class]];
-	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
-	CGSize size = CGSizeMake(10, 10);
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
-	[[mockOnImage expect] drawAtPoint:CGPointMake(0, 0)];
-	[[mockOnImage expect] drawAtPoint:CGPointMake(10, 0)];
-	[[mockOnImage expect] drawAtPoint:CGPointMake(20, 0)];
-	[[mockOffImage expect] drawAtPoint:CGPointMake(30, 0)];
-	[[mockOffImage expect] drawAtPoint:CGPointMake(40, 0)];
-
-	// Test
-	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
-	rating.rating = 3;
-	CGRect rect = CGRectMake(0, 0, 100, 100);
-	rating.offRatingImage = mockOffImage;
-	rating.onRatingImage    = mockOnImage;
-	[rating drawRect:rect];
-
-	// finish up
-	[mockOffImage verify];
-	[mockOnImage verify];
+- (void) testDrawRectWithScale5AndRating5 {
+	int expectedImages[5] = {1,1,1,1,1};
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5 rating:5 imageTypes:expectedImages];
 }
 
 - (void) testDrawRectWithScale5AndHalfAndRating2AndHalf {
+	int expectedImages[5] = {1,1,0,-1,-1};
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5_WITH_HALVES rating:2.5 imageTypes:expectedImages];
+}
 
+- (void) testDrawRectWithScale5AndHalfAndRating3 {
+	int expectedImages[5] = {1,1,1,-1,-1};
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5_WITH_HALVES rating:3 imageTypes:expectedImages];
+}
 
+- (void) testDrawRectWithScale10AndRating5 {
+	int expectedImages[5] = {1,1,0,-1,-1};
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_10 rating:5 imageTypes:expectedImages];
+}
+
+- (void) testDrawRectWithScale10AndRating6 {
+	int expectedImages[5] = {1,1,1,-1,-1};
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_10 rating:6 imageTypes:expectedImages];
+}
+
+-(void) runDrawRectTestWithScale:(DCRATINGSCALE) scale rating:(float) rating imageTypes:(int[5]) imageTypes {
 	// Create the mocks
 	id mockOnImage = [OCMockObject mockForClass:[UIImage class]];
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	id mockHalfImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-
+	
 	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
 
-	[[mockOnImage expect] drawAtPoint:CGPointMake(0, 0)];
-	[[mockOnImage expect] drawAtPoint:CGPointMake(10, 0)];
-	[[mockHalfImage expect] drawAtPoint:CGPointMake(20, 0)];
-	[[mockOffImage expect] drawAtPoint:CGPointMake(30, 0)];
-	[[mockOffImage expect] drawAtPoint:CGPointMake(40, 0)];
-
+	DC_LOG(@"Adding image expectations");
+	for (int i = 0, offset = 0;i < 5; i++, offset += 10) {
+		if (imageTypes[i] == 1) {
+			DC_LOG(@"Adding expectation for on image at %i", offset);
+			[[mockOnImage expect] drawAtPoint:CGPointMake(offset, 0)];
+		} else if(imageTypes[i] == 0) {
+			DC_LOG(@"Adding expectation for half image at %i", offset);
+			[[mockHalfImage expect] drawAtPoint:CGPointMake(offset, 0)];
+		} else {
+			DC_LOG(@"Adding expectation for off image at %i", offset);
+			[[mockOffImage expect] drawAtPoint:CGPointMake(offset, 0)];
+		}
+	}
+	
 	// Test
-	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
-	rating.rating = 2.5;
-	rating.offRatingImage = mockOffImage;
-	rating.onRatingImage    = mockOnImage;
-	rating.halfRatingImage = mockHalfImage;
-	rating.scaleType = DC_SCALE_0_TO_5_WITH_HALVES;
+	DCUIRating *ratingControl = [[[DCUIRating alloc] init] autorelease];
+	ratingControl.rating = rating;
+	ratingControl.offRatingImage = mockOffImage;
+	ratingControl.onRatingImage = mockOnImage;
+	ratingControl.halfRatingImage = mockHalfImage;
+	ratingControl.scaleType = scale;
 	CGRect rect = CGRectMake(0, 0, 100, 100);
-	[rating drawRect:rect];
-
+	[ratingControl layoutSubviews];
+	[ratingControl drawRect:rect];
+	
 	[mockOffImage verify];
 	[mockHalfImage verify];
 	[mockOnImage verify];
 }
+
 
 - (void) testRatingOverrunLeft {
 	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:-5 result:0.0];
@@ -166,6 +159,7 @@
 	rating.offRatingImage = mockImage;
 	rating.onRatingImage = mockImage;
 	rating.halfRatingImage = mockImage;
+	[rating layoutSubviews];
 
 	//Do a drawRect as this will always occur first and finishes the control setup.
 	[rating drawRect:CGRectMake(0, 0, 50, 50)];
