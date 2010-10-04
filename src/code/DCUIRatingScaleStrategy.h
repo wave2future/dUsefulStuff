@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>  
 
+#define FUZZ_FACTOR 0.8;
+
 /**
  * This interface outlines the contract for a class which handles scale
  * related functionality for a DCUIRating.
  */
 @protocol DCUIRatingScaleStrategy
-ssss
+
 /** \name Constructor */
 -(id) initWithOffImage:(UIImage *) aOffImage onImage:(UIImage *) aOnImage halfOnImage:(UIImage *) aHalfOnImage;
 

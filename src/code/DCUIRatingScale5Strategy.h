@@ -7,15 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCUIRatingScaleStrategy.h"
+#import "DCUIRatingAbstractScaleStrategy.h"
 
-@interface DCUIRatingScale5Strategy : NSObject <DCUIRatingScaleStrategy> {
-	UIImage * onImage;
-	UIImage * offImage;
-	UIImage * halfOnImage;
-	float rating;
-	int imageWidth;
-	float fuzzFactor;
+@interface DCUIRatingScale5Strategy : DCUIRatingAbstractScaleStrategy {
 }
 
 @end

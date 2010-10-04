@@ -77,4 +77,10 @@
 	
 }
 
+-(void) testFormattedRating0 {
+	DCUIRatingScale5Strategy * strategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:nil onImage:nil halfOnImage:nil];
+	strategy.rating = 0;
+	GHAssertEquals([strategy formattedRating], @"0", @"Rating not formatted correctly");
+}
+
 @end
