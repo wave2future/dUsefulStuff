@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>  
 
-#define FUZZ_FACTOR 0.8;
-
 /**
  * This interface outlines the contract for a class which handles scale
  * related functionality for a DCUIRating.
@@ -26,6 +24,11 @@
  * expected to handle drawing the correct image on the display.
  */
 -(void) drawImageAtIndex:(int) index;
+
+/**
+ * Returns the width of the area on the left where the rating is zero.
+ */
+-(int) calcZeroAreaWidth;
 
 /**
  * Asks the strategy to calculate a new rating based on the touch.

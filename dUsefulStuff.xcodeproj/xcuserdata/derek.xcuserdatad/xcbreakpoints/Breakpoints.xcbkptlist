@@ -7,55 +7,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "src/code/DCUIRating.m"
-         timestampString = "307799994.515344"
+         filePath = "src/code/DCUIRatingScale5HalfStrategy.m"
+         timestampString = "307887863.169449"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "105"
-         endingLineNumber = "105"
-         landmarkName = "-drawRect:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "src/tests/DCUIRatingTests.m"
-         timestampString = "307725433.118984"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "70"
-         endingLineNumber = "70"
-         landmarkName = "-runDrawRectTestWithScale:rating:imageTypes:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "src/tests/DCUIRatingTests.m"
-         timestampString = "307805664.03761"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "92"
-         endingLineNumber = "92"
-         landmarkName = "-runDrawRectTestWithScale:rating:imageTypes:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "src/tests/DCUIRatingTests.m"
-         timestampString = "307805665.592261"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
-         landmarkName = "-runDrawRectTestWithScale:rating:imageTypes:"
+         startingLineNumber = "19"
+         endingLineNumber = "19"
+         landmarkName = "-imageForIndex:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

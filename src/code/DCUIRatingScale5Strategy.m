@@ -11,12 +11,12 @@
 
 @implementation DCUIRatingScale5Strategy
 
--(float) calcFuzzFactor {
-	return imageWidth * FUZZ_FACTOR;
+-(int) calcZeroAreaWidth {
+	return imageWidth / 3;
 }
 
 -(UIImage *) imageForIndex:(int) index {
-	if (index < rating) {
+	if (index < self.rating) {
 		DC_LOG(@"Drawing full rating at %i", index * imageWidth);
 		return onImage;
 	} else {
@@ -26,7 +26,7 @@
 }
 
 -(float) calcRatingFromTouchX:(int) touchX{
-	return floor((touchX + fuzzFactor) / imageWidth);
+	return touchX < zeroAreaWidth ? 0 : floor(touchX / imageWidth);
 }
 
 -(NSString *) formattedRating{

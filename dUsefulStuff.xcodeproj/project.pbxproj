@@ -46,6 +46,8 @@
 		65896F1F1244F9210089E207 /* UIColor+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65896F201244F9210089E207 /* UIColor+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */; };
 		65896F461244FC320089E207 /* UIColor+dUsefulStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */; };
+		659CB9A8125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 659CB9A7125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m */; };
+		659CB9CB125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m */; };
 		659D2BEE117748000056AA74 /* RatingTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650357B3116A1BAA00202897 /* RatingTest.xib */; };
 		659D2BEF117748010056AA74 /* RatingTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357B5116A1BAA00202897 /* RatingTestAppDelegate.m */; };
 		659D2BF0117748030056AA74 /* RatingTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357B7116A1BAA00202897 /* RatingTestController.m */; };
@@ -79,6 +81,9 @@
 		65D11B8812585AC0001FED62 /* DCUIRatingScale5Strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */; };
 		65D11B8912585AC0001FED62 /* DCUIRatingScale5Strategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8712585AC0001FED62 /* DCUIRatingScale5Strategy.m */; };
 		65D11B8C12586419001FED62 /* DCUIRatingScale5StrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8B12586419001FED62 /* DCUIRatingScale5StrategyTests.m */; };
+		65D5D7761259FA6C00E161C1 /* DCUIRatingScale10Strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D5D7741259FA6C00E161C1 /* DCUIRatingScale10Strategy.h */; };
+		65D5D7771259FA6C00E161C1 /* DCUIRatingScale10Strategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D5D7751259FA6C00E161C1 /* DCUIRatingScale10Strategy.m */; };
+		65D5D7841259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D5D7831259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m */; };
 		65D66C501175FC07001132D1 /* libOCMock-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D66C3A1175FC07001132D1 /* libOCMock-static.a */; };
 		65FE650F11BBD9E300C14BA3 /* bubble.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
 		65FE651011BBD9E300C14BA3 /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
@@ -169,14 +174,17 @@
 		65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+dUsefulStuff.h"; path = "src/code/UIColor+dUsefulStuff.h"; sourceTree = "<group>"; };
 		65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuff.m"; path = "src/code/UIColor+dUsefulStuff.m"; sourceTree = "<group>"; };
 		65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuffTests.m"; path = "src/tests/UIColor+dUsefulStuffTests.m"; sourceTree = "<group>"; };
+		659CB9A7125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale10StrategyTests.m; path = src/tests/DCUIRatingScale10StrategyTests.m; sourceTree = "<group>"; };
+		659CB9C9125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GHUnitTest+DCUIRatingScaleUtils.h"; path = "src/tests/GHUnitTest+DCUIRatingScaleUtils.h"; sourceTree = "<group>"; };
+		659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GHUnitTest+DCUIRatingScaleUtils.m"; path = "src/tests/GHUnitTest+DCUIRatingScaleUtils.m"; sourceTree = "<group>"; };
 		659D2BE5117747BA0056AA74 /* dUsefullStuff Test Program.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefullStuff Test Program.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A0C68F116EF534003AC854 /* libdUsefulStuff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdUsefulStuff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+dUsefulStuff.h"; path = "src/code/UIView+dUsefulStuff.h"; sourceTree = "<group>"; };
 		65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+dUsefulStuff.m"; path = "src/code/UIView+dUsefulStuff.m"; sourceTree = "<group>"; };
 		65BD83E51259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingScale5HalfStrategy.h; path = src/code/DCUIRatingScale5HalfStrategy.h; sourceTree = "<group>"; };
 		65BD83E61259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale5HalfStrategy.m; path = src/code/DCUIRatingScale5HalfStrategy.m; sourceTree = "<group>"; };
-		65BD83E91259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUIRatingAbstractScaleStrategy.h; sourceTree = "<group>"; };
-		65BD83EA1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUIRatingAbstractScaleStrategy.m; sourceTree = "<group>"; };
+		65BD83E91259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingAbstractScaleStrategy.h; path = src/code/DCUIRatingAbstractScaleStrategy.h; sourceTree = "<group>"; };
+		65BD83EA1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingAbstractScaleStrategy.m; path = src/code/DCUIRatingAbstractScaleStrategy.m; sourceTree = "<group>"; };
 		65CD37711225288D0061EEBF /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = framework.plist; sourceTree = "<group>"; };
 		65CD392E122551E90061EEBF /* DCDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDialogs.h; path = src/code/DCDialogs.h; sourceTree = "<group>"; };
 		65CD392F122551E90061EEBF /* DCDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDialogs.m; path = src/code/DCDialogs.m; sourceTree = "<group>"; };
@@ -186,6 +194,9 @@
 		65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingScale5Strategy.h; path = src/code/DCUIRatingScale5Strategy.h; sourceTree = "<group>"; };
 		65D11B8712585AC0001FED62 /* DCUIRatingScale5Strategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale5Strategy.m; path = src/code/DCUIRatingScale5Strategy.m; sourceTree = "<group>"; };
 		65D11B8B12586419001FED62 /* DCUIRatingScale5StrategyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale5StrategyTests.m; path = src/tests/DCUIRatingScale5StrategyTests.m; sourceTree = "<group>"; };
+		65D5D7741259FA6C00E161C1 /* DCUIRatingScale10Strategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingScale10Strategy.h; path = src/code/DCUIRatingScale10Strategy.h; sourceTree = "<group>"; };
+		65D5D7751259FA6C00E161C1 /* DCUIRatingScale10Strategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale10Strategy.m; path = src/code/DCUIRatingScale10Strategy.m; sourceTree = "<group>"; };
+		65D5D7831259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale5HalfStrategyTests.m; path = src/tests/DCUIRatingScale5HalfStrategyTests.m; sourceTree = "<group>"; };
 		65D66C3A1175FC07001132D1 /* libOCMock-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libOCMock-static.a"; path = "../tools/OCMock-static/libOCMock-static.a"; sourceTree = SOURCE_ROOT; };
 		65D66C3B1175FC07001132D1 /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "../tools/OCMock-static/NSInvocation+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
 		65D66C3C1175FC07001132D1 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "../tools/OCMock-static/NSMethodSignature+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
@@ -295,13 +306,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				65D11B84125856C9001FED62 /* DCUIRatingScaleStrategy.h */,
-				65BD83E91259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h */,
-				65BD83EA1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m */,
-				65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */,
-				65D11B8712585AC0001FED62 /* DCUIRatingScale5Strategy.m */,
-				65BD83E51259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h */,
-				65BD83E61259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.m */,
+				65D5D7711259EBDA00E161C1 /* Rating scales */,
 				6503579B116A1B8100202897 /* DCCommon.h */,
 				65568E971233B7C400BC02C3 /* DCCoreData.h */,
 				65568E981233B7C400BC02C3 /* DCCoreData.m */,
@@ -334,8 +339,12 @@
 		650357A9116A1B8600202897 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				659CB9C9125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.h */,
+				659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m */,
 				650357AA116A1BAA00202897 /* blank_10_x_10.png */,
 				65D11B8B12586419001FED62 /* DCUIRatingScale5StrategyTests.m */,
+				65D5D7831259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m */,
+				659CB9A7125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m */,
 				650357AC116A1BAA00202897 /* DCCommonTests.m */,
 				65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */,
 				650357AD116A1BAA00202897 /* DCUIRatingTests.m */,
@@ -375,6 +384,22 @@
 				651834BC1227F9AC00B4AE43 /* createDmg.sh */,
 			);
 			path = scripts;
+			sourceTree = "<group>";
+		};
+		65D5D7711259EBDA00E161C1 /* Rating scales */ = {
+			isa = PBXGroup;
+			children = (
+				65D11B84125856C9001FED62 /* DCUIRatingScaleStrategy.h */,
+				65BD83E91259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h */,
+				65BD83EA1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m */,
+				65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */,
+				65D11B8712585AC0001FED62 /* DCUIRatingScale5Strategy.m */,
+				65BD83E51259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h */,
+				65BD83E61259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.m */,
+				65D5D7741259FA6C00E161C1 /* DCUIRatingScale10Strategy.h */,
+				65D5D7751259FA6C00E161C1 /* DCUIRatingScale10Strategy.m */,
+			);
+			name = "Rating scales";
 			sourceTree = "<group>";
 		};
 		65F21665116C677F0086F808 /* Rating tests */ = {
@@ -439,6 +464,7 @@
 				65D11B8812585AC0001FED62 /* DCUIRatingScale5Strategy.h in Headers */,
 				65BD83E71259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h in Headers */,
 				65BD83EB1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h in Headers */,
+				65D5D7761259FA6C00E161C1 /* DCUIRatingScale10Strategy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +606,9 @@
 				6576D211121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m in Sources */,
 				65896F461244FC320089E207 /* UIColor+dUsefulStuffTests.m in Sources */,
 				65D11B8C12586419001FED62 /* DCUIRatingScale5StrategyTests.m in Sources */,
+				65D5D7841259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m in Sources */,
+				659CB9A8125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m in Sources */,
+				659CB9CB125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +637,7 @@
 				65D11B8912585AC0001FED62 /* DCUIRatingScale5Strategy.m in Sources */,
 				65BD83E81259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.m in Sources */,
 				65BD83EC1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m in Sources */,
+				65D5D7771259FA6C00E161C1 /* DCUIRatingScale10Strategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

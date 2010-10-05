@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCUIRatingScale5Strategy.h"
+#import "DCUIRatingAbstractScaleStrategy.h"
 
-
-@interface DCUIRatingScale5HalfStrategy : DCUIRatingScale5Strategy {
-
+@interface DCUIRatingScale5HalfStrategy : DCUIRatingAbstractScaleStrategy {
+	NSNumberFormatter * decimalFormatter;
 }
 
 @end

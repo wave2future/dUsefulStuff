@@ -10,65 +10,38 @@
 #import "DCUIRatingScale5Strategy.h"
 #import "OCMock.h"
 #import "DCCommon.h"
+#import "DCUIRating.h"
+#import "GHUnitTest+DCUIRatingScaleUtils.h"
 
 @interface DCUIRatingScale5StrategyTests : GHTestCase {
 	
 }
--(void) runDrawAtTestWithRating:(int) rating imageTypes:(int[5]) imageTypes;
 @end
 
 @implementation DCUIRatingScale5StrategyTests
 
 -(void) testDrawImageAtIndexWithRating0 {
-	int imageTypes[5] = {-1,-1,-1,-1,-1};
-	[self runDrawAtTestWithRating:0 imageTypes:imageTypes];
+	int imageTypes[5] = {IMAGE_OFF, IMAGE_OFF, IMAGE_OFF, IMAGE_OFF, IMAGE_OFF};
+	[self runDrawAtTestWithRating:0 scaleType:DC_SCALE_0_TO_5 imageTypes:imageTypes];
 }
 
 -(void) testDrawImageAtIndexWithRating3 {
-	int imageTypes[5] = {1,1,1,-1,-1};
-	[self runDrawAtTestWithRating:3 imageTypes:imageTypes];
+	int imageTypes[5] = {IMAGE_ON, IMAGE_ON, IMAGE_ON, IMAGE_OFF, IMAGE_OFF};
+	[self runDrawAtTestWithRating:3 scaleType:DC_SCALE_0_TO_5 imageTypes:imageTypes];
 }
 
 -(void) testDrawImageAtIndexWithRating5 {
-	int imageTypes[5] = {1,1,1,1,1};
-	[self runDrawAtTestWithRating:5 imageTypes:imageTypes];
+	int imageTypes[5] = {IMAGE_ON, IMAGE_ON, IMAGE_ON, IMAGE_ON, IMAGE_ON};
+	[self runDrawAtTestWithRating:5 scaleType:DC_SCALE_0_TO_5 imageTypes:imageTypes];
 }
 
--(void) runDrawAtTestWithRating:(int) rating imageTypes:(int[5]) imageTypes {
-	id mockOnImage = [OCMockObject mockForClass:[UIImage class]];
-	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
-	
-	CGSize size = CGSizeMake(10, 10);
-	
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
-	
-	for (int i = 0, offset = 0;i < 5;i++, offset+=10) {
-		if (imageTypes[i] == 1) {
-			[[mockOnImage expect] drawAtPoint:CGPointMake(offset, 0)]; 
-		}else {
-			[[mockOffImage expect] drawAtPoint:CGPointMake(offset, 0)]; 
-		}
-	}
-	
-	DCUIRatingScale5Strategy * strategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:nil];
-	[strategy setRating:rating];
-	
-	for (int i = 0;i < 5;i++) {
-		[strategy drawImageAtIndex:i];
-	}
-	
-	[mockOffImage verify];
-	[mockOnImage verify];
-	
-}
-
--(void) testCalcNewRatingFromTouchX0 {
+-(void) testCalcNewRatingFromTouchX {
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(20, 10);
 	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
 	DCUIRatingScale5Strategy * strategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:mockOffImage onImage:nil halfOnImage:nil];
 	
-	int xPos[12] = {1,3,4,23,24,43,44,63,64,83,84,100};
+	int xPos[12] = {1,6,7,20,21,40,41,60,61,80,81,100};
 	float result[12] = {0,0,1,1,2,2,3,3,4,4,5,5};
 	for (int x = 0;x<12;x++) {
 		float actualResult = [strategy calcNewRatingFromTouchX:xPos[x]];
@@ -80,7 +53,7 @@
 -(void) testFormattedRating0 {
 	DCUIRatingScale5Strategy * strategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:nil onImage:nil halfOnImage:nil];
 	strategy.rating = 0;
-	GHAssertEquals([strategy formattedRating], @"0", @"Rating not formatted correctly");
+	GHAssertEqualStrings([strategy formattedRating], @"0", @"Rating not formatted correctly");
 }
 
 @end

@@ -10,6 +10,8 @@
 #import "DCCommon.h"
 #import <UIKit/UIKit.h>
 #import "DCUIRatingScale5Strategy.h"
+#import "DCUIRatingScale5HalfStrategy.h"
+#import "DCUIRatingScale10Strategy.h"
 
 @interface DCUIRating ()
 - (void) calculateRatingWithTouch:(UITouch *)aTouch;
@@ -49,9 +51,9 @@
 		if (scaleType == DC_SCALE_0_TO_5) {
 			scaleStrategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
 		} else if (scaleType == DC_SCALE_0_TO_5_WITH_HALVES) {
-			
+			scaleStrategy = [[DCUIRatingScale5HalfStrategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
 		} else {
-			
+			scaleStrategy = [[DCUIRatingScale10Strategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
 		}
 		if (initialRating > 0) {
 			[scaleStrategy setRating:initialRating];
