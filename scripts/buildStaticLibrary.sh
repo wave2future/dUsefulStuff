@@ -36,14 +36,18 @@ assertSet BUILD_CONFIGURATION
 # Moves the  <user>.pbxuser file out of the way so that command line compiles 
 # will work without error. Otherwise it's presence triggers an exception.
 archivePbxuser() {
-	echo "Moving pbxuser file out of the way...."
-	mv $PROJECT_NAME.xcodeproj/$USER.pbxuser $PROJECT_NAME.xcodeproj/$USER.pbxuser.old
+	if [[ $XCODE_VERSION_ACTUAL != "0400" && $XCODE_VERSION_ACTUAL != "4.0" ]]; then
+		echo "Moving pbxuser file out of the way...."
+		mv $PROJECT_NAME.xcodeproj/$USER.pbxuser $PROJECT_NAME.xcodeproj/$USER.pbxuser.old
+	fi
 }
 
 # Restores the <user>.pbxuser file so that xcode can continue working.
 restorePbxuser() {
-	echo "Restoring pbxuser file...."
-	mv $PROJECT_NAME.xcodeproj/$USER.pbxuser.old $PROJECT_NAME.xcodeproj/$USER.pbxuser
+	if [[ $XCODE_VERSION_ACTUAL != "0400" && $XCODE_VERSION_ACTUAL != "4.0" ]]; then
+		echo "Restoring pbxuser file...."
+		mv $PROJECT_NAME.xcodeproj/$USER.pbxuser.old $PROJECT_NAME.xcodeproj/$USER.pbxuser
+	fi
 }
 
 # Encapslates the compilation of the project against a specific set of architectures.

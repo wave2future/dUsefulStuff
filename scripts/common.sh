@@ -10,4 +10,3 @@ assertSet() {
     : ${!1:? "$1 has not been set, aborting."}
 }
 
-

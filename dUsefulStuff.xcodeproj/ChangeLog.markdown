@@ -2,6 +2,7 @@
 # Changes Version 0.0.6
 
 * After an informative discussion on StackOverflow, re-wrote the DCUIRating initialisation code to be simpler.
+* refactored the DCUIRating code and tests. Created strategies for the various calculations and drawing methods. 
 
 # Changes Version 0.0.5
 
