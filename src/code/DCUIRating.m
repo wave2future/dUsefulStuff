@@ -118,8 +118,9 @@
 
 	// Store the current touch X and handle when it's out of the controls range.
 	lastTouchX = (int)[aTouch locationInView:self].x;
-	lastTouchX = fmin(self.frame.size.width, lastTouchX);
+	lastTouchX = fmin(self.frame.size.width - 1, lastTouchX);
 	lastTouchX = fmax(0, lastTouchX);
+	DC_LOG(@"New lastTouchX: %i", lastTouchX); 
 
 	// Add the fuzz factor. This creates the area around each star's center where
 	// the users touch will still select it. Dividing by the segment size gives the

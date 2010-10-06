@@ -31,10 +31,13 @@
 	// Set expectations.
 	for (int i = 0, offset = 0;i < 5;i++, offset+=10) {
 		if (imageTypes[i] == IMAGE_ON) {
+			DC_LOG(@"Adding expectation On image at %i", offset);
 			[[mockOnImage expect] drawAtPoint:CGPointMake(offset, 0)]; 
-		} else if (imageTypes[i] == IMAGE_OFF) {
+		} else if (imageTypes[i] == IMAGE_HALF_ON) {
+			DC_LOG(@"Adding expectation Half On image at %i", offset);
 			[[mockHalfOnImage expect] drawAtPoint:CGPointMake(offset, 0)]; 
 		}else {
+			DC_LOG(@"Adding expectation Off image at %i", offset);
 			[[mockOffImage expect] drawAtPoint:CGPointMake(offset, 0)]; 
 		}
 	}

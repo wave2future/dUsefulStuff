@@ -29,7 +29,13 @@
 }
 
 -(float) calcRatingFromTouchX:(int) touchX{
-	return touchX < zeroAreaWidth ? 0 : floor(touchX / (imageWidth / 2)) / 2;
+	DC_LOG(@"%f", (float)touchX + 1);
+	DC_LOG(@"%f", ((float)touchX + 1)/ (float)imageWidth);
+	DC_LOG(@"%f", ((float)touchX + 1)/ (float)imageWidth * 2);
+	DC_LOG(@"%f", ceilf(((float)touchX + 1) / (float)imageWidth * 2));
+	DC_LOG(@"%f", ceilf(((float)touchX + 1) / (float)imageWidth * 2) / 2);
+
+	return touchX < zeroAreaWidth ? 0 : ceilf(((float)touchX + 1) / (float)imageWidth * 2) /2;
 }
 
 -(NSString *) formattedRating{

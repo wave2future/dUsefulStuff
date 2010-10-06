@@ -26,7 +26,7 @@
 }
 
 -(float) calcRatingFromTouchX:(int) touchX{
-	return touchX < zeroAreaWidth ? 0 : floor(touchX / imageWidth);
+	return touchX < zeroAreaWidth ? 0 : ceilf(((float)touchX + 1) / (float)imageWidth);
 }
 
 -(NSString *) formattedRating{

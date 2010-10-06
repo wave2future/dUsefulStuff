@@ -41,7 +41,7 @@
 	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
 	DCUIRatingScale5Strategy * strategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:mockOffImage onImage:nil halfOnImage:nil];
 	
-	int xPos[12] = {1,6,7,20,21,40,41,60,61,80,81,100};
+	int xPos[12] = {0,5,6,19,20,39,40,59,60,79,80,99};
 	float result[12] = {0,0,1,1,2,2,3,3,4,4,5,5};
 	for (int x = 0;x<12;x++) {
 		float actualResult = [strategy calcNewRatingFromTouchX:xPos[x]];

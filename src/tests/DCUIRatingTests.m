@@ -111,15 +111,15 @@
 }
 
 - (void) testScale5HalfWayTouch {
-	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:25 result:3.0];
+	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:24 result:3.0];
 }
 
 - (void) testScale5WithHalvesHalfWayTouch {
-	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5_WITH_HALVES x:25 result:2.5];
+	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5_WITH_HALVES x:24 result:2.5];
 }
 
 - (void) testScale10HalfWayTouch {
-	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_10 x:25 result:5.0];
+	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_10 x:24 result:5.0];
 }
 
 - (void) runRatingSetValueTestForScale:(DCRATINGSCALE)scale x:(int)x result:(float)result {

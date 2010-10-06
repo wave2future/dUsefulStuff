@@ -17,7 +17,7 @@
 }
 
 -(float) calcRatingFromTouchX:(int) touchX{
-	return touchX < zeroAreaWidth ? 0 : floor(touchX / (imageWidth / 2));
+	return touchX < zeroAreaWidth ? 0 : ceilf(((float)touchX + 1) / (float)imageWidth * 2);
 }
 
 -(UIImage *) imageForIndex:(int) index {
