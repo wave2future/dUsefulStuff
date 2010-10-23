@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		65001C9A117C87F500C6ACA8 /* DCUIBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIBubble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65001C9B117C87F500C6ACA8 /* DCUIBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIBubble.m */; };
 		65001DF4117F32CA00C6ACA8 /* DCUIBubbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */; };
 		65184ABA124E127100C36C18 /* build.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6518349F1227EED400B4AE43 /* build.sh */; };
@@ -29,6 +28,20 @@
 		65269784116EF983003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
 		652697A7116EF98B003C63D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269778116EF91E003C63D3 /* CoreGraphics.framework */; };
 		652697E8116EF992003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
+		653888E51272C76D0037D2C1 /* DCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579B116A1B8100202897 /* DCCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888E61272C7710037D2C1 /* DCCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 65568E971233B7C400BC02C3 /* DCCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888E71272C7730037D2C1 /* DCDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CD392E122551E90061EEBF /* DCDialogs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888E81272C7740037D2C1 /* DCUIRating.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579C116A1B8100202897 /* DCUIRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888E91272C7750037D2C1 /* DCUIBubble.h in Headers */ = {isa = PBXBuildFile; fileRef = 65001C96117C87F500C6ACA8 /* DCUIBubble.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888EA1272C7770037D2C1 /* NSDictionary+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579E116A1B8100202897 /* NSDictionary+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888EB1272C77A0037D2C1 /* NSMutableDictionary+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 650357A0116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888EC1272C77A0037D2C1 /* UIColor+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888ED1272C77B0037D2C1 /* UIView+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888EE1272C7850037D2C1 /* DCUIRatingScaleStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D11B84125856C9001FED62 /* DCUIRatingScaleStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653888EF1272C7860037D2C1 /* DCUIRatingAbstractScaleStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65BD83E91259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h */; };
+		653888F01272C7870037D2C1 /* DCUIRatingScale5Strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */; };
+		653888F11272C7870037D2C1 /* DCUIRatingScale5HalfStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65BD83E51259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h */; };
+		653888F21272C7880037D2C1 /* DCUIRatingScale10Strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D5D7741259FA6C00E161C1 /* DCUIRatingScale10Strategy.h */; };
 		653AD383116E146E006E2268 /* blank_10_x_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 650357AA116A1BAA00202897 /* blank_10_x_10.png */; };
 		653AD384116E153F006E2268 /* DCCommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357AC116A1BAA00202897 /* DCCommonTests.m */; };
 		653AD385116E153F006E2268 /* DCUIRatingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357AD116A1BAA00202897 /* DCUIRatingTests.m */; };
@@ -37,13 +50,11 @@
 		653AD415116E165B006E2268 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		6541E03D1235191D00508A8F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65568ECC1233B95900BC02C3 /* CoreData.framework */; };
 		6541E16F12366D0700508A8F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65568ECC1233B95900BC02C3 /* CoreData.framework */; };
-		65568E991233B7C400BC02C3 /* DCCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 65568E971233B7C400BC02C3 /* DCCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65568E9A1233B7C400BC02C3 /* DCCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 65568E981233B7C400BC02C3 /* DCCoreData.m */; };
 		65568EE91233B96E00BC02C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65568ECC1233B95900BC02C3 /* CoreData.framework */; };
 		656B793511796FE000F19C5D /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
 		6576D1C4121C0CAF00CBE1B0 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */; };
 		6576D211121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */; };
-		65896F1F1244F9210089E207 /* UIColor+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65896F201244F9210089E207 /* UIColor+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */; };
 		65896F461244FC320089E207 /* UIColor+dUsefulStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */; };
 		659CB9A8125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 659CB9A7125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m */; };
@@ -59,29 +70,18 @@
 		659D2BFA117748440056AA74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269778116EF91E003C63D3 /* CoreGraphics.framework */; };
 		659D2BFD117748450056AA74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
 		659D2C0E117749310056AA74 /* libdUsefulStuff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A0C68F116EF534003AC854 /* libdUsefulStuff.a */; };
-		65A0C680116EF534003AC854 /* DCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579B116A1B8100202897 /* DCCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65A0C681116EF534003AC854 /* DCUIRating.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579C116A1B8100202897 /* DCUIRating.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65A0C682116EF534003AC854 /* NSDictionary+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579E116A1B8100202897 /* NSDictionary+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65A0C683116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 650357A0116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65A0C685116EF534003AC854 /* DCUIRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 6503579D116A1B8100202897 /* DCUIRating.m */; };
 		65A0C686116EF534003AC854 /* NSDictionary+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 6503579F116A1B8100202897 /* NSDictionary+dUsefulStuff.m */; };
 		65A0C687116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357A1116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.m */; };
 		65A0C689116EF534003AC854 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		65A0C6AB116EF691003AC854 /* libdUsefulStuff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A0C68F116EF534003AC854 /* libdUsefulStuff.a */; };
-		65B182F1124DD7CC00A789C0 /* UIView+dUsefulStuff.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65B182F2124DD7CC00A789C0 /* UIView+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */; };
-		65BD83E71259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65BD83E51259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h */; };
 		65BD83E81259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD83E61259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.m */; };
-		65BD83EB1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65BD83E91259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h */; };
 		65BD83EC1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD83EA1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m */; };
 		65CD37721225288D0061EEBF /* framework.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CD37711225288D0061EEBF /* framework.plist */; };
-		65CD3930122551E90061EEBF /* DCDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CD392E122551E90061EEBF /* DCDialogs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65CD3931122551E90061EEBF /* DCDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD392F122551E90061EEBF /* DCDialogs.m */; };
-		65D11B85125856C9001FED62 /* DCUIRatingScaleStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D11B84125856C9001FED62 /* DCUIRatingScaleStrategy.h */; };
-		65D11B8812585AC0001FED62 /* DCUIRatingScale5Strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */; };
 		65D11B8912585AC0001FED62 /* DCUIRatingScale5Strategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8712585AC0001FED62 /* DCUIRatingScale5Strategy.m */; };
 		65D11B8C12586419001FED62 /* DCUIRatingScale5StrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8B12586419001FED62 /* DCUIRatingScale5StrategyTests.m */; };
-		65D5D7761259FA6C00E161C1 /* DCUIRatingScale10Strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D5D7741259FA6C00E161C1 /* DCUIRatingScale10Strategy.h */; };
 		65D5D7771259FA6C00E161C1 /* DCUIRatingScale10Strategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D5D7751259FA6C00E161C1 /* DCUIRatingScale10Strategy.m */; };
 		65D5D7841259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D5D7831259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m */; };
 		65D66C501175FC07001132D1 /* libOCMock-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D66C3A1175FC07001132D1 /* libOCMock-static.a */; };
@@ -451,20 +451,20 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65A0C680116EF534003AC854 /* DCCommon.h in Headers */,
-				65A0C681116EF534003AC854 /* DCUIRating.h in Headers */,
-				65A0C682116EF534003AC854 /* NSDictionary+dUsefulStuff.h in Headers */,
-				65A0C683116EF534003AC854 /* NSMutableDictionary+dUsefulStuff.h in Headers */,
-				65001C9A117C87F500C6ACA8 /* DCUIBubble.h in Headers */,
-				65CD3930122551E90061EEBF /* DCDialogs.h in Headers */,
-				65568E991233B7C400BC02C3 /* DCCoreData.h in Headers */,
-				65896F1F1244F9210089E207 /* UIColor+dUsefulStuff.h in Headers */,
-				65B182F1124DD7CC00A789C0 /* UIView+dUsefulStuff.h in Headers */,
-				65D11B85125856C9001FED62 /* DCUIRatingScaleStrategy.h in Headers */,
-				65D11B8812585AC0001FED62 /* DCUIRatingScale5Strategy.h in Headers */,
-				65BD83E71259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h in Headers */,
-				65BD83EB1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h in Headers */,
-				65D5D7761259FA6C00E161C1 /* DCUIRatingScale10Strategy.h in Headers */,
+				653888E51272C76D0037D2C1 /* DCCommon.h in Headers */,
+				653888E61272C7710037D2C1 /* DCCoreData.h in Headers */,
+				653888E71272C7730037D2C1 /* DCDialogs.h in Headers */,
+				653888E81272C7740037D2C1 /* DCUIRating.h in Headers */,
+				653888E91272C7750037D2C1 /* DCUIBubble.h in Headers */,
+				653888EA1272C7770037D2C1 /* NSDictionary+dUsefulStuff.h in Headers */,
+				653888EB1272C77A0037D2C1 /* NSMutableDictionary+dUsefulStuff.h in Headers */,
+				653888EC1272C77A0037D2C1 /* UIColor+dUsefulStuff.h in Headers */,
+				653888ED1272C77B0037D2C1 /* UIView+dUsefulStuff.h in Headers */,
+				653888EE1272C7850037D2C1 /* DCUIRatingScaleStrategy.h in Headers */,
+				653888EF1272C7860037D2C1 /* DCUIRatingAbstractScaleStrategy.h in Headers */,
+				653888F01272C7870037D2C1 /* DCUIRatingScale5Strategy.h in Headers */,
+				653888F11272C7870037D2C1 /* DCUIRatingScale5HalfStrategy.h in Headers */,
+				653888F21272C7880037D2C1 /* DCUIRatingScale10Strategy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
