@@ -18,7 +18,7 @@
 
 + (void) displayMessage:(NSString *)msg title:(NSString *)title {
 
-	NSLog(@"Displaying error %@", msg);
+	NSLog(@"Displaying message: %@", msg);
 
 	// Alert the user
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
@@ -28,7 +28,6 @@
 	                                      otherButtonTitles:nil];
 	[alert show];
 	[alert release];
-	[msg release];
 
 }
 

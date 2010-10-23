@@ -19,6 +19,12 @@ SRC=src/code
 
 BUILD_TARGET="Build Library"
 
+# Quick and dirty debug building.
+if [[ $1 == "--debug" ]]; then
+	echo "Switching to Debug build"
+	BUILD_CONFIGURATION=Debug
+fi
+
 # SDKs.
 SIMULATOR_SDK=iphonesimulator3.2
 SIMULATOR_ARCHS=i386

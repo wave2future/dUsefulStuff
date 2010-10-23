@@ -95,7 +95,9 @@ COMPILE_ARCHS=$DEVICE_ARCHS
 compile
 
 echo "Combining libraries..."
+echo "Creating lib dir $BUILD_DIR/lib"
 mkdir "$BUILD_DIR/lib"
+echo "Combining ..."
 lipo -create "${PROJECT_DIR}/build/$BUILD_CONFIGURATION-iphoneos/lib${PROJECT_NAME}.a" "${PROJECT_DIR}/build/$BUILD_CONFIGURATION-iphonesimulator/lib${PROJECT_NAME}.a" -o "$BUILD_DIR/lib/$PROJECT_NAME"
 
 echo "Static library created at $BUILD_DIR/lib/$PROJECT_NAME"

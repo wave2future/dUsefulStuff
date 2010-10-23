@@ -3,6 +3,8 @@
 
 * After an informative discussion on StackOverflow, re-wrote the DCUIRating initialisation code to be simpler.
 * refactored the DCUIRating code and tests. Created strategies for the various calculations and drawing methods. 
+* Fixed EXC_BAD_ACCESS error in DCDialogs:displayMessage: due to un-required release of the message string.
+* Added optional --debug parameter to the main build script which enables building a debug library.
 
 # Changes Version 0.0.5
 
