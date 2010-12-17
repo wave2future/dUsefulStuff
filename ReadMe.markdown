@@ -4,9 +4,9 @@ This library is intended as a container of useful defines and classes which can 
 
 # Installing
 
-1. Download the latest dmg file. This contains compiled versions of the library for the devices (iPhone and iPad), simulator, documentation and some sample graphics.
+1. Download the latest dmg file. This contains a static framework usuable on both iPhones and iPads, documentation and some sample graphics.
 1. Copy the library contents to a folder somewhere. For example, ~/projects/libs/dUsefulStuff
-1. Drag and drop the dUsefulStuff.framework folder to xcode.
+1. Drag and drop the dUsefulStuff.framework folder to xcode. This is essentially the same as adding a framework.
 1. Add the header imports you need to your project. As this is a framework, you can now use the framework style syntax. For example
 
 		#import <dUsefulStuff/DCUIRating.h>
@@ -49,7 +49,12 @@ This header fine contains the following useful defines :
 </tr>
 <tr>
 	<td>DC_MOCK_VALUE(variable)</td>
-	<td>An update to the OCMOCK_VALUE define. Works better with iPhone code.</td>
+	<td>An update to the OCMOCK_VALUE define. Works better with iPhone code. Note that 
+	to use this you must pass it a variable. Here's a simple example:
+	<pre>
+BOOL yes = YES;
+[[mockThing expect] andReturnValue:DC_MOCK_VALUE(yes)] isThingReady];</pre>
+	</td>
 </tr>
 </table>
 
@@ -65,19 +70,19 @@ It's core features include :
 * Provided star images but can be configured with any images you like.
 * Resizes itself to match the width and height of the supplied images.
 * Can popup a bubble above the users finger displaying the newly selected rating.
+* Able to update a delegate so your controller can respond to changes.
 
 ### Using DCUIRating
 
 1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view. Here's the header file:
 
 		#import <UIKit/UIKit.h>
-		#import "DCUIRating.h"
+		#import <dUsefulStuff/DCUIRating.h>
+		#import <dUsefulStuff/DCUIRatingDelegate.h>
 		
-		@interface RatingTestController : UIViewController {
-		
+		@interface RatingTestController : UIViewController<DCUIRatingDelegate> {
 			@private
 			DCUIRating * ratingControl;
-		
 		}
 		
 		@property (retain, nonatomic) IBOutlet DCUIRating * ratingControl;
@@ -100,6 +105,9 @@ It's core features include :
 			self.ratingControl.onRatingImage = myRatingImage;
 			self.ratingControl.offRatingImage = myNoRatingImage;
 			self.ratingControl.scaleType = DC_SCALE_0_TO_5;
+			
+			// Not required unless you want to get notified of changes.
+			self.ratingControl.delegate = self;
 
 			[myRatingImage release];
 			[myNoRatingImage release];
@@ -119,15 +127,24 @@ It's core features include :
 			[myBubbleImage release];
 		}
 
+		// Delegate method.
+		-(void) ratingDidChange:(DCUIRating *) rating {
+			DC_LOG(NSString stringWithFormat:@"Value: %f", rating.rating]);
+		}
+
+
 1. The last thing to do is to add the the control to your xib file. Open Interface Builder and the view. 
 1. In the **Library** dialog, click on the **Classes** button to show all classes in the project.
 1. Scroll down until you find the DCUIRating classes, then drag it onto your view.
-1. Size and position the control. Note you won't see anything because Interface Builder does not see it as a control and therefore does not draw it. Also note that an instance of DCUIRating will resize itself to fit the height and 5 times the width of the inactive image you set in the controller code.
+1. Size and position the control. Note you won't see anything because Interface Builder does not see it
+as a control and therefore does not draw it. Also note that an instance of DCUIRating will resize itself to fit the height and 5 times the width of the inactive image you set in the controller code.
 1. Lastly, make sure that the control is connected to the controllers IBOutlet.
 
 ## DCUIBubble
 
-This class can be used to display values from another control. generally speakng it's designed to be a popup bubble which appears when the user presses their finger against a control. Here's a example of how your control can display a DCUIBubble
+This class can be used to display values from another control. 
+Generally speakng it's designed to be a popup bubble which appears when the user presses their 
+finger against a control. Here's a example of how your control can display a DCUIBubble
 
 		- (void) popBubbleAtTouch:(UITouch *)atTouch {
 			[self.bubble alignWithTough:atTouch];
@@ -176,6 +193,11 @@ This category adds a colour comparison function which can be used to test UIColo
 
 This category adds a method for drawing rounded rectangles on the view.
 
+## DCCoreData
+
+This class is intended to be a base class providing infrastructure and useful methods for dealing with
+core data.
+
 ## DCDialogs
 
 Class of static methods for displaying messages to the user. Just takes some pain out of rewriting code.
@@ -187,34 +209,48 @@ In the **scripts** directory there are a number of scripts which can be used for
 Here is an example of using them (actually it's a copy of the build.sh script from this project :-). Check that ile for the latest version and settings.
 
 		#!/bin/sh
-		
+
 		# build.sh
 		# dUsefulStuff
 		#
 		# Created by Derek Clarkson on 27/08/10.
 		# Copyright 2010 Derek Clarkson. All rights reserved.
-		
+
 		# Exit if an error occurs.
 		set -o errexit
-		# Disallows unset variables.
+
+		# Quick and dirty debug building.
+		if [[ $1 == "--debug" ]]; then
+			echo "Switching to Debug build"
+			BUILD_CONFIGURATION=Debug
+		fi
+
+		# Now disallow unset variables.
 		set -o nounset
-		
+
 		# Set build related values.
 		PRODUCT_NAME=dUsefulStuff
 		PROJECT_NAME=$PRODUCT_NAME
-		CURRENT_PROJECT_VERSION=0.0.4
+		CURRENT_PROJECT_VERSION=0.0.6
 		SRC=src/code
-		
+
 		BUILD_TARGET="Build Library"
-		
+
 		# SDKs.
-		SIMULATOR_SDK=iphonesimulator3.2
+		SIMULATOR_SDK=iphonesimulator4.2
 		SIMULATOR_ARCHS=i386
 		SIMULATOR_VALID_ARCHS=i386
-		DEVICE_SDK=iphoneos3.2
+		DEVICE_SDK=iphoneos4.2
 		DEVICE_ARCHS="armv6 armv7"
 		DEVICE_VALID_ARCHS="armv6 armv7"
-		
+		# Normally this is set to release. But you can override it to set it to Debug.
+		BUILD_CONFIGURATION=${BUILD_CONFIGURATION=Release}
+
+		# Sort out the xcode version
+		_VERSION_OUTPUT=`xcodebuild -version | grep Xcode`
+		_XCODE_VERSION=${_VERSION_OUTPUT/#Xcode /}
+		XCODE_VERSION_ACTUAL=${XCODE_VERSION_ACTUAL=$_XCODE_VERSION}
+
 		# Set used directories. Notice some allow for setting from xcode.
 		SCRIPTS_DIR=./scripts
 		TOOLS_DIR=../tools
@@ -222,18 +258,27 @@ Here is an example of using them (actually it's a copy of the build.sh script fr
 		PROJECT_DIR=${PROJECT_DIR=.}
 		BUILD_DIR=${BUILD_DIR=build}
 		ARTIFACT_DIR=Releases/v$CURRENT_PROJECT_VERSION
-		
+
 		DMG_FILE=Releases/$PRODUCT_NAME-$CURRENT_PROJECT_VERSION.dmg
-		
+
+		#Uncomment for xcode 4.
+		#DOCSETUTIL_PATH=/Xcode4/usr/bin/docsetutil
+
 		# Export so the scripts can see the setting.
-		export SCRIPTS_DIR TOOLS_DIR EXTERNAL_DIR SIMULATOR_SDK SIMULATOR_ARCHS SIMULATOR_VALID_ARCHS DEVICE_SDK DEVICE_ARCHS DEVICE_VALID_ARCHS PROJECT_NAME PRODUCT_NAME BUILD_DIR PROJECT_DIR CURRENT_PROJECT_VERSION BUILD_TARGET ARTIFACT_DIR DMG_FILE SRC
-		
+		export SCRIPTS_DIR TOOLS_DIR EXTERNAL_DIR SIMULATOR_SDK SIMULATOR_ARCHS SIMULATOR_VALID_ARCHS DEVICE_SDK DEVICE_ARCHS DEVICE_VALID_ARCHS PROJECT_NAME PRODUCT_NAME BUILD_DIR PROJECT_DIR CURRENT_PROJECT_VERSION BUILD_TARGET ARTIFACT_DIR DMG_FILE SRC BUILD_CONFIGURATION DOCSETUTIL_PATH XCODE_VERSION_ACTUAL
+
 		# Call the scripts.
 		$SCRIPTS_DIR/clean.sh
 		$SCRIPTS_DIR/buildStaticLibrary.sh
 		$SCRIPTS_DIR/createDocumentation.sh
 		$SCRIPTS_DIR/assembleFramework.sh
+
+		# Extra step here to copy the scripts into a directory of the dmg file.
+		mkdir $ARTIFACT_DIR/scripts
+		find "scripts" -type f -name "*.sh" -depth 1 -exec cp -v "{}" "$ARTIFACT_DIR/scripts" \;
+
 		$SCRIPTS_DIR/createDmg.sh
+
 
 ### buildStaticLibrary.sh
 
@@ -258,6 +303,11 @@ This script takes in the compiled static library and creates a framework. This a
 ### createDmg.sh
 
 This takes in all the files it finds into the artifact directory and builds a dmg file suitable for uploaded to distribution sites. Also included are any markdown documentation files (such as this one) that are in the project.
+
+## Uncrustify.sh
+
+This is a shelle script which can be added to xcode as a script. You can use it to reformat the source code
+using the uncrustify code formatter.
 
 
  
