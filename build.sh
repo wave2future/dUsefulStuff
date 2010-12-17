@@ -8,7 +8,14 @@
 
 # Exit if an error occurs.
 set -o errexit
-# Disallows unset variables.
+
+# Quick and dirty debug building.
+if [[ $1 == "--debug" ]]; then
+	echo "Switching to Debug build"
+	BUILD_CONFIGURATION=Debug
+fi
+
+# Now disallow unset variables.
 set -o nounset
 
 # Set build related values.
@@ -19,17 +26,11 @@ SRC=src/code
 
 BUILD_TARGET="Build Library"
 
-# Quick and dirty debug building.
-if [[ $1 == "--debug" ]]; then
-	echo "Switching to Debug build"
-	BUILD_CONFIGURATION=Debug
-fi
-
 # SDKs.
-SIMULATOR_SDK=iphonesimulator3.2
+SIMULATOR_SDK=iphonesimulator4.2
 SIMULATOR_ARCHS=i386
 SIMULATOR_VALID_ARCHS=i386
-DEVICE_SDK=iphoneos3.2
+DEVICE_SDK=iphoneos4.2
 DEVICE_ARCHS="armv6 armv7"
 DEVICE_VALID_ARCHS="armv6 armv7"
 # Normally this is set to release. But you can override it to set it to Debug.
@@ -50,7 +51,8 @@ ARTIFACT_DIR=Releases/v$CURRENT_PROJECT_VERSION
 
 DMG_FILE=Releases/$PRODUCT_NAME-$CURRENT_PROJECT_VERSION.dmg
 
-DOCSETUTIL_PATH=/Xcode4/usr/bin/docsetutil
+#Uncomment for xcode 4.
+#DOCSETUTIL_PATH=/Xcode4/usr/bin/docsetutil
 
 # Export so the scripts can see the setting.
 export SCRIPTS_DIR TOOLS_DIR EXTERNAL_DIR SIMULATOR_SDK SIMULATOR_ARCHS SIMULATOR_VALID_ARCHS DEVICE_SDK DEVICE_ARCHS DEVICE_VALID_ARCHS PROJECT_NAME PRODUCT_NAME BUILD_DIR PROJECT_DIR CURRENT_PROJECT_VERSION BUILD_TARGET ARTIFACT_DIR DMG_FILE SRC BUILD_CONFIGURATION DOCSETUTIL_PATH XCODE_VERSION_ACTUAL

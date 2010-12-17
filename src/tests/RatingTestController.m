@@ -15,6 +15,7 @@
 @synthesize rating5;
 @synthesize rating5half;
 @synthesize rating10;
+@synthesize readOut;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void) viewDidLoad {
@@ -54,19 +55,27 @@
 	self.rating5.offRatingImage = myNoRatingImage;
 	self.rating5.bubble = bubble5;
 	self.rating5.scaleType = DC_SCALE_0_TO_5;
+	self.rating5.delegate = self;
 	
 	self.rating5half.onRatingImage = myRatingImage;
 	self.rating5half.offRatingImage = myNoRatingImage;
 	self.rating5half.halfRatingImage = myHalfRatingImage;
 	self.rating5half.bubble = bubble5half;
 	self.rating5half.scaleType = DC_SCALE_0_TO_5_WITH_HALVES;
+	self.rating5half.delegate = self;
 
 	self.rating10.onRatingImage = myRatingImage;
 	self.rating10.offRatingImage = myNoRatingImage;
 	self.rating10.halfRatingImage = myHalfRatingImage;
 	self.rating10.bubble = bubble10;
 	self.rating10.scaleType = DC_SCALE_0_TO_10;
+	self.rating10.delegate = self;
 
+}
+
+
+-(void) ratingDidChange:(DCUIRating *) rating {
+	self.readOut.text = [NSString stringWithFormat:@"Value: %f", rating.rating];
 }
 
 - (IBAction) alertButtonClicked:(id)button; {

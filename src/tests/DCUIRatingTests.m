@@ -7,7 +7,8 @@
 //
 
 #import <GHUnitIOS/GHUnitIOS.h>
-#import "OCMock.h"
+#import <OCMock/OCMock.h>
+
 #import "DCUIRating.h"
 #import "DCCommon.h"
 #import <UIKit/UIKit.h>
@@ -97,7 +98,6 @@
 	[mockOnImage verify];
 }
 
-
 - (void) testRatingOverrunLeft {
 	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:-5 result:0.0];
 }
@@ -173,5 +173,63 @@
 	GHAssertEquals(rating.rating, result, @"Incorrect rating returned");
 
 }
+
+- (void) testDelegateIsCalledWhenValueChanges {
+	
+	// Setup the rating control.
+	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
+	CGRect ratingFrame = CGRectMake(10, 10, 50, 50);
+	rating.frame = ratingFrame;
+	rating.scaleType = DC_SCALE_0_TO_5;
+
+	//Setup the delegate.
+	id mockDelegate = [OCMockObject mockForProtocol:@protocol(DCUIRatingDelegate)];
+	rating.delegate = mockDelegate;
+	
+	// Set delegate expectation.
+	[[mockDelegate expect] ratingDidChange:rating];
+	
+	// Create a window and add the rating control.
+	UIWindow *window = [[[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 320, 480)] autorelease];
+	[window addSubview:rating];
+	
+	// mock out the touch.
+	id mockTouch = [OCMockObject mockForClass:[UITouch class]];
+	[[[mockTouch stub] andReturn:rating] view];
+	[[[mockTouch stub] andReturn:window] window];
+	
+	// setup the touch points within the window and rating control.
+	CGPoint touchPointInRating = CGPointMake(35, 26);
+	[[[mockTouch stub] andReturnValue:DC_MOCK_VALUE(touchPointInRating)] locationInView:rating];
+	CGPoint touchPointInWindow = CGPointMake(45, 26);
+	[[[mockTouch stub] andReturnValue:DC_MOCK_VALUE(touchPointInWindow)] locationInView:window];
+	
+	// setup the event.
+	id mockEvent = [OCMockObject mockForClass:[UIEvent class]];
+	NSMutableSet *touches = [NSMutableSet set];
+	[touches addObject:mockTouch];
+	[[[mockEvent stub] andReturn:touches] touchesForView:rating];
+	
+	// Mock up the images so that draw rect can be called. Use a nice mock because it's not important to the test.
+	id mockImage = [OCMockObject niceMockForClass:[UIImage class]];
+	CGSize size = CGSizeMake(10, 10);
+	[[[mockImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	rating.offRatingImage = mockImage;
+	rating.onRatingImage = mockImage;
+	[rating layoutSubviews];
+	
+	//Do a drawRect as this will always occur first and finishes the control setup.
+	[rating drawRect:CGRectMake(0, 0, 50, 50)];
+	
+	// Trigger the calculation.
+	[rating touchesEnded:touches withEvent:mockEvent];
+	
+	// Verify
+	[mockDelegate verify];
+	GHAssertEquals(rating.rating, (float)4, @"Incorrect rating returned");
+	
+}
+
+
 
 @end

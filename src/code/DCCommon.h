@@ -70,7 +70,7 @@
 	} while (FALSE); \
    if (vName != nil) { \
 		if ([vName retainCount] == 0) { \
-			DC_LOG(@"ERROR !!!!! " # vName " retain count == 0") \
+			DC_LOG(@"ERROR !!!!! " # vName " retain count == 0"); \
 		} \
 		[vName release]; \
 		vName = nil; \

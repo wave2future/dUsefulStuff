@@ -8,17 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "DCUIRating.h"
+#import "DCUIRatingDelegate.h"
 
 
-@interface RatingTestController : UIViewController {
+@interface RatingTestController : UIViewController<DCUIRatingDelegate> {
 	
 	@private
 	DCUIRating * rating5;
 	DCUIRating * rating5half;
 	DCUIRating * rating10;
+	UILabel * readOut;
 
 }
 
+@property (retain, nonatomic) IBOutlet UILabel * readOut;
 @property (retain, nonatomic) IBOutlet DCUIRating * rating5;
 @property (retain, nonatomic) IBOutlet DCUIRating * rating5half;
 @property (retain, nonatomic) IBOutlet DCUIRating * rating10;

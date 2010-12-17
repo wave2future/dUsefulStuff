@@ -6,7 +6,8 @@
 //  Copyright 2010 Derek Clarkson. All rights reserved.
 //
 #import <GHUnitIOS/GHUnitIOS.h>
-#import "OCMock.h"
+#import <OCMock/OCMock.h>
+
 #import "DCUIBubble.h"
 #import "DCCommon.h"
 #import "UIColor+dUsefulStuff.h"

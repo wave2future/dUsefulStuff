@@ -29,6 +29,11 @@ APPLEDOC_DIR=${APPLEDOC_DIR=$EXTERNAL_DIR/appledoc}
 APPLEDOC=${APPLEDOC=$APPLEDOC_DIR/build/Release/appledoc}
 DOXYGEN=${DOXYGEN=$TOOLS_DIR/Doxygen.app/Contents/Resources/doxygen}
 
+echo DOCSETUTIL_PATH= $DOCSETUTIL_PATH
+echo APPLEDOC_DIR   = $APPLEDOC_DIR
+echo APPLEDOC       = $APPLEDOC
+echo DOXYGEN        = $DOXYGEN
+
 if [ ! -f $APPLEDOC ]; then
 	echo "Error: Appledoc not found at $APPLEDOC"
 	exit 1

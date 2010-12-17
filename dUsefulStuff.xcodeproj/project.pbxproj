@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		65001C9B117C87F500C6ACA8 /* DCUIBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIBubble.m */; };
 		65001DF4117F32CA00C6ACA8 /* DCUIBubbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */; };
+		650B81931276F1B3002BA0B2 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650B81921276F1B3002BA0B2 /* OCMock.framework */; };
 		65184ABA124E127100C36C18 /* build.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6518349F1227EED400B4AE43 /* build.sh */; };
 		65269779116EF91E003C63D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269778116EF91E003C63D3 /* CoreGraphics.framework */; };
 		65269784116EF983003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
@@ -42,6 +43,7 @@
 		653888F01272C7870037D2C1 /* DCUIRatingScale5Strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D11B8612585AC0001FED62 /* DCUIRatingScale5Strategy.h */; };
 		653888F11272C7870037D2C1 /* DCUIRatingScale5HalfStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65BD83E51259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h */; };
 		653888F21272C7880037D2C1 /* DCUIRatingScale10Strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D5D7741259FA6C00E161C1 /* DCUIRatingScale10Strategy.h */; };
+		6538898C12730EDF0037D2C1 /* DCCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6538898A12730E980037D2C1 /* DCCoreDataTests.m */; };
 		653AD383116E146E006E2268 /* blank_10_x_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 650357AA116A1BAA00202897 /* blank_10_x_10.png */; };
 		653AD384116E153F006E2268 /* DCCommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357AC116A1BAA00202897 /* DCCommonTests.m */; };
 		653AD385116E153F006E2268 /* DCUIRatingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357AD116A1BAA00202897 /* DCUIRatingTests.m */; };
@@ -55,6 +57,7 @@
 		656B793511796FE000F19C5D /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
 		6576D1C4121C0CAF00CBE1B0 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */; };
 		6576D211121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */; };
+		657F52F8129E9D6600EC3B7F /* DCUIRatingDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 657F52F7129E9D6600EC3B7F /* DCUIRatingDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65896F201244F9210089E207 /* UIColor+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */; };
 		65896F461244FC320089E207 /* UIColor+dUsefulStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */; };
 		659CB9A8125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 659CB9A7125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m */; };
@@ -84,7 +87,6 @@
 		65D11B8C12586419001FED62 /* DCUIRatingScale5StrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8B12586419001FED62 /* DCUIRatingScale5StrategyTests.m */; };
 		65D5D7771259FA6C00E161C1 /* DCUIRatingScale10Strategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D5D7751259FA6C00E161C1 /* DCUIRatingScale10Strategy.m */; };
 		65D5D7841259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D5D7831259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m */; };
-		65D66C501175FC07001132D1 /* libOCMock-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D66C3A1175FC07001132D1 /* libOCMock-static.a */; };
 		65FE650F11BBD9E300C14BA3 /* bubble.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
 		65FE651011BBD9E300C14BA3 /* star-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65D116C5B89007AB3BA /* star-active.png */; };
 		65FE651111BBD9E300C14BA3 /* star-half-active.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 654ED65E116C5B89007AB3BA /* star-half-active.png */; };
@@ -149,6 +151,7 @@
 		650357B5116A1BAA00202897 /* RatingTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingTestAppDelegate.m; path = src/tests/RatingTestAppDelegate.m; sourceTree = "<group>"; };
 		650357B6116A1BAA00202897 /* RatingTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatingTestController.h; path = src/tests/RatingTestController.h; sourceTree = "<group>"; };
 		650357B7116A1BAA00202897 /* RatingTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingTestController.m; path = src/tests/RatingTestController.m; sourceTree = "<group>"; };
+		650B81921276F1B3002BA0B2 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = ../tools/OCMock.framework; sourceTree = SOURCE_ROOT; };
 		6518349F1227EED400B4AE43 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		651834AD1227F19D00B4AE43 /* createDocumentation.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createDocumentation.sh; sourceTree = "<group>"; };
 		651834AE1227F3A300B4AE43 /* clean.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = clean.sh; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 		651834BC1227F9AC00B4AE43 /* createDmg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createDmg.sh; sourceTree = "<group>"; };
 		65269778116EF91E003C63D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		65269783116EF983003C63D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6538898A12730E980037D2C1 /* DCCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoreDataTests.m; sourceTree = "<group>"; };
 		654ED65A116C5B89007AB3BA /* docset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = docset.plist; sourceTree = "<group>"; };
 		654ED65B116C5B89007AB3BA /* doxygen-appledoc.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "doxygen-appledoc.config"; sourceTree = "<group>"; };
 		654ED65C116C5B89007AB3BA /* ReadMe.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = ReadMe.markdown; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 		6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = src/tests/GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefulStuff simulator unit tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657D8F731170B4E60044EF4F /* installDocSet */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = installDocSet; sourceTree = "<group>"; };
+		657F52F7129E9D6600EC3B7F /* DCUIRatingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUIRatingDelegate.h; sourceTree = "<group>"; };
 		65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+dUsefulStuff.h"; path = "src/code/UIColor+dUsefulStuff.h"; sourceTree = "<group>"; };
 		65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuff.m"; path = "src/code/UIColor+dUsefulStuff.m"; sourceTree = "<group>"; };
 		65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuffTests.m"; path = "src/tests/UIColor+dUsefulStuffTests.m"; sourceTree = "<group>"; };
@@ -179,6 +184,7 @@
 		659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GHUnitTest+DCUIRatingScaleUtils.m"; path = "src/tests/GHUnitTest+DCUIRatingScaleUtils.m"; sourceTree = "<group>"; };
 		659D2BE5117747BA0056AA74 /* dUsefullStuff Test Program.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefullStuff Test Program.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A0C68F116EF534003AC854 /* libdUsefulStuff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdUsefulStuff.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65AD2520128E816C007E4F23 /* Uncrustify.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Uncrustify.sh; sourceTree = "<group>"; };
 		65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+dUsefulStuff.h"; path = "src/code/UIView+dUsefulStuff.h"; sourceTree = "<group>"; };
 		65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+dUsefulStuff.m"; path = "src/code/UIView+dUsefulStuff.m"; sourceTree = "<group>"; };
 		65BD83E51259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingScale5HalfStrategy.h; path = src/code/DCUIRatingScale5HalfStrategy.h; sourceTree = "<group>"; };
@@ -197,27 +203,6 @@
 		65D5D7741259FA6C00E161C1 /* DCUIRatingScale10Strategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingScale10Strategy.h; path = src/code/DCUIRatingScale10Strategy.h; sourceTree = "<group>"; };
 		65D5D7751259FA6C00E161C1 /* DCUIRatingScale10Strategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale10Strategy.m; path = src/code/DCUIRatingScale10Strategy.m; sourceTree = "<group>"; };
 		65D5D7831259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale5HalfStrategyTests.m; path = src/tests/DCUIRatingScale5HalfStrategyTests.m; sourceTree = "<group>"; };
-		65D66C3A1175FC07001132D1 /* libOCMock-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libOCMock-static.a"; path = "../tools/OCMock-static/libOCMock-static.a"; sourceTree = SOURCE_ROOT; };
-		65D66C3B1175FC07001132D1 /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "../tools/OCMock-static/NSInvocation+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
-		65D66C3C1175FC07001132D1 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "../tools/OCMock-static/NSMethodSignature+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
-		65D66C3D1175FC07001132D1 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "../tools/OCMock-static/NSNotificationCenter+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
-		65D66C3E1175FC07001132D1 /* OCClassMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCClassMockObject.h; path = "../tools/OCMock-static/OCClassMockObject.h"; sourceTree = SOURCE_ROOT; };
-		65D66C3F1175FC07001132D1 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = "../tools/OCMock-static/OCMArg.h"; sourceTree = SOURCE_ROOT; };
-		65D66C401175FC07001132D1 /* OCMBoxedReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMBoxedReturnValueProvider.h; path = "../tools/OCMock-static/OCMBoxedReturnValueProvider.h"; sourceTree = SOURCE_ROOT; };
-		65D66C411175FC07001132D1 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = "../tools/OCMock-static/OCMConstraint.h"; sourceTree = SOURCE_ROOT; };
-		65D66C421175FC07001132D1 /* OCMExceptionReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMExceptionReturnValueProvider.h; path = "../tools/OCMock-static/OCMExceptionReturnValueProvider.h"; sourceTree = SOURCE_ROOT; };
-		65D66C431175FC07001132D1 /* OCMIndirectReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMIndirectReturnValueProvider.h; path = "../tools/OCMock-static/OCMIndirectReturnValueProvider.h"; sourceTree = SOURCE_ROOT; };
-		65D66C441175FC07001132D1 /* OCMNotificationPoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMNotificationPoster.h; path = "../tools/OCMock-static/OCMNotificationPoster.h"; sourceTree = SOURCE_ROOT; };
-		65D66C451175FC07001132D1 /* OCMObserverRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMObserverRecorder.h; path = "../tools/OCMock-static/OCMObserverRecorder.h"; sourceTree = SOURCE_ROOT; };
-		65D66C461175FC07001132D1 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = "../tools/OCMock-static/OCMock.h"; sourceTree = SOURCE_ROOT; };
-		65D66C471175FC07001132D1 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = "../tools/OCMock-static/OCMockObject.h"; sourceTree = SOURCE_ROOT; };
-		65D66C481175FC07001132D1 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = "../tools/OCMock-static/OCMockRecorder.h"; sourceTree = SOURCE_ROOT; };
-		65D66C491175FC07001132D1 /* OCMPassByRefSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMPassByRefSetter.h; path = "../tools/OCMock-static/OCMPassByRefSetter.h"; sourceTree = SOURCE_ROOT; };
-		65D66C4A1175FC07001132D1 /* OCMReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMReturnValueProvider.h; path = "../tools/OCMock-static/OCMReturnValueProvider.h"; sourceTree = SOURCE_ROOT; };
-		65D66C4B1175FC07001132D1 /* OCObserverMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCObserverMockObject.h; path = "../tools/OCMock-static/OCObserverMockObject.h"; sourceTree = SOURCE_ROOT; };
-		65D66C4C1175FC07001132D1 /* OCPartialMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCPartialMockObject.h; path = "../tools/OCMock-static/OCPartialMockObject.h"; sourceTree = SOURCE_ROOT; };
-		65D66C4D1175FC07001132D1 /* OCPartialMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCPartialMockRecorder.h; path = "../tools/OCMock-static/OCPartialMockRecorder.h"; sourceTree = SOURCE_ROOT; };
-		65D66C4E1175FC07001132D1 /* OCProtocolMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCProtocolMockObject.h; path = "../tools/OCMock-static/OCProtocolMockObject.h"; sourceTree = SOURCE_ROOT; };
 		AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dUsefulStuff_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -231,9 +216,9 @@
 				653AD415116E165B006E2268 /* Foundation.framework in Frameworks */,
 				65269779116EF91E003C63D3 /* CoreGraphics.framework in Frameworks */,
 				65269784116EF983003C63D3 /* UIKit.framework in Frameworks */,
-				65D66C501175FC07001132D1 /* libOCMock-static.a in Frameworks */,
 				6576D1C4121C0CAF00CBE1B0 /* GHUnitIOS.framework in Frameworks */,
 				6541E16F12366D0700508A8F /* CoreData.framework in Frameworks */,
+				650B81931276F1B3002BA0B2 /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +278,9 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				650B81921276F1B3002BA0B2 /* OCMock.framework */,
 				65568ECC1233B95900BC02C3 /* CoreData.framework */,
 				6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */,
-				65F21672116C67FB0086F808 /* OCMock */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
 				65269778116EF91E003C63D3 /* CoreGraphics.framework */,
 				65269783116EF983003C63D3 /* UIKit.framework */,
@@ -306,20 +291,21 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				65D5D7711259EBDA00E161C1 /* Rating scales */,
 				6503579B116A1B8100202897 /* DCCommon.h */,
 				65568E971233B7C400BC02C3 /* DCCoreData.h */,
 				65568E981233B7C400BC02C3 /* DCCoreData.m */,
 				65CD392E122551E90061EEBF /* DCDialogs.h */,
 				65CD392F122551E90061EEBF /* DCDialogs.m */,
-				6503579C116A1B8100202897 /* DCUIRating.h */,
-				6503579D116A1B8100202897 /* DCUIRating.m */,
 				65001C96117C87F500C6ACA8 /* DCUIBubble.h */,
 				65001C97117C87F500C6ACA8 /* DCUIBubble.m */,
+				6503579C116A1B8100202897 /* DCUIRating.h */,
+				6503579D116A1B8100202897 /* DCUIRating.m */,
+				657F52F7129E9D6600EC3B7F /* DCUIRatingDelegate.h */,
 				6503579E116A1B8100202897 /* NSDictionary+dUsefulStuff.h */,
 				6503579F116A1B8100202897 /* NSDictionary+dUsefulStuff.m */,
 				650357A0116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.h */,
 				650357A1116A1B8100202897 /* NSMutableDictionary+dUsefulStuff.m */,
+				65D5D7711259EBDA00E161C1 /* Rating scales */,
 				65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */,
 				65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */,
 				65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */,
@@ -354,6 +340,7 @@
 				650357B1116A1BAA00202897 /* NSMutableDictionary+dUsefulStuffTests.m */,
 				65F21665116C677F0086F808 /* Rating tests */,
 				65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */,
+				6538898A12730E980037D2C1 /* DCCoreDataTests.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -382,6 +369,7 @@
 				651834AE1227F3A300B4AE43 /* clean.sh */,
 				651834BB1227F98200B4AE43 /* assembleFramework.sh */,
 				651834BC1227F9AC00B4AE43 /* createDmg.sh */,
+				65AD2520128E816C007E4F23 /* Uncrustify.sh */,
 			);
 			path = scripts;
 			sourceTree = "<group>";
@@ -416,34 +404,6 @@
 			name = "Rating tests";
 			sourceTree = "<group>";
 		};
-		65F21672116C67FB0086F808 /* OCMock */ = {
-			isa = PBXGroup;
-			children = (
-				65D66C3A1175FC07001132D1 /* libOCMock-static.a */,
-				65D66C3B1175FC07001132D1 /* NSInvocation+OCMAdditions.h */,
-				65D66C3C1175FC07001132D1 /* NSMethodSignature+OCMAdditions.h */,
-				65D66C3D1175FC07001132D1 /* NSNotificationCenter+OCMAdditions.h */,
-				65D66C3E1175FC07001132D1 /* OCClassMockObject.h */,
-				65D66C3F1175FC07001132D1 /* OCMArg.h */,
-				65D66C401175FC07001132D1 /* OCMBoxedReturnValueProvider.h */,
-				65D66C411175FC07001132D1 /* OCMConstraint.h */,
-				65D66C421175FC07001132D1 /* OCMExceptionReturnValueProvider.h */,
-				65D66C431175FC07001132D1 /* OCMIndirectReturnValueProvider.h */,
-				65D66C441175FC07001132D1 /* OCMNotificationPoster.h */,
-				65D66C451175FC07001132D1 /* OCMObserverRecorder.h */,
-				65D66C461175FC07001132D1 /* OCMock.h */,
-				65D66C471175FC07001132D1 /* OCMockObject.h */,
-				65D66C481175FC07001132D1 /* OCMockRecorder.h */,
-				65D66C491175FC07001132D1 /* OCMPassByRefSetter.h */,
-				65D66C4A1175FC07001132D1 /* OCMReturnValueProvider.h */,
-				65D66C4B1175FC07001132D1 /* OCObserverMockObject.h */,
-				65D66C4C1175FC07001132D1 /* OCPartialMockObject.h */,
-				65D66C4D1175FC07001132D1 /* OCPartialMockRecorder.h */,
-				65D66C4E1175FC07001132D1 /* OCProtocolMockObject.h */,
-			);
-			name = OCMock;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -465,6 +425,7 @@
 				653888F01272C7870037D2C1 /* DCUIRatingScale5Strategy.h in Headers */,
 				653888F11272C7870037D2C1 /* DCUIRatingScale5HalfStrategy.h in Headers */,
 				653888F21272C7880037D2C1 /* DCUIRatingScale10Strategy.h in Headers */,
+				657F52F8129E9D6600EC3B7F /* DCUIRatingDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +570,7 @@
 				65D5D7841259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m in Sources */,
 				659CB9A8125A01CC00AD44BE /* DCUIRatingScale10StrategyTests.m in Sources */,
 				659CB9CB125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m in Sources */,
+				6538898C12730EDF0037D2C1 /* DCCoreDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,20 +622,18 @@
 		1DEB922308733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Debug;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				CURRENT_PROJECT_VERSION = 0.0.6;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DC_DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = dUsefulStuff;
 				RUN_CLANG_STATIC_ANALYZER = NO;
-				SDKROOT = iphonesimulator3.2;
+				SDKROOT = iphoneos4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -681,18 +641,16 @@
 		1DEB922408733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				CURRENT_PROJECT_VERSION = 0.0.6;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = dUsefulStuff;
 				RUN_CLANG_STATIC_ANALYZER = NO;
-				SDKROOT = iphonesimulator3.2;
+				SDKROOT = iphoneos4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -715,10 +673,7 @@
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
 				INFOPLIST_FILE = "src/tests/dUsefulStuff unit tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../tools/OCMock-static\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -747,10 +702,7 @@
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
 				INFOPLIST_FILE = "src/tests/dUsefulStuff unit tests-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../tools/OCMock-static\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -774,7 +726,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "src/tests/RatingTest-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -786,7 +737,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefullStuff Test Program";
-				SDKROOT = iphonesimulator3.2;
+				PROVISIONING_PROFILE = "8A161FB9-BEAF-4A19-B0A6-9FBFA35388D2";
 			};
 			name = Debug;
 		};
@@ -802,7 +753,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "src/tests/RatingTest-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -813,7 +763,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefullStuff Test Program";
-				SDKROOT = iphonesimulator3.2;
+				PROVISIONING_PROFILE = "8A161FB9-BEAF-4A19-B0A6-9FBFA35388D2";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -821,20 +771,16 @@
 		65A0C68D116EF534003AC854 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Debug;
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
-				SDKROOT = iphonesimulator3.2;
 			};
 			name = Debug;
 		};
 		65A0C68E116EF534003AC854 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
-				SDKROOT = iphonesimulator3.2;
 			};
 			name = Release;
 		};

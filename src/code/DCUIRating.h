@@ -9,6 +9,8 @@
 #import <UIKit/UIControl.h>
 #import "DCUIBubble.h"
 #import "DCUIRatingScaleStrategy.h"
+#import "DCUIRating.h"
+#import "DCUIRatingDelegate.h"
 
 /**
  * What type of scale the control uses.
@@ -44,6 +46,7 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 	UIImage *halfRatingImage;
 	DCRATINGSCALE scaleType;
 	DCUIBubble *bubble;
+	NSObject<DCUIRatingDelegate> * delegate;
 
 	// Internal use for display and layout.
 	int lastTouchX;
@@ -52,6 +55,12 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 }
 
 /** \name Properties */
+
+/**
+ * If you wish to have the rating control notify another class of changes, implement the DCUIRatingDelegate
+ * protocol and set the class as the DCUIRating delegate.
+ */
+@property(retain,nonatomic) NSObject<DCUIRatingDelegate> * delegate;
 
 /**
  * Defines the range of values that the control will produce. There are three options:
@@ -82,6 +91,10 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  */
 @property (nonatomic, retain) UIImage *halfRatingImage;
 
+/** \name Bubble */
+/**
+ * Set this property with an instance of DCUIBubble to have the bubble displayed when the user is touching the control.
+ */
 @property (nonatomic,retain) DCUIBubble * bubble;
 
 @end

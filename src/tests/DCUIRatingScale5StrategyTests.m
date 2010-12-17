@@ -7,8 +7,9 @@
 //
 
 #import <GHUnitIOS/GHUnitIOS.h>
+#import <OCMock/OCMock.h>
+
 #import "DCUIRatingScale5Strategy.h"
-#import "OCMock.h"
 #import "DCCommon.h"
 #import "DCUIRating.h"
 #import "GHUnitTest+DCUIRatingScaleUtils.h"

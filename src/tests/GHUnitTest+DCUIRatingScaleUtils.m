@@ -6,8 +6,9 @@
 //  Copyright (c) 2010 Oakton Pty Ltd. All rights reserved.
 //
 
+#import <OCMock/OCMock.h>
+
 #import "GHUnitTest+DCUIRatingScaleUtils.h"
-#import "OCMock.h"
 #import "DCUIRatingScaleStrategy.h"
 #import "DCUIRatingScale5Strategy.h"
 #import "DCUIRatingScale5HalfStrategy.h"

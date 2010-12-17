@@ -12,113 +12,61 @@
 
 @interface DCCoreData ()
 
-- (NSManagedObjectModel *) managedObjectModel;
-- (NSPersistentStoreCoordinator *) persistentStoreCoordinator;
-
 @end
 
 
 @implementation DCCoreData
 
-@dynamic managedObjectContext;
+@synthesize managedObjectContext;
+@synthesize dbName;
+@synthesize dbFilePath;
 
-/**
- * Constructor which takes a directory to look for the database in.
- */
-- (id) initWithDBName:(NSString *)aName {
+- (id) initWithDBName:(NSString *)aName error:(NSError **) error {
 	self = [super init];
 	if (self) {
+
 		dbName = [aName retain];
+		NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+		dbFilePath = [docDir stringByAppendingPathComponent:[dbName stringByAppendingString:@".sqlite"]];
+		NSURL *dbFileUrl = [NSURL fileURLWithPath:dbFilePath];
+		DC_LOG(@"Using database at path: %@", dbFilePath);
+
+		DC_LOG(@"Creating managed object model from all models in the app bundle.");
+		managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
+
+		DC_LOG(@"Create persistant store coordinator");
+		persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel];
+
+		DC_LOG(@"Adding database to persistant store.");
+		if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:dbFileUrl options:nil error:error]) {
+			return nil;
+		}
+		
+		DC_LOG(@"Creating managed object context.");
+		managedObjectContext = [[NSManagedObjectContext alloc] init];
+		[self.managedObjectContext setPersistentStoreCoordinator:persistentStoreCoordinator];
+
 	}
+		
 	return self;
 }
 
-/**
- * Returns the managed object context for the application.
- * If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
- */
-- (NSManagedObjectContext *) managedObjectContext {
-
-	if (managedObjectContext != nil) {
-		return managedObjectContext;
+- (BOOL) deleteDatabase:(NSError **) error {
+	NSFileManager *fileManager = [[[NSFileManager alloc] init] autorelease];
+	DC_LOG(@"Checking for database file at: %@", self.dbFilePath);
+	if ([fileManager fileExistsAtPath:self.dbFilePath]) {
+		DC_LOG(@"Deleting database: %@", self.dbFilePath);
+		return [fileManager removeItemAtPath:self.dbFilePath error:error];
 	}
-
-	DC_LOG(@"Create managed object context");
-	NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-	if (coordinator != nil) {
-		managedObjectContext = [[NSManagedObjectContext alloc] init];
-		[managedObjectContext setPersistentStoreCoordinator:coordinator];
-	}
-	return managedObjectContext;
+	return YES;
 }
-
-
-/**
- * Returns the managed object model for the application.
- * If the model doesn't already exist, it is created by merging all of the models found in the application bundle.
- */
-- (NSManagedObjectModel *) managedObjectModel {
-
-	if (managedObjectModel != nil) {
-		return managedObjectModel;
-	}
-	DC_LOG(@"Creating managed object model");
-	managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
-	return managedObjectModel;
-}
-
-
-/**
- * Returns the persistent store coordinator for the application.
- * If the coordinator doesn't already exist, it is created and the application's store added to it.
- */
-- (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
-
-	if (persistentStoreCoordinator != nil) {
-		return persistentStoreCoordinator;
-	}
-
-	DC_LOG(@"Create persistant store coordinator");
-	NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-	NSURL *storeUrl = [NSURL fileURLWithPath:[docDir stringByAppendingPathComponent:[dbName stringByAppendingString:@".sqlite"]]];
-
-	NSError *error = nil;
-	persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-	if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
-		
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-
-		//Alert the user
-		NSString * msg = [[NSString alloc] initWithFormat:
-				 @"An unexpected error has occured: %@", [error localizedDescription]];
-		[DCDialogs displayMessage:msg];
-		[msg release];
-	}
-
-	return persistentStoreCoordinator;
-}
-
-- (void) applicationWillTerminate {
-	DC_LOG(@"Terminating");
-	NSError *error = nil;
-	if (managedObjectContext != nil) {
-		if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-			DC_LOG(@"Unresolved error %@, %@", error, [error userInfo]);
-		}
-	}
-	NSString *msg = [[NSString alloc] initWithFormat:
-			 @"An unexpected error has occured: %@", [error localizedDescription]];
-	[DCDialogs displayMessage:msg];
-	[msg release];
-}
-
 
 
 - (void) dealloc {
 	DC_DEALLOC(dbName);
-	[managedObjectContext release];
-	[managedObjectModel release];
-	[persistentStoreCoordinator release];
+	DC_DEALLOC(managedObjectModel);
+	DC_DEALLOC(persistentStoreCoordinator);
+	DC_DEALLOC(managedObjectContext);
 	[super dealloc];
 }
 

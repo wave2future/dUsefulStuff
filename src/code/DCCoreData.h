@@ -15,6 +15,7 @@
 @interface DCCoreData : NSObject {
 	@private
 	NSString *dbName;
+	NSString *dbFilePath;
 	NSManagedObjectModel *managedObjectModel;
 	NSManagedObjectContext *managedObjectContext;
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -26,16 +27,29 @@
  */
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
+/**
+ * Returns the name of the database.
+ */
+@property (nonatomic, readonly) NSString *dbName;
+
+/**
+ * Returns the url of the database in the local file system.
+ */
+@property (nonatomic, readonly) NSString *dbFilePath;
+
 /** \name Constructors */
 /**
  * Constructor which accepts the name of the sqlite database that will be used. This assembles all the interal objects in order to work with that database.
+ * \param nName the name of the database to create/access.
+ * \param error a reference to an error variable which will be populated with a NSError object if there 
+ * is a problem.
  */
-- (id) initWithDBName:(NSString *)aName;
+- (id) initWithDBName:(NSString *)aName error:(NSError **) error;
 
-/** \name Finalisation */
 /**
- * Call this from your application delegate to ensure correct shutdown. This ensures that any changes left in the managed object context are saved to the database.
+ * Deletes the database by deleting the file it is stored in.
+ * Returns true if the deletion was successful.
  */
-- (void) applicationWillTerminate;
+- (BOOL) deleteDatabase:(NSError **) error;
 
 @end
