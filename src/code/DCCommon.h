@@ -12,9 +12,9 @@
 #pragma mark Logging
 
 /**
- * DC_LOG is controlled by the DHC_DEBUG flag. If set, all DHC_LOG calls are converted into NSLog() calls.
- * If not set they are blanked out, producing no additional code. This makes life easy for developing because we
- * can be quite verbose without worrying about slowing the code down.
+ DC_LOG is controlled by the DHC_DEBUG flag. If set, all DHC_LOG calls are converted into NSLog() calls.
+ If not set they are blanked out, producing no additional code. This makes life easy for developing because we
+ can be quite verbose without worrying about slowing the code down.
  */
 #ifdef DC_DEBUG
 
@@ -42,9 +42,9 @@
 #pragma mark Memory handling
 
 /**
- * Wraps up some boiler plate code to dealloc an instance of a variable. This just does some house keeping
- * Although if logging is on, it will attempt to print a representation of the value of the deallocd variable so
- * that the developer can see when things are being freed.
+ Wraps up some boiler plate code to dealloc an instance of a variable. This just does some house keeping
+ Although if logging is on, it will attempt to print a representation of the value of the deallocd variable so
+ that the developer can see when things are being freed.
  */
 #ifdef DC_LOG_DEALLOCS
 

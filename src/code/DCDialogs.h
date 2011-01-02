@@ -10,23 +10,26 @@
 #import <UIKit/UIView.h>
 
 /**
- * Class which contains static dialog methods.
+ Class which contains static dialog methods.
  */
 @interface DCDialogs : NSObject {
 
 }
 
-/** \name Alerts */
+/** @name Alerts */
+
 /**
- * Displays a standard error notification. The dialog will have a single "ok" button.
- * \param msg the error text to display.
+ Displays a standard error notification. The dialog will have a single "ok" button.
+
+ @param msg the error text to display.
  */
 + (void) displayMessage:(NSString *)msg;
 
 /**
- * Displays a standard error notification. The dialog will have a single "ok" button.
- * \param msg the error text to display.
- * \param title The title of the dialog.
+ Displays a standard error notification. The dialog will have a single "ok" button.
+ 
+ @param msg the error text to display.
+ @param title The title of the dialog.
  */
 + (void) displayMessage:(NSString *)msg title:(NSString *)title;
 @end

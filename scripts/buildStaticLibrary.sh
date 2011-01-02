@@ -6,47 +6,20 @@
 # Created by Derek Clarkson on 26/08/10.
 # Copyright 2010 Derek Clarkson. All rights reserved.
 
-# Exit if an error occurs.
-set -o errexit
-# Disallows unset variables.
-set -o nounset
-
-if [ ! -f $SCRIPTS_DIR/common.sh ]; then
-	echo "Error: Common.sh not found!"
-	exit 1
-fi
-
-. $SCRIPTS_DIR/common.sh
-
-# Check or help requests if not running within xcode.
-assertSet PROJECT_DIR
-assertSet PROJECT_NAME
-assertSet PRODUCT_NAME
-assertSet CURRENT_PROJECT_VERSION
-assertSet BUILD_DIR
-assertSet BUILD_TARGET
-assertSet DEVICE_SDK
-assertSet DEVICE_ARCHS
-assertSet DEVICE_VALID_ARCHS
-assertSet SIMULATOR_SDK
-assertSet SIMULATOR_ARCHS
-assertSet SIMULATOR_VALID_ARCHS
-assertSet BUILD_CONFIGURATION
-
 # Moves the  <user>.pbxuser file out of the way so that command line compiles 
 # will work without error. Otherwise it's presence triggers an exception.
 archivePbxuser() {
-	if [[ $XCODE_VERSION_ACTUAL != "0400" && $XCODE_VERSION_ACTUAL != "4.0" ]]; then
+if [ -f $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser ]; then
 		echo "Moving pbxuser file out of the way...."
-		mv $PROJECT_NAME.xcodeproj/$USER.pbxuser $PROJECT_NAME.xcodeproj/$USER.pbxuser.old
+		mv $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser.old
 	fi
 }
 
 # Restores the <user>.pbxuser file so that xcode can continue working.
 restorePbxuser() {
-	if [[ $XCODE_VERSION_ACTUAL != "0400" && $XCODE_VERSION_ACTUAL != "4.0" ]]; then
+	if [ -f $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser ]; then
 		echo "Restoring pbxuser file...."
-		mv $PROJECT_NAME.xcodeproj/$USER.pbxuser.old $PROJECT_NAME.xcodeproj/$USER.pbxuser
+		mv $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser.old $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser
 	fi
 }
 
@@ -60,16 +33,16 @@ compile() {
 	# Reset error trapping.
 	set +o errexit
 
-	echo "Building $COMPILE_ARCHS library ..."
-	xcodebuild -target "$BUILD_TARGET" -sdk $COMPILE_SDK -configuration $BUILD_CONFIGURATION VALID_ARCHS="$COMPILE_VALID_ARCHS" ARCHS="$COMPILE_ARCHS"
-	BUILD_RC=$?
+	echo "Building $DC_COMPILE_ARCHS library ..."
+	xcodebuild -target "$DC_BUILD_TARGET" -sdk $DC_COMPILE_SDK -configuration $DC_BUILD_CONFIGURATION VALID_ARCHS="$DC_COMPILE_VALID_ARCHS" ARCHS="$DC_COMPILE_ARCHS"
+	DC_BUILD_RC=$?
 	
 	# if it failed then restore user settings and exit.
-	if [ $BUILD_RC != 0 ]; then
+	if [ $DC_BUILD_RC != 0 ]; then
 		echo "Executing build failure sequence ..."
 		restorePbxuser
 		echo "Exiting as build threw an error."
-		exit $BUILD_RC
+		exit $DC_BUILD_RC
 	fi
 	
 	echo "Compiled."
@@ -84,23 +57,23 @@ compile() {
 # Start of run.
 echo "Starting build ..."
 
-COMPILE_SDK=$SIMULATOR_SDK
-COMPILE_VALID_ARCHS=$SIMULATOR_VALID_ARCHS
-COMPILE_ARCHS=$SIMULATOR_ARCHS
+DC_COMPILE_SDK=$DC_SIMULATOR_SDK
+DC_COMPILE_VALID_ARCHS=$DC_SIMULATOR_VALID_ARCHS
+DC_COMPILE_ARCHS=$DC_SIMULATOR_ARCHS
 compile
 
-COMPILE_SDK=$DEVICE_SDK
-COMPILE_VALID_ARCHS=$DEVICE_VALID_ARCHS
-COMPILE_ARCHS=$DEVICE_ARCHS
+DC_COMPILE_SDK=$DC_DEVICE_SDK
+DC_COMPILE_VALID_ARCHS=$DC_DEVICE_VALID_ARCHS
+DC_COMPILE_ARCHS=$DC_DEVICE_ARCHS
 compile
 
 echo "Combining libraries..."
-echo "Creating lib dir $BUILD_DIR/lib"
-mkdir "$BUILD_DIR/lib"
+echo "Creating universal directory $DC_UNIVERSAL_DIR"
+mkdir "$DC_UNIVERSAL_DIR"
 echo "Combining ..."
-lipo -create "${PROJECT_DIR}/build/$BUILD_CONFIGURATION-iphoneos/lib${PROJECT_NAME}.a" "${PROJECT_DIR}/build/$BUILD_CONFIGURATION-iphonesimulator/lib${PROJECT_NAME}.a" -o "$BUILD_DIR/lib/$PROJECT_NAME"
+lipo -create "${DC_PROJECT_DIR}/build/$DC_BUILD_CONFIGURATION-iphoneos/lib${DC_PROJECT_NAME}.a" "${DC_PROJECT_DIR}/build/$DC_BUILD_CONFIGURATION-iphonesimulator/lib${DC_PROJECT_NAME}.a" -o "$DC_UNIVERSAL_DIR/$DC_PROJECT_NAME"
 
-echo "Static library created at $BUILD_DIR/lib/$PROJECT_NAME"
+echo "Static library created at $DC_UNIVERSAL_DIR/$DC_PROJECT_NAME"
 
 exit 0
 

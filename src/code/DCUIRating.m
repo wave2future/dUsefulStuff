@@ -6,13 +6,17 @@
 //  Copyright 2010 Derek Clarkson. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 #import "DCUIRating.h"
 #import "DCCommon.h"
-#import <UIKit/UIKit.h>
 #import "DCUIRatingScale5Strategy.h"
 #import "DCUIRatingScale5HalfStrategy.h"
 #import "DCUIRatingScale10Strategy.h"
 
+/**
+ private interface
+ */
 @interface DCUIRating ()
 - (void) calculateRatingWithTouch:(UITouch *)aTouch;
 - (void) popBubbleAtTouch:(UITouch *)atTouch;
@@ -30,6 +34,11 @@
 @synthesize bubble;
 @synthesize delegate;
 
+/**
+ Sets the rating to be displayed. Usually used when setting up data in a display.
+
+ @param rating the value to be set.
+ */
 -(void) setRating:(float)rating {
 	if (scaleStrategy == nil) {
 		initialRating = rating;
@@ -40,6 +49,9 @@
 	}
 }
 
+/**
+ Returns the current rating value.
+ */
 -(float) rating {
 	return scaleStrategy == nil ? initialRating : [scaleStrategy rating];	
 }

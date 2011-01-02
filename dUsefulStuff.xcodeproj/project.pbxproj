@@ -81,7 +81,6 @@
 		65B182F2124DD7CC00A789C0 /* UIView+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */; };
 		65BD83E81259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD83E61259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.m */; };
 		65BD83EC1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD83EA1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m */; };
-		65CD37721225288D0061EEBF /* framework.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CD37711225288D0061EEBF /* framework.plist */; };
 		65CD3931122551E90061EEBF /* DCDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD392F122551E90061EEBF /* DCDialogs.m */; };
 		65D11B8912585AC0001FED62 /* DCUIRatingScale5Strategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8712585AC0001FED62 /* DCUIRatingScale5Strategy.m */; };
 		65D11B8C12586419001FED62 /* DCUIRatingScale5StrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8B12586419001FED62 /* DCUIRatingScale5StrategyTests.m */; };
@@ -160,7 +159,6 @@
 		65269778116EF91E003C63D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		65269783116EF983003C63D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6538898A12730E980037D2C1 /* DCCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoreDataTests.m; sourceTree = "<group>"; };
-		654ED65A116C5B89007AB3BA /* docset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = docset.plist; sourceTree = "<group>"; };
 		654ED65B116C5B89007AB3BA /* doxygen-appledoc.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "doxygen-appledoc.config"; sourceTree = "<group>"; };
 		654ED65C116C5B89007AB3BA /* ReadMe.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = ReadMe.markdown; sourceTree = "<group>"; };
 		654ED65D116C5B89007AB3BA /* star-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-active.png"; sourceTree = "<group>"; };
@@ -169,8 +167,11 @@
 		65568E971233B7C400BC02C3 /* DCCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCoreData.h; path = src/code/DCCoreData.h; sourceTree = "<group>"; };
 		65568E981233B7C400BC02C3 /* DCCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCCoreData.m; path = src/code/DCCoreData.m; sourceTree = "<group>"; };
 		65568ECC1233B95900BC02C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		65584D7212C427CE00F7B39A /* defaults.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = defaults.sh; sourceTree = "<group>"; };
+		65584FF412D085A800F7B39A /* AppleDocTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleDocTest.h; path = src/code/AppleDocTest.h; sourceTree = "<group>"; };
+		65584FF512D085A800F7B39A /* AppleDocTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleDocTest.m; path = src/code/AppleDocTest.m; sourceTree = "<group>"; };
 		656B793411796FE000F19C5D /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
-		656E3EEC1257752A00CAFAD9 /* ChangeLog.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; name = ChangeLog.markdown; path = dUsefulStuff.xcodeproj/ChangeLog.markdown; sourceTree = "<group>"; };
+		656E3EEC1257752A00CAFAD9 /* ChangeLog.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChangeLog.markdown; sourceTree = "<group>"; };
 		6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = /Users/derek/projects/tools/GHUnitIOS.framework; sourceTree = "<absolute>"; };
 		6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = src/tests/GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefulStuff simulator unit tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +192,6 @@
 		65BD83E61259E3DF00433CCD /* DCUIRatingScale5HalfStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale5HalfStrategy.m; path = src/code/DCUIRatingScale5HalfStrategy.m; sourceTree = "<group>"; };
 		65BD83E91259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingAbstractScaleStrategy.h; path = src/code/DCUIRatingAbstractScaleStrategy.h; sourceTree = "<group>"; };
 		65BD83EA1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingAbstractScaleStrategy.m; path = src/code/DCUIRatingAbstractScaleStrategy.m; sourceTree = "<group>"; };
-		65CD37711225288D0061EEBF /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = framework.plist; sourceTree = "<group>"; };
 		65CD392E122551E90061EEBF /* DCDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDialogs.h; path = src/code/DCDialogs.h; sourceTree = "<group>"; };
 		65CD392F122551E90061EEBF /* DCDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDialogs.m; path = src/code/DCDialogs.m; sourceTree = "<group>"; };
 		65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buildStaticLibrary.sh; sourceTree = "<group>"; };
@@ -310,6 +310,8 @@
 				65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */,
 				65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */,
 				65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */,
+				65584FF412D085A800F7B39A /* AppleDocTest.h */,
+				65584FF512D085A800F7B39A /* AppleDocTest.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -350,12 +352,10 @@
 			children = (
 				656B793411796FE000F19C5D /* bubble.png */,
 				657D8F731170B4E60044EF4F /* installDocSet */,
-				654ED65A116C5B89007AB3BA /* docset.plist */,
 				654ED65B116C5B89007AB3BA /* doxygen-appledoc.config */,
 				654ED65D116C5B89007AB3BA /* star-active.png */,
 				654ED65E116C5B89007AB3BA /* star-half-active.png */,
 				654ED65F116C5B89007AB3BA /* star.png */,
-				65CD37711225288D0061EEBF /* framework.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -370,6 +370,7 @@
 				651834BB1227F98200B4AE43 /* assembleFramework.sh */,
 				651834BC1227F9AC00B4AE43 /* createDmg.sh */,
 				65AD2520128E816C007E4F23 /* Uncrustify.sh */,
+				65584D7212C427CE00F7B39A /* defaults.sh */,
 			);
 			path = scripts;
 			sourceTree = "<group>";
@@ -520,7 +521,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				653AD383116E146E006E2268 /* blank_10_x_10.png in Resources */,
-				65CD37721225288D0061EEBF /* framework.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +624,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Debug;
-				CURRENT_PROJECT_VERSION = 0.0.6;
+				CURRENT_PROJECT_VERSION = 0.0.7;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DC_DEBUG;
@@ -643,7 +643,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
-				CURRENT_PROJECT_VERSION = 0.0.6;
+				CURRENT_PROJECT_VERSION = 0.0.7;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

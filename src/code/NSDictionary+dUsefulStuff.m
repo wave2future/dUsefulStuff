@@ -12,9 +12,6 @@
 
 @implementation NSDictionary (dUsefulStuff)
 
-/**
- * Returns an object for a passed int key.
- */
 - (id) objectForIntKey:(int)aIntKey {
 	DC_LOG(@"Returning value for key: %i", aIntKey);
 	return [self objectForKey:[NSNumber numberWithInteger:aIntKey]];
