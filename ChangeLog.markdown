@@ -5,6 +5,7 @@
 * Re-wrote createDocumentation.sh to work with appledoc V2.
 * Threw out the framework.plist file so that it is created by the script.
 * As a result of going to appledoc V2, threw out dependencies on doxygen.
+* Fixed a minor issues with the definition of the rating property in the strategies.
 
 # Changes Version 0.0.6
 

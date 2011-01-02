@@ -9,44 +9,49 @@
 #import <UIKit/UIKit.h>  
 
 /**
- * This interface outlines the contract for a class which handles scale
- * related functionality for a DCUIRating.
+ This interface outlines the contract for a class which handles scale
+ related functionality for a DCUIRating.
  */
 @protocol DCUIRatingScaleStrategy
 
-/** \name Constructor */
+/// ------------------------------------
+/// @name Constructors
+/// ------------------------------------
+
 -(id) initWithOffImage:(UIImage *) aOffImage onImage:(UIImage *) aOnImage halfOnImage:(UIImage *) aHalfOnImage;
 
-/** \name Methods */
+/// ------------------------------------
+/// @name Methods
+/// ------------------------------------
 
 /**
- * Called during DCUIRating:drawRect, this is where the strategy is 
- * expected to handle drawing the correct image on the display.
+ Called during DCUIRating:drawRect:, this is where the strategy is 
+ expected to handle drawing the correct image on the display. This method will be called 5 times to draw 
+ the complete row of images.
+ 
+ @param index the index of the icon to be drawn. 
  */
 -(void) drawImageAtIndex:(int) index;
 
 /**
- * Returns the width of the area on the left where the rating is zero.
+ Returns the width of the area on the left where the rating is zero.
  */
 -(int) calcZeroAreaWidth;
 
 /**
- * Asks the strategy to calculate a new rating based on the touch.
+ Asks the strategy to calculate a new rating based on the touch. This is the method that is called by DCUIRating.
+ 
+ @param touchX the current horizontal X value of the touch event.
  */
 -(float) calcNewRatingFromTouchX:(int) touchX;
 
 /**
- * Setter which allows setting of the current value.
+ The current value of the rating as set or calculated by the strategy.
  */
--(void) setRating:(float) aRating;
+@property (nonatomic) float rating;
 
 /**
- * Getter for the current rating.
- */
--(float) rating;
-
-/**
- * Used to get a formatted version of the rating suitable for displays.
+ Used to get a formatted version of the rating suitable for displays.
  */
 -(NSString *) formattedRating;
 

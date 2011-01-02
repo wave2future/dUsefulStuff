@@ -9,7 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "DCUIRatingAbstractScaleStrategy.h"
 
+/**
+ Class that implements the 0, 0.5, 1.0, 1.5 ...5 strategory for DC_SCALE_0_TO_5_HALF
+ */
 @interface DCUIRatingScale5HalfStrategy : DCUIRatingAbstractScaleStrategy {
+
+	/**
+	 This formatter is used by decendants as well. Hence it is public.
+	 It should not be used by external classes.
+	 */
 	NSNumberFormatter * decimalFormatter;
 }
 

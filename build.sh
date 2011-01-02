@@ -24,17 +24,17 @@ source $DC_SCRIPTS_DIR/common.sh
 
 printSettings
 
-$DC_SCRIPTS_DIR/createDocumentation.sh
-exit 0
 # Call the scripts.
 $DC_SCRIPTS_DIR/clean.sh
 $DC_SCRIPTS_DIR/buildStaticLibrary.sh
 $DC_SCRIPTS_DIR/assembleFramework.sh
+$DC_SCRIPTS_DIR/createDocumentation.sh
 
 # Extra step here to copy the scripts into a directory of the dmg file.
 mkdir $DC_ARTIFACT_DIR/scripts
 find "scripts" -type f -name "*.sh" -depth 1 -exec cp -v "{}" "$DC_ARTIFACT_DIR/scripts" \;
 
+# Final assembly.
 $DC_SCRIPTS_DIR/createDmg.sh
 
 

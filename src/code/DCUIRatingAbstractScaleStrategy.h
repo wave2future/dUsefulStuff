@@ -10,7 +10,7 @@
 #import "DCUIRatingScaleStrategy.h"
 
 /**
- * This is an abstract class for strategies. It puts in place everything that all strategies do.
+ This is an abstract class for strategies. It puts in place everything that all strategies do.
  */
 @interface DCUIRatingAbstractScaleStrategy : NSObject <DCUIRatingScaleStrategy> {
 	UIImage * onImage;
@@ -21,24 +21,23 @@
 	int zeroAreaWidth;
 }
 
-/** \name Properties */
 /**
- * Gets and sets the current rating. Usually only done when setting up.
- */
-@property (nonatomic) float rating;
-
-/**
- * Override to return the width of the area on the left which represents a rating of zero.
+ Override to return the width of the area on the left which represents a rating of zero.
  */
 -(int) calcZeroAreaWidth;
 
 /**
- * Override to return the image for a specific index.
+ Override to return the image for a specific index.
+ 
+ @param index the index of the image we want. 0 - 5.
  */
 -(UIImage *) imageForIndex:(int) index;
 
 /**
- * Called from DCUIRatingAbstractScaleStrategy:calcNewRatingFromTouchX to do the calculation.
+ Called from calcNewRatingFromTouchX: to do the calculation of the new rating. This needs to be implemented
+ by the strategies.
+ 
+ @param touchX the horizontal X value from the touch event.
  */
 -(float) calcRatingFromTouchX:(int) touchX;
 

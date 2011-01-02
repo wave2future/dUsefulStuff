@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "DCUIRatingAbstractScaleStrategy.h"
 
+/**
+ Class that implements the 0...5 strategory for DC_SCALE_0_TO_5
+ */
 @interface DCUIRatingScale5Strategy : DCUIRatingAbstractScaleStrategy {
 }
 
