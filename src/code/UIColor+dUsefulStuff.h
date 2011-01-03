@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 
 /**
- * A category of colour handing routines.
+ A category of colour handing routines.
  */
 @interface UIColor (dUsefulStuff)
 
 /**
- * Returns YES if the colours are the same.
+ Returns YES if this colour is the same as the colour passed in this message.
+ 
+ @param aColour the colour to test against. 
  */
 - (BOOL) isEqualToColor:(UIColor *) aColour;
 

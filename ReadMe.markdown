@@ -206,7 +206,9 @@ Class of static methods for displaying messages to the user. Just takes some pai
 
 In the **scripts** directory there are a number of scripts which can be used for building static libraries and documentation from the command line. To see an example how they can be used look at the **build.sh** file in the source root of this project. Each script is a distinct part or phase of a build process. Here users of Ant or Maven will be familiar with what I am talking about. These scripts are designed to be used either from a command line or from within xcode. Hence they make use of the standard xcode properties.
 
-Here is an example of using them (actually it's a copy of the build.sh script from this project :-). Check that ile for the latest version and settings.
+You will notice that all the sripts make use of variables prefixed with *DC_*. This is a deliberate thing because it makes it easier to see which variables are being used and there values.
+
+Here is an example of using them (actually it's a copy of the build.sh script from this project :-). Check that file for the latest version and settings.
 
 		#!/bin/sh
 
@@ -216,81 +218,46 @@ Here is an example of using them (actually it's a copy of the build.sh script fr
 		# Created by Derek Clarkson on 27/08/10.
 		# Copyright 2010 Derek Clarkson. All rights reserved.
 
-		# Exit if an error occurs.
-		set -o errexit
+		# build specific.
+		DC_CURRENT_PROJECT_VERSION=${CURRENT_PROJECT_VERSION=0.0.7}
+		DC_PRODUCT_NAME=${PRODUCT_NAME=dUsefulStuff}
+		DC_SRC=src/code
+		DC_BUILD_TARGET="Build Library"
+		DC_COMPANY_ID=au.com.derekclarkson
+		DC_AUTHOR="Derek Clarkson"
+		DC_COMPANY=$DC_AUTHOR
 
-		# Quick and dirty debug building.
-		if [[ $1 == "--debug" ]]; then
-			echo "Switching to Debug build"
-			BUILD_CONFIGURATION=Debug
-		fi
+		DC_SCRIPTS_DIR=scripts
+		export DC_SCRIPTS_DIR 
 
-		# Now disallow unset variables.
-		set -o nounset
+		# Include common scripts.
+		source $DC_SCRIPTS_DIR/defaults.sh
+		source $DC_SCRIPTS_DIR/common.sh
 
-		# Set build related values.
-		PRODUCT_NAME=dUsefulStuff
-		PROJECT_NAME=$PRODUCT_NAME
-		CURRENT_PROJECT_VERSION=0.0.6
-		SRC=src/code
-
-		BUILD_TARGET="Build Library"
-
-		# SDKs.
-		SIMULATOR_SDK=iphonesimulator4.2
-		SIMULATOR_ARCHS=i386
-		SIMULATOR_VALID_ARCHS=i386
-		DEVICE_SDK=iphoneos4.2
-		DEVICE_ARCHS="armv6 armv7"
-		DEVICE_VALID_ARCHS="armv6 armv7"
-		# Normally this is set to release. But you can override it to set it to Debug.
-		BUILD_CONFIGURATION=${BUILD_CONFIGURATION=Release}
-
-		# Sort out the xcode version
-		_VERSION_OUTPUT=`xcodebuild -version | grep Xcode`
-		_XCODE_VERSION=${_VERSION_OUTPUT/#Xcode /}
-		XCODE_VERSION_ACTUAL=${XCODE_VERSION_ACTUAL=$_XCODE_VERSION}
-
-		# Set used directories. Notice some allow for setting from xcode.
-		SCRIPTS_DIR=./scripts
-		TOOLS_DIR=../tools
-		EXTERNAL_DIR=../External
-		PROJECT_DIR=${PROJECT_DIR=.}
-		BUILD_DIR=${BUILD_DIR=build}
-		ARTIFACT_DIR=Releases/v$CURRENT_PROJECT_VERSION
-
-		DMG_FILE=Releases/$PRODUCT_NAME-$CURRENT_PROJECT_VERSION.dmg
-
-		#Uncomment for xcode 4.
-		#DOCSETUTIL_PATH=/Xcode4/usr/bin/docsetutil
-
-		# Export so the scripts can see the setting.
-		export SCRIPTS_DIR TOOLS_DIR EXTERNAL_DIR SIMULATOR_SDK SIMULATOR_ARCHS SIMULATOR_VALID_ARCHS DEVICE_SDK DEVICE_ARCHS DEVICE_VALID_ARCHS PROJECT_NAME PRODUCT_NAME BUILD_DIR PROJECT_DIR CURRENT_PROJECT_VERSION BUILD_TARGET ARTIFACT_DIR DMG_FILE SRC BUILD_CONFIGURATION DOCSETUTIL_PATH XCODE_VERSION_ACTUAL
+		printSettings
 
 		# Call the scripts.
-		$SCRIPTS_DIR/clean.sh
-		$SCRIPTS_DIR/buildStaticLibrary.sh
-		$SCRIPTS_DIR/createDocumentation.sh
-		$SCRIPTS_DIR/assembleFramework.sh
+		$DC_SCRIPTS_DIR/clean.sh
+		$DC_SCRIPTS_DIR/buildStaticLibrary.sh
+		$DC_SCRIPTS_DIR/assembleFramework.sh
+		$DC_SCRIPTS_DIR/createDocumentation.sh
+		$DC_SCRIPTS_DIR/createDmg.sh
 
-		# Extra step here to copy the scripts into a directory of the dmg file.
-		mkdir $ARTIFACT_DIR/scripts
-		find "scripts" -type f -name "*.sh" -depth 1 -exec cp -v "{}" "$ARTIFACT_DIR/scripts" \;
+### defaults.sh
 
-		$SCRIPTS_DIR/createDmg.sh
-
-
-### buildStaticLibrary.sh
-
-This is the main script for building. It will compile both a simulator and device version of the code in your project and then combine them into a single library. 
+This script takes in the values previously setup in the build.sh script and uses then as the basis for further settings. Therefore it is important that it is included using the *source* statement rather than called as a subscript.
 
 ### common.sh
 
 A script which is included by other scripts to provide some commonly used functions.
 
+### buildStaticLibrary.sh
+
+This is the main script for building. It will compile both a simulator and device version of the code in your project and then combine them into a single library. 
+
 ### createDocumentation.sh
 
-This script will create and install api documentation using he doxygen and appledoc tools. If either of these two tools are not found then documentation is not created and wil be skipped. Setting this up is quite complicated because it also depends on a **docset.plist** file and a **doxygen-appledoc.config** file. Both of these are supplied in the dmg.
+This script will create and install api documentation using *appledoc V2* tools. If appledoc is not found then documentation is not created and this step will be skipped. 
 
 ### clean.sh
 
@@ -309,5 +276,10 @@ This takes in all the files it finds into the artifact directory and builds a dm
 This is a shelle script which can be added to xcode as a script. You can use it to reformat the source code
 using the uncrustify code formatter.
 
+# Thanks
 
- 
+I'd like to say thanks to several developers for developing the following tools which have helped me tremendously is developing dUsefulStuff:
+
+* Tomaž Kragelj for [Appledoc V2](http://www.gentlebytes.com/home/appledocapp/)
+* Gabriel Handford for [GHUnit](https://github.com/gabriel/gh-unit)
+* Erik Doernenburg for [OCMock](http://www.mulle-kybernetik.com/software/OCMock/)

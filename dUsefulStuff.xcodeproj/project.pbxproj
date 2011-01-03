@@ -167,8 +167,6 @@
 		65568E981233B7C400BC02C3 /* DCCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCCoreData.m; path = src/code/DCCoreData.m; sourceTree = "<group>"; };
 		65568ECC1233B95900BC02C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		65584D7212C427CE00F7B39A /* defaults.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = defaults.sh; sourceTree = "<group>"; };
-		65584FF412D085A800F7B39A /* AppleDocTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppleDocTest.h; path = src/code/AppleDocTest.h; sourceTree = "<group>"; };
-		65584FF512D085A800F7B39A /* AppleDocTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleDocTest.m; path = src/code/AppleDocTest.m; sourceTree = "<group>"; };
 		656B793411796FE000F19C5D /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 		656E3EEC1257752A00CAFAD9 /* ChangeLog.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChangeLog.markdown; sourceTree = "<group>"; };
 		6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = /Users/derek/projects/tools/GHUnitIOS.framework; sourceTree = "<absolute>"; };
@@ -308,8 +306,6 @@
 				65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */,
 				65B182EF124DD7CC00A789C0 /* UIView+dUsefulStuff.h */,
 				65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */,
-				65584FF412D085A800F7B39A /* AppleDocTest.h */,
-				65584FF512D085A800F7B39A /* AppleDocTest.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

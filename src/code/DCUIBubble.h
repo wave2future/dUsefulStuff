@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 
 /**
- * A popup bubble.
- * A bubble is a (usually) small display area that can be programmed to appear is a position
- * which is related to another control. It usually displays a value or some text which the other
- * control sends it. Typically bubbles appear when the user has their finger on the display and
- * disappear when the user removes it. This is controlled by the other UIView through it's touch methods.
+ A popup bubble.
+ 
+ A bubble is a (usually) small display area that can be programmed to appear is a position
+ which is related to another control. It usually displays a value or some text which the other
+ control sends it. Typically bubbles appear when the user has their finger on the display and
+ disappear when the user removes it. This is controlled by the other UIView through it's touch methods.
  */
 @interface DCUIBubble : UIView {
 	@private
@@ -25,7 +26,9 @@
 	int textOffsetYPixels;
 }
 
-/** @name Properties */
+/// ---------------------------------------
+/// @name Properties
+/// ---------------------------------------
 
 /**
  The colour to paint the value with.
@@ -48,8 +51,10 @@
 @property (nonatomic) int textOffsetYPixels;
 
 /**
- Can be set to define the formatting of float values. If not set when the first draw occurs and the
- type is DC_BUBBLE_VALUE_FLOAT, this
+ Can be set to define the formatting of float values. 
+ 
+ If not set when the first draw occurs and the
+ type is *DC_BUBBLE_VALUE_FLOAT*, this
  will be set to a formatter with 1 decimal place.
  */
 @property (nonatomic, retain) NSNumberFormatter *decimalFormatter;
@@ -64,32 +69,50 @@
  */
 @property (nonatomic, retain) UIColor *borderColor;
 
-/** @name Constructors */
+/// ---------------------------------------
+/// @name Constructors
+/// ---------------------------------------
 
 /**
- Creates a bubble which makes use of the default rounded rectangle background. Background colour and border
- colour can be set via properties.
+ Creates a bubble which makes use of the default rounded rectangle background. 
+ 
+ Background colour and border colour can be set via properties.
+ 
+ @param size the size in pixels to make the bubble.
  */
 - (id) initWithSize:(CGSize)size;
 
 /**
- Creates a bubble which uses an image as a background. This image can contain transparent areas. backgroundColor and borderColor values are ignored if this constructor is used.
+ Creates a bubble which uses an image as a background. This image can contain transparent areas. 
+ 
+ BackgroundColor and borderColor values are ignored if this constructor is used.
+ 
+ @param image an image to use as the backgroun to the bubble. To make odd shaped bubbles, use transparency.
  */
 - (id) initWithBackgroundImage:(UIImage *)image;
 
-/** @name Events */
+/// ---------------------------------------
+/// @name Events
+/// ---------------------------------------
 
 /**
- Called DCUIRating control to move this control to it's new horizontal position.
+ Called by the DCUIRating control to move this control to it's new horizontal position. 
+ 
+ Or if you are using a
+ bubble over another control, ensure that the touch events of that control call this.
  
  @param aTouch the touch event that triggered the move.
  */
 - (void) alignWithTough:(UITouch *)aTouch;
 
-/** @name Setting the value */
+/// ---------------------------------------
+/// @name Setting the value
+/// ---------------------------------------
 
 /**
  Sets the value to be displayed.
+ 
+ @param aValue the value to display.
  */
 - (void) setValue:(NSString *)aValue;
 

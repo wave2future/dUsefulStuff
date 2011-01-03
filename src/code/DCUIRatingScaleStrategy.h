@@ -18,6 +18,13 @@
 /// @name Constructors
 /// ------------------------------------
 
+/**
+ Primary constructor.
+ 
+ @param aOffImage a UIImage which is displayed when the rating icon index is higher that the rating. i.e. it's off.
+ @param aOnImage a UIImage which is displayed when the rating icon index is less than or equal to the rating. i.e. it's on.
+ @param aHalfOnImage a UIImage which is displayed when the rating icon index is equal to the rating and the scale is set to DC\_SCALE\_0\_TO\_5\_WITH\_HALVES or DC\_SCALE\_0\_TO\_10. i.e. it's a half a star.
+ */
 -(id) initWithOffImage:(UIImage *) aOffImage onImage:(UIImage *) aOnImage halfOnImage:(UIImage *) aHalfOnImage;
 
 /// ------------------------------------

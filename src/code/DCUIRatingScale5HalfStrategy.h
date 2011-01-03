@@ -10,7 +10,7 @@
 #import "DCUIRatingAbstractScaleStrategy.h"
 
 /**
- Class that implements the 0, 0.5, 1.0, 1.5 ...5 strategory for DC_SCALE_0_TO_5_HALF
+ Class that implements the 0, 0.5, 1.0, 1.5 ...5 strategory for DC_SCALE_0_TO_5_WITH_HALVES
  */
 @interface DCUIRatingScale5HalfStrategy : DCUIRatingAbstractScaleStrategy {
 

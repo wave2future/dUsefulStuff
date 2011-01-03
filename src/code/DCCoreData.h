@@ -9,7 +9,7 @@
 #import <CoreData/CoreData.h>
 
 /**
-   This class acts as a wrapper to core data. It's job is to simply the calls being made so that the rest of
+   This class acts as a wrapper to core data. It's job is to simplify the calls being made so that the rest of
    the application doesn't have to be too aware of core data's internals.
  */
 @interface DCCoreData : NSObject {
@@ -21,7 +21,9 @@
 	NSPersistentStoreCoordinator * persistentStoreCoordinator;
 }
 
-/** @name Properties */
+/// ---------------------------------------
+/// @name Properties
+/// ---------------------------------------
 
 /**
    Gives access to the managed object context.
@@ -38,10 +40,13 @@
  */
 @property (nonatomic, readonly) NSString * dbFilePath;
 
-/** @name Constructors */
+/// ---------------------------------------
+/// @name Constructors
+/// ---------------------------------------
+
 /** Constructor which accepts the name of the sqlite database that will be used. This assembles all the interal objects in order to work with that database.
 
-   @param nName the name of the database to create/access.
+   @param aName the name of the database to create/access.
    @param error a reference to an error variable which will be populated with a NSError object if there is a problem.
    @return a reference to the newly created DCCoreData instance.
  */
