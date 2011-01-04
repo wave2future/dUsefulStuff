@@ -7,7 +7,7 @@
 # Copyright 2010 Derek Clarkson. All rights reserved.
 
 # build specific.
-DC_CURRENT_PROJECT_VERSION=${CURRENT_PROJECT_VERSION=0.0.7}
+DC_CURRENT_PROJECT_VERSION=${CURRENT_PROJECT_VERSION=0.0.8}
 DC_PRODUCT_NAME=${PRODUCT_NAME=dUsefulStuff}
 DC_SRC=src/code
 DC_BUILD_TARGET="Build Library"

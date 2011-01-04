@@ -1,4 +1,7 @@
 
+# Changes Version 0.0.8
+
+
 # Changes Version 0.0.7
 * Created a scripts/defaults.sh as a more practical method for centralising building settings common to many projects.
 * Refactored variable names in scripts to begin with DC_ so that it's easier to find and work with them.
