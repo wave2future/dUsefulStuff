@@ -7,7 +7,7 @@
 # Copyright 2010 Derek Clarkson. All rights reserved.
 echo "Building appledoc documentation ..."
 
-DC_APPLEDOC_CMD="$DC_APPLEDOC --ignore .m --install-docset --output $DC_BUILD_DIR/appledoc --project-name $DC_PROJECT_NAME --company-id $DC_COMPANY_ID --project-company $DC_COMPANY --templates $DC_APPLEDOC_TEMPLATES_DIR $DC_SRC"
+DC_APPLEDOC_CMD="$DC_APPLEDOC --ignore .m --keep-intermediate-files --install-docset --output $DC_BUILD_DIR/appledoc --project-name $DC_PROJECT_NAME --company-id $DC_COMPANY_ID --project-company $DC_COMPANY --templates $DC_APPLEDOC_TEMPLATES_DIR $DC_SRC"
 echo 
 echo Appledoc command: $DC_APPLEDOC_CMD
 echo 

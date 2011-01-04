@@ -6,11 +6,11 @@
 # Created by Derek Clarkson on 27/08/10.
 # Copyright 2010 Derek Clarkson. All rights reserved.
 
-DOCSET_PATH="/Users/derek/Library/Developer/Shared/Documentation/DocSets/$DC_COMPANY_ID.$DC_PROJECT_NAME.docset"
+DOCSET_PATH="$DC_BUILD_DIR/appledoc/docset"
 echo "Checking for docset at $DOCSET_PATH"
 if [ -d $DOCSET_PATH ]; then
 	echo "Copying docset ..."
-	cp -fR "$DOCSET_PATH" "$DC_ARTIFACT_DIR"
+	cp -fR "$DC_BUILD_DIR/appledoc/docset" "$DC_ARTIFACT_DIR/$DC_COMPANY_ID.$DC_PROJECT_NAME.docset"
 	
 	echo "Writing install docset script file ..."
 	echo "echo \"Installing $DC_PROJECT_NAME documentation into XCode.\"" > "$DC_ARTIFACT_DIR/installDocSet"
