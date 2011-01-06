@@ -156,6 +156,7 @@
 		651834AE1227F3A300B4AE43 /* clean.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = clean.sh; sourceTree = "<group>"; };
 		651834BB1227F98200B4AE43 /* assembleFramework.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = assembleFramework.sh; sourceTree = "<group>"; };
 		651834BC1227F9AC00B4AE43 /* createDmg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createDmg.sh; sourceTree = "<group>"; };
+		651D450D12D5DFD3005F77B2 /* License.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.markdown; sourceTree = "<group>"; };
 		65269778116EF91E003C63D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		65269783116EF983003C63D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6538898A12730E980037D2C1 /* DCCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoreDataTests.m; sourceTree = "<group>"; };
@@ -259,6 +260,7 @@
 			children = (
 				656E3EEC1257752A00CAFAD9 /* ChangeLog.markdown */,
 				654ED65C116C5B89007AB3BA /* ReadMe.markdown */,
+				651D450D12D5DFD3005F77B2 /* License.markdown */,
 				6518349F1227EED400B4AE43 /* build.sh */,
 				65CD39A01226872A0061EEBF /* scripts */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
