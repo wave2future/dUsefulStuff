@@ -351,8 +351,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>4</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -398,7 +397,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>createDocumentation.sh</string>
+								<string>ChangeLog.markdown</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -406,20 +405,20 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>createDocumentation.sh</string>
+										<string>ChangeLog.markdown</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>65C9087212D43338007C9090</string>
+										<string>651D445E12D595E9005F77B2</string>
 										<key>history</key>
 										<array>
-											<string>65006B4412D2F06B007D0974</string>
 											<string>65006B4512D2F06B007D0974</string>
 											<string>65006B5F12D2F13B007D0974</string>
-											<string>65006B6012D2F13B007D0974</string>
 											<string>65006B6112D2F13B007D0974</string>
 											<string>652CCD2312D43199001B4F1C</string>
-											<string>652CCD2512D43199001B4F1C</string>
+											<string>652DCB1912D555C40091F962</string>
+											<string>651D445C12D595E9005F77B2</string>
+											<string>651D445D12D595E9005F77B2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -477,9 +476,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>65C9086C12D43210007C9090</string>
+				<string>651D445F12D595E9005F77B2</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>65C9086D12D43210007C9090</string>
+				<string>651D446012D595E9005F77B2</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -600,7 +599,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>315896632.27731103</real>
+	<real>315987433.20680898</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -698,7 +697,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>659935E51168C10B006DE3C9</string>
-				<string>65C9086E12D43210007C9090</string>
+				<string>651D446112D595E9005F77B2</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

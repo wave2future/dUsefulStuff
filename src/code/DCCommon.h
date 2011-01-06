@@ -49,32 +49,33 @@
 #ifdef DC_LOG_DEALLOCS
 
 #define DC_DEALLOC(vName) \
-   do { \
-		if (vName == nil) { \
-			break; \
-		} \
-		id dobj = (id)vName; \
-		if ([dobj retainCount] == INT_MAX) { \
-			DC_LOG(@"DC_DEALLOC releasing static " # vName ": %@", dobj); \
-			break; \
-		} \
-		if ([dobj isKindOfClass:[NSData class]]) { \
-			NSData *data = dobj;    \
-			DC_LOG(@"DC_DEALLOC releasing " # vName ": %@", DC_DATA_TO_STRING(data)); \
-			break; \
-		} \
-		if (![dobj isKindOfClass:[NSDictionary class]] && ![dobj isKindOfClass:[NSArray class]]) { \
-			DC_LOG(@"DC_DEALLOC releasing " # vName ": %@", vName); \
-			break; \
-		} \
-	} while (FALSE); \
-   if (vName != nil) { \
+	if (vName == nil) { \
+		DC_LOG(@"DC_DEALLOC " # vName " is nil, nothing to do."); \
+	} else { \
+		do { \
+			id dobj = (id)vName; \
+			if ([dobj retainCount] == INT_MAX) { \
+				DC_LOG(@"DC_DEALLOC releasing static " # vName ": %@", dobj); \
+				break; \
+			} \
+			if ([dobj isKindOfClass:[NSData class]]) { \
+				NSData *data = dobj;    \
+				DC_LOG(@"DC_DEALLOC releasing NSData " # vName ": %@", DC_DATA_TO_STRING(data)); \
+				break; \
+			} \
+			if (![dobj isKindOfClass:[NSDictionary class]] && ![dobj isKindOfClass:[NSArray class]]) { \
+				DC_LOG(@"DC_DEALLOC releasing " # vName ": %@", vName); \
+				break; \
+			} \
+		} while (FALSE); \
 		if ([vName retainCount] == 0) { \
 			DC_LOG(@"ERROR !!!!! " # vName " retain count == 0"); \
 		} \
 		[vName release]; \
+		DC_LOG(# vName @" released"); \
 		vName = nil; \
-	}
+}
+
 #else
 
 #define DC_DEALLOC(vName) \

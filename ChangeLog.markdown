@@ -1,6 +1,6 @@
 
 # Changes Version 0.0.8
-
+* Updated DC_DEALLOC to slightly better code.
 
 # Changes Version 0.0.7
 * Created a scripts/defaults.sh as a more practical method for centralising building settings common to many projects.
