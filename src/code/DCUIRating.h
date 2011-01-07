@@ -16,21 +16,32 @@
  This enum dictates what type of scale the control uses.
  */
 enum DCScaleEnum {
-	/// 0, 1, 2, 3 ... 5
+	/// @deprecated 0, 1, 2, 3 ... 5
 	DC_SCALE_0_TO_5,
 
-	/// 0, 0.5, 1, 1.5, ... 5
+	/// @deprecated 0, 0.5, 1, 1.5, ... 5
 	DC_SCALE_0_TO_5_WITH_HALVES,
 
-	/// 0, 1, 2, 3, ... 10
-	DC_SCALE_0_TO_10
+	/// @deprecated 0, 1, 2, 3, ... 10
+	DC_SCALE_0_TO_10,
+	
+	/// Each touchable rating icon represents an increment of 1. i.e. 0, 1, 2, 3, 4, 5
+	/// Therefore each 
+	DC_UI_RATING_SCALE_WHOLE,
+	
+	/// Each touchable rating icon represents an increment of 2 halves which the user is able to select. This gives a finer level of control and value setting. i.e. 0, 0.5, 1, 1.5, ... 5
+	DC_UI_RATING_SCALE_HALF,
+	/// Each touchable rating icon represents an increment of 2 which the user is able to select. This gives a finer level of control and value setting and produes a large range. i.e. 0, 1, 2, 3, ... 10
+	DC_UI_RATING_SCALE_DOUBLE
 };
 typedef enum DCScaleEnum DCRATINGSCALE;
 
 /**
- This control provides a rating display similar to that seen in iTunes for rating songs. It draws a set of 5 icons across the display which the user can use to select a rating from 0 to 5. The user can select a rating value by either taping the control at the rating they want, or swiping their finger back and forwards to adjust the rating. However they must start the swipe inside the control.
+ This control provides a rating display similar to that seen in iTunes for rating songs. It draws a set of 3 to 5 icons across the display which the user can use to select a rating based on the scales in the DCScaleEnum (typedef DCRATINGSCALE). The user can select a rating value by either taping the control at the rating they want, or swiping their finger back and forwards to adjust the rating. However they must start the swipe inside the control.
  
- There are three options for the value of the rating. Like iTunes the default is a value from 0 - 5. Each icon from left to right represents 1 rating value, so tapping the second icon from the right will choose a rating of 4 out of 5. However you can also select to using ratings from 0 to 10 or 0 - 5 with half values. This is represented by the control drawing half stars for either the odd numbers or half values.
+ There are six scale types (3 deprecated, 3 new) which control the way the control calculates a rating from the users selection. Here is a list of the scale types:
+ 
+ * *DC_UI_RATING_SCALE_WHOLE* - the users actions can only turn whole rating icons on or off and each icon represents an increment of 1.
  
  The developer can also choose to display a popup bubble above the rating controller. This bubble tracks the
  users touch and displays the value during the touch operation. It appears at the first touch and disappears when

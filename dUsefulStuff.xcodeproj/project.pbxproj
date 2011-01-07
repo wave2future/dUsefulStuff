@@ -200,6 +200,7 @@
 		65D5D7741259FA6C00E161C1 /* DCUIRatingScale10Strategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingScale10Strategy.h; path = src/code/DCUIRatingScale10Strategy.h; sourceTree = "<group>"; };
 		65D5D7751259FA6C00E161C1 /* DCUIRatingScale10Strategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale10Strategy.m; path = src/code/DCUIRatingScale10Strategy.m; sourceTree = "<group>"; };
 		65D5D7831259FD7700E161C1 /* DCUIRatingScale5HalfStrategyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScale5HalfStrategyTests.m; path = src/tests/DCUIRatingScale5HalfStrategyTests.m; sourceTree = "<group>"; };
+		65E52DB012D69DB60005EA2A /* setup.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setup.sh; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dUsefulStuff_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -357,14 +358,15 @@
 		65CD39A01226872A0061EEBF /* scripts */ = {
 			isa = PBXGroup;
 			children = (
-				65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */,
-				65CD39A4122689B10061EEBF /* common.sh */,
-				651834AD1227F19D00B4AE43 /* createDocumentation.sh */,
-				651834AE1227F3A300B4AE43 /* clean.sh */,
 				651834BB1227F98200B4AE43 /* assembleFramework.sh */,
+				65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */,
+				651834AE1227F3A300B4AE43 /* clean.sh */,
+				65CD39A4122689B10061EEBF /* common.sh */,
 				651834BC1227F9AC00B4AE43 /* createDmg.sh */,
-				65AD2520128E816C007E4F23 /* Uncrustify.sh */,
+				651834AD1227F19D00B4AE43 /* createDocumentation.sh */,
 				65584D7212C427CE00F7B39A /* defaults.sh */,
+				65E52DB012D69DB60005EA2A /* setup.sh */,
+				65AD2520128E816C007E4F23 /* Uncrustify.sh */,
 			);
 			path = scripts;
 			sourceTree = "<group>";

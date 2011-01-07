@@ -15,6 +15,7 @@ export DC_BUILD_TARGET
 export DC_SRC
 export DC_AUTHOR
 export DC_COMPANY
+export DC_SCRIPTS_DIR 
 
 # Set used directories. Notice some allow for setting from xcode.
 DC_TOOLS_DIR=${DC_TOOLS_DIR=../tools}
@@ -57,6 +58,7 @@ export DC_BUILD_CONFIGURATION
 DC_APPLEDOC_DIR=${DC_APPLEDOC_DIR=$DC_TOOLS_DIR/appledoc}
 DC_APPLEDOC=${DC_APPLEDOC=$DC_APPLEDOC_DIR/appledoc}
 DC_APPLEDOC_TEMPLATES_DIR=${DC_APPLEDOC_TEMPLATES_DIR=$DC_APPLEDOC_DIR/Templates}
+DC_BUILD_DOCO_ONLY=${DC_BUILD_DOCO_ONLY=}
 
 if [ ! -f $DC_APPLEDOC ]; then
 	echo "Warning: Appledoc not found at $DC_APPLEDOC"
@@ -65,8 +67,15 @@ fi
 export DC_APPLEDOC_DIR
 export DC_APPLEDOC
 export DC_APPLEDOC_TEMPLATES_DIR
+export DC_BUILD_DOCO_ONLY
 
 # Framework related settings.
 DC_FRAMEWORK_DIR=$DC_ARTIFACT_DIR/$DC_PROJECT_NAME.framework  
 
 export DC_FRAMEWORK_DIR
+
+# DMG settings
+DC_MOUNT_DMG=${DC_MOUNT_DMG=}
+
+export DC_MOUNT_DMG
+

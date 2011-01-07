@@ -6,9 +6,6 @@
 # Created by Derek Clarkson on 27/08/10.
 # Copyright 2010 Derek Clarkson. All rights reserved.
 
-echo "Creating artifact directory ..."
-mkdir -p $DC_ARTIFACT_DIR
-
 echo "Setting up framework directories..."  
 mkdir -p $DC_FRAMEWORK_DIR  
 mkdir -p $DC_FRAMEWORK_DIR/Versions  

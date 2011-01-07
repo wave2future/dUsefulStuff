@@ -16,16 +16,22 @@ DC_AUTHOR="Derek Clarkson"
 DC_COMPANY=$DC_AUTHOR
 
 DC_SCRIPTS_DIR=scripts
-export DC_SCRIPTS_DIR 
 
 # Include common scripts.
 source $DC_SCRIPTS_DIR/defaults.sh
 source $DC_SCRIPTS_DIR/common.sh
 
-printSettings
-
-# Call the scripts.
+# Clean and setup.
 $DC_SCRIPTS_DIR/clean.sh
+$DC_SCRIPTS_DIR/setup.sh
+
+# Check for a doco only build.
+if [ -n "$DC_BUILD_DOCO_ONLY" ]; then
+	$DC_SCRIPTS_DIR/createDocumentation.sh
+	exit 0
+fi
+
+# Otherwise do a full build.
 $DC_SCRIPTS_DIR/buildStaticLibrary.sh
 $DC_SCRIPTS_DIR/assembleFramework.sh
 $DC_SCRIPTS_DIR/createDocumentation.sh
