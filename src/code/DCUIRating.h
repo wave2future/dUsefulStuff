@@ -41,7 +41,12 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  
  There are six scale types (3 deprecated, 3 new) which control the way the control calculates a rating from the users selection. Here is a list of the scale types:
  
- * *DC_UI_RATING_SCALE_WHOLE* - the users actions can only turn whole rating icons on or off and each icon represents an increment of 1.
+ * *DC_UI_RATING_SCALE_WHOLE* - the users actions can only turn whole rating icons on or off and each icon represents an increment of 1. This produces a sequence of ratings 0, 1, 2, ...
+ * *DC_UI_RATING_SCALE_HALF* - the users actions can turn half a rating icon on or off and each half an icon represents an increment of 0.5. This produces a sequence of ratings 0, 0.5, 1, 1.5, ...
+ * *DC_UI_RATING_SCALE_DOUBLE* - the users actions can turn half a rating icon on or off and each half an icon represents an increment of 1. This produces a sequence of ratings 0, 1, 2, ... 
+ * *DC_SCALE_0_TO_5* - depreciated. Do not use.
+ * *DC_SCALE_0_TO_5_WITH_HALVES* - depreciated. Do not use.
+ * *DC_SCALE_0_TO_10* - depreciated. Do not use.
  
  The developer can also choose to display a popup bubble above the rating controller. This bubble tracks the
  users touch and displays the value during the touch operation. It appears at the first touch and disappears when
@@ -57,6 +62,7 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 	DCRATINGSCALE scaleType;
 	DCUIBubble *bubble;
 	NSObject<DCUIRatingDelegate> * delegate;
+	int iconCount;
 
 	// Internal use for display and layout.
 	int lastTouchX;
@@ -75,12 +81,19 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 /**
  Defines the range of values that the control will produce. There are three options:
 
- - *DC_SCALE_0_TO_5* - produces 0, 1, 2, 3, 5
- - *DC_SCALE_0_TO_5_WITH_HALVES* - produces 0, 0.5, 1, 1.5, ... 5
- - *DC_SCALE_0_TO_10* - produces 0, 1, 2, 3, ... 10
+ - *DC_SCALE_0_TO_5* or *DC_UI_RATING_SCALE_WHOLE* - produces 0, 1, 2, 3, ...
+ - *DC_SCALE_0_TO_5_WITH_HALVES* or *DC_UI_RATING_SCALE_HALF* - produces 0, 0.5, 1, 1.5, ... 
+ - *DC_SCALE_0_TO_10* or *DC_UI_RATING_SCALE_DOUBLE* - produces 0, 1, 2, 3, ... 
  
  */
 @property (nonatomic) DCRATINGSCALE scaleType;
+
+/**
+ Tells the control how many icons to draw.
+ 
+ Must be one of 3, 4 or 5.
+ */
+@property (nonatomic) int iconCount;
 
 /**
  The current value of the control. This value depends on the current setting of the scaleType; Set this value to have the control light up the necessary rating images.

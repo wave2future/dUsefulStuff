@@ -655,7 +655,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Debug;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -676,7 +675,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefulStuff simulator unit tests";
-				SDKROOT = iphonesimulator3.2;
 			};
 			name = Debug;
 		};
@@ -684,7 +682,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Release;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -705,7 +702,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefulStuff simulator unit tests";
-				SDKROOT = iphonesimulator3.2;
 				ZERO_LINK = NO;
 			};
 			name = Release;

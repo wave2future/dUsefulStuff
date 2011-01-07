@@ -29,7 +29,7 @@
 /**
  Override to return the image for a specific index.
  
- @param index the index of the image we want. 0 - 5.
+ @param index the index of the image we want. 0 - iconCount.
  */
 -(UIImage *) imageForIndex:(int) index;
 

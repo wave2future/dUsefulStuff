@@ -33,6 +33,7 @@
 @synthesize scaleType;
 @synthesize bubble;
 @synthesize delegate;
+@synthesize iconCount;
 
 /**
  Sets the rating to be displayed. Usually used when setting up data in a display.
@@ -56,6 +57,26 @@
 	return scaleStrategy == nil ? initialRating : [scaleStrategy rating];	
 }
 
+#pragma mark Constructors
+-(id) initWithFrame:(CGRect)frame {
+	self = [super initWithFrame:frame];
+	if (self) {
+		self.iconCount = 5;
+	}
+	return self;
+}
+
+-(id) initWithCoder:(NSCoder *)decoder {
+	self = [super initWithCoder:decoder];
+	if (self) {
+		self.iconCount = 5;
+	}
+	return self;
+}
+
+#pragma mark -
+#pragma mark Internal methods
+
 - (CGSize)sizeThatFits:(CGSize)size {
     DC_LOG(@"being asked for size");
 	 return CGSizeMake(self.offRatingImage.size.width * 5, self.offRatingImage.size.height);
@@ -63,16 +84,16 @@
 
 - (void)layoutSubviews {
 	if (scaleStrategy == nil) {
-		if (scaleType == DC_SCALE_0_TO_5) {
+		if (self.scaleType == DC_UI_RATING_SCALE_WHOLE || self.scaleType == DC_SCALE_0_TO_5) {
 			scaleStrategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
-		} else if (scaleType == DC_SCALE_0_TO_5_WITH_HALVES) {
+		} else if (self.scaleType == DC_UI_RATING_SCALE_HALF || self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES) {
 			scaleStrategy = [[DCUIRatingScale5HalfStrategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
 		} else {
 			scaleStrategy = [[DCUIRatingScale10Strategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
 		}
-		if (initialRating > 0) {
-			[scaleStrategy setRating:initialRating];
-		}
+
+		// sync the strategy with the current setting.
+		[scaleStrategy setRating:initialRating];
 	}
 	[self sizeToFit];
 }
@@ -119,7 +140,7 @@
 
 - (void) drawRect:(CGRect)rect {                                        // From UIView
 	DC_LOG(@"Drawing rating control: %@", self);
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < self.iconCount; i++) {
 		[scaleStrategy drawImageAtIndex:i];
 	}
 }

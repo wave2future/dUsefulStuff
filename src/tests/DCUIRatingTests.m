@@ -16,50 +16,109 @@
 @interface DCUIRatingTests : GHTestCase
 {
 }
-- (void) runRatingSetValueTestForScale:(DCRATINGSCALE)scale x:(int)x result:(float)result;
--(void) runDrawRectTestWithScale:(DCRATINGSCALE) scale rating:(float) rating imageTypes:(int[5]) imageTypes;
+- (void) runRatingSetValueTestForScale:(DCRATINGSCALE)scale x:(int)x iconCount:(int) iconCount result:(float)result;
+-(void) runDrawRectTestWithScale:(DCRATINGSCALE) scale rating:(float) rating imageTypes:(int[5]) imageTypes iconCount:(int) iconCount;
 @end
 
 
 
 @implementation DCUIRatingTests
 
+// -------------------------------------------
+// OLD TESTS START
+// -------------------------------------------
+
 - (void) testDrawRectWithScale5AndRating0 {
 	int expectedImages[5] = {-1,-1,-1,-1,-1};
-	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5 rating:0 imageTypes:expectedImages];
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5 rating:0 imageTypes:expectedImages iconCount:5];
 }
 
 - (void) testDrawRectWithScale5AndRating3 {
 	int expectedImages[5] = {1,1,1,-1,-1};
-	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5 rating:3 imageTypes:expectedImages];
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5 rating:3 imageTypes:expectedImages iconCount:5];
 }
 
 - (void) testDrawRectWithScale5AndRating5 {
 	int expectedImages[5] = {1,1,1,1,1};
-	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5 rating:5 imageTypes:expectedImages];
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5 rating:5 imageTypes:expectedImages iconCount:5];
 }
 
 - (void) testDrawRectWithScale5AndHalfAndRating2AndHalf {
 	int expectedImages[5] = {1,1,0,-1,-1};
-	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5_WITH_HALVES rating:2.5 imageTypes:expectedImages];
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5_WITH_HALVES rating:2.5 imageTypes:expectedImages iconCount:5];
 }
 
 - (void) testDrawRectWithScale5AndHalfAndRating3 {
 	int expectedImages[5] = {1,1,1,-1,-1};
-	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5_WITH_HALVES rating:3 imageTypes:expectedImages];
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_5_WITH_HALVES rating:3 imageTypes:expectedImages iconCount:5];
 }
 
 - (void) testDrawRectWithScale10AndRating5 {
 	int expectedImages[5] = {1,1,0,-1,-1};
-	[self runDrawRectTestWithScale:DC_SCALE_0_TO_10 rating:5 imageTypes:expectedImages];
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_10 rating:5 imageTypes:expectedImages iconCount:5];
 }
 
 - (void) testDrawRectWithScale10AndRating6 {
 	int expectedImages[5] = {1,1,1,-1,-1};
-	[self runDrawRectTestWithScale:DC_SCALE_0_TO_10 rating:6 imageTypes:expectedImages];
+	[self runDrawRectTestWithScale:DC_SCALE_0_TO_10 rating:6 imageTypes:expectedImages iconCount:5];
 }
 
--(void) runDrawRectTestWithScale:(DCRATINGSCALE) scale rating:(float) rating imageTypes:(int[5]) imageTypes {
+// -------------------------------------------
+// OLD TESTS END
+// -------------------------------------------
+
+- (void) testDrawRectWithScaleWholeAndRating0IconsDefault {
+	int expectedImages[5] = {-1,-1,-1,-1,-1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_WHOLE rating:0 imageTypes:expectedImages iconCount:-1];
+}
+
+- (void) testDrawRectWithScaleWholeAndRating0Icons5 {
+	int expectedImages[5] = {-1,-1,-1,-1,-1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_WHOLE rating:0 imageTypes:expectedImages iconCount:5];
+}
+
+- (void) testDrawRectWithScaleWholeAndRating0Icons4 {
+	int expectedImages[4] = {-1,-1,-1,-1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_WHOLE rating:0 imageTypes:expectedImages iconCount:4];
+}
+
+- (void) testDrawRectWithScaleWholeAndRating0Icons3 {
+	int expectedImages[3] = {-1,-1,-1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_WHOLE rating:0 imageTypes:expectedImages iconCount:3];
+}
+
+- (void) testDrawRectWithScaleWholeAndRating3 {
+	int expectedImages[5] = {1,1,1,-1,-1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_WHOLE rating:3 imageTypes:expectedImages iconCount:5];
+}
+
+- (void) testDrawRectWithScaleWholeAndRating5 {
+	int expectedImages[5] = {1,1,1,1,1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_WHOLE rating:5 imageTypes:expectedImages iconCount:5];
+}
+
+- (void) testDrawRectWithScaleHalfAndRating2AndHalf {
+	int expectedImages[5] = {1,1,0,-1,-1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_HALF rating:2.5 imageTypes:expectedImages iconCount:5];
+}
+
+- (void) testDrawRectWithScaleHalfAndRating3 {
+	int expectedImages[5] = {1,1,1,-1,-1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_HALF rating:3 imageTypes:expectedImages iconCount:5];
+}
+
+- (void) testDrawRectWithScaleDoubleAndRating5 {
+	int expectedImages[5] = {1,1,0,-1,-1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_DOUBLE rating:5 imageTypes:expectedImages iconCount:5];
+}
+
+- (void) testDrawRectWithScaleDoubleAndRating6 {
+	int expectedImages[5] = {1,1,1,-1,-1};
+	[self runDrawRectTestWithScale:DC_UI_RATING_SCALE_DOUBLE rating:6 imageTypes:expectedImages iconCount:5];
+}
+
+
+-(void) runDrawRectTestWithScale:(DCRATINGSCALE) scale rating:(float) rating imageTypes:(int[5]) imageTypes iconCount:(int) iconCount {
 	// Create the mocks
 	id mockOnImage = [OCMockObject mockForClass:[UIImage class]];
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
@@ -69,7 +128,8 @@
 	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
 
 	DC_LOG(@"Adding image expectations");
-	for (int i = 0, offset = 0;i < 5; i++, offset += 10) {
+	int intLoopCount = iconCount == -1 ? 5 : iconCount;
+	for (int i = 0, offset = 0;i < intLoopCount; i++, offset += 10) {
 		if (imageTypes[i] == 1) {
 			DC_LOG(@"Adding expectation for on image at %i", offset);
 			[[mockOnImage expect] drawAtPoint:CGPointMake(offset, 0)];
@@ -89,6 +149,9 @@
 	ratingControl.onRatingImage = mockOnImage;
 	ratingControl.halfRatingImage = mockHalfImage;
 	ratingControl.scaleType = scale;
+	if (iconCount > 0) {
+		ratingControl.iconCount = iconCount;
+	}
 	CGRect rect = CGRectMake(0, 0, 100, 100);
 	[ratingControl layoutSubviews];
 	[ratingControl drawRect:rect];
@@ -98,31 +161,64 @@
 	[mockOnImage verify];
 }
 
+// -------------------------------------------
+// OLD TESTS START
+// -------------------------------------------
+
 - (void) testRatingOverrunLeft {
-	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:-5 result:0.0];
+	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:-5 iconCount:5 result:0.0];
 }
 
 - (void) testRatingOverrunRightScale5 {
-	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:150 result:5.0];
+	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:150 iconCount:5 result:5.0];
 }
 
 - (void) testRatingOverrunRightScale10 {
-	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_10 x:150 result:10.0];
+	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_10 x:150 iconCount:5 result:10.0];
 }
 
 - (void) testScale5HalfWayTouch {
-	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:24 result:3.0];
+	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5 x:24 iconCount:5 result:3.0];
 }
 
 - (void) testScale5WithHalvesHalfWayTouch {
-	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5_WITH_HALVES x:24 result:2.5];
+	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_5_WITH_HALVES x:24 iconCount:5 result:2.5];
 }
 
 - (void) testScale10HalfWayTouch {
-	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_10 x:24 result:5.0];
+	[self runRatingSetValueTestForScale:DC_SCALE_0_TO_10 x:24 iconCount:5 result:5.0];
 }
 
-- (void) runRatingSetValueTestForScale:(DCRATINGSCALE)scale x:(int)x result:(float)result {
+// -------------------------------------------
+// OLD TESTS END
+// -------------------------------------------
+
+- (void) testRatingOverrunLeftScaleWhole {
+	[self runRatingSetValueTestForScale:DC_UI_RATING_SCALE_WHOLE x:-5 iconCount:5 result:0.0];
+}
+
+- (void) testRatingOverrunRightScaleWhole {
+	[self runRatingSetValueTestForScale:DC_UI_RATING_SCALE_WHOLE x:150 iconCount:5 result:5.0];
+}
+
+- (void) testRatingOverrunRightScaleDouble {
+	[self runRatingSetValueTestForScale:DC_UI_RATING_SCALE_DOUBLE x:150 iconCount:5 result:10.0];
+}
+
+- (void) testScaleWholeHalfWayTouch {
+	[self runRatingSetValueTestForScale:DC_UI_RATING_SCALE_WHOLE x:24 iconCount:5 result:3.0];
+}
+
+- (void) testScaleHalfHalfWayTouch {
+	[self runRatingSetValueTestForScale:DC_UI_RATING_SCALE_HALF x:24 iconCount:5 result:2.5];
+}
+
+- (void) testScaleDoubleHalfWayTouch {
+	[self runRatingSetValueTestForScale:DC_UI_RATING_SCALE_DOUBLE x:24 iconCount:5 result:5.0];
+}
+
+
+- (void) runRatingSetValueTestForScale:(DCRATINGSCALE)scale x:(int)x iconCount:(int) iconCount result:(float)result {
 
 	// Setup the rating control.
 	DCUIRating *rating = [[[DCUIRating alloc] init] autorelease];
@@ -159,6 +255,7 @@
 	rating.offRatingImage = mockImage;
 	rating.onRatingImage = mockImage;
 	rating.halfRatingImage = mockImage;
+	rating.iconCount = iconCount;
 	[rating layoutSubviews];
 
 	//Do a drawRect as this will always occur first and finishes the control setup.
