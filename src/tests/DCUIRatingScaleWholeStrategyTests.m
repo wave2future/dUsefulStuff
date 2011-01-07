@@ -9,17 +9,17 @@
 #import <GHUnitIOS/GHUnitIOS.h>
 #import <OCMock/OCMock.h>
 
-#import "DCUIRatingScale5Strategy.h"
+#import "DCUIRatingScaleWholeStrategy.h"
 #import "DCCommon.h"
 #import "DCUIRating.h"
 #import "GHUnitTest+DCUIRatingScaleUtils.h"
 
-@interface DCUIRatingScale5StrategyTests : GHTestCase {
+@interface DCUIRatingScaleWholeStrategyTests : GHTestCase {
 	
 }
 @end
 
-@implementation DCUIRatingScale5StrategyTests
+@implementation DCUIRatingScaleWholeStrategyTests
 
 -(void) testDrawImageAtIndexWithRating0 {
 	int imageTypes[5] = {IMAGE_OFF, IMAGE_OFF, IMAGE_OFF, IMAGE_OFF, IMAGE_OFF};
@@ -40,7 +40,7 @@
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(20, 10);
 	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
-	DCUIRatingScale5Strategy * strategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:mockOffImage onImage:nil halfOnImage:nil];
+	DCUIRatingScaleWholeStrategy * strategy = [[DCUIRatingScaleWholeStrategy alloc]initWithOffImage:mockOffImage onImage:nil halfOnImage:nil];
 	
 	int xPos[12] = {0,5,6,19,20,39,40,59,60,79,80,99};
 	float result[12] = {0,0,1,1,2,2,3,3,4,4,5,5};
@@ -52,7 +52,7 @@
 }
 
 -(void) testFormattedRating0 {
-	DCUIRatingScale5Strategy * strategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:nil onImage:nil halfOnImage:nil];
+	DCUIRatingScaleWholeStrategy * strategy = [[DCUIRatingScaleWholeStrategy alloc]initWithOffImage:nil onImage:nil halfOnImage:nil];
 	strategy.rating = 0;
 	GHAssertEqualStrings([strategy formattedRating], @"0", @"Rating not formatted correctly");
 }

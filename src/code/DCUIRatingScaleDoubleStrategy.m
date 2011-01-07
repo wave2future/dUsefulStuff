@@ -6,11 +6,11 @@
 //  Copyright (c) 2010 Oakton Pty Ltd. All rights reserved.
 //
 
-#import "DCUIRatingScale10Strategy.h"
+#import "DCUIRatingScaleDoubleStrategy.h"
 #import "DCCommon.h"
 
 
-@implementation DCUIRatingScale10Strategy
+@implementation DCUIRatingScaleDoubleStrategy
 
 -(int) calcZeroAreaWidth {
 	return imageWidth / 6;

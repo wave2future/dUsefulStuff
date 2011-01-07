@@ -10,9 +10,9 @@
 
 #import "DCUIRating.h"
 #import "DCCommon.h"
-#import "DCUIRatingScale5Strategy.h"
-#import "DCUIRatingScale5HalfStrategy.h"
-#import "DCUIRatingScale10Strategy.h"
+#import "DCUIRatingScaleWholeStrategy.h"
+#import "DCUIRatingScaleHalfStrategy.h"
+#import "DCUIRatingScaleDoubleStrategy.h"
 
 /**
  private interface
@@ -85,11 +85,11 @@
 - (void)layoutSubviews {
 	if (scaleStrategy == nil) {
 		if (self.scaleType == DC_UI_RATING_SCALE_WHOLE || self.scaleType == DC_SCALE_0_TO_5) {
-			scaleStrategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
+			scaleStrategy = [[DCUIRatingScaleWholeStrategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
 		} else if (self.scaleType == DC_UI_RATING_SCALE_HALF || self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES) {
-			scaleStrategy = [[DCUIRatingScale5HalfStrategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
+			scaleStrategy = [[DCUIRatingScaleHalfStrategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
 		} else {
-			scaleStrategy = [[DCUIRatingScale10Strategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
+			scaleStrategy = [[DCUIRatingScaleDoubleStrategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
 		}
 
 		// sync the strategy with the current setting.
@@ -158,12 +158,10 @@
 	lastTouchX = fmax(0, lastTouchX);
 	DC_LOG(@"New lastTouchX: %i", lastTouchX); 
 
-	// Add the fuzz factor. This creates the area around each star's center where
-	// the users touch will still select it. Dividing by the segment size gives the
-	// new rating.
 	float oldRating = [scaleStrategy rating];
 	float newRating = [scaleStrategy calcNewRatingFromTouchX:lastTouchX];
 
+	// Only trigger display updates if the rating has changed.
 	if (oldRating != newRating) {
 		[self updateBubble];
 		[self setNeedsDisplay];

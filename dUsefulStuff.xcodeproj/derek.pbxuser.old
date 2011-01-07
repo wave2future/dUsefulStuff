@@ -1,0 +1,193 @@
+// !$*UTF8*$!
+{
+	0867D690FE84028FC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 6546846A12D6980A00A67F5A /* Run unit tests */;
+		activeTarget = 65A0C679116EF534003AC854 /* Build Library */;
+		addToTargets = (
+		);
+		codeSenseManager = 6546847312D6981000A67F5A /* Code sense */;
+		executables = (
+			6546846A12D6980A00A67F5A /* Run unit tests */,
+			6546846B12D6980A00A67F5A /* Application Test */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					653,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 316054528;
+			PBXWorkspaceStateSaveDate = 316054528;
+		};
+		sourceControlManager = 6546847212D6981000A67F5A /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	6518349F1227EED400B4AE43 /* build.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 906}}";
+			sepNavSelRange = "{390, 0}";
+			sepNavVisRange = "{0, 1090}";
+		};
+	};
+	651834AD1227F19D00B4AE43 /* createDocumentation.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 906}}";
+			sepNavSelRange = "{754, 0}";
+			sepNavVisRange = "{0, 1310}";
+		};
+	};
+	651834AE1227F3A300B4AE43 /* clean.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 906}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 274}";
+		};
+	};
+	651834BB1227F98200B4AE43 /* assembleFramework.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 906}}";
+			sepNavSelRange = "{469, 0}";
+			sepNavVisRange = "{0, 1833}";
+		};
+	};
+	651834BC1227F9AC00B4AE43 /* createDmg.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 906}}";
+			sepNavSelRange = "{399, 0}";
+			sepNavVisRange = "{0, 625}";
+		};
+	};
+	653AD37C116E13CF006E2268 /* Run unit tests */ = {
+		activeExec = 0;
+		executables = (
+			6546846A12D6980A00A67F5A /* Run unit tests */,
+		);
+	};
+	6546846A12D6980A00A67F5A /* Run unit tests */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Run unit tests";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	6546846B12D6980A00A67F5A /* Application Test */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Application Test";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	6546847212D6981000A67F5A /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	6546847312D6981000A67F5A /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	65584D7212C427CE00F7B39A /* defaults.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 1027}}";
+			sepNavSelRange = "{453, 0}";
+			sepNavVisRange = "{155, 1847}";
+		};
+	};
+	659D2BE4117747BA0056AA74 /* Application Test */ = {
+		activeExec = 0;
+		executables = (
+			6546846B12D6980A00A67F5A /* Application Test */,
+		);
+	};
+	65A0C679116EF534003AC854 /* Build Library */ = {
+		activeExec = 0;
+	};
+	65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 1066}}";
+			sepNavSelRange = "{0, 303}";
+			sepNavVisRange = "{0, 1818}";
+		};
+	};
+	65CD39A4122689B10061EEBF /* common.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 906}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1193}";
+		};
+	};
+	65D75B8511B7D19E003D938D /* Build release framework */ = {
+		activeExec = 0;
+	};
+	65E52DB012D69DB60005EA2A /* setup.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {831, 906}}";
+			sepNavSelRange = "{202, 0}";
+			sepNavVisRange = "{0, 230}";
+		};
+	};
+}

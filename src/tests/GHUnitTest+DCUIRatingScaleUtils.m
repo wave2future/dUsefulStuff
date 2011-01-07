@@ -10,9 +10,9 @@
 
 #import "GHUnitTest+DCUIRatingScaleUtils.h"
 #import "DCUIRatingScaleStrategy.h"
-#import "DCUIRatingScale5Strategy.h"
-#import "DCUIRatingScale5HalfStrategy.h"
-#import "DCUIRatingScale10Strategy.h"
+#import "DCUIRatingScaleWholeStrategy.h"
+#import "DCUIRatingScaleHalfStrategy.h"
+#import "DCUIRatingScaleDoubleStrategy.h"
 #import "DCCommon.h"
 
 
@@ -45,11 +45,11 @@
 	
 	NSObject<DCUIRatingScaleStrategy> * strategy;
 	if (scale == DC_SCALE_0_TO_5) {
-		strategy = [[DCUIRatingScale5Strategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:mockHalfOnImage];
+		strategy = [[DCUIRatingScaleWholeStrategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:mockHalfOnImage];
 	} else if (scale == DC_SCALE_0_TO_5_WITH_HALVES) {
-		strategy = [[DCUIRatingScale5HalfStrategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:mockHalfOnImage];
+		strategy = [[DCUIRatingScaleHalfStrategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:mockHalfOnImage];
 	} else {
-		strategy = [[DCUIRatingScale10Strategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:mockHalfOnImage];
+		strategy = [[DCUIRatingScaleDoubleStrategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:mockHalfOnImage];
 	}
 	
 	[strategy setRating:rating];
