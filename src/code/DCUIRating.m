@@ -85,14 +85,17 @@
 - (void)layoutSubviews {
 	if (scaleStrategy == nil) {
 		if (self.scaleType == DC_UI_RATING_SCALE_WHOLE || self.scaleType == DC_SCALE_0_TO_5) {
-			scaleStrategy = [[DCUIRatingScaleWholeStrategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
+			scaleStrategy = [[DCUIRatingScaleWholeStrategy alloc]init];
 		} else if (self.scaleType == DC_UI_RATING_SCALE_HALF || self.scaleType == DC_SCALE_0_TO_5_WITH_HALVES) {
-			scaleStrategy = [[DCUIRatingScaleHalfStrategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
+			scaleStrategy = [[DCUIRatingScaleHalfStrategy alloc]init];
 		} else {
-			scaleStrategy = [[DCUIRatingScaleDoubleStrategy alloc]initWithOffImage:offRatingImage onImage:onRatingImage halfOnImage:halfRatingImage];
+			scaleStrategy = [[DCUIRatingScaleDoubleStrategy alloc]init];
 		}
 
 		// sync the strategy with the current setting.
+		scaleStrategy.offImage = offRatingImage;
+		scaleStrategy.onImage = onRatingImage;
+		scaleStrategy.halfOnImage = halfRatingImage;
 		[scaleStrategy setRating:initialRating];
 	}
 	[self sizeToFit];

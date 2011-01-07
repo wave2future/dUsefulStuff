@@ -45,12 +45,16 @@
 	
 	NSObject<DCUIRatingScaleStrategy> * strategy;
 	if (scale == DC_SCALE_0_TO_5) {
-		strategy = [[DCUIRatingScaleWholeStrategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:mockHalfOnImage];
+		strategy = [[DCUIRatingScaleWholeStrategy alloc]init];
 	} else if (scale == DC_SCALE_0_TO_5_WITH_HALVES) {
-		strategy = [[DCUIRatingScaleHalfStrategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:mockHalfOnImage];
+		strategy = [[DCUIRatingScaleHalfStrategy alloc]init];
 	} else {
-		strategy = [[DCUIRatingScaleDoubleStrategy alloc]initWithOffImage:mockOffImage onImage:mockOnImage halfOnImage:mockHalfOnImage];
+		strategy = [[DCUIRatingScaleDoubleStrategy alloc]init];
 	}
+	strategy.offImage = mockOffImage;
+	strategy.onImage = mockOnImage;
+	strategy.halfOnImage = mockHalfOnImage;
+
 	
 	[strategy setRating:rating];
 	

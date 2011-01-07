@@ -40,7 +40,8 @@
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(20, 10);
 	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
-	DCUIRatingScaleHalfStrategy * strategy = [[DCUIRatingScaleHalfStrategy alloc]initWithOffImage:mockOffImage onImage:nil halfOnImage:nil];
+	DCUIRatingScaleHalfStrategy * strategy = [[DCUIRatingScaleHalfStrategy alloc]init];
+	strategy.offImage = mockOffImage;
 	
 	int xPos[22] = {0,2,3,9,10,19,20,29,30,39,40,49,50,59,60,69,70,79,80,89,90,99};
 	float result[22] = {0,0,0.5,0.5,1,1,1.5,1.5,2,2,2.5,2.5,3,3,3.5,3.5,4,4,4.5,4.5,5,5};
@@ -53,19 +54,19 @@
 }
 
 -(void) testFormattedRating0 {
-	DCUIRatingScaleHalfStrategy * strategy = [[DCUIRatingScaleHalfStrategy alloc]initWithOffImage:nil onImage:nil halfOnImage:nil];
+	DCUIRatingScaleHalfStrategy * strategy = [[DCUIRatingScaleHalfStrategy alloc]init];
 	strategy.rating = 0;
 	GHAssertEqualStrings([strategy formattedRating], @"0.0", @"Rating not formatted correctly");
 }
 
 -(void) testFormattedRating2Half {
-	DCUIRatingScaleHalfStrategy * strategy = [[DCUIRatingScaleHalfStrategy alloc]initWithOffImage:nil onImage:nil halfOnImage:nil];
+	DCUIRatingScaleHalfStrategy * strategy = [[DCUIRatingScaleHalfStrategy alloc]init];
 	strategy.rating = 2.5;
 	GHAssertEqualStrings([strategy formattedRating], @"2.5", @"Rating not formatted correctly");
 }
 
 -(void) testFormattedRating5 {
-	DCUIRatingScaleHalfStrategy * strategy = [[DCUIRatingScaleHalfStrategy alloc]initWithOffImage:nil onImage:nil halfOnImage:nil];
+	DCUIRatingScaleHalfStrategy * strategy = [[DCUIRatingScaleHalfStrategy alloc]init];
 	strategy.rating = 5;
 	GHAssertEqualStrings([strategy formattedRating], @"5.0", @"Rating not formatted correctly");
 }

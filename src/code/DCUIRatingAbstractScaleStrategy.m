@@ -12,27 +12,26 @@
 @implementation DCUIRatingAbstractScaleStrategy
 
 @synthesize rating;
+@synthesize onImage;
+@synthesize halfOnImage;
+@dynamic offImage;
 
--(id) initWithOffImage:(UIImage *) aOffImage onImage:(UIImage *) aOnImage halfOnImage:(UIImage *) aHalfOnImage{
+-(void) setOffImage:(UIImage *) image {
+	[offImage release];
+	offImage = [image retain];
+
+	// Setup common values.
+	imageWidth = (int)offImage.size.width;
+	DC_LOG(@"Image width: %i", imageWidth);
 	
-	self = [super init];
-	if (self) {
-		
-		//Store the images.
-		onImage = [aOnImage retain];
-		offImage = [aOffImage retain];
-		halfOnImage = [aHalfOnImage retain];
-		
-		// Setup common values.
-		imageWidth = (int)offImage.size.width;
-		DC_LOG(@"Image width: %i", imageWidth);
-		
-		// Calculate a fuzz factor around the users touch position.
-		zeroAreaWidth = [self calcZeroAreaWidth];
-		DC_LOG(@"Zero area width: %i", zeroAreaWidth);
-		
-	}
-	return self;
+	// Calculate a fuzz factor around the users touch position.
+	zeroAreaWidth = [self calcZeroAreaWidth];
+	DC_LOG(@"Zero area width: %i", zeroAreaWidth);
+	
+}
+
+-(UIImage*) offImage {
+	return offImage;
 }
 
 -(void) drawImageAtIndex:(int) index{
@@ -65,9 +64,9 @@
 }
 
 - (void)dealloc {
-	DC_DEALLOC(onImage);
-	DC_DEALLOC(offImage);
-	DC_DEALLOC(halfOnImage);
+	self.onImage = nil;
+	self.offImage = nil;
+	self.halfOnImage = nil;
 	[super dealloc];
 }
 

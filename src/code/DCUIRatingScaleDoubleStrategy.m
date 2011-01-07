@@ -25,13 +25,13 @@
 	if (index < onImages) {
 		if (index + 1 > onImages) {
 			DC_LOG(@"Drawing half rating at %i", index * imageWidth);
-			return halfOnImage;
+			return self.halfOnImage;
 		} 
 		DC_LOG(@"Drawing full rating at %i", index * imageWidth);
-		return onImage;
+		return self.onImage;
 	} 
 	DC_LOG(@"Drawing inactive rating at %i", index * imageWidth);
-	return offImage;
+	return self.offImage;
 }
 
 @end

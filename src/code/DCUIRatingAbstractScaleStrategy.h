@@ -13,12 +13,13 @@
  This is an abstract class for strategies. It puts in place everything that all strategies do.
  */
 @interface DCUIRatingAbstractScaleStrategy : NSObject <DCUIRatingScaleStrategy> {
-	UIImage * onImage;
-	UIImage * offImage;
-	UIImage * halfOnImage;
 	float rating;
 	int imageWidth;
 	int zeroAreaWidth;
+@private
+	UIImage * onImage;
+	UIImage * offImage;
+	UIImage * halfOnImage;
 }
 
 /**

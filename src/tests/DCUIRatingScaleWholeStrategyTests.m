@@ -40,7 +40,8 @@
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(20, 10);
 	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
-	DCUIRatingScaleWholeStrategy * strategy = [[DCUIRatingScaleWholeStrategy alloc]initWithOffImage:mockOffImage onImage:nil halfOnImage:nil];
+	DCUIRatingScaleWholeStrategy * strategy = [[DCUIRatingScaleWholeStrategy alloc]init];
+	strategy.offImage = mockOffImage;
 	
 	int xPos[12] = {0,5,6,19,20,39,40,59,60,79,80,99};
 	float result[12] = {0,0,1,1,2,2,3,3,4,4,5,5};
@@ -52,7 +53,7 @@
 }
 
 -(void) testFormattedRating0 {
-	DCUIRatingScaleWholeStrategy * strategy = [[DCUIRatingScaleWholeStrategy alloc]initWithOffImage:nil onImage:nil halfOnImage:nil];
+	DCUIRatingScaleWholeStrategy * strategy = [[DCUIRatingScaleWholeStrategy alloc]init];
 	strategy.rating = 0;
 	GHAssertEqualStrings([strategy formattedRating], @"0", @"Rating not formatted correctly");
 }

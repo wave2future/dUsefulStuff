@@ -18,10 +18,10 @@
 -(UIImage *) imageForIndex:(int) index {
 	if (index < self.rating) {
 		DC_LOG(@"Drawing full rating at %i", index * imageWidth);
-		return onImage;
+		return self.onImage;
 	} else {
 		DC_LOG(@"Drawing inactive rating at %i", index * imageWidth);
-		return offImage;
+		return self.offImage;
 	}
 }
 
