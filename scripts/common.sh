@@ -44,7 +44,7 @@ while getopts ":dDm" opt; do
 	   ;;
     m)
 		echo "Mounting of final dmg file requested."
-		DC_MOUNT_DMG=YES
+		DC_ATTACH_DMG=-attach
 	   ;;
     \?)
 		echo
