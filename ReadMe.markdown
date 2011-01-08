@@ -60,7 +60,7 @@ BOOL yes = YES;
 
 ## DCUIRating
 
-![Screen dump of rating controller](http://drekka.github.com/images/screendump1.png)
+![Screen dump of rating controller](http://drekka.github.com/dUsefulStuff/Screenshot%202011.01.08%2021.25.08.png)
 
 This class can be used on iPhone displays to produce a star rating control similar to what you can see in Tunes. It produces a single horizontal bar of 5 images across the display. The user can tap or swipe across the bar to set the rating value they want. In addition, you can create and add a DCUIBubble to it which will display the current value of the rating whenever the users finger is on the display. This is useful for instant feed back because he users finger often obscures the control and therefore the current value.
 
