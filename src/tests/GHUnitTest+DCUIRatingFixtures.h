@@ -10,10 +10,11 @@
 #import <GHUnitIOS/GHUnitIOS.h>
 #import "DCUIRating.h"
 
+// Done as defines because an enum is illegal here.
 #define IMAGE_ON 1
 #define IMAGE_HALF_ON 0
 #define IMAGE_OFF -1
 
-@interface GHTestCase (GHUnitTest_DCUIRatingScaleUtils)
--(void) runDrawAtTestWithRating:(float) rating scaleType:(DCRATINGSCALE) scale imageTypes:(int[5]) imageTypes;
+@interface GHTestCase (GHUnitTest_DCUIRatingFixtures)
+-(void) verifyImagesDrawAtCorrectPostionWithRating:(float) rating scaleType:(DCRATINGSCALE) scale imageTypes:(int[5]) imageTypes iconCount:(int) iconCount;
 @end

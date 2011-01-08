@@ -8,7 +8,7 @@
 
 #import <OCMock/OCMock.h>
 
-#import "GHUnitTest+DCUIRatingScaleUtils.h"
+#import "GHUnitTest+DCUIRatingFixtures.h"
 #import "DCUIRatingScaleStrategy.h"
 #import "DCUIRatingScaleWholeStrategy.h"
 #import "DCUIRatingScaleHalfStrategy.h"
@@ -16,9 +16,9 @@
 #import "DCCommon.h"
 
 
-@implementation GHTestCase (GHUnitTest_DCUIRatingScaleUtils)
+@implementation GHTestCase (GHUnitTest_DCUIRatingFixtures)
 
--(void) runDrawAtTestWithRating:(float) rating scaleType:(DCRATINGSCALE) scale imageTypes:(int[5]) imageTypes {
+-(void) verifyImagesDrawAtCorrectPostionWithRating:(float) rating scaleType:(DCRATINGSCALE) scale imageTypes:(int[]) imageTypes iconCount:(int) iconCount {
 	
 	// Mocks of images.
 	id mockOnImage = [OCMockObject mockForClass:[UIImage class]];
@@ -30,7 +30,7 @@
 	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
 	
 	// Set expectations.
-	for (int i = 0, offset = 0;i < 5;i++, offset+=10) {
+	for (int i = 0, offset = 0;i < iconCount;i++, offset+=10) {
 		if (imageTypes[i] == IMAGE_ON) {
 			DC_LOG(@"Adding expectation On image at %i", offset);
 			[[mockOnImage expect] drawAtPoint:CGPointMake(offset, 0)]; 
@@ -44,9 +44,9 @@
 	}
 	
 	NSObject<DCUIRatingScaleStrategy> * strategy;
-	if (scale == DC_SCALE_0_TO_5) {
+	if (scale == DC_UI_RATING_SCALE_WHOLE) {
 		strategy = [[DCUIRatingScaleWholeStrategy alloc]init];
-	} else if (scale == DC_SCALE_0_TO_5_WITH_HALVES) {
+	} else if (scale == DC_UI_RATING_SCALE_HALF) {
 		strategy = [[DCUIRatingScaleHalfStrategy alloc]init];
 	} else {
 		strategy = [[DCUIRatingScaleDoubleStrategy alloc]init];
@@ -55,10 +55,10 @@
 	strategy.onImage = mockOnImage;
 	strategy.halfOnImage = mockHalfOnImage;
 
-	
+	DC_LOG(@"Setting rating %f", rating);
 	[strategy setRating:rating];
-	
-	for (int i = 0;i < 5;i++) {
+
+	for (int i = 0;i < iconCount;i++) {
 		[strategy drawImageAtIndex:i];
 	}
 	

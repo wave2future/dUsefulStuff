@@ -12,9 +12,9 @@
 #import "DCUIBubble.h"
 
 @implementation RatingTestController
-@synthesize rating5;
-@synthesize rating5half;
-@synthesize rating10;
+@synthesize ratingWhole;
+@synthesize ratingHalf;
+@synthesize ratingDouble;
 @synthesize readOut;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -35,42 +35,43 @@
 	imagePath = [[NSBundle mainBundle] pathForResource:@"bubble" ofType:@"png"];
 	UIImage *myBubbleImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
 
-	DCUIBubble * bubble5 = [[DCUIBubble alloc] initWithBackgroundImage:myBubbleImage];
-	bubble5.textOffsetXPixels = -2;
-	bubble5.textOffsetYPixels = -9;
-	bubble5.fontColor = [UIColor redColor];
+	DCUIBubble * bubbleWhole = [[DCUIBubble alloc] initWithBackgroundImage:myBubbleImage];
+	bubbleWhole.textOffsetXPixels = -2;
+	bubbleWhole.textOffsetYPixels = -9;
+	bubbleWhole.fontColor = [UIColor redColor];
 	
-	DCUIBubble * bubble5half = [[DCUIBubble alloc] initWithBackgroundImage:myBubbleImage];
-	bubble5half.textOffsetXPixels = -2;
-	bubble5half.textOffsetYPixels = -9;
-	bubble5half.fontColor = [UIColor blueColor];
+	DCUIBubble * bubbleHalf = [[DCUIBubble alloc] initWithBackgroundImage:myBubbleImage];
+	bubbleHalf.textOffsetXPixels = -2;
+	bubbleHalf.textOffsetYPixels = -9;
+	bubbleHalf.fontColor = [UIColor blueColor];
 
-	DCUIBubble * bubble10 = [[DCUIBubble alloc] initWithSize:CGSizeMake(50, 50)];
-	bubble10.textOffsetXPixels = -2;
-	bubble10.textOffsetYPixels = -9;
-	bubble10.color = [UIColor orangeColor];
-	bubble10.borderColor = [UIColor blackColor];
+	DCUIBubble * bubbleDouble = [[DCUIBubble alloc] initWithSize:CGSizeMake(50, 50)];
+	bubbleDouble.textOffsetXPixels = -2;
+	bubbleDouble.textOffsetYPixels = -9;
+	bubbleDouble.color = [UIColor orangeColor];
+	bubbleDouble.borderColor = [UIColor blackColor];
 	
-	self.rating5.onRatingImage = myRatingImage;
-	self.rating5.offRatingImage = myNoRatingImage;
-	self.rating5.bubble = bubble5;
-	self.rating5.scaleType = DC_SCALE_0_TO_5;
-	self.rating5.delegate = self;
+	self.ratingWhole.onRatingImage = myRatingImage;
+	self.ratingWhole.offRatingImage = myNoRatingImage;
+	self.ratingWhole.bubble = bubbleWhole;
+	self.ratingWhole.scale = DC_UI_RATING_SCALE_WHOLE;
+	self.ratingWhole.delegate = self;
 	
-	self.rating5half.onRatingImage = myRatingImage;
-	self.rating5half.offRatingImage = myNoRatingImage;
-	self.rating5half.halfRatingImage = myHalfRatingImage;
-	self.rating5half.bubble = bubble5half;
-	self.rating5half.scaleType = DC_SCALE_0_TO_5_WITH_HALVES;
-	self.rating5half.delegate = self;
+	self.ratingHalf.onRatingImage = myRatingImage;
+	self.ratingHalf.offRatingImage = myNoRatingImage;
+	self.ratingHalf.halfRatingImage = myHalfRatingImage;
+	self.ratingHalf.bubble = bubbleHalf;
+	self.ratingHalf.scale = DC_UI_RATING_SCALE_HALF;
+	self.ratingHalf.delegate = self;
+	self.ratingHalf.iconCount = 4;
 
-	self.rating10.onRatingImage = myRatingImage;
-	self.rating10.offRatingImage = myNoRatingImage;
-	self.rating10.halfRatingImage = myHalfRatingImage;
-	self.rating10.bubble = bubble10;
-	self.rating10.scaleType = DC_SCALE_0_TO_10;
-	self.rating10.delegate = self;
-
+	self.ratingDouble.onRatingImage = myRatingImage;
+	self.ratingDouble.offRatingImage = myNoRatingImage;
+	self.ratingDouble.halfRatingImage = myHalfRatingImage;
+	self.ratingDouble.bubble = bubbleDouble;
+	self.ratingDouble.scale = DC_UI_RATING_SCALE_DOUBLE;
+	self.ratingDouble.delegate = self;
+	self.ratingDouble.iconCount = 3;
 }
 
 

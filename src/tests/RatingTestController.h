@@ -14,17 +14,17 @@
 @interface RatingTestController : UIViewController<DCUIRatingDelegate> {
 	
 	@private
-	DCUIRating * rating5;
-	DCUIRating * rating5half;
-	DCUIRating * rating10;
+	DCUIRating * ratingWhole;
+	DCUIRating * ratingHalf;
+	DCUIRating * ratingDouble;
 	UILabel * readOut;
 
 }
 
 @property (retain, nonatomic) IBOutlet UILabel * readOut;
-@property (retain, nonatomic) IBOutlet DCUIRating * rating5;
-@property (retain, nonatomic) IBOutlet DCUIRating * rating5half;
-@property (retain, nonatomic) IBOutlet DCUIRating * rating10;
+@property (retain, nonatomic) IBOutlet DCUIRating * ratingWhole;
+@property (retain, nonatomic) IBOutlet DCUIRating * ratingHalf;
+@property (retain, nonatomic) IBOutlet DCUIRating * ratingDouble;
 
 -(IBAction) alertButtonClicked: (id) button;
 -(IBAction) alert2ButtonClicked: (id) button;

@@ -12,7 +12,7 @@
 #import "DCUIRatingScaleDoubleStrategy.h"
 #import "DCCommon.h"
 #import "DCUIRating.h"
-#import "GHUnitTest+DCUIRatingScaleUtils.h"
+#import "GHUnitTest+DCUIRatingFixtures.h"
 
 @interface DCUIRatingScaleDoubleStrategyTests : GHTestCase {
 	
@@ -23,17 +23,17 @@
 
 -(void) testDrawImageAtIndexWithRating0 {
 	int imageTypes[5] = {IMAGE_OFF,IMAGE_OFF,IMAGE_OFF,IMAGE_OFF,IMAGE_OFF};
-	[self runDrawAtTestWithRating:0 scaleType:DC_SCALE_0_TO_10 imageTypes:imageTypes];
+	[self verifyImagesDrawAtCorrectPostionWithRating:0 scaleType:DC_UI_RATING_SCALE_DOUBLE imageTypes:imageTypes iconCount:5];
 }
 
 -(void) testDrawImageAtIndexWithRating7 {
 	int imageTypes[5] = {IMAGE_ON,IMAGE_ON,IMAGE_ON,IMAGE_HALF_ON,IMAGE_OFF};
-	[self runDrawAtTestWithRating:7 scaleType:DC_SCALE_0_TO_10 imageTypes:imageTypes];
+	[self verifyImagesDrawAtCorrectPostionWithRating:7 scaleType:DC_UI_RATING_SCALE_DOUBLE imageTypes:imageTypes iconCount:5];
 }
 
 -(void) testDrawImageAtIndexWithRating5 {
 	int imageTypes[5] = {IMAGE_ON,IMAGE_ON,IMAGE_ON,IMAGE_ON,IMAGE_ON};
-	[self runDrawAtTestWithRating:10 scaleType:DC_SCALE_0_TO_10 imageTypes:imageTypes];
+	[self verifyImagesDrawAtCorrectPostionWithRating:10 scaleType:DC_UI_RATING_SCALE_DOUBLE imageTypes:imageTypes iconCount:5];
 }
 
 -(void) testCalcNewRatingFromTouchX {

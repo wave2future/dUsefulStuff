@@ -1,6 +1,13 @@
 
 # Changes Version 0.0.8
 * Updated DC_DEALLOC to slightly better code.
+* Refactored DCUIRatingScaleStrategy classes to be scale specific.
+* Changed constructors to be properties in strategies.
+* Added the ability to specify a number of icons to display in a range of 3 to 5.
+* Removed a lot of unnecessary tests.
+* Added new tests.
+* Added flags to scripts to allowing building of just the doco and whether or not to attach the dmg file.
+* Added parameter handling to scripts.
 
 # Changes Version 0.0.7
 * Created a scripts/defaults.sh as a more practical method for centralising building settings common to many projects.

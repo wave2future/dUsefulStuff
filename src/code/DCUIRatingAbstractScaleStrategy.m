@@ -21,13 +21,14 @@
 	offImage = [image retain];
 
 	// Setup common values.
-	imageWidth = (int)offImage.size.width;
-	DC_LOG(@"Image width: %i", imageWidth);
+	if (offImage != nil) {
+		imageWidth = (int)offImage.size.width;
+		DC_LOG(@"Image width: %i", imageWidth);
 	
-	// Calculate a fuzz factor around the users touch position.
-	zeroAreaWidth = [self calcZeroAreaWidth];
-	DC_LOG(@"Zero area width: %i", zeroAreaWidth);
-	
+		// Calculate a fuzz factor around the users touch position.
+		zeroAreaWidth = [self calcZeroAreaWidth];
+		DC_LOG(@"Zero area width: %i", zeroAreaWidth);
+	}
 }
 
 -(UIImage*) offImage {
@@ -64,8 +65,9 @@
 }
 
 - (void)dealloc {
-	self.onImage = nil;
+	// Use DC_DEALLOC to avoid setter.
 	self.offImage = nil;
+	self.onImage = nil;
 	self.halfOnImage = nil;
 	[super dealloc];
 }

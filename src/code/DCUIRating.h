@@ -16,15 +16,6 @@
  This enum dictates what type of scale the control uses.
  */
 enum DCScaleEnum {
-	/// @deprecated 0, 1, 2, 3 ... 5
-	DC_SCALE_0_TO_5,
-
-	/// @deprecated 0, 0.5, 1, 1.5, ... 5
-	DC_SCALE_0_TO_5_WITH_HALVES,
-
-	/// @deprecated 0, 1, 2, 3, ... 10
-	DC_SCALE_0_TO_10,
-	
 	/// Each touchable rating icon represents an increment of 1. i.e. 0, 1, 2, 3, 4, 5
 	/// Therefore each 
 	DC_UI_RATING_SCALE_WHOLE,
@@ -39,34 +30,32 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 /**
  This control provides a rating display similar to that seen in iTunes for rating songs. It draws a set of 3 to 5 icons across the display which the user can use to select a rating based on the scales in the DCScaleEnum (typedef DCRATINGSCALE). The user can select a rating value by either taping the control at the rating they want, or swiping their finger back and forwards to adjust the rating. However they must start the swipe inside the control.
  
- There are six scale types (3 deprecated, 3 new) which control the way the control calculates a rating from the users selection. Here is a list of the scale types:
+ There are 3 scales which control the way the control calculates a rating from the users selection:
  
  * *DC_UI_RATING_SCALE_WHOLE* - the users actions can only turn whole rating icons on or off and each icon represents an increment of 1. This produces a sequence of ratings 0, 1, 2, ...
  * *DC_UI_RATING_SCALE_HALF* - the users actions can turn half a rating icon on or off and each half an icon represents an increment of 0.5. This produces a sequence of ratings 0, 0.5, 1, 1.5, ...
  * *DC_UI_RATING_SCALE_DOUBLE* - the users actions can turn half a rating icon on or off and each half an icon represents an increment of 1. This produces a sequence of ratings 0, 1, 2, ... 
- * *DC_SCALE_0_TO_5* - depreciated. Do not use.
- * *DC_SCALE_0_TO_5_WITH_HALVES* - depreciated. Do not use.
- * *DC_SCALE_0_TO_10* - depreciated. Do not use.
+ 
+ The maximum value is defined by the iconCount property. See the properties doco for details.
  
  The developer can also choose to display a popup bubble above the rating controller. This bubble tracks the
  users touch and displays the value during the touch operation. It appears at the first touch and disappears when
  the touch leaves. This bubble can be configured with an image background (setting this causes the bubble to be displayed), font, text colour and text position.
  */
 @interface DCUIRating : UIControl {
-	@private
-
+@private
+	
 	// Public interface variables.
 	UIImage *offRatingImage;
 	UIImage *onRatingImage;
 	UIImage *halfRatingImage;
-	DCRATINGSCALE scaleType;
 	DCUIBubble *bubble;
 	NSObject<DCUIRatingDelegate> * delegate;
 	int iconCount;
-
+	DCRATINGSCALE scale;
+	
 	// Internal use for display and layout.
 	int lastTouchX;
-	float initialRating;
 	NSObject<DCUIRatingScaleStrategy> * scaleStrategy;
 }
 
@@ -79,21 +68,25 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 @property(retain,nonatomic) NSObject<DCUIRatingDelegate> * delegate;
 
 /**
- Defines the range of values that the control will produce. There are three options:
-
- - *DC_SCALE_0_TO_5* or *DC_UI_RATING_SCALE_WHOLE* - produces 0, 1, 2, 3, ...
- - *DC_SCALE_0_TO_5_WITH_HALVES* or *DC_UI_RATING_SCALE_HALF* - produces 0, 0.5, 1, 1.5, ... 
- - *DC_SCALE_0_TO_10* or *DC_UI_RATING_SCALE_DOUBLE* - produces 0, 1, 2, 3, ... 
- 
- */
-@property (nonatomic) DCRATINGSCALE scaleType;
-
-/**
  Tells the control how many icons to draw.
  
- Must be one of 3, 4 or 5.
+ Must be one of 3, 4 or 5. This is also the maximum rating that the control will return unless scaleType is set to *DC_UI_RATING_SCALE_DOUBLE* in which case it is double. i.e. 3 = 6, 4 = 8, 5 = 10. 
+ 
+ @exception NSException thrown if the number is out of range.
+ 
  */
 @property (nonatomic) int iconCount;
+
+/**
+ Sets the scale.
+ 
+ There are three options:
+ 
+ - *DC_UI_RATING_SCALE_WHOLE*(default) - produces 0, 1, 2, 3, ...
+ - *DC_UI_RATING_SCALE_HALF* - produces 0, 0.5, 1, 1.5, ... 
+ - *DC_UI_RATING_SCALE_DOUBLE* - produces 0, 1, 2, 3, ... 
+ */
+@property (nonatomic) DCRATINGSCALE scale;
 
 /**
  The current value of the control. This value depends on the current setting of the scaleType; Set this value to have the control light up the necessary rating images.

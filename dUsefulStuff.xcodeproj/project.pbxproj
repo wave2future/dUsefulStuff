@@ -61,7 +61,7 @@
 		65896F201244F9210089E207 /* UIColor+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */; };
 		65896F461244FC320089E207 /* UIColor+dUsefulStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */; };
 		659CB9A8125A01CC00AD44BE /* DCUIRatingScaleDoubleStrategyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 659CB9A7125A01CC00AD44BE /* DCUIRatingScaleDoubleStrategyTests.m */; };
-		659CB9CB125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m */; };
+		659CB9CB125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = 659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.m */; };
 		659D2BEE117748000056AA74 /* RatingTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650357B3116A1BAA00202897 /* RatingTest.xib */; };
 		659D2BEF117748010056AA74 /* RatingTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357B5116A1BAA00202897 /* RatingTestAppDelegate.m */; };
 		659D2BF0117748030056AA74 /* RatingTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650357B7116A1BAA00202897 /* RatingTestController.m */; };
@@ -178,8 +178,8 @@
 		65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuff.m"; path = "src/code/UIColor+dUsefulStuff.m"; sourceTree = "<group>"; };
 		65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuffTests.m"; path = "src/tests/UIColor+dUsefulStuffTests.m"; sourceTree = "<group>"; };
 		659CB9A7125A01CC00AD44BE /* DCUIRatingScaleDoubleStrategyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScaleDoubleStrategyTests.m; path = src/tests/DCUIRatingScaleDoubleStrategyTests.m; sourceTree = "<group>"; };
-		659CB9C9125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GHUnitTest+DCUIRatingScaleUtils.h"; path = "src/tests/GHUnitTest+DCUIRatingScaleUtils.h"; sourceTree = "<group>"; };
-		659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GHUnitTest+DCUIRatingScaleUtils.m"; path = "src/tests/GHUnitTest+DCUIRatingScaleUtils.m"; sourceTree = "<group>"; };
+		659CB9C9125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GHUnitTest+DCUIRatingFixtures.h"; path = "src/tests/GHUnitTest+DCUIRatingFixtures.h"; sourceTree = "<group>"; };
+		659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GHUnitTest+DCUIRatingFixtures.m"; path = "src/tests/GHUnitTest+DCUIRatingFixtures.m"; sourceTree = "<group>"; };
 		659D2BE5117747BA0056AA74 /* dUsefullStuff Test Program.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefullStuff Test Program.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A0C68F116EF534003AC854 /* libdUsefulStuff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdUsefulStuff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AD2520128E816C007E4F23 /* Uncrustify.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Uncrustify.sh; sourceTree = "<group>"; };
@@ -324,8 +324,7 @@
 		650357A9116A1B8600202897 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				659CB9C9125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.h */,
-				659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m */,
+				657C582612D718FF00D3C182 /* Fixtures */,
 				650357AA116A1BAA00202897 /* blank_10_x_10.png */,
 				65D11B8B12586419001FED62 /* DCUIRatingScaleWholeStrategyTests.m */,
 				65D5D7831259FD7700E161C1 /* DCUIRatingScaleHalfStrategyTests.m */,
@@ -334,7 +333,6 @@
 				65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */,
 				650357AD116A1BAA00202897 /* DCUIRatingTests.m */,
 				650357AE116A1BAA00202897 /* dUsefulStuff unit tests-Info.plist */,
-				6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */,
 				650357B0116A1BAA00202897 /* NSDictionary+dUsefulStuffTests.m */,
 				650357B1116A1BAA00202897 /* NSMutableDictionary+dUsefulStuffTests.m */,
 				65F21665116C677F0086F808 /* Rating tests */,
@@ -353,6 +351,16 @@
 				654ED65F116C5B89007AB3BA /* star.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		657C582612D718FF00D3C182 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				659CB9C9125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.h */,
+				659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.m */,
+				6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */,
+			);
+			name = Fixtures;
 			sourceTree = "<group>";
 		};
 		65CD39A01226872A0061EEBF /* scripts */ = {
@@ -565,7 +573,7 @@
 				65D11B8C12586419001FED62 /* DCUIRatingScaleWholeStrategyTests.m in Sources */,
 				65D5D7841259FD7700E161C1 /* DCUIRatingScaleHalfStrategyTests.m in Sources */,
 				659CB9A8125A01CC00AD44BE /* DCUIRatingScaleDoubleStrategyTests.m in Sources */,
-				659CB9CB125B14ED00AD44BE /* GHUnitTest+DCUIRatingScaleUtils.m in Sources */,
+				659CB9CB125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.m in Sources */,
 				6538898C12730EDF0037D2C1 /* DCCoreDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,7 +719,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Debug;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -729,7 +736,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefullStuff Test Program";
-				PROVISIONING_PROFILE = "8A161FB9-BEAF-4A19-B0A6-9FBFA35388D2";
 			};
 			name = Debug;
 		};
@@ -738,7 +744,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Release;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -755,7 +761,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefullStuff Test Program";
-				PROVISIONING_PROFILE = "8A161FB9-BEAF-4A19-B0A6-9FBFA35388D2";
+				PROVISIONING_PROFILE = "";
 				ZERO_LINK = NO;
 			};
 			name = Release;

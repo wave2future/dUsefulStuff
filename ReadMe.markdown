@@ -4,7 +4,7 @@ This library is intended as a container of useful defines and classes which can 
 
 # Installing
 
-1. Download the latest dmg file. This contains a static framework usuable on both iPhones and iPads, documentation and some sample graphics.
+1. Download the latest dmg file. This contains a static framework usable on both iPhones and iPads, scripts, documentation and some sample graphics.
 1. Copy the library contents to a folder somewhere. For example, ~/projects/libs/dUsefulStuff
 1. Drag and drop the dUsefulStuff.framework folder to xcode. This is essentially the same as adding a framework.
 1. Add the header imports you need to your project. As this is a framework, you can now use the framework style syntax. For example
@@ -66,15 +66,16 @@ This class can be used on iPhone displays to produce a star rating control simil
 
 It's core features include :
 
-* 3 scales : 0 - 5, 0 - 5 with half values, and 0 - 10.
+* 3 scales addressable by the icons on the display : one whole icon = rating 1, half an icon = rating 0.5, or half an icon equals rating 1.
+* Selectable number of icons - between 3 and 5.
 * Provided star images but can be configured with any images you like.
-* Resizes itself to match the width and height of the supplied images.
+* Resizes itself to match the width and height of the supplied images and number of icons specified.
 * Can popup a bubble above the users finger displaying the newly selected rating.
 * Able to update a delegate so your controller can respond to changes.
 
 ### Using DCUIRating
 
-1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view. Here's the header file:
+1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view and you (optionally needd to ensure that the delegate implements the DCUIRatingDelegate protocol. Here's an example header file:
 
 		#import <UIKit/UIKit.h>
 		#import <dUsefulStuff/DCUIRating.h>
@@ -89,7 +90,7 @@ It's core features include :
 		
 		@end
 
-1. Then you will need to add the following code to your **viewDidLoad:** method:
+1. And some example code interface your **viewDidLoad:** method:
 
 		- (void) viewDidLoad {
 			[super viewDidLoad];
@@ -104,7 +105,7 @@ It's core features include :
 			// Now setup the rating control.
 			self.ratingControl.onRatingImage = myRatingImage;
 			self.ratingControl.offRatingImage = myNoRatingImage;
-			self.ratingControl.scaleType = DC_SCALE_0_TO_5;
+			self.ratingControl.scale = DC_RATING_SCALE_WHOLE;
 			
 			// Not required unless you want to get notified of changes.
 			self.ratingControl.delegate = self;
@@ -137,7 +138,7 @@ It's core features include :
 1. In the **Library** dialog, click on the **Classes** button to show all classes in the project.
 1. Scroll down until you find the DCUIRating classes, then drag it onto your view.
 1. Size and position the control. Note you won't see anything because Interface Builder does not see it
-as a control and therefore does not draw it. Also note that an instance of DCUIRating will resize itself to fit the height and 5 times the width of the inactive image you set in the controller code.
+as a control and therefore does not draw it. Also note that an instance of DCUIRating will resize itself to fit the height and number of icons specified (5 is the default) using the width of the inactive image you have set.
 1. Lastly, make sure that the control is connected to the controllers IBOutlet.
 
 ## DCUIBubble
@@ -210,38 +211,50 @@ You will notice that all the sripts make use of variables prefixed with *DC_*. T
 
 Here is an example of using them (actually it's a copy of the build.sh script from this project :-). Check that file for the latest version and settings.
 
-		#!/bin/sh
+    #!/bin/sh
 
-		# build.sh
-		# dUsefulStuff
-		#
-		# Created by Derek Clarkson on 27/08/10.
-		# Copyright 2010 Derek Clarkson. All rights reserved.
+    # build.sh
+    # dUsefulStuff
+    #
+    # Created by Derek Clarkson on 27/08/10.
+    # Copyright 2010 Derek Clarkson. All rights reserved.
 
-		# build specific.
-		DC_CURRENT_PROJECT_VERSION=${CURRENT_PROJECT_VERSION=0.0.7}
-		DC_PRODUCT_NAME=${PRODUCT_NAME=dUsefulStuff}
-		DC_SRC=src/code
-		DC_BUILD_TARGET="Build Library"
-		DC_COMPANY_ID=au.com.derekclarkson
-		DC_AUTHOR="Derek Clarkson"
-		DC_COMPANY=$DC_AUTHOR
+    # build specific.
+    DC_CURRENT_PROJECT_VERSION=${CURRENT_PROJECT_VERSION=0.0.8}
+    DC_PRODUCT_NAME=${PRODUCT_NAME=dUsefulStuff}
+    DC_SRC=src/code
+    DC_BUILD_TARGET="Build Library"
+    DC_COMPANY_ID=au.com.derekclarkson
+    DC_AUTHOR="Derek Clarkson"
+    DC_COMPANY=$DC_AUTHOR
 
-		DC_SCRIPTS_DIR=scripts
-		export DC_SCRIPTS_DIR 
+    DC_SCRIPTS_DIR=scripts
 
-		# Include common scripts.
-		source $DC_SCRIPTS_DIR/defaults.sh
-		source $DC_SCRIPTS_DIR/common.sh
+    # Include common scripts.
+    source $DC_SCRIPTS_DIR/defaults.sh
+    source $DC_SCRIPTS_DIR/common.sh
 
-		printSettings
+    # Clean and setup.
+    $DC_SCRIPTS_DIR/clean.sh
+    $DC_SCRIPTS_DIR/setup.sh
 
-		# Call the scripts.
-		$DC_SCRIPTS_DIR/clean.sh
-		$DC_SCRIPTS_DIR/buildStaticLibrary.sh
-		$DC_SCRIPTS_DIR/assembleFramework.sh
-		$DC_SCRIPTS_DIR/createDocumentation.sh
-		$DC_SCRIPTS_DIR/createDmg.sh
+    # Check for a doco only build.
+    if [ -n "$DC_BUILD_DOCO_ONLY" ]; then
+    	$DC_SCRIPTS_DIR/createDocumentation.sh
+    	exit 0
+    fi
+
+    # Otherwise do a full build.
+    $DC_SCRIPTS_DIR/buildStaticLibrary.sh
+    $DC_SCRIPTS_DIR/assembleFramework.sh
+    $DC_SCRIPTS_DIR/createDocumentation.sh
+
+    # Extra step here to copy the scripts into a directory of the dmg file.
+    mkdir $DC_ARTIFACT_DIR/scripts
+    find "scripts" -type f -name "*.sh" -depth 1 -exec cp -v "{}" "$DC_ARTIFACT_DIR/scripts" \;
+
+    # Final assembly.
+    $DC_SCRIPTS_DIR/createDmg.sh
 
 ### defaults.sh
 
@@ -249,11 +262,11 @@ This script takes in the values previously setup in the build.sh script and uses
 
 ### common.sh
 
-A script which is included by other scripts to provide some commonly used functions.
+A script which is included by other scripts to provide some commonly used functions. This script also handles arguments. There are several possible arguments that this build system understands so just do ./build.sh -? to see them.
 
 ### buildStaticLibrary.sh
 
-This is the main script for building. It will compile both a simulator and device version of the code in your project and then combine them into a single library. 
+This is the main script for building. It will compile both a simulator and device version of the code in your project and then combine them into a single static framework. 
 
 ### createDocumentation.sh
 
