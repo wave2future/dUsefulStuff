@@ -35,7 +35,7 @@
 @property (nonatomic, retain) UIImage * halfOnImage;
 
 /// ------------------------------------
-/// @name Methods
+/// @name Messages
 /// ------------------------------------
 
 /**

@@ -227,10 +227,8 @@
 	
 	//Setup the delegate.
 	id mockDelegate = [OCMockObject mockForProtocol:@protocol(DCUIRatingDelegate)];
-	ratingControl.delegate = mockDelegate;
-	
-	// Set delegate expectation.
 	[[mockDelegate expect] ratingDidChange:ratingControl];
+	ratingControl.delegate = mockDelegate;
 	
 	// Create a window and add the rating control.
 	UIWindow *window = [[[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 320, 480)] autorelease];
@@ -242,7 +240,6 @@
 	[[[mockImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
 	ratingControl.offRatingImage = mockImage;
 	ratingControl.onRatingImage = mockImage;
-	//[ratingControl layoutSubviews];
 	
 	// mock out the touch.
 	id mockTouch = [OCMockObject mockForClass:[UITouch class]];
