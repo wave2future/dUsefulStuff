@@ -12,3 +12,6 @@ rm -fr $DC_ARTIFACT_DIR
 rm -f $DC_DMG_FILE
 echo "Directories cleared."
 
+echo "Creating artifact directory $DC_ARTIFACT_DIR"
+mkdir -p $DC_ARTIFACT_DIR
+

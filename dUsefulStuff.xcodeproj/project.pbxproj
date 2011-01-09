@@ -200,7 +200,6 @@
 		65D5D7741259FA6C00E161C1 /* DCUIRatingScaleDoubleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingScaleDoubleStrategy.h; path = src/code/DCUIRatingScaleDoubleStrategy.h; sourceTree = "<group>"; };
 		65D5D7751259FA6C00E161C1 /* DCUIRatingScaleDoubleStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScaleDoubleStrategy.m; path = src/code/DCUIRatingScaleDoubleStrategy.m; sourceTree = "<group>"; };
 		65D5D7831259FD7700E161C1 /* DCUIRatingScaleHalfStrategyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScaleHalfStrategyTests.m; path = src/tests/DCUIRatingScaleHalfStrategyTests.m; sourceTree = "<group>"; };
-		65E52DB012D69DB60005EA2A /* setup.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setup.sh; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* dUsefulStuff_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dUsefulStuff_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -373,7 +372,6 @@
 				651834BC1227F9AC00B4AE43 /* createDmg.sh */,
 				651834AD1227F19D00B4AE43 /* createDocumentation.sh */,
 				65584D7212C427CE00F7B39A /* defaults.sh */,
-				65E52DB012D69DB60005EA2A /* setup.sh */,
 				65AD2520128E816C007E4F23 /* Uncrustify.sh */,
 			);
 			path = scripts;

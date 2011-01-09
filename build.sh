@@ -23,7 +23,6 @@ source $DC_SCRIPTS_DIR/common.sh
 
 # Clean and setup.
 $DC_SCRIPTS_DIR/clean.sh
-$DC_SCRIPTS_DIR/setup.sh
 
 # Check for a doco only build.
 if [ -n "$DC_BUILD_DOCO_ONLY" ]; then

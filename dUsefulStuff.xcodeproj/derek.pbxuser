@@ -62,6 +62,14 @@
 		userBuildSettings = {
 		};
 	};
+	6503579D116A1B8100202897 /* DCUIRating.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {929, 3549}}";
+			sepNavSelRange = "{6337, 0}";
+			sepNavVisRange = "{4979, 1863}";
+			sepNavWindowFrame = "{{1935, 225}, {988, 970}}";
+		};
+	};
 	650357AD116A1BAA00202897 /* DCUIRatingTests.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1125, 3341}}";
@@ -141,8 +149,36 @@
 	6518349F1227EED400B4AE43 /* build.sh */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1125, 992}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavSelRange = "{389, 0}";
 			sepNavVisRange = "{0, 1090}";
+		};
+	};
+	651834AD1227F19D00B4AE43 /* createDocumentation.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 992}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1310}";
+		};
+	};
+	651834AE1227F3A300B4AE43 /* clean.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 992}}";
+			sepNavSelRange = "{358, 0}";
+			sepNavVisRange = "{0, 359}";
+		};
+	};
+	651834BB1227F98200B4AE43 /* assembleFramework.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 992}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1833}";
+		};
+	};
+	651834BC1227F9AC00B4AE43 /* createDmg.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 992}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 632}";
 		};
 	};
 	653AD37C116E13CF006E2268 /* Run unit tests */ = {
@@ -154,8 +190,8 @@
 	65584D7212C427CE00F7B39A /* defaults.sh */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1125, 1196}}";
-			sepNavSelRange = "{2798, 0}";
-			sepNavVisRange = "{0, 2542}";
+			sepNavSelRange = "{2772, 0}";
+			sepNavVisRange = "{123, 2497}";
 		};
 	};
 	659D2BE4117747BA0056AA74 /* Application Test */ = {
@@ -167,11 +203,19 @@
 	65A0C679116EF534003AC854 /* Build Library */ = {
 		activeExec = 0;
 	};
+	65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 1040}}";
+			sepNavSelRange = "{807, 0}";
+			sepNavVisRange = "{0, 2180}";
+			sepNavWindowFrame = "{{1958, 204}, {988, 970}}";
+		};
+	};
 	65CD39A4122689B10061EEBF /* common.sh */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1125, 992}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1212}";
+			sepNavSelRange = "{1222, 0}";
+			sepNavVisRange = "{0, 1227}";
 		};
 	};
 	65D11B84125856C9001FED62 /* DCUIRatingScaleStrategy.h */ = {

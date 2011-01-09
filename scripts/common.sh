@@ -59,6 +59,8 @@ done
 set -o errexit
 set -o nounset
 
+printSettings
+
 
 
 
