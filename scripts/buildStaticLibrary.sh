@@ -17,7 +17,7 @@ if [ -f $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser ]; then
 
 # Restores the <user>.pbxuser file so that xcode can continue working.
 restorePbxuser() {
-	if [ -f $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser ]; then
+	if [ -f $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser.old ]; then
 		echo "Restoring pbxuser file...."
 		mv $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser.old $DC_PROJECT_NAME.xcodeproj/$USER.pbxuser
 	fi
