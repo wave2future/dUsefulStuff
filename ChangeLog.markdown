@@ -3,6 +3,8 @@
 * Removed setup.sh as it really didn't do much.
 * Externalised the releases directory from the projects so that git checkouts don't wipe it, loosing all previous version packages.
 * Cleaned up parameter settings in defaults.sh
+* Removed some unnecessary variable setting from the static build script.
+* Added more tests.
 
 # Changes Version 0.0.8
 * Updated DC_DEALLOC to slightly better code.
