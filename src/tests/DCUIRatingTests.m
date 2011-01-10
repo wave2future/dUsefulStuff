@@ -6,7 +6,7 @@
 //  Copyright 2010 Derek Clarkson. All rights reserved.
 //
 
-#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnit/GHUnit.h>
 #import <OCMock/OCMock.h>
 
 #import "DCUIRating.h"
@@ -22,7 +22,7 @@
 @implementation DCUIRatingTests
 
 -(void) setUp {
-	ratingControl = [[DCUIRating alloc] initWithCoder:nil];
+	ratingControl = [[DCUIRating alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
 }
 
 -(void) tearDown {
@@ -170,8 +170,6 @@
 - (void) testTouchEndedCalculatesRating {
 	
 	// Setup the rating control.
-	CGRect ratingFrame = CGRectMake(10, 10, 50, 50);
-	ratingControl.frame = ratingFrame;
 	[ratingControl setScale:DC_UI_RATING_SCALE_HALF];
 	
 	// Create a window and add the rating control.
@@ -204,11 +202,6 @@
 	ratingControl.halfRatingImage = mockImage;
 	ratingControl.iconCount = 5;
 	
-	[ratingControl layoutSubviews];
-	
-	//Do a drawRect as this will always occur first and finishes the control setup.
-	[ratingControl drawRect:CGRectMake(0, 0, 50, 50)];
-	
 	// Trigger the calculation.
 	[ratingControl touchesEnded:touches withEvent:mockEvent];
 	
@@ -220,10 +213,6 @@
 }
 
 - (void) testDelegateIsCalledWhenValueChanges {
-	
-	// Setup the rating control.
-	CGRect ratingFrame = CGRectMake(10, 10, 50, 50);
-	ratingControl.frame = ratingFrame;
 	
 	//Setup the delegate.
 	id mockDelegate = [OCMockObject mockForProtocol:@protocol(DCUIRatingDelegate)];
@@ -258,10 +247,8 @@
 	[touches addObject:mockTouch];
 	[[[mockEvent stub] andReturn:touches] touchesForView:ratingControl];
 	
-	//Do a drawRect as this will always occur first and finishes the control setup.
-	[ratingControl drawRect:CGRectMake(0, 0, 50, 50)];
-	
 	// Trigger the calculation.
+	DC_LOG(@"Make call to test code");
 	[ratingControl touchesEnded:touches withEvent:mockEvent];
 	
 	// Verify

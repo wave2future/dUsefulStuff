@@ -34,7 +34,7 @@ compile() {
 	set +o errexit
 
 	echo "Building $DC_COMPILE_ARCHS library ..."
-	xcodebuild -target "$DC_BUILD_TARGET" -sdk $DC_COMPILE_SDK -configuration $DC_BUILD_CONFIGURATION VALID_ARCHS="$DC_COMPILE_VALID_ARCHS" ARCHS="$DC_COMPILE_ARCHS"
+	xcodebuild -target "$DC_BUILD_TARGET" -sdk $1 -configuration $DC_BUILD_CONFIGURATION VALID_ARCHS="$3" ARCHS="$2"
 	DC_BUILD_RC=$?
 	
 	# if it failed then restore user settings and exit.
@@ -56,16 +56,8 @@ compile() {
 
 # Start of run.
 echo "Starting build ..."
-
-DC_COMPILE_SDK=$DC_SIMULATOR_SDK
-DC_COMPILE_VALID_ARCHS=$DC_SIMULATOR_VALID_ARCHS
-DC_COMPILE_ARCHS=$DC_SIMULATOR_ARCHS
-compile
-
-DC_COMPILE_SDK=$DC_DEVICE_SDK
-DC_COMPILE_VALID_ARCHS=$DC_DEVICE_VALID_ARCHS
-DC_COMPILE_ARCHS=$DC_DEVICE_ARCHS
-compile
+compile "$DC_SIMULATOR_SDK" "$DC_SIMULATOR_ARCHS" "$DC_SIMULATOR_VALID_ARCHS"
+compile "$DC_DEVICE_SDK" "$DC_DEVICE_ARCHS" "$DC_DEVICE_VALID_ARCHS"
 
 echo "Combining libraries..."
 echo "Creating universal directory $DC_UNIVERSAL_DIR"

@@ -5,7 +5,7 @@
 //  Created by Derek Clarkson on 21/04/10.
 //  Copyright 2010 Derek Clarkson. All rights reserved.
 //
-#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnit/GHUnit.h>
 #import <OCMock/OCMock.h>
 
 #import "DCUIBubble.h"

@@ -29,6 +29,7 @@
 		65269784116EF983003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
 		652697A7116EF98B003C63D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269778116EF91E003C63D3 /* CoreGraphics.framework */; };
 		652697E8116EF992003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
+		652AC6A012DA98C5007D5042 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6576D1C3121C0CAF00CBE1B0 /* GHUnit.framework */; };
 		653888E51272C76D0037D2C1 /* DCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579B116A1B8100202897 /* DCCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		653888E61272C7710037D2C1 /* DCCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 65568E971233B7C400BC02C3 /* DCCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		653888E71272C7730037D2C1 /* DCDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CD392E122551E90061EEBF /* DCDialogs.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,7 +56,6 @@
 		65568E9A1233B7C400BC02C3 /* DCCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 65568E981233B7C400BC02C3 /* DCCoreData.m */; };
 		65568EE91233B96E00BC02C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65568ECC1233B95900BC02C3 /* CoreData.framework */; };
 		656B793511796FE000F19C5D /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 656B793411796FE000F19C5D /* bubble.png */; };
-		6576D1C4121C0CAF00CBE1B0 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */; };
 		6576D211121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */; };
 		657F52F8129E9D6600EC3B7F /* DCUIRatingDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 657F52F7129E9D6600EC3B7F /* DCUIRatingDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65896F201244F9210089E207 /* UIColor+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */; };
@@ -170,7 +170,7 @@
 		65584D7212C427CE00F7B39A /* defaults.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = defaults.sh; sourceTree = "<group>"; };
 		656B793411796FE000F19C5D /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 		656E3EEC1257752A00CAFAD9 /* ChangeLog.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChangeLog.markdown; sourceTree = "<group>"; };
-		6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = /Users/derek/projects/tools/GHUnitIOS.framework; sourceTree = "<absolute>"; };
+		6576D1C3121C0CAF00CBE1B0 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = "/Users/derek/projects/tools/GHUnit 0.4.27/GHUnit.framework"; sourceTree = "<absolute>"; };
 		6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = src/tests/GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefulStuff simulator unit tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		657F52F7129E9D6600EC3B7F /* DCUIRatingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUIRatingDelegate.h; sourceTree = "<group>"; };
@@ -213,9 +213,9 @@
 				653AD415116E165B006E2268 /* Foundation.framework in Frameworks */,
 				65269779116EF91E003C63D3 /* CoreGraphics.framework in Frameworks */,
 				65269784116EF983003C63D3 /* UIKit.framework in Frameworks */,
-				6576D1C4121C0CAF00CBE1B0 /* GHUnitIOS.framework in Frameworks */,
 				6541E16F12366D0700508A8F /* CoreData.framework in Frameworks */,
 				650B81931276F1B3002BA0B2 /* OCMock.framework in Frameworks */,
+				652AC6A012DA98C5007D5042 /* GHUnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +278,7 @@
 			children = (
 				650B81921276F1B3002BA0B2 /* OCMock.framework */,
 				65568ECC1233B95900BC02C3 /* CoreData.framework */,
-				6576D1C3121C0CAF00CBE1B0 /* GHUnitIOS.framework */,
+				6576D1C3121C0CAF00CBE1B0 /* GHUnit.framework */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
 				65269778116EF91E003C63D3 /* CoreGraphics.framework */,
 				65269783116EF983003C63D3 /* UIKit.framework */,
@@ -667,6 +667,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../tools\"",
+					"\"$(SRCROOT)/../tools/GHUnit 0.4.27\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -695,6 +696,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../tools\"",
+					"\"$(SRCROOT)/../tools/GHUnit 0.4.27\"",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

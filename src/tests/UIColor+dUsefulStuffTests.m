@@ -5,7 +5,7 @@
 //  Created by Derek Clarkson on 18/09/10.
 //  Copyright 2010 Derek Clarkson. All rights reserved.
 //
-#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnit/GHUnit.h>
 #import "UIColor+dUsefulStuff.h"
 
 @interface UIColor_dUsefulStuffTests : GHTestCase {}

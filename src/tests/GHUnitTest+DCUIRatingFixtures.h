@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnit/GHUnit.h>
 #import "DCUIRating.h"
 
 // Done as defines because an enum is illegal here.

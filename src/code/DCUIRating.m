@@ -142,7 +142,7 @@
 #pragma mark Constructors
 
 - (id) initWithFrame:(CGRect) frame {
-	DC_LOG(@"InitWithFrame:");
+	DC_LOG(@"initWithFrame:");
 	self = [super initWithFrame:frame];
 	if (self) {
 		[self setDefaults];
@@ -151,7 +151,7 @@
 }
 
 - (id) initWithCoder:(NSCoder *) decoder {
-	DC_LOG(@"InitWithCoder:");
+	DC_LOG(@"initWithCoder:");
 	self = [super initWithCoder:decoder];
 	if (self) {
 		[self setDefaults];
@@ -161,8 +161,8 @@
 
 - (void) setDefaults {
 	DC_LOG(@"Setting defaults");
-	self.iconCount = 5;
 	scaleStrategy = [[DCUIRatingScaleWholeStrategy alloc] init];
+	self.iconCount = 5;
 }
 
 #pragma mark -
@@ -173,8 +173,9 @@
 #pragma mark Internal messages
 
 - (CGSize) sizeThatFits:(CGSize) size {
-	DC_LOG(@"being asked for size");
-	return CGSizeMake(self.offRatingImage.size.width * self.iconCount, self.offRatingImage.size.height);
+	CGSize newSize = CGSizeMake(self.offRatingImage.size.width * self.iconCount, self.offRatingImage.size.height);
+	DC_LOG(@"sizeThatFits: returning %f x %f", newSize.width, newSize.height);
+	return newSize;
 }
 
 - (void) popBubbleAtTouch:(UITouch *) atTouch {
@@ -235,7 +236,7 @@
 	lastTouchX = (int) [aTouch locationInView:self].x;
 	lastTouchX = fmin(self.frame.size.width - 1, lastTouchX);
 	lastTouchX = fmax(0, lastTouchX);
-	DC_LOG(@"New lastTouchX: %i", lastTouchX);
+	DC_LOG(@"lastTouchX: %i", lastTouchX);
 	
 	float oldRating = [scaleStrategy rating];
 	float newRating = [scaleStrategy calcNewRatingFromTouchX:lastTouchX];

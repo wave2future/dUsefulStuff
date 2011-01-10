@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Oakton Pty Ltd. All rights reserved.
 //
 
-#import <GHUnitIOS/GHUnitIOS.h>
+#import <GHUnit/GHUnit.h>
 #import <OCMock/OCMock.h>
 
 #import "DCUIRatingScaleDoubleStrategy.h"

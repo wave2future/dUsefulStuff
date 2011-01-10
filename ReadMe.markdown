@@ -76,7 +76,7 @@ It's core features include :
 ### Using DCUIRating
 
 1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view and you (optionally needd to ensure that the delegate implements the DCUIRatingDelegate protocol. Here's an example header file:
-{% highlight objc %} 
+ 
 		#import <UIKit/UIKit.h>
 		#import <dUsefulStuff/DCUIRating.h>
 		#import <dUsefulStuff/DCUIRatingDelegate.h>
@@ -88,7 +88,7 @@ It's core features include :
 		
 		@property (retain, nonatomic) IBOutlet DCUIRating * ratingControl;
 		
-		@end{% endhighlight %}
+		@end
 
 1. And some example code interface your **viewDidLoad:** method:
 
