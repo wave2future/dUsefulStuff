@@ -5,6 +5,9 @@
 * Cleaned up parameter settings in defaults.sh
 * Removed some unnecessary variable setting from the static build script.
 * Added more tests.
+* Deprecating DC_MOCK_VALUE as OCMock has now been updated.
+* Added logging of variable pointer address and retain count to DC_DEALLOC.
+* Removed NSLog from DCDialogs.
 
 # Changes Version 0.0.8
 * Updated DC_DEALLOC to slightly better code.

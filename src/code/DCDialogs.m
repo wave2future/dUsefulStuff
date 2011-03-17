@@ -18,7 +18,7 @@
 
 + (void) displayMessage:(NSString *)msg title:(NSString *)title {
 
-	NSLog(@"Displaying message: %@", msg);
+	DC_LOG(@"Displaying message: %@", msg);
 
 	// Alert the user
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title

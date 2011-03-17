@@ -323,20 +323,20 @@
 		650357A9116A1B8600202897 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				657C582612D718FF00D3C182 /* Fixtures */,
 				650357AA116A1BAA00202897 /* blank_10_x_10.png */,
-				65D11B8B12586419001FED62 /* DCUIRatingScaleWholeStrategyTests.m */,
-				65D5D7831259FD7700E161C1 /* DCUIRatingScaleHalfStrategyTests.m */,
-				659CB9A7125A01CC00AD44BE /* DCUIRatingScaleDoubleStrategyTests.m */,
 				650357AC116A1BAA00202897 /* DCCommonTests.m */,
+				6538898A12730E980037D2C1 /* DCCoreDataTests.m */,
 				65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */,
+				659CB9A7125A01CC00AD44BE /* DCUIRatingScaleDoubleStrategyTests.m */,
+				65D5D7831259FD7700E161C1 /* DCUIRatingScaleHalfStrategyTests.m */,
+				65D11B8B12586419001FED62 /* DCUIRatingScaleWholeStrategyTests.m */,
 				650357AD116A1BAA00202897 /* DCUIRatingTests.m */,
 				650357AE116A1BAA00202897 /* dUsefulStuff unit tests-Info.plist */,
+				657C582612D718FF00D3C182 /* Fixtures */,
 				650357B0116A1BAA00202897 /* NSDictionary+dUsefulStuffTests.m */,
 				650357B1116A1BAA00202897 /* NSMutableDictionary+dUsefulStuffTests.m */,
 				65F21665116C677F0086F808 /* Rating tests */,
 				65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */,
-				6538898A12730E980037D2C1 /* DCCoreDataTests.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -634,8 +634,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = dUsefulStuff;
-				RUN_CLANG_STATIC_ANALYZER = NO;
-				SDKROOT = iphoneos4.2;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -645,14 +645,14 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
-				CURRENT_PROJECT_VERSION = 0.0.8;
+				CURRENT_PROJECT_VERSION = 0.0.9;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = dUsefulStuff;
-				RUN_CLANG_STATIC_ANALYZER = NO;
-				SDKROOT = iphoneos4.2;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -769,7 +769,6 @@
 		65A0C68D116EF534003AC854 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_STYLE = Debug;
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
 			};
 			name = Debug;
@@ -777,7 +776,6 @@
 		65A0C68E116EF534003AC854 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_STYLE = Release;
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
 			};
 			name = Release;
@@ -785,7 +783,6 @@
 		65D75B8611B7D19E003D938D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_STYLE = Debug;
 				COPY_PHASE_STRIP = NO;
 				DC_BUILD_TARGET = "Build Library";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -796,7 +793,6 @@
 		65D75B8711B7D19E003D938D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_STYLE = Release;
 				COPY_PHASE_STRIP = YES;
 				DC_BUILD_TARGET = "Build Library";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

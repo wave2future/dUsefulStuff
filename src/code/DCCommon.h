@@ -19,7 +19,7 @@
 #ifdef DC_DEBUG
 
 #define DC_LOG(s, ...) \
-   NSLog(@"%@:(%d) %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], \
+   NSLog(@"%s(%d) %@", __PRETTY_FUNCTION__, \
          __LINE__, \
          [NSString stringWithFormat:(s), ## __VA_ARGS__])
 
@@ -52,29 +52,28 @@
 	if (vName == nil) { \
 		DC_LOG(@"DC_DEALLOC " # vName " is nil, nothing to do."); \
 	} else { \
-		do { \
-			id dobj = (id)vName; \
-			if ([dobj retainCount] == INT_MAX) { \
-				DC_LOG(@"DC_DEALLOC releasing static " # vName ": %@", dobj); \
-				break; \
-			} \
+		\
+		id dobj = (id)vName; \
+		\
+		/* If it's static then do nothing. */ \
+		if ([dobj retainCount] == INT_MAX) { \
+			DC_LOG(@"DC_DEALLOC static " # vName ": %@", dobj); \
+		} else {  \
+			\
+			/* Print details. */ \
 			if ([dobj isKindOfClass:[NSData class]]) { \
 				NSData *data = dobj;    \
-				DC_LOG(@"DC_DEALLOC releasing NSData " # vName ": %@", DC_DATA_TO_STRING(data)); \
-				break; \
+				DC_LOG(@"DC_DEALLOC NSData " # vName ": %@", DC_DATA_TO_STRING(data)); \
+			} else if (![dobj isKindOfClass:[NSDictionary class]] && ![dobj isKindOfClass:[NSArray class]]) { \
+				DC_LOG(@"DC_DEALLOC " # vName ": %@", vName); \
 			} \
-			if (![dobj isKindOfClass:[NSDictionary class]] && ![dobj isKindOfClass:[NSArray class]]) { \
-				DC_LOG(@"DC_DEALLOC releasing " # vName ": %@", vName); \
-				break; \
-			} \
-		} while (FALSE); \
-		if ([vName retainCount] == 0) { \
-			DC_LOG(@"ERROR !!!!! " # vName " retain count == 0"); \
+			\
+			/* Now release. */ \
+			DC_LOG(@"DC_DEALLOC Releasing " # vName " ([%p] retain count: %i)", vName ,[vName retainCount]); \
+			[vName release]; \
+			vName = nil; \
 		} \
-		[vName release]; \
-		DC_LOG(# vName @" released"); \
-		vName = nil; \
-}
+	}
 
 #else
 
@@ -108,6 +107,7 @@
 
 #pragma mark Testing
 
-// iPhone compatible mock arg define from OCMock. Need to post this to the author.
+// iPhone compatible mock arg define from OCMock.
+// DEPRECATED - OCMock is now the same as this. Please use OCMOCK_VALUE instead.
 #define DC_MOCK_VALUE(variable) [NSValue value : &variable withObjCType : @encode(__typeof__(variable))]
 

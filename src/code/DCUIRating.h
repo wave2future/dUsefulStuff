@@ -46,10 +46,6 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 @private
 	
 	// Public interface variables.
-	UIImage *offRatingImage;
-	UIImage *onRatingImage;
-	UIImage *halfRatingImage;
-	DCUIBubble *bubble;
 	NSObject<DCUIRatingDelegate> * delegate;
 	int iconCount;
 	DCRATINGSCALE scale;

@@ -28,5 +28,13 @@
 	DC_LOG_LAYOUT(view);
 }
 
+-(void) testDC_MOCK_VALUE {
+	BOOL yes = YES;
+	NSValue * value = DC_MOCK_VALUE(yes);
+	GHAssertNotNil(value, @"Should have received a NSValue object");
+	bool result;
+	[value getValue:&result];
+	DC_LOG(@"Result = %@", DC_PRETTY_BOOL(result));
+}
 
 @end
