@@ -8,6 +8,7 @@
 * Deprecating DC_MOCK_VALUE as OCMock has now been updated.
 * Added logging of variable pointer address and retain count to DC_DEALLOC.
 * Removed NSLog from DCDialogs.
+* Changed DCUIRating to assign the delegate as retaining created retain loops.
 
 # Changes Version 0.0.8
 * Updated DC_DEALLOC to slightly better code.

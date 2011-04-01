@@ -61,7 +61,7 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  If you wish to have the rating control notify another class of changes, implement the DCUIRatingDelegate
  protocol and set the class as the DCUIRating delegate.
  */
-@property(retain,nonatomic) NSObject<DCUIRatingDelegate> * delegate;
+@property(assign,nonatomic) NSObject<DCUIRatingDelegate> * delegate;
 
 /**
  Tells the control how many icons to draw.
