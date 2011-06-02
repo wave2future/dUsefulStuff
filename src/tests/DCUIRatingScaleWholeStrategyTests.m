@@ -23,23 +23,23 @@
 
 -(void) testDrawImageAtIndexWithRating0 {
 	int imageTypes[5] = {IMAGE_OFF, IMAGE_OFF, IMAGE_OFF, IMAGE_OFF, IMAGE_OFF};
-	[self verifyImagesDrawAtCorrectPostionWithRating:0 scaleType:DC_UI_RATING_SCALE_WHOLE imageTypes:imageTypes iconCount:5];
+	[self verifyImagesDrawAtCorrectPostionWithRating:0 scaleType:DCRatingScaleWhole imageTypes:imageTypes iconCount:5];
 }
 
 -(void) testDrawImageAtIndexWithRating3 {
 	int imageTypes[5] = {IMAGE_ON, IMAGE_ON, IMAGE_ON, IMAGE_OFF, IMAGE_OFF};
-	[self verifyImagesDrawAtCorrectPostionWithRating:3 scaleType:DC_UI_RATING_SCALE_WHOLE imageTypes:imageTypes iconCount:5];
+	[self verifyImagesDrawAtCorrectPostionWithRating:3 scaleType:DCRatingScaleWhole imageTypes:imageTypes iconCount:5];
 }
 
 -(void) testDrawImageAtIndexWithRating5 {
 	int imageTypes[5] = {IMAGE_ON, IMAGE_ON, IMAGE_ON, IMAGE_ON, IMAGE_ON};
-	[self verifyImagesDrawAtCorrectPostionWithRating:5 scaleType:DC_UI_RATING_SCALE_WHOLE imageTypes:imageTypes iconCount:5];
+	[self verifyImagesDrawAtCorrectPostionWithRating:5 scaleType:DCRatingScaleWhole imageTypes:imageTypes iconCount:5];
 }
 
 -(void) testCalcNewRatingFromTouchX {
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(20, 10);
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockOffImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	DCUIRatingScaleWholeStrategy * strategy = [[DCUIRatingScaleWholeStrategy alloc]init];
 	strategy.offImage = mockOffImage;
 	

@@ -54,14 +54,14 @@
 	self.ratingWhole.onRatingImage = myRatingImage;
 	self.ratingWhole.offRatingImage = myNoRatingImage;
 	self.ratingWhole.bubble = bubbleWhole;
-	self.ratingWhole.scale = DC_UI_RATING_SCALE_WHOLE;
+	self.ratingWhole.scale = DCRatingScaleWhole;
 	self.ratingWhole.delegate = self;
 	
 	self.ratingHalf.onRatingImage = myRatingImage;
 	self.ratingHalf.offRatingImage = myNoRatingImage;
 	self.ratingHalf.halfRatingImage = myHalfRatingImage;
 	self.ratingHalf.bubble = bubbleHalf;
-	self.ratingHalf.scale = DC_UI_RATING_SCALE_HALF;
+	self.ratingHalf.scale = DCRatingScaleHalf;
 	self.ratingHalf.delegate = self;
 	self.ratingHalf.iconCount = 4;
 
@@ -69,7 +69,7 @@
 	self.ratingDouble.offRatingImage = myNoRatingImage;
 	self.ratingDouble.halfRatingImage = myHalfRatingImage;
 	self.ratingDouble.bubble = bubbleDouble;
-	self.ratingDouble.scale = DC_UI_RATING_SCALE_DOUBLE;
+	self.ratingDouble.scale = DCRatingScaleDouble;
 	self.ratingDouble.delegate = self;
 	self.ratingDouble.iconCount = 3;
 }

@@ -42,36 +42,36 @@
 	// Create the mocks
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockOffImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	
 	// Test
 	ratingControl.offRatingImage = mockOffImage;
 	
-	[ratingControl setScale:DC_UI_RATING_SCALE_WHOLE];
+	[ratingControl setScale:DCRatingScaleWhole];
 }
 
 -(void) testSetScaleWithScaleHalf {
 	// Create the mocks
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockOffImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	
 	// Test
 	ratingControl.offRatingImage = mockOffImage;
 	
-	[ratingControl setScale:DC_UI_RATING_SCALE_HALF];
+	[ratingControl setScale:DCRatingScaleHalf];
 }
 
 -(void) testSetScaleWithScaleDouble {
 	// Create the mocks
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockOffImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	
 	// Test
 	ratingControl.offRatingImage = mockOffImage;
 	
-	[ratingControl setScale:DC_UI_RATING_SCALE_DOUBLE];
+	[ratingControl setScale:DCRatingScaleDouble];
 }
 
 -(void) testSetRatingExceedsMaxAndIsReset {
@@ -80,7 +80,7 @@
 }
 
 -(void) testSetRatingExceedsMaxAndIsResetWhenScaleDouble {
-	ratingControl.scale = DC_UI_RATING_SCALE_DOUBLE;
+	ratingControl.scale = DCRatingScaleDouble;
 	ratingControl.rating = 99;
 	GHAssertEquals(ratingControl.rating, (float)10, @"Excessive rating not reduced.");
 }
@@ -102,7 +102,7 @@
 	// Create the mocks
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockOffImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	
 	// Test
 	ratingControl.offRatingImage = mockOffImage;
@@ -114,7 +114,7 @@
 	// Create the mocks
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockOffImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	
 	// Test
 	ratingControl.offRatingImage = mockOffImage;
@@ -127,7 +127,7 @@
 	// Create the mocks
 	id mockOffImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockOffImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	
 	// Test
 	ratingControl.offRatingImage = mockOffImage;
@@ -144,7 +144,7 @@
 	id mockHalfImage = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
 	
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockOffImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	
 	DC_LOG(@"Adding image expectations");
 	[[mockOnImage expect] drawAtPoint:CGPointMake(0, 0)];
@@ -158,7 +158,7 @@
 	ratingControl.offRatingImage = mockOffImage;
 	ratingControl.onRatingImage = mockOnImage;
 	ratingControl.halfRatingImage = mockHalfImage;
-	[ratingControl setScale:DC_UI_RATING_SCALE_HALF];
+	[ratingControl setScale:DCRatingScaleHalf];
 	[ratingControl layoutSubviews];
 	[ratingControl drawRect:CGRectMake(0, 0, 320, 480)];
 	
@@ -170,7 +170,7 @@
 - (void) testTouchEndedCalculatesRating {
 	
 	// Setup the rating control.
-	[ratingControl setScale:DC_UI_RATING_SCALE_HALF];
+	[ratingControl setScale:DCRatingScaleHalf];
 	
 	// Create a window and add the rating control.
 	UIWindow *window = [[[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 320, 480)] autorelease];
@@ -183,9 +183,9 @@
 	
 	// setup the touch points within the window and rating control.
 	CGPoint touchPointInRating = CGPointMake(23, 26);
-	[[[mockTouch stub] andReturnValue:DC_MOCK_VALUE(touchPointInRating)] locationInView:ratingControl];
+	[[[mockTouch stub] andReturnValue:OCMOCK_VALUE(touchPointInRating)] locationInView:ratingControl];
 	CGPoint touchPointInWindow = CGPointMake(33, 26);
-	[[[mockTouch stub] andReturnValue:DC_MOCK_VALUE(touchPointInWindow)] locationInView:window];
+	[[[mockTouch stub] andReturnValue:OCMOCK_VALUE(touchPointInWindow)] locationInView:window];
 	
 	// setup the event.
 	id mockEvent = [OCMockObject mockForClass:[UIEvent class]];
@@ -196,7 +196,7 @@
 	// Mock up the images so that draw rect can be called. Use a nice mock because it's not important to the test.
 	id mockImage = [OCMockObject niceMockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	ratingControl.offRatingImage = mockImage;
 	ratingControl.onRatingImage = mockImage;
 	ratingControl.halfRatingImage = mockImage;
@@ -226,7 +226,7 @@
 	// Mock up the images so that draw rect can be called. Use a nice mock because it's not important to the test.
 	id mockImage = [OCMockObject niceMockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	ratingControl.offRatingImage = mockImage;
 	ratingControl.onRatingImage = mockImage;
 	
@@ -237,9 +237,9 @@
 	
 	// setup the touch points within the window and rating control.
 	CGPoint touchPointInRating = CGPointMake(35, 26);
-	[[[mockTouch stub] andReturnValue:DC_MOCK_VALUE(touchPointInRating)] locationInView:ratingControl];
+	[[[mockTouch stub] andReturnValue:OCMOCK_VALUE(touchPointInRating)] locationInView:ratingControl];
 	CGPoint touchPointInWindow = CGPointMake(45, 26);
-	[[[mockTouch stub] andReturnValue:DC_MOCK_VALUE(touchPointInWindow)] locationInView:window];
+	[[[mockTouch stub] andReturnValue:OCMOCK_VALUE(touchPointInWindow)] locationInView:window];
 	
 	// setup the event.
 	id mockEvent = [OCMockObject mockForClass:[UIEvent class]];

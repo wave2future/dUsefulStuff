@@ -16,5 +16,5 @@
 #define IMAGE_OFF -1
 
 @interface GHTestCase (GHUnitTest_DCUIRatingFixtures)
--(void) verifyImagesDrawAtCorrectPostionWithRating:(float) rating scaleType:(DCRATINGSCALE) scale imageTypes:(int[5]) imageTypes iconCount:(int) iconCount;
+-(void) verifyImagesDrawAtCorrectPostionWithRating:(float) rating scaleType:(DCRatingScale) scale imageTypes:(int[5]) imageTypes iconCount:(int) iconCount;
 @end

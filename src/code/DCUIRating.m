@@ -20,10 +20,9 @@
  */
 @interface DCUIRating ()
 - (void) setDefaults;
-- (void) calculateRatingWithTouch:(UITouch *) aTouch;
-- (void) popBubbleAtTouch:(UITouch *) atTouch;
-- (void) hideBubble;
-- (void) updateBubble;
+- (void) calculateRatingAtX:(float) x;
+- (IBAction)tapGesture:(UIPanGestureRecognizer *)sender;
+- (IBAction)swipeGesture:(UIPanGestureRecognizer *)sender;
 @end
 
 @implementation DCUIRating
@@ -38,12 +37,14 @@
 @synthesize delegate;
 @synthesize scale;
 
+//@synthesize enabled;
+
 #pragma mark Dynamic properties
 
 - (void) setRating:(float) aRating {
 	
 	//Check that the rating is not above the scale/iconCount maximum value.
-	int maxValue = iconCount * (scale == DC_UI_RATING_SCALE_DOUBLE ? 2: 1);
+	int maxValue = iconCount * (scale == DCRatingScaleDouble ? 2: 1);
 	if (aRating > maxValue) {
 		DC_LOG(@"Passed rating %f greater than max rating %i, resetting to max.", aRating, maxValue);
 		aRating = maxValue;
@@ -91,7 +92,7 @@
 #pragma mark Property setter overrides
 
 - (void) setIconCount:(int) count {
-
+	
 	// Fast exit.
 	if (count == iconCount ) {
 		return;
@@ -105,12 +106,12 @@
 											  userInfo:nil];
 		@throw myException;
 	}
-
+	
 	iconCount = count;
 	[self sizeToFit];
 }
 
-- (void) setScale:(DCRATINGSCALE) aScale {
+- (void) setScale:(DCRatingScale) aScale {
 	
 	//Store
 	scale = aScale;
@@ -118,10 +119,10 @@
 	// Get the new strategy.
 	NSObject<DCUIRatingScaleStrategy> * newStrategy = nil;
 	switch (aScale) {
-		case DC_UI_RATING_SCALE_WHOLE:
+		case DCRatingScaleWhole:
 			newStrategy = [[DCUIRatingScaleWholeStrategy alloc] init];
 			break;
-		case DC_UI_RATING_SCALE_HALF:
+		case DCRatingScaleHalf:
 			newStrategy = [[DCUIRatingScaleHalfStrategy alloc] init];
 			break;
 		default:
@@ -163,11 +164,15 @@
 	DC_LOG(@"Setting defaults");
 	scaleStrategy = [[DCUIRatingScaleWholeStrategy alloc] init];
 	self.iconCount = 5;
+	
+	DC_LOG(@"Adding gesture recognisers");
+	UITapGestureRecognizer * tapRecogniser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
+	[self addGestureRecognizer:tapRecogniser];
+	[tapRecogniser release];
+	UIPanGestureRecognizer * swipeRecogniser = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+	[self addGestureRecognizer:swipeRecogniser];
+	[swipeRecogniser release];
 }
-
-#pragma mark -
-#pragma mark Public tasks
-
 
 #pragma mark -
 #pragma mark Internal messages
@@ -178,62 +183,11 @@
 	return newSize;
 }
 
-- (void) popBubbleAtTouch:(UITouch *) atTouch {
-	[self.bubble alignWithTough:atTouch];
-	self.bubble.hidden = NO;
-}
-
-- (void) hideBubble {
-	self.bubble.hidden = YES;
-}
-
-- (void) touchesBegan:(NSSet *) touches withEvent:(UIEvent *) event { // From UIResponder
-	DC_LOG(@"Starting touch event");
-	UITouch * aTouch = [[event touchesForView:self] anyObject];
-	[self calculateRatingWithTouch:aTouch];
-	[self popBubbleAtTouch:aTouch];
-	[super touchesBegan:touches withEvent:event];
-}
-
-- (void) touchesEnded:(NSSet *) touches withEvent:(UIEvent *) event {     // From UIResponder
-	DC_LOG(@"Ending touch event");
-	[self calculateRatingWithTouch:[[event touchesForView:self] anyObject]];
-	[self hideBubble];
-	[super touchesEnded:touches withEvent:event];
-}
-
-- (void) touchesMoved:(NSSet *) touches withEvent:(UIEvent *) event {     // From UIResponder
-	DC_LOG(@"Touch moved event");
-	UITouch * aTouch = [[event touchesForView:self] anyObject];
-	if (lastTouchX != [aTouch locationInView:self].x) {
-		[self calculateRatingWithTouch:aTouch];
-		[self popBubbleAtTouch:aTouch];
-	}
-}
-
-- (void) touchesCancelled:(NSSet *) touches withEvent:(UIEvent *) event { // From UIResponder
-	DC_LOG(@"Touch cancelled event");
-	[self calculateRatingWithTouch:[[event touchesForView:self] anyObject]];
-	[self hideBubble];
-	[super touchesCancelled:touches withEvent:event];
-}
-
-- (void) drawRect:(CGRect) rect {                                        // From UIView
-	DC_LOG(@"Drawing rating control: %@", self);
-	for (int i = 0; i < self.iconCount; i++) {
-		[scaleStrategy drawImageAtIndex:i];
-	}
-}
-
-- (void) calculateRatingWithTouch:(UITouch *) aTouch {
-	
-	DC_LOG_LAYOUT(aTouch.window);
-	DC_LOG(@"Touch in window : %f x %f", [aTouch locationInView:aTouch.window].x, [aTouch locationInView:aTouch.window].y);
-	DC_LOG_LAYOUT(aTouch.view);
-	DC_LOG(@"Touch in control: %f x %f", [aTouch locationInView:self].x, [aTouch locationInView:self].y);
+- (void) calculateRatingAtX:(float) x {
+	DC_LOG(@"x: %f", x);
 	
 	// Store the current touch X and handle when it's out of the controls range.
-	lastTouchX = (int) [aTouch locationInView:self].x;
+	lastTouchX = (int) x;
 	lastTouchX = fmin(self.frame.size.width - 1, lastTouchX);
 	lastTouchX = fmax(0, lastTouchX);
 	DC_LOG(@"lastTouchX: %i", lastTouchX);
@@ -243,7 +197,6 @@
 	
 	// Only trigger display updates if the rating has changed.
 	if (oldRating != newRating) {
-		[self updateBubble];
 		[self setNeedsDisplay];
 		
 		// Notify the delegate.
@@ -255,10 +208,49 @@
 	
 }
 
-- (void) updateBubble {
-	[self.bubble setValue:[scaleStrategy formattedRating]];
+#pragma mark -
+#pragma mark Interactions
+
+- (IBAction) tapGesture:(UIPanGestureRecognizer *)sender {
+	DC_LOG(@"Tap gesture handler firing");
+	[self calculateRatingAtX:[sender locationInView:self].x];
 }
 
+- (IBAction) swipeGesture:(UIPanGestureRecognizer *)sender {
+	DC_LOG(@"Swipe gesture handler firing, state: %i", sender.state);
+	
+	// Switch based on the state.
+	[self calculateRatingAtX:[sender locationInView:self].x];
+	[self.bubble setValue:[scaleStrategy formattedRating]];
+	switch (sender.state) {
+			
+		case UIGestureRecognizerStateBegan:
+			DC_LOG(@"Starting touch event");
+			[self.bubble positionAtView:sender.view offset:[sender locationInView:self].x];
+			self.bubble.hidden = NO;
+			break;
+		case UIGestureRecognizerStateChanged:
+			DC_LOG(@"Continuing touch event");
+			[self.bubble positionAtView:sender.view offset:[sender locationInView:self].x];
+			break;
+		default:
+			// Ended.
+			DC_LOG(@"Ending touch event");
+			self.bubble.hidden = YES;
+			break;
+	}
+	
+}
+
+#pragma mark -
+#pragma mark Drawing
+
+- (void) drawRect:(CGRect) rect {                                       
+	DC_LOG(@"Drawing rating control: %@", self);
+	for (int i = 0; i < self.iconCount; i++) {
+		[scaleStrategy drawImageAtIndex:i];
+	}
+}
 
 - (void) dealloc {
 	self.offRatingImage = nil;

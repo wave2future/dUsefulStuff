@@ -102,8 +102,16 @@
  bubble over another control, ensure that the touch events of that control call this.
  
  @param aTouch the touch event that triggered the move.
- */
 - (void) alignWithTough:(UITouch *)aTouch;
+ */
+
+/**
+ * Called by the parent control to position the bubble above it and to the right by a specified offset.
+ * @param view the parent view.
+ * @param offset how far along the control to display the bubble in pixels.
+ */
+- (void) positionAtView:(UIView *)view offset:(int) offset;
+
 
 /// ---------------------------------------
 /// @name Setting the value

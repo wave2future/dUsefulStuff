@@ -48,12 +48,12 @@ This header fine contains the following useful defines :
 	<td>Returns a NSData * from the passed NSString *.</td>
 </tr>
 <tr>
-	<td>DC_MOCK_VALUE(variable)</td>
+	<td>OCMOCK_VALUE(variable)</td>
 	<td>An update to the OCMOCK_VALUE define. Works better with iPhone code. Note that 
 	to use this you must pass it a variable. Here's a simple example:
 	<pre>
 BOOL yes = YES;
-[[mockThing expect] andReturnValue:DC_MOCK_VALUE(yes)] isThingReady];</pre>
+[[mockThing expect] andReturnValue:OCMOCK_VALUE(yes)] isThingReady];</pre>
 	</td>
 </tr>
 </table>
@@ -75,7 +75,7 @@ It's core features include :
 
 ### Using DCUIRating
 
-1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view and you (optionally needd to ensure that the delegate implements the DCUIRatingDelegate protocol. Here's an example header file:
+1. First you need to add some code to your controller. You will need an outlet for each rating controller you want to add to the view and you (optionally need to ensure that the delegate implements the DCUIRatingDelegate protocol. Here's an example header file:
  
 		#import <UIKit/UIKit.h>
 		#import <dUsefulStuff/DCUIRating.h>
@@ -105,7 +105,7 @@ It's core features include :
 			// Now setup the rating control.
 			self.ratingControl.onRatingImage = myRatingImage;
 			self.ratingControl.offRatingImage = myNoRatingImage;
-			self.ratingControl.scale = DC_RATING_SCALE_WHOLE;
+			self.ratingControl.scale = DCRatingScaleWhole;
 			
 			// Not required unless you want to get notified of changes.
 			self.ratingControl.delegate = self;

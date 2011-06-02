@@ -15,17 +15,16 @@
 /**
  This enum dictates what type of scale the control uses.
  */
-enum DCScaleEnum {
+typedef enum {
 	/// Each touchable rating icon represents an increment of 1. i.e. 0, 1, 2, 3, 4, 5
 	/// Therefore each 
-	DC_UI_RATING_SCALE_WHOLE,
+	DCRatingScaleWhole,
 	
 	/// Each touchable rating icon represents an increment of 2 halves which the user is able to select. This gives a finer level of control and value setting. i.e. 0, 0.5, 1, 1.5, ... 5
-	DC_UI_RATING_SCALE_HALF,
+	DCRatingScaleHalf,
 	/// Each touchable rating icon represents an increment of 2 which the user is able to select. This gives a finer level of control and value setting and produes a large range. i.e. 0, 1, 2, 3, ... 10
-	DC_UI_RATING_SCALE_DOUBLE
-};
-typedef enum DCScaleEnum DCRATINGSCALE;
+	DCRatingScaleDouble
+} DCRatingScale;
 
 /**
  This control provides a rating display similar to that seen in iTunes for rating songs. It draws a set of 3 to 5 icons across the display which the user can use to select a rating based on the scales in the DCScaleEnum (typedef DCRATINGSCALE). The user can select a rating value by either taping the control at the rating they want, or swiping their finger back and forwards to adjust the rating. However they must start the swipe inside the control.
@@ -48,12 +47,16 @@ typedef enum DCScaleEnum DCRATINGSCALE;
 	// Public interface variables.
 	NSObject<DCUIRatingDelegate> * delegate;
 	int iconCount;
-	DCRATINGSCALE scale;
+	DCRatingScale scale;
 	
 	// Internal use for display and layout.
 	int lastTouchX;
 	NSObject<DCUIRatingScaleStrategy> * scaleStrategy;
+	
+	//BOOL enabled;
 }
+
+//@property (nonatomic) BOOL enabled;
 
 /** @name Properties */
 
@@ -82,7 +85,7 @@ typedef enum DCScaleEnum DCRATINGSCALE;
  - *DC_UI_RATING_SCALE_HALF* - produces 0, 0.5, 1, 1.5, ... 
  - *DC_UI_RATING_SCALE_DOUBLE* - produces 0, 1, 2, 3, ... 
  */
-@property (nonatomic) DCRATINGSCALE scale;
+@property (nonatomic) DCRatingScale scale;
 
 /**
  The current value of the control. This value depends on the current setting of the scaleType; Set this value to have the control light up the necessary rating images.

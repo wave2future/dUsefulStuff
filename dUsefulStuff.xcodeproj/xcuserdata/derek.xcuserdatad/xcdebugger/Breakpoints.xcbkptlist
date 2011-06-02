@@ -9,23 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "src/tests/DCCommonTests.m"
-         timestampString = "316398755.947637"
+         timestampString = "324299953.602672"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "src/tests/DCCommonTests.m"
-         timestampString = "316401308.309242"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40">
+         startingLineNumber = "32"
+         endingLineNumber = "32">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

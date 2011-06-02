@@ -107,7 +107,3 @@
 
 #pragma mark Testing
 
-// iPhone compatible mock arg define from OCMock.
-// DEPRECATED - OCMock is now the same as this. Please use OCMOCK_VALUE instead.
-#define DC_MOCK_VALUE(variable) [NSValue value : &variable withObjCType : @encode(__typeof__(variable))]
-

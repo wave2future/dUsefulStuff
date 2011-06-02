@@ -63,7 +63,7 @@ echo "Combining libraries..."
 echo "Creating universal directory $DC_UNIVERSAL_DIR"
 mkdir "$DC_UNIVERSAL_DIR"
 echo "Combining ..."
-lipo -create "${DC_PROJECT_DIR}/build/$DC_BUILD_CONFIGURATION-iphoneos/lib${DC_PROJECT_NAME}.a" "${DC_PROJECT_DIR}/build/$DC_BUILD_CONFIGURATION-iphonesimulator/lib${DC_PROJECT_NAME}.a" -o "$DC_UNIVERSAL_DIR/$DC_PROJECT_NAME"
+lipo -create "${DC_PROJECT_DIR}/build/$DC_BUILD_CONFIGURATION-iphoneos/${DC_LIB_PREFIX}${DC_PROJECT_NAME}.a" "${DC_PROJECT_DIR}/build/$DC_BUILD_CONFIGURATION-iphonesimulator/${DC_LIB_PREFIX}${DC_PROJECT_NAME}.a" -o "$DC_UNIVERSAL_DIR/$DC_PROJECT_NAME"
 
 echo "Static library created at $DC_UNIVERSAL_DIR/$DC_PROJECT_NAME"
 

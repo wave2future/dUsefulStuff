@@ -18,7 +18,7 @@
 
 @implementation GHTestCase (GHUnitTest_DCUIRatingFixtures)
 
--(void) verifyImagesDrawAtCorrectPostionWithRating:(float) rating scaleType:(DCRATINGSCALE) scale imageTypes:(int[]) imageTypes iconCount:(int) iconCount {
+-(void) verifyImagesDrawAtCorrectPostionWithRating:(float) rating scaleType:(DCRatingScale) scale imageTypes:(int[]) imageTypes iconCount:(int) iconCount {
 	
 	// Mocks of images.
 	id mockOnImage = [OCMockObject mockForClass:[UIImage class]];
@@ -27,7 +27,7 @@
 	
 	// Expectations.
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockOffImage stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockOffImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	
 	// Set expectations.
 	for (int i = 0, offset = 0;i < iconCount;i++, offset+=10) {
@@ -44,9 +44,9 @@
 	}
 	
 	NSObject<DCUIRatingScaleStrategy> * strategy;
-	if (scale == DC_UI_RATING_SCALE_WHOLE) {
+	if (scale == DCRatingScaleWhole) {
 		strategy = [[DCUIRatingScaleWholeStrategy alloc]init];
-	} else if (scale == DC_UI_RATING_SCALE_HALF) {
+	} else if (scale == DCRatingScaleHalf) {
 		strategy = [[DCUIRatingScaleHalfStrategy alloc]init];
 	} else {
 		strategy = [[DCUIRatingScaleDoubleStrategy alloc]init];

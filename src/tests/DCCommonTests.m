@@ -10,6 +10,7 @@
 #import <GHUnit/GHUnit.h> 
 #import "DCCommon.h"
 #import <UIKit/UIKit.h>
+#import <OCMock/OCMock.h>
 
 @interface DCCommonTests : GHTestCase {}
 
@@ -26,15 +27,6 @@
 	CGRect rect = CGRectMake(1,2,3,4);
 	view.frame = rect;
 	DC_LOG_LAYOUT(view);
-}
-
--(void) testDC_MOCK_VALUE {
-	BOOL yes = YES;
-	NSValue * value = DC_MOCK_VALUE(yes);
-	GHAssertNotNil(value, @"Should have received a NSValue object");
-	bool result;
-	[value getValue:&result];
-	DC_LOG(@"Result = %@", DC_PRETTY_BOOL(result));
 }
 
 @end

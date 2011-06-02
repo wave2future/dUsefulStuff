@@ -1,4 +1,9 @@
 
+# Changes Version 0.0.10
+* Changed DCRatingScale to DCRatingScale and fixed enum declaration.
+* Removed DC_MOCK_VALUE as it is no longer needed.
+* Converted to use gesture recognisers.
+
 # Changes Version 0.0.9
 * Removed setup.sh as it really didn't do much.
 * Externalised the releases directory from the projects so that git checkouts don't wipe it, loosing all previous version packages.

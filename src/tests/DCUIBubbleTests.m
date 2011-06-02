@@ -32,7 +32,7 @@
 
 	id mockBackground = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 20);
-	[[[mockBackground stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockBackground stub] andReturnValue:OCMOCK_VALUE(size)] size];
 
 	DCUIBubble *bubble = [[[DCUIBubble alloc] initWithBackgroundImage:mockBackground] autorelease];
 	GHAssertEquals(bubble.frame.size.width, (CGFloat)10, @"Width not set correctly");
@@ -79,7 +79,7 @@
 	[[[mockTouch stub] andReturn:view] view];
 	[[[mockTouch stub] andReturn:window] window];
 	CGPoint touchPointInWindow = CGPointMake(x, 26);
-	[[[mockTouch expect] andReturnValue:DC_MOCK_VALUE(touchPointInWindow)] locationInView:window];
+	[[[mockTouch expect] andReturnValue:OCMOCK_VALUE(touchPointInWindow)] locationInView:window];
 
 	DCUIBubble *bubble = [[[DCUIBubble alloc] initWithSize:CGSizeMake(10, 10)] autorelease];
 	[window addSubview:bubble];
@@ -96,7 +96,7 @@
 
 	id mockBackground = [OCMockObject mockForClass:[UIImage class]];
 	CGSize size = CGSizeMake(10, 10);
-	[[[mockBackground stub] andReturnValue:DC_MOCK_VALUE(size)] size];
+	[[[mockBackground stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	CGRect expectedDrawInRect = CGRectMake(0, 0, 10, 10);
 	[[mockBackground expect] drawInRect:expectedDrawInRect];
 
