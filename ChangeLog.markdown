@@ -2,7 +2,9 @@
 # Changes Version 0.0.10
 * Changed DCRatingScale to DCRatingScale and fixed enum declaration.
 * Removed DC_MOCK_VALUE as it is no longer needed.
-* Converted to use gesture recognisers.
+* Converted DCUIRating to use gesture recognisers.
+* Added macro for string concatination which uses indirection so that embedded macros such as __LINE__ can be concatinated into other strings.
+* Added DCBackgroundTask and DCBusyIndicator to facilitate background tasks.
 
 # Changes Version 0.0.9
 * Removed setup.sh as it really didn't do much.

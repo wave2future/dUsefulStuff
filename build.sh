@@ -15,8 +15,8 @@ DC_COMPANY_ID=au.com.derekclarkson
 DC_AUTHOR="Derek Clarkson"
 DC_COMPANY=$DC_AUTHOR
 
-DC_SIMULATOR_SDK=iphonesimulator4.3
-DC_DEVICE_SDK=iphoneos4.3
+DC_SIMULATOR_SDK=iphonesimulator5.0
+DC_DEVICE_SDK=iphoneos5.0
 
 DC_SCRIPTS_DIR=scripts
 

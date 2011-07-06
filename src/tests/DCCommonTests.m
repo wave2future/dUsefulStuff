@@ -29,4 +29,9 @@
 	DC_LOG_LAYOUT(view);
 }
 
+-(void) testConcantination {
+	int DC_CONCATINATE(abc, __LINE__) = 45;
+	GHAssertEquals(abc33, 45, @"String not concatinated properly");
+}
+
 @end

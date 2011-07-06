@@ -25,17 +25,22 @@
 
 #define DC_LOG_LAYOUT(obj) \
 	do { \
-		UIView *_dObj = (UIView *) obj; \
-		NSLog(@"%@:(%d) Layout for \"" # obj "\" position= %i x %i, size= %i x %i", \
-			[[NSString stringWithUTF8String:__FILE__] lastPathComponent], \
-			__LINE__, \
-			(int)_dObj.frame.origin.x, (int)_dObj.frame.origin.y, (int)_dObj.frame.size.width, (int)_dObj.frame.size.height); \
+		NSString * msg = [NSString stringWithFormat:@"%@:(%d) Layout for \"" # obj "\"", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__]; \
+		DC_LOG_CGRECT(msg, obj.frame); \
 	} while (FALSE);
+
+#define DC_LOG_CGRECT(msg, obj) \
+	do { \
+	NSLog(@"%@ position= %i x %i, size= %i x %i", \
+		msg, (int) obj.origin.x, (int)obj.origin.y, (int)obj.size.width, (int)obj.size.height); \
+	} while (FALSE);
+
 #else
 
 // Effectively remove the logging.
 #define DC_LOG(s, ...)
 #define DC_LOG_LAYOUT(obj)
+#define DC_LOG_CGRECT(msg, obj)
 
 #endif
 
@@ -90,6 +95,13 @@
 // Trims whitespace from a string and returns a new string.
 #define DC_TRIM(string) \
    [string stringByTrimmingCharactersInSet :[NSCharacterSet whitespaceAndNewlineCharacterSet]]
+
+// Internal macro - don't use.
+#define _DC_CONCAT(left, right) left ## right
+
+// Concantiates the two values using another macro to do the work. This allows a level of indirection which
+// means that macros such as __LINE__ can be concatinated.
+#define DC_CONCATINATE(left, right) _DC_CONCAT(left, right)
 
 #pragma mark Common conversions
 

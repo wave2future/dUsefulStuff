@@ -28,5 +28,6 @@
 
 -(IBAction) alertButtonClicked: (id) button;
 -(IBAction) alert2ButtonClicked: (id) button;
+-(IBAction) busyIndicatorButtonClicked: (id) button;
 
 @end

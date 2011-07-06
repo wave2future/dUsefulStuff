@@ -10,6 +10,7 @@
 #import "DCCommon.h"
 #import "DCDialogs.h"
 #import "DCUIBubble.h"
+#import "DCBusyIndicator.h"
 
 @implementation RatingTestController
 @synthesize ratingWhole;
@@ -35,17 +36,17 @@
 	imagePath = [[NSBundle mainBundle] pathForResource:@"bubble" ofType:@"png"];
 	UIImage *myBubbleImage = [[[UIImage alloc] initWithContentsOfFile:imagePath] autorelease];
 
-	DCUIBubble * bubbleWhole = [[DCUIBubble alloc] initWithBackgroundImage:myBubbleImage];
+	DCUIBubble * bubbleWhole = [[[DCUIBubble alloc] initWithBackgroundImage:myBubbleImage] autorelease];
 	bubbleWhole.textOffsetXPixels = -2;
 	bubbleWhole.textOffsetYPixels = -9;
 	bubbleWhole.fontColor = [UIColor redColor];
 	
-	DCUIBubble * bubbleHalf = [[DCUIBubble alloc] initWithBackgroundImage:myBubbleImage];
+	DCUIBubble * bubbleHalf = [[[DCUIBubble alloc] initWithBackgroundImage:myBubbleImage] autorelease];
 	bubbleHalf.textOffsetXPixels = -2;
 	bubbleHalf.textOffsetYPixels = -9;
 	bubbleHalf.fontColor = [UIColor blueColor];
 
-	DCUIBubble * bubbleDouble = [[DCUIBubble alloc] initWithSize:CGSizeMake(50, 50)];
+	DCUIBubble * bubbleDouble = [[[DCUIBubble alloc] initWithSize:CGSizeMake(50, 50)] autorelease];
 	bubbleDouble.textOffsetXPixels = -2;
 	bubbleDouble.textOffsetYPixels = -9;
 	bubbleDouble.color = [UIColor orangeColor];
@@ -85,6 +86,13 @@
 
 - (IBAction) alert2ButtonClicked:(id)button; {
 	[DCDialogs displayMessage:@"Hello this is an alert" title:@"With a title"];
+}
+
+-(IBAction) busyIndicatorButtonClicked: (id) button {
+	DCBusyIndicator * indicator = [[DCBusyIndicator alloc] initWithSuperview:self.view];
+	indicator.message = @"Whoa!";
+	[indicator activate];
+	[indicator release];
 }
 
 

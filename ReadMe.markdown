@@ -48,13 +48,14 @@ This header fine contains the following useful defines :
 	<td>Returns a NSData * from the passed NSString *.</td>
 </tr>
 <tr>
-	<td>OCMOCK_VALUE(variable)</td>
-	<td>An update to the OCMOCK_VALUE define. Works better with iPhone code. Note that 
-	to use this you must pass it a variable. Here's a simple example:
-	<pre>
-BOOL yes = YES;
-[[mockThing expect] andReturnValue:OCMOCK_VALUE(yes)] isThingReady];</pre>
-	</td>
+<td>DC_CONCATINATE(string, string)</td>
+<td>Returns the concatinated strings. The reason for this macro is that it uses indirection before 
+concantinating. Thi allows things like this:
+<pre>
+51: DC_CONCATINATE(abc, __LINE__) 
+</pre>
+Which produces "abc51". Normal concatination using "##" doesn't work with __LINE__, but this macros gets around it.
+</td>
 </tr>
 </table>
 

@@ -6,24 +6,14 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		65D75B8511B7D19E003D938D /* Build release framework */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 65D75B8811B7D1BC003D938D /* Build configuration list for PBXAggregateTarget "Build release framework" */;
-			buildPhases = (
-				65D75B8411B7D19E003D938D /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = "Build release framework";
-			productName = "Build final artifacts";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		65001C9B117C87F500C6ACA8 /* DCUIBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIBubble.m */; };
 		65001DF4117F32CA00C6ACA8 /* DCUIBubbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */; };
 		650B81931276F1B3002BA0B2 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650B81921276F1B3002BA0B2 /* OCMock.framework */; };
+		65142DF313C1F54D00C4C21F /* DCBackgroundTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 65142DEF13C1F54D00C4C21F /* DCBackgroundTask.h */; };
+		65142DF413C1F54D00C4C21F /* DCBackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 65142DF013C1F54D00C4C21F /* DCBackgroundTask.m */; };
+		65142DF713C1F54D00C4C21F /* DCBusyIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 65142DF113C1F54D00C4C21F /* DCBusyIndicator.h */; };
+		65142DF813C1F54D00C4C21F /* DCBusyIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65142DF213C1F54D00C4C21F /* DCBusyIndicator.m */; };
 		65184ABA124E127100C36C18 /* build.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6518349F1227EED400B4AE43 /* build.sh */; };
 		65269779116EF91E003C63D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269778116EF91E003C63D3 /* CoreGraphics.framework */; };
 		65269784116EF983003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
@@ -151,6 +141,10 @@
 		650357B6116A1BAA00202897 /* RatingTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatingTestController.h; path = src/tests/RatingTestController.h; sourceTree = "<group>"; };
 		650357B7116A1BAA00202897 /* RatingTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingTestController.m; path = src/tests/RatingTestController.m; sourceTree = "<group>"; };
 		650B81921276F1B3002BA0B2 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = ../tools/OCMock.framework; sourceTree = SOURCE_ROOT; };
+		65142DEF13C1F54D00C4C21F /* DCBackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCBackgroundTask.h; path = src/code/DCBackgroundTask.h; sourceTree = "<group>"; };
+		65142DF013C1F54D00C4C21F /* DCBackgroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCBackgroundTask.m; path = src/code/DCBackgroundTask.m; sourceTree = "<group>"; };
+		65142DF113C1F54D00C4C21F /* DCBusyIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCBusyIndicator.h; path = src/code/DCBusyIndicator.h; sourceTree = "<group>"; };
+		65142DF213C1F54D00C4C21F /* DCBusyIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCBusyIndicator.m; path = src/code/DCBusyIndicator.m; sourceTree = "<group>"; };
 		6518349F1227EED400B4AE43 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		651834AD1227F19D00B4AE43 /* createDocumentation.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createDocumentation.sh; sourceTree = "<group>"; };
 		651834AE1227F3A300B4AE43 /* clean.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = clean.sh; sourceTree = "<group>"; };
@@ -289,6 +283,10 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				65142DEF13C1F54D00C4C21F /* DCBackgroundTask.h */,
+				65142DF013C1F54D00C4C21F /* DCBackgroundTask.m */,
+				65142DF113C1F54D00C4C21F /* DCBusyIndicator.h */,
+				65142DF213C1F54D00C4C21F /* DCBusyIndicator.m */,
 				6503579B116A1B8100202897 /* DCCommon.h */,
 				65568E971233B7C400BC02C3 /* DCCoreData.h */,
 				65568E981233B7C400BC02C3 /* DCCoreData.m */,
@@ -429,6 +427,8 @@
 				653888F11272C7870037D2C1 /* DCUIRatingScaleHalfStrategy.h in Headers */,
 				653888F21272C7880037D2C1 /* DCUIRatingScaleDoubleStrategy.h in Headers */,
 				657F52F8129E9D6600EC3B7F /* DCUIRatingDelegate.h in Headers */,
+				65142DF313C1F54D00C4C21F /* DCBackgroundTask.h in Headers */,
+				65142DF713C1F54D00C4C21F /* DCBusyIndicator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +496,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "dUsefulStuff" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -512,7 +513,6 @@
 				65A0C679116EF534003AC854 /* Build Library */,
 				653AD37C116E13CF006E2268 /* Run unit tests */,
 				659D2BE4117747BA0056AA74 /* Application Test */,
-				65D75B8511B7D19E003D938D /* Build release framework */,
 			);
 		};
 /* End PBXProject section */
@@ -539,22 +539,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		65D75B8411B7D19E003D938D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = ./build.sh;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		653AD37A116E13CF006E2268 /* Sources */ = {
@@ -602,6 +586,8 @@
 				65BD83E81259E3DF00433CCD /* DCUIRatingScaleHalfStrategy.m in Sources */,
 				65BD83EC1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m in Sources */,
 				65D5D7771259FA6C00E161C1 /* DCUIRatingScaleDoubleStrategy.m in Sources */,
+				65142DF413C1F54D00C4C21F /* DCBackgroundTask.m in Sources */,
+				65142DF813C1F54D00C4C21F /* DCBusyIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +616,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DC_DEBUG;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -647,6 +634,7 @@
 				BUILD_STYLE = Release;
 				CURRENT_PROJECT_VERSION = 0.0.10;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -662,7 +650,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Debug;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -680,7 +667,6 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefulStuff simulator unit tests";
 			};
 			name = Debug;
@@ -690,7 +676,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Release;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -698,7 +683,6 @@
 					"\"$(SRCROOT)/../tools\"",
 					"\"$(SRCROOT)/../tools/GHUnit 0.4.27\"",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
 				INFOPLIST_FILE = "src/tests/dUsefulStuff unit tests-Info.plist";
@@ -708,7 +692,6 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefulStuff simulator unit tests";
 				ZERO_LINK = NO;
 			};
@@ -719,7 +702,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Debug;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -735,9 +717,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefullStuff Test Program";
-				PROVISIONING_PROFILE = "57EAF555-F7D2-484C-AEAE-F77A9B00EEE4";
 			};
 			name = Debug;
 		};
@@ -746,10 +726,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Release;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Derek Clarkson (WAPG756K8Y)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "src/tests/RatingTest-Info.plist";
@@ -761,9 +739,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "dUsefullStuff Test Program";
-				PROVISIONING_PROFILE = "57EAF555-F7D2-484C-AEAE-F77A9B00EEE4";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -779,27 +755,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREFIX_HEADER = dUsefulStuff_Prefix.pch;
-			};
-			name = Release;
-		};
-		65D75B8611B7D19E003D938D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DC_BUILD_TARGET = "Build Library";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-			};
-			name = Debug;
-		};
-		65D75B8711B7D19E003D938D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DC_BUILD_TARGET = "Build Library";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -838,15 +793,6 @@
 			buildConfigurations = (
 				65A0C68D116EF534003AC854 /* Debug */,
 				65A0C68E116EF534003AC854 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65D75B8811B7D1BC003D938D /* Build configuration list for PBXAggregateTarget "Build release framework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65D75B8611B7D19E003D938D /* Debug */,
-				65D75B8711B7D19E003D938D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
