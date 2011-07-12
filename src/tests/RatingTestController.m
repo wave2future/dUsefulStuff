@@ -89,7 +89,7 @@
 }
 
 -(IBAction) busyIndicatorButtonClicked: (id) button {
-	DCBusyIndicator * indicator = [[DCBusyIndicator alloc] initWithSuperview:self.view];
+	DCBusyIndicator * indicator = [[DCBusyIndicator alloc] initWithFrame:self.view.frame];
 	indicator.message = @"Whoa!";
 	[indicator activate];
 	[indicator release];

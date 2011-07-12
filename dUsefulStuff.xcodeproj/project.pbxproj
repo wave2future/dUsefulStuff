@@ -21,6 +21,8 @@
 		652697A7116EF98B003C63D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269778116EF91E003C63D3 /* CoreGraphics.framework */; };
 		652697E8116EF992003C63D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65269783116EF983003C63D3 /* UIKit.framework */; };
 		652AC6A012DA98C5007D5042 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6576D1C3121C0CAF00CBE1B0 /* GHUnit.framework */; };
+		652D4E4213C9B2FA00633E51 /* CancellableTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 652D4E4113C9B2FA00633E51 /* CancellableTask.m */; };
+		652D4E4513CC70B800633E51 /* SleepingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 652D4E4413CC70B800633E51 /* SleepingTask.m */; };
 		653888E51272C76D0037D2C1 /* DCCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6503579B116A1B8100202897 /* DCCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		653888E61272C7710037D2C1 /* DCCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 65568E971233B7C400BC02C3 /* DCCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		653888E71272C7730037D2C1 /* DCDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CD392E122551E90061EEBF /* DCDialogs.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -157,6 +159,10 @@
 		651D450D12D5DFD3005F77B2 /* License.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.markdown; sourceTree = "<group>"; };
 		65269778116EF91E003C63D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		65269783116EF983003C63D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		652D4E4013C9B2FA00633E51 /* CancellableTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CancellableTask.h; sourceTree = "<group>"; };
+		652D4E4113C9B2FA00633E51 /* CancellableTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancellableTask.m; sourceTree = "<group>"; };
+		652D4E4313CC70B800633E51 /* SleepingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepingTask.h; sourceTree = "<group>"; };
+		652D4E4413CC70B800633E51 /* SleepingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepingTask.m; sourceTree = "<group>"; };
 		6538898A12730E980037D2C1 /* DCCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoreDataTests.m; sourceTree = "<group>"; };
 		654ED65C116C5B89007AB3BA /* ReadMe.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = ReadMe.markdown; sourceTree = "<group>"; };
 		654ED65D116C5B89007AB3BA /* star-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-active.png"; sourceTree = "<group>"; };
@@ -365,6 +371,10 @@
 				659CB9C9125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.h */,
 				659CB9CA125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.m */,
 				6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */,
+				652D4E4013C9B2FA00633E51 /* CancellableTask.h */,
+				652D4E4113C9B2FA00633E51 /* CancellableTask.m */,
+				652D4E4313CC70B800633E51 /* SleepingTask.h */,
+				652D4E4413CC70B800633E51 /* SleepingTask.m */,
 			);
 			name = Fixtures;
 			sourceTree = "<group>";
@@ -569,6 +579,8 @@
 				659CB9CB125B14ED00AD44BE /* GHUnitTest+DCUIRatingFixtures.m in Sources */,
 				6538898C12730EDF0037D2C1 /* DCCoreDataTests.m in Sources */,
 				65CC19A813C882E0005D8BA3 /* DCBackgroundThreadTests.m in Sources */,
+				652D4E4213C9B2FA00633E51 /* CancellableTask.m in Sources */,
+				652D4E4513CC70B800633E51 /* SleepingTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

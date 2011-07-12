@@ -14,11 +14,18 @@
  */
 @interface DCBusyIndicator : UIView {
 @private 
-	UIView *superView;
 	UIActivityIndicatorView *busy;
 	UILabel *label;
 	CGFloat transparency;
+	UIView *parentView;
 }
+
+/// @name Properties
+
+/**
+ Allows you to set a specific view as the super view of the DCBusyIndicator. If not set the top view of the last keyed window will be used.
+ */
+@property (retain, nonatomic) UIView *parentView;
 
 /**
  A message to display below the activity indicator. keep it short is best.
@@ -29,10 +36,8 @@
  How transparent to make the background color. 1 = opaque, 0 = 100% transparent.
  */
 @property (nonatomic) CGFloat transparency;
-/**
- * Default constructor. Better to use the static method if possible.
- */
-- (id) initWithSuperview:(UIView *)aSuperView;
+
+/// @name Tasks
 
 /**
  Called on the main thread by BackgroundTask to add the busy indicator view to the display.
