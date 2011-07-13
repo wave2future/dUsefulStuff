@@ -5,6 +5,8 @@
 * Converted DCUIRating to use gesture recognisers.
 * Added macro for string concatination which uses indirection so that embedded macros such as __LINE__ can be concatinated into other strings.
 * Added DCBackgroundTask and DCBusyIndicator to facilitate background tasks.
+* Correct gesture type in DCUIRating.
+
 
 # Changes Version 0.0.9
 * Removed setup.sh as it really didn't do much.

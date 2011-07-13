@@ -133,35 +133,9 @@
 	}
 }
 
-/*
-- (void) alignWithTough:(UITouch *)aTouch {
-
-	//If the bubble is not in the view hirachy then add it to the current window.
-	//This effectively adds to to the top of the z-order.
-	if (self.window == nil) {
-		DC_LOG(@"Adding bubble to window");
-		[[[UIApplication sharedApplication] keyWindow] addSubview:self];
-	}
-
-	// Tell the controls superview to calculate it's origin in main window.
-	CGPoint controlOriginInWindow = [aTouch.view.superview convertPoint:aTouch.view.frame.origin toView:nil];
-	DC_LOG(@"Control position in window: %f x %f", controlOriginInWindow.x, controlOriginInWindow.y);
-
-	// Stop the bubble moving to far to the left or right.
-	float bubbleXPos = fmin(controlOriginInWindow.x + aTouch.view.frame.size.width, [aTouch locationInView:aTouch.window].x);
-	bubbleXPos = fmax(controlOriginInWindow.x, bubbleXPos);
-
-	// Find out where the control is on the window and put the bubble above it.
-	float bubbleYPos = controlOriginInWindow.y - self.frame.size.height;
-	DC_LOG(@"Bubble Y pos %f = control.y %f - bubble.height %f", bubbleYPos, controlOriginInWindow.y, self.frame.size.height);
-
-	// Position the bubble.
-	self.frame = CGRectMake(bubbleXPos, bubbleYPos, self.frame.size.width, self.frame.size.height);
-
-	[self setNeedsDisplay];
-}
-*/
 - (void) positionAtView:(UIView *)view offset:(int) offset {
+	
+	DC_LOG(@"Offset request: %f pixels", offset);
 	
 	//If the bubble is not in the view hirachy then add it to the current window.
 	//This effectively adds to to the top of the z-order and gets around z-order issues.
@@ -175,12 +149,13 @@
 	DC_LOG(@"Control position in window: %f x %f", controlOriginInWindow.x, controlOriginInWindow.y);
 	
 	// Stop the bubble moving to far to the left or right.
+	DC_LOG(@"Wanting to position bubble at %f", controlOriginInWindow.x + offset);
 	float bubbleXPos = fmin(controlOriginInWindow.x + view.frame.size.width, controlOriginInWindow.x + offset);
 	bubbleXPos = fmax(controlOriginInWindow.x, bubbleXPos);
 	
 	// Put the bubble above the view.
 	float bubbleYPos = controlOriginInWindow.y - self.frame.size.height;
-	DC_LOG(@"Bubble Y pos %f = control.y %f - bubble.height %f", bubbleYPos, controlOriginInWindow.y, self.frame.size.height);
+	DC_LOG(@"Bubble X pos: %f, Y pos: %f, control.y: %f, bubble.height: %f", bubbleXPos, bubbleYPos, controlOriginInWindow.y, self.frame.size.height);
 	
 	// Position the bubble.
 	self.frame = CGRectMake(bubbleXPos, bubbleYPos, self.frame.size.width, self.frame.size.height);

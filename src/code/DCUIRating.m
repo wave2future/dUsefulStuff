@@ -21,7 +21,7 @@
 @interface DCUIRating ()
 - (void) setDefaults;
 - (void) calculateRatingAtX:(float) x;
-- (IBAction)tapGesture:(UIPanGestureRecognizer *)sender;
+- (IBAction)tapGesture:(UITapGestureRecognizer *)sender;
 - (IBAction)swipeGesture:(UIPanGestureRecognizer *)sender;
 @end
 
@@ -211,7 +211,7 @@
 #pragma mark -
 #pragma mark Interactions
 
-- (IBAction) tapGesture:(UIPanGestureRecognizer *)sender {
+- (IBAction) tapGesture:(UITapGestureRecognizer *)sender {
 	DC_LOG(@"Tap gesture handler firing");
 	[self calculateRatingAtX:[sender locationInView:self].x];
 }

@@ -15,7 +15,7 @@
 @interface DCUIBubbleTests : GHTestCase
 {
 }
-- (void) verifyMoveToX:(int)x putsFrameAtX:(int)frameAt;
+- (void) verifyMoveToOffset:(int)x putsBubbleFrameAtX:(int)frameAt;
 
 @end
 
@@ -58,32 +58,27 @@
 
 
 - (void) testMoveToX {
-	[self verifyMoveToX:15 putsFrameAtX:15];
+	[self verifyMoveToOffset:15 putsBubbleFrameAtX:25];
 }
 
 - (void) testMoveToXSticksAtLeftBounds {
-	[self verifyMoveToX:1 putsFrameAtX:10];
+	[self verifyMoveToOffset:-1 putsBubbleFrameAtX:10];
 }
 
 - (void) testMoveToXSticksAtRightBounds {
-	[self verifyMoveToX:100 putsFrameAtX:60];
+	[self verifyMoveToOffset:100 putsBubbleFrameAtX:60];
 }
 
-- (void) verifyMoveToX:(int)x putsFrameAtX:(int)frameAt {
+- (void) verifyMoveToOffset:(int)x putsBubbleFrameAtX:(int)frameAt {
 
 	UIWindow *window = [[[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 320, 480)] autorelease];
 	UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(10, 20, 50, 50)] autorelease];
 	[window addSubview:view];
 
-	id mockTouch = [OCMockObject mockForClass:[UITouch class]];
-	[[[mockTouch stub] andReturn:view] view];
-	[[[mockTouch stub] andReturn:window] window];
-	CGPoint touchPointInWindow = CGPointMake(x, 26);
-	[[[mockTouch expect] andReturnValue:OCMOCK_VALUE(touchPointInWindow)] locationInView:window];
-
 	DCUIBubble *bubble = [[[DCUIBubble alloc] initWithSize:CGSizeMake(10, 10)] autorelease];
 	[window addSubview:bubble];
-	[bubble alignWithTough:mockTouch];
+	
+	[bubble positionAtView:view offset:x];
 
 	GHAssertEquals(bubble.frame.origin.x, (CGFloat)frameAt, @"Incorrect position x");
 	GHAssertEquals(bubble.frame.origin.y, (CGFloat)10, @"Incorrect position y");

@@ -19,6 +19,12 @@
 }
 @end
 
+@interface DCUIRating (testAccess)
+- (IBAction)tapGesture:(UIPanGestureRecognizer *)sender;
+- (IBAction)swipeGesture:(UIPanGestureRecognizer *)sender;
+@end
+
+
 @implementation DCUIRatingTests
 
 -(void) setUp {
@@ -176,22 +182,10 @@
 	UIWindow *window = [[[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 320, 480)] autorelease];
 	[window addSubview:ratingControl];
 	
-	// mock out the touch.
-	id mockTouch = [OCMockObject mockForClass:[UITouch class]];
-	[[[mockTouch stub] andReturn:ratingControl] view];
-	[[[mockTouch stub] andReturn:window] window];
-	
-	// setup the touch points within the window and rating control.
-	CGPoint touchPointInRating = CGPointMake(23, 26);
-	[[[mockTouch stub] andReturnValue:OCMOCK_VALUE(touchPointInRating)] locationInView:ratingControl];
-	CGPoint touchPointInWindow = CGPointMake(33, 26);
-	[[[mockTouch stub] andReturnValue:OCMOCK_VALUE(touchPointInWindow)] locationInView:window];
-	
-	// setup the event.
-	id mockEvent = [OCMockObject mockForClass:[UIEvent class]];
-	NSMutableSet *touches = [NSMutableSet set];
-	[touches addObject:mockTouch];
-	[[[mockEvent expect] andReturn:touches] touchesForView:ratingControl];
+	// Mock out the tap gesture.
+	id mockTapGesture = [OCMockObject mockForClass:[UITouch class]];
+	CGPoint tapAt = CGPointMake(23, 26);
+	[[[mockTapGesture stub] andReturnValue:OCMOCK_VALUE(tapAt)] locationInView:ratingControl];
 	
 	// Mock up the images so that draw rect can be called. Use a nice mock because it's not important to the test.
 	id mockImage = [OCMockObject niceMockForClass:[UIImage class]];
@@ -203,11 +197,10 @@
 	ratingControl.iconCount = 5;
 	
 	// Trigger the calculation.
-	[ratingControl touchesEnded:touches withEvent:mockEvent];
+	[ratingControl tapGesture:mockTapGesture];
 	
 	// Verify
-	[mockEvent verify];
-	[mockTouch verify];
+	[mockTapGesture verify];
 	GHAssertEquals(ratingControl.rating, (float)2.5, @"Incorrect rating returned");
 	
 }
@@ -229,27 +222,15 @@
 	[[[mockImage stub] andReturnValue:OCMOCK_VALUE(size)] size];
 	ratingControl.offRatingImage = mockImage;
 	ratingControl.onRatingImage = mockImage;
-	
-	// mock out the touch.
-	id mockTouch = [OCMockObject mockForClass:[UITouch class]];
-	[[[mockTouch stub] andReturn:ratingControl] view];
-	[[[mockTouch stub] andReturn:window] window];
-	
-	// setup the touch points within the window and rating control.
-	CGPoint touchPointInRating = CGPointMake(35, 26);
-	[[[mockTouch stub] andReturnValue:OCMOCK_VALUE(touchPointInRating)] locationInView:ratingControl];
-	CGPoint touchPointInWindow = CGPointMake(45, 26);
-	[[[mockTouch stub] andReturnValue:OCMOCK_VALUE(touchPointInWindow)] locationInView:window];
-	
-	// setup the event.
-	id mockEvent = [OCMockObject mockForClass:[UIEvent class]];
-	NSMutableSet *touches = [NSMutableSet set];
-	[touches addObject:mockTouch];
-	[[[mockEvent stub] andReturn:touches] touchesForView:ratingControl];
+
+	// Mock out the tap gesture.
+	id mockTapGesture = [OCMockObject mockForClass:[UITouch class]];
+	CGPoint tapAt = CGPointMake(35, 26);
+	[[[mockTapGesture stub] andReturnValue:OCMOCK_VALUE(tapAt)] locationInView:ratingControl];
 	
 	// Trigger the calculation.
 	DC_LOG(@"Make call to test code");
-	[ratingControl touchesEnded:touches withEvent:mockEvent];
+	[ratingControl tapGesture:mockTapGesture];
 	
 	// Verify
 	[mockDelegate verify];
