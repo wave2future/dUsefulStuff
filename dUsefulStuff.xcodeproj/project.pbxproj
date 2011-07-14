@@ -10,9 +10,9 @@
 		65001C9B117C87F500C6ACA8 /* DCUIBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001C97117C87F500C6ACA8 /* DCUIBubble.m */; };
 		65001DF4117F32CA00C6ACA8 /* DCUIBubbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65001DB7117F2C8700C6ACA8 /* DCUIBubbleTests.m */; };
 		650B81931276F1B3002BA0B2 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650B81921276F1B3002BA0B2 /* OCMock.framework */; };
-		65142DF313C1F54D00C4C21F /* DCBackgroundThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 65142DEF13C1F54D00C4C21F /* DCBackgroundThread.h */; };
+		65142DF313C1F54D00C4C21F /* DCBackgroundThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 65142DEF13C1F54D00C4C21F /* DCBackgroundThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65142DF413C1F54D00C4C21F /* DCBackgroundThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 65142DF013C1F54D00C4C21F /* DCBackgroundThread.m */; };
-		65142DF713C1F54D00C4C21F /* DCBusyIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 65142DF113C1F54D00C4C21F /* DCBusyIndicator.h */; };
+		65142DF713C1F54D00C4C21F /* DCBusyIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 65142DF113C1F54D00C4C21F /* DCBusyIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65142DF813C1F54D00C4C21F /* DCBusyIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65142DF213C1F54D00C4C21F /* DCBusyIndicator.m */; };
 		65142DFF13C4A01500C4C21F /* DCBackgroundThreadDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 65142DFE13C4A00E00C4C21F /* DCBackgroundThreadDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65184ABA124E127100C36C18 /* build.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6518349F1227EED400B4AE43 /* build.sh */; };
@@ -74,7 +74,7 @@
 		65B182F2124DD7CC00A789C0 /* UIView+dUsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B182F0124DD7CC00A789C0 /* UIView+dUsefulStuff.m */; };
 		65BD83E81259E3DF00433CCD /* DCUIRatingScaleHalfStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD83E61259E3DF00433CCD /* DCUIRatingScaleHalfStrategy.m */; };
 		65BD83EC1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD83EA1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m */; };
-		65CC19A613C87CF9005D8BA3 /* DCBackgroundTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CC19A513C8760B005D8BA3 /* DCBackgroundTask.h */; };
+		65CC19A613C87CF9005D8BA3 /* DCBackgroundTask.h in Headers */ = {isa = PBXBuildFile; fileRef = 65CC19A513C8760B005D8BA3 /* DCBackgroundTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65CC19A813C882E0005D8BA3 /* DCBackgroundThreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CC19A713C88183005D8BA3 /* DCBackgroundThreadTests.m */; };
 		65CD3931122551E90061EEBF /* DCDialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD392F122551E90061EEBF /* DCDialogs.m */; };
 		65D11B8912585AC0001FED62 /* DCUIRatingScaleWholeStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D11B8712585AC0001FED62 /* DCUIRatingScaleWholeStrategy.m */; };
