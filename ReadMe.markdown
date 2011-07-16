@@ -54,7 +54,7 @@ concantinating. Thi allows things like this:
 <pre>
 51: DC_CONCATINATE(abc, __LINE__) 
 </pre>
-Which produces "abc51". Normal concatination using "##" doesn't work with __LINE__, but this macros gets around it.
+Which produces "abc51". Normal concatination using "##" doesn't work with __LINE__, but this macros gets around it by using nested macros.
 </td>
 </tr>
 </table>
@@ -203,6 +203,14 @@ core data.
 ## DCDialogs
 
 Class of static methods for displaying messages to the user. Just takes some pain out of rewriting code.
+
+## DCBackgroundThread, DCBackgroundThreadDelegate and DCBackgroundTask
+
+Working with background threads involves a bit of boiler plate code and setup. These classes enable you to avoid this work. So now all that's involved in setting up a background thread is adopting the DCBackgroundTask protocol and implementing a single method. Then allocate a DCBackgroundThread instance and giving it the task to run. 
+
+## DCBusyIndicator
+
+This class provides a semi-transparent overlay with text and an activity indicator. This will slide up from the bottom of the screen. It's designed to be used when thee is something happening and you want to cover the whole screen. DCBackgroundThread makes use of this automatically if you tell it too.
 
 ## Scripts
 

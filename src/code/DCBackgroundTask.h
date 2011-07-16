@@ -14,7 +14,7 @@
 @protocol DCBackgroundTask <NSObject>
 
 /**
- This method is called to start the background processing.
+ This method is called by DCBackgroundThread to start the background processing.
  */
 -(void) start;
 

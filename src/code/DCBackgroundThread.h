@@ -12,6 +12,17 @@
 /**
  This class manages a thread that is to be run in the background. It can also display a DCBusyIndicator in a semi modal form. By this I mean that it slides
  up the screen covering the specified view. Usually you would use this to cover the main display whilst something is happening.
+ Here's some example code:
+ <pre>
+ SomeTask *task = [[SomeTask alloc] init];
+ DCBackgroundThread *thread = [[DCBackgroundThread alloc] initWithTask:task];
+ thread.delegate = self;
+ 
+ NSThread *actualThread = [thread start];
+ 
+ [thread release];
+ [task release];
+ </pre>
  */
 @interface DCBackgroundThread : NSObject {
 	@private
