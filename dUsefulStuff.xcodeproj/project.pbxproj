@@ -150,7 +150,7 @@
 		65142DF013C1F54D00C4C21F /* DCBackgroundThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCBackgroundThread.m; path = src/code/DCBackgroundThread.m; sourceTree = "<group>"; };
 		65142DF113C1F54D00C4C21F /* DCBusyIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCBusyIndicator.h; path = src/code/DCBusyIndicator.h; sourceTree = "<group>"; };
 		65142DF213C1F54D00C4C21F /* DCBusyIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCBusyIndicator.m; path = src/code/DCBusyIndicator.m; sourceTree = "<group>"; };
-		65142DFE13C4A00E00C4C21F /* DCBackgroundThreadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCBackgroundThreadDelegate.h; sourceTree = "<group>"; };
+		65142DFE13C4A00E00C4C21F /* DCBackgroundThreadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCBackgroundThreadDelegate.h; path = src/code/DCBackgroundThreadDelegate.h; sourceTree = "<group>"; };
 		6518349F1227EED400B4AE43 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		651834AD1227F19D00B4AE43 /* createDocumentation.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createDocumentation.sh; sourceTree = "<group>"; };
 		651834AE1227F3A300B4AE43 /* clean.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = clean.sh; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		652D4E4113C9B2FA00633E51 /* CancellableTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CancellableTask.m; sourceTree = "<group>"; };
 		652D4E4313CC70B800633E51 /* SleepingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepingTask.h; sourceTree = "<group>"; };
 		652D4E4413CC70B800633E51 /* SleepingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepingTask.m; sourceTree = "<group>"; };
-		6538898A12730E980037D2C1 /* DCCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCoreDataTests.m; sourceTree = "<group>"; };
+		6538898A12730E980037D2C1 /* DCCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCCoreDataTests.m; path = src/tests/DCCoreDataTests.m; sourceTree = "<group>"; };
 		654ED65C116C5B89007AB3BA /* ReadMe.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = ReadMe.markdown; sourceTree = "<group>"; };
 		654ED65D116C5B89007AB3BA /* star-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-active.png"; sourceTree = "<group>"; };
 		654ED65E116C5B89007AB3BA /* star-half-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-half-active.png"; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		6576D1C3121C0CAF00CBE1B0 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = "/Users/derek/projects/tools/GHUnit 0.4.27/GHUnit.framework"; sourceTree = "<absolute>"; };
 		6576D210121C1EFA00CBE1B0 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = src/tests/GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		6579F224116E1AC00065C30E /* dUsefulStuff simulator unit tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dUsefulStuff simulator unit tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		657F52F7129E9D6600EC3B7F /* DCUIRatingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUIRatingDelegate.h; sourceTree = "<group>"; };
+		657F52F7129E9D6600EC3B7F /* DCUIRatingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingDelegate.h; path = src/code/DCUIRatingDelegate.h; sourceTree = "<group>"; };
 		65896F1D1244F9210089E207 /* UIColor+dUsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+dUsefulStuff.h"; path = "src/code/UIColor+dUsefulStuff.h"; sourceTree = "<group>"; };
 		65896F1E1244F9210089E207 /* UIColor+dUsefulStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuff.m"; path = "src/code/UIColor+dUsefulStuff.m"; sourceTree = "<group>"; };
 		65896F451244FC320089E207 /* UIColor+dUsefulStuffTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+dUsefulStuffTests.m"; path = "src/tests/UIColor+dUsefulStuffTests.m"; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 		65BD83E61259E3DF00433CCD /* DCUIRatingScaleHalfStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingScaleHalfStrategy.m; path = src/code/DCUIRatingScaleHalfStrategy.m; sourceTree = "<group>"; };
 		65BD83E91259E49300433CCD /* DCUIRatingAbstractScaleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUIRatingAbstractScaleStrategy.h; path = src/code/DCUIRatingAbstractScaleStrategy.h; sourceTree = "<group>"; };
 		65BD83EA1259E49300433CCD /* DCUIRatingAbstractScaleStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUIRatingAbstractScaleStrategy.m; path = src/code/DCUIRatingAbstractScaleStrategy.m; sourceTree = "<group>"; };
-		65CC19A513C8760B005D8BA3 /* DCBackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCBackgroundTask.h; sourceTree = "<group>"; };
-		65CC19A713C88183005D8BA3 /* DCBackgroundThreadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCBackgroundThreadTests.m; sourceTree = "<group>"; };
+		65CC19A513C8760B005D8BA3 /* DCBackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCBackgroundTask.h; path = src/code/DCBackgroundTask.h; sourceTree = "<group>"; };
+		65CC19A713C88183005D8BA3 /* DCBackgroundThreadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCBackgroundThreadTests.m; path = src/tests/DCBackgroundThreadTests.m; sourceTree = "<group>"; };
 		65CD392E122551E90061EEBF /* DCDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDialogs.h; path = src/code/DCDialogs.h; sourceTree = "<group>"; };
 		65CD392F122551E90061EEBF /* DCDialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDialogs.m; path = src/code/DCDialogs.m; sourceTree = "<group>"; };
 		65CD39A31226880D0061EEBF /* buildStaticLibrary.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buildStaticLibrary.sh; sourceTree = "<group>"; };
